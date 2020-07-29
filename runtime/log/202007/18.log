@@ -1,0 +1,412 @@
+---------------------------------------------------------------
+[ 2020-07-18T08:50:07+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index.html
+[ info ] www.obtest.com/user/index.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,574.40kb] [文件加载：71]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\app\index\controller\User.php:24]
+---------------------------------------------------------------
+[ 2020-07-18T08:57:49+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index.html
+[ info ] www.obtest.com/user/index.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,574.41kb] [文件加载：71]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\app\index\controller\User.php:24]
+---------------------------------------------------------------
+[ 2020-07-18T10:27:57+08:00 ] 127.0.0.1 127.0.0.1 GET /user/system.html
+[ info ] www.obtest.com/user/system.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,575.46kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ''</td>'' (T_CONSTANT_ENCAPSED_STRING)[D:\phpstudy_pro\WWW\obtest\app\common\model\Member.php:178]
+---------------------------------------------------------------
+[ 2020-07-18T10:34:51+08:00 ] 127.0.0.1 127.0.0.1 POST /user/useredit.html
+[ info ] www.obtest.com/user/useredit.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,819.63kb] [文件加载：75]
+[ error ] [8]未定义数组索引: password[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:64]
+---------------------------------------------------------------
+[ 2020-07-18T10:37:44+08:00 ] 127.0.0.1 127.0.0.1 POST /user/transfer.html
+[ info ] www.obtest.com/user/transfer.html [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：2,934.57kb] [文件加载：76]
+[ error ] [8]Array to string conversion[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:397]
+---------------------------------------------------------------
+[ 2020-07-18T11:22:55+08:00 ] 127.0.0.1 127.0.0.1 GET /user/system.html
+[ info ] www.obtest.com/user/system.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,914.68kb] [文件加载：72]
+[ error ] [0]类的属性不存在:app\common\model\Member->param[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-18T11:59:27+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,575.42kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ')', expecting ';'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:133]
+---------------------------------------------------------------
+[ 2020-07-18T12:08:16+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.072005s][吞吐率：13.89req/s] [内存消耗：2,990.61kb] [文件加载：77]
+[ error ] [8]未定义数组索引: $iii[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:134]
+---------------------------------------------------------------
+[ 2020-07-18T12:08:35+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.076003s][吞吐率：13.16req/s] [内存消耗：2,986.47kb] [文件加载：77]
+[ error ] [8]未定义数组索引: $iii[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:135]
+---------------------------------------------------------------
+[ 2020-07-18T12:25:24+08:00 ] 127.0.0.1 127.0.0.1 GET /members/tree/id/6.html
+[ info ] www.obtest.com/members/tree/id/6.html [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：3,023.91kb] [文件加载：78]
+[ error ] [0]致命错误: Call to undefined function raw()[D:\phpstudy_pro\WWW\obtest\runtime\temp\ba09769c92f0e46ee5dcb53941169355.php:98]
+---------------------------------------------------------------
+[ 2020-07-18T14:36:03+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,590.02kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->teamTree3[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-18T14:36:36+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,919.10kb] [文件加载：74]
+[ error ] [2]Use of undefined constant __STATIC__ - assumed '__STATIC__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:740]
+---------------------------------------------------------------
+[ 2020-07-18T14:36:58+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,918.78kb] [文件加载：74]
+[ error ] [8]Trying to get property 'username' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:743]
+---------------------------------------------------------------
+[ 2020-07-18T14:37:21+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,918.78kb] [文件加载：74]
+[ error ] [8]Trying to get property 'username' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:744]
+---------------------------------------------------------------
+[ 2020-07-18T14:37:23+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：2,825.09kb] [文件加载：74]
+[ error ] [8]Trying to get property 'username' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:744]
+---------------------------------------------------------------
+[ 2020-07-18T14:37:42+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,919.03kb] [文件加载：74]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:759]
+---------------------------------------------------------------
+[ 2020-07-18T14:38:16+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,917.38kb] [文件加载：73]
+[ error ] [0]致命错误: Call to a member function getData() on array[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:864]
+---------------------------------------------------------------
+[ 2020-07-18T14:39:02+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,918.78kb] [文件加载：74]
+[ error ] [8]Trying to get property 'username' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:868]
+---------------------------------------------------------------
+[ 2020-07-18T14:39:25+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,918.88kb] [文件加载：74]
+[ error ] [8]Trying to get property 're_nums' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:39:41+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.065003s][吞吐率：15.38req/s] [内存消耗：2,918.73kb] [文件加载：74]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:868]
+---------------------------------------------------------------
+[ 2020-07-18T14:41:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,918.91kb] [文件加载：74]
+[ error ] [8]Trying to get property 're_nums' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:07+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,918.91kb] [文件加载：74]
+[ error ] [8]Trying to get property 'zhitui_all' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:08+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,825.23kb] [文件加载：74]
+[ error ] [8]Trying to get property 'zhitui_all' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:09+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,825.23kb] [文件加载：74]
+[ error ] [8]Trying to get property 'zhitui_all' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:09+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,825.23kb] [文件加载：74]
+[ error ] [8]Trying to get property 'zhitui_all' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:36+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,918.87kb] [文件加载：74]
+[ error ] [8]未定义数组索引: zhitui_all[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:37+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,825.18kb] [文件加载：74]
+[ error ] [8]未定义数组索引: zhitui_all[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:769]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:44+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,920.30kb] [文件加载：74]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:773]
+---------------------------------------------------------------
+[ 2020-07-18T14:43:46+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,826.62kb] [文件加载：74]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:773]
+---------------------------------------------------------------
+[ 2020-07-18T14:44:20+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：2,953.22kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:869]
+---------------------------------------------------------------
+[ 2020-07-18T14:44:38+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,918.73kb] [文件加载：74]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:869]
+---------------------------------------------------------------
+[ 2020-07-18T14:44:39+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,825.05kb] [文件加载：74]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:869]
+---------------------------------------------------------------
+[ 2020-07-18T14:45:11+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,953.22kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:46:08+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：2,917.57kb] [文件加载：73]
+[ error ] [0]致命错误: Call to a member function getData() on array[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:866]
+---------------------------------------------------------------
+[ 2020-07-18T14:46:16+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,953.22kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:46:48+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,953.22kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:46:48+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,947.27kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:46:48+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,947.27kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:48:32+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,918.86kb] [文件加载：74]
+[ error ] [8]未定义变量: members[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:48:33+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,825.17kb] [文件加载：74]
+[ error ] [8]未定义变量: members[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,953.38kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:05+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：2,947.43kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:05+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：2,947.43kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:06+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.047002s][吞吐率：21.28req/s] [内存消耗：2,947.43kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:17+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,953.38kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'id'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:18+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,947.43kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'id'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:49:35+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,953.22kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:52:43+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,953.22kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:870]
+---------------------------------------------------------------
+[ 2020-07-18T14:56:50+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：2,953.26kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T14:56:53+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,947.02kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:871]
+---------------------------------------------------------------
+[ 2020-07-18T15:00:46+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,953.60kb] [文件加载：74]
+[ error ] [2]Illegal string offset 'status'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:867]
+---------------------------------------------------------------
+[ 2020-07-18T15:02:00+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,953.12kb] [文件加载：74]
+[ error ] [8]Trying to get property 're_path_id' of non-object[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:792]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:13+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：2,953.16kb] [文件加载：73]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest\public/../app/index\view\user\my_team_tree.html[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:14+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,947.21kb] [文件加载：73]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest\public/../app/index\view\user\my_team_tree.html[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:36+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：3,203.89kb] [文件加载：78]
+[ error ] [8]未定义数组索引: re_nums[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:92]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:37+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.057004s][吞吐率：17.54req/s] [内存消耗：3,005.95kb] [文件加载：76]
+[ error ] [8]未定义数组索引: re_nums[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:92]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:37+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,005.95kb] [文件加载：76]
+[ error ] [8]未定义数组索引: re_nums[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:92]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:57+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,204.34kb] [文件加载：78]
+[ error ] [8]未定义数组索引: zhitui_all[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:92]
+---------------------------------------------------------------
+[ 2020-07-18T15:03:58+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：3,005.92kb] [文件加载：76]
+[ error ] [8]未定义数组索引: zhitui_all[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:92]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:09+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：3,204.32kb] [文件加载：78]
+[ error ] [8]未定义变量: member[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:97]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:10+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：3,005.89kb] [文件加载：76]
+[ error ] [8]未定义变量: member[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:97]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:11+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：3,005.89kb] [文件加载：76]
+[ error ] [8]未定义变量: member[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:97]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:11+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：3,005.89kb] [文件加载：76]
+[ error ] [8]未定义变量: member[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:97]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:41+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：3,202.53kb] [文件加载：77]
+[ error ] [0]致命错误: Call to undefined function raw()[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:124]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:49+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：3,203.75kb] [文件加载：78]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:129]
+---------------------------------------------------------------
+[ 2020-07-18T15:04:50+08:00 ] 127.0.0.1 127.0.0.1 GET /user/my_teamtree/id/6.html
+[ info ] www.obtest.com/user/my_teamtree/id/6.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：3,005.80kb] [文件加载：76]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\runtime\temp\678306796c62fb54e75cefce18845083.php:129]
+---------------------------------------------------------------
+[ 2020-07-18T15:07:14+08:00 ] 127.0.0.1 127.0.0.1 GET /members/tree/id/6.html
+[ info ] www.obtest.com/members/tree/id/6.html [运行时间：0.065003s][吞吐率：15.38req/s] [内存消耗：3,017.74kb] [文件加载：78]
+[ error ] [0]致命错误: Call to undefined function raw()[D:\phpstudy_pro\WWW\obtest\runtime\temp\ba09769c92f0e46ee5dcb53941169355.php:118]
+---------------------------------------------------------------
+[ 2020-07-18T15:07:17+08:00 ] 127.0.0.1 127.0.0.1 GET /members/teamtree/id/6.html
+[ info ] www.obtest.com/members/teamtree/id/6.html [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：2,766.79kb] [文件加载：77]
+[ error ] [8]未定义变量: vo[D:\phpstudy_pro\WWW\obtest\runtime\temp\04164bc6f7d0b079ab216eb5c77ddf7e.php:85]
+---------------------------------------------------------------
+[ 2020-07-18T15:21:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/money/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/money/index.html?_pjax=.content [运行时间：0.122006s][吞吐率：8.20req/s] [内存消耗：3,181.15kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T15:24:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/money/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/money/index.html?_pjax=.content [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,175.42kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T15:27:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/money/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/money/index.html?_pjax=.content [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,181.15kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T15:27:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/money/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/money/index.html?_pjax=.content [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,181.15kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T15:27:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：3,164.16kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T15:34:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/bonus/record.html?_pjax=.content [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：3,117.90kb] [文件加载：81]
+[ error ] [0]method not exist:think\db\Query->addInfo[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-18T15:34:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html
+[ info ] www.obtest.com/admin.php/bonus/record.html [运行时间：0.076004s][吞吐率：13.16req/s] [内存消耗：3,129.16kb] [文件加载：82]
+[ error ] [0]method not exist:think\db\Query->addInfo[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-18T15:36:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/bonus/record.html?_pjax=.content [运行时间：0.097005s][吞吐率：10.31req/s] [内存消耗：3,187.63kb] [文件加载：81]
+[ error ] [0]method not exist:think\db\Query->addInfo[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-18T15:36:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html
+[ info ] www.obtest.com/admin.php/bonus/record.html [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：3,129.16kb] [文件加载：82]
+[ error ] [0]method not exist:think\db\Query->addInfo[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-18T15:36:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html
+[ info ] www.obtest.com/admin.php/bonus/record.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：3,129.33kb] [文件加载：82]
+[ error ] [0]method not exist:think\db\Query->addInfo[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-18T15:55:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/bonus/record.html?_pjax=.content [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,291.34kb] [文件加载：60]
+[ error ] [0]语法解析错误: syntax error, unexpected '；' (T_STRING)[D:\phpstudy_pro\WWW\obtest\app\admin\controller\Bonus.php:49]
+---------------------------------------------------------------
+[ 2020-07-18T15:55:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/record.html
+[ info ] www.obtest.com/admin.php/bonus/record.html [运行时间：0.044003s][吞吐率：22.73req/s] [内存消耗：2,208.93kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected '；' (T_STRING)[D:\phpstudy_pro\WWW\obtest\app\admin\controller\Bonus.php:49]
+---------------------------------------------------------------
+[ 2020-07-18T16:10:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.089006s][吞吐率：11.24req/s] [内存消耗：3,170.01kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T16:23:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.142008s][吞吐率：7.04req/s] [内存消耗：3,392.95kb] [文件加载：85]
+[ error ] [2]Use of undefined constant 表达式 - assumed '表达式' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\runtime\temp\890af3e54efbe96324384d58727b4c59.php:224]
+---------------------------------------------------------------
+[ 2020-07-18T16:25:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,386.39kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:25:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：3,379.79kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:25:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：3,379.79kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:26:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,386.27kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:26:15+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html?_pjax=.content [运行时间：0.102005s][吞吐率：9.80req/s] [内存消耗：3,291.13kb] [文件加载：82]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:26:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：3,379.56kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:27:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,314.94kb] [文件加载：81]
+[ error ] [0]语法解析错误: syntax error, unexpected '<'[D:\phpstudy_pro\WWW\obtest\runtime\temp\890af3e54efbe96324384d58727b4c59.php:225]
+---------------------------------------------------------------
+[ 2020-07-18T16:28:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,386.50kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:28:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,379.90kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:28:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：3,379.90kb] [文件加载：85]
+[ error ] [2]array_key_exists(): The first argument should be either a string or an integer[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:318]
+---------------------------------------------------------------
+[ 2020-07-18T16:28:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：3,314.94kb] [文件加载：81]
+[ error ] [0]语法解析错误: syntax error, unexpected ']'[D:\phpstudy_pro\WWW\obtest\runtime\temp\890af3e54efbe96324384d58727b4c59.php:226]
+---------------------------------------------------------------
+[ 2020-07-18T16:28:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberedit/id/6.html
+[ info ] www.obtest.com/admin.php/member/memberedit/id/6.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：3,309.21kb] [文件加载：81]
+[ error ] [0]语法解析错误: syntax error, unexpected ']'[D:\phpstudy_pro\WWW\obtest\runtime\temp\890af3e54efbe96324384d58727b4c59.php:226]
+---------------------------------------------------------------
+[ 2020-07-18T16:30:52+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/memberedit.html
+[ info ] www.obtest.com/admin.php/member/memberedit.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：3,040.06kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '无' for column 'status' at row 1[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-18T16:30:57+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/memberedit.html
+[ info ] www.obtest.com/admin.php/member/memberedit.html [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：3,040.06kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '无' for column 'status' at row 1[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-18T16:31:48+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/memberedit.html
+[ info ] www.obtest.com/admin.php/member/memberedit.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,040.12kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '操作：无' for column 'status' at row 1[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-18T17:05:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.085005s][吞吐率：11.76req/s] [内存消耗：3,170.01kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-18T17:35:54+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/bonus/searchCashier
+[ info ] www.obtest.com/admin.php/bonus/searchCashier [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：3,185.89kb] [文件加载：82]
+[ error ] [2]strtolower() expects parameter 1 to be string, array given[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:1661]
+---------------------------------------------------------------
+[ 2020-07-18T17:38:50+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/bonus/searchCashier
+[ info ] www.obtest.com/admin.php/bonus/searchCashier [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：3,185.89kb] [文件加载：82]
+[ error ] [2]strtolower() expects parameter 1 to be string, array given[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:1661]
+---------------------------------------------------------------
+[ 2020-07-18T17:40:29+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/bonus/searchCashier
+[ info ] www.obtest.com/admin.php/bonus/searchCashier [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：3,378.25kb] [文件加载：86]
+[ error ] [0]致命错误: Call to undefined method think\Collection::render()[D:\phpstudy_pro\WWW\obtest\runtime\temp\36f760416860dfee7dba640c7a958cc4.php:235]
+---------------------------------------------------------------
+[ 2020-07-18T17:43:06+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/bonus/searchCashier
+[ info ] www.obtest.com/admin.php/bonus/searchCashier [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,123.59kb] [文件加载：81]
+[ error ] [0]致命错误: Call to undefined method think\Collection::paginate()[D:\phpstudy_pro\WWW\obtest\app\admin\logic\Bonus.php:71]
+---------------------------------------------------------------
+[ 2020-07-18T17:44:31+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/bonus/searchCashier
+[ info ] www.obtest.com/admin.php/bonus/searchCashier [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,123.59kb] [文件加载：81]
+[ error ] [0]致命错误: Call to undefined method think\Collection::paginate()[D:\phpstudy_pro\WWW\obtest\app\admin\logic\Bonus.php:71]

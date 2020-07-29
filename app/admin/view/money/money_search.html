@@ -1,0 +1,51 @@
+
+<div class="box">
+    <div class="box-header">
+
+    </div>
+
+    <div class="box-body table-responsive">
+        <table  class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th>用户</th>
+                <th>充值</th>
+                <th>提现</th>
+                <th>转账</th>
+                <th>激活</th>
+                <th>推荐奖</th>
+                <th>领导奖</th>
+                <th>对碰奖</th>
+                <th>管理奖</th>
+                <th>见点奖</th>
+                <th>操作时间</th>
+            </tr>
+            </thead>
+            {notempty name='list'}
+            <tbody>
+            {volist name='list' id='vo'}
+            <tr>
+                <td>{$vo.user_name}</td>
+                <td>{$vo.recharge}</td>
+                <td>{$vo.withdrawl}</td>
+                <td>{$vo.transfer}</td>
+                <td>{$vo.activate}</td>
+                <td>{$vo.tuijian}</td>
+                <td>{$vo.lingdao}</td>
+                <td>{$vo.duipeng}</td>
+                <td>{$vo.guanli}</td>
+                <td>{$vo.jiandian}</td>
+                <td>{$vo.create_time}</td>
+            </tr>
+            {/volist}
+            </tbody>
+            {/notempty}
+        </table>
+    </div>
+
+    <div class="box-footer clearfix text-center">
+
+    </div>
+    <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+
+</div>

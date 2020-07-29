@@ -1,0 +1,59 @@
+<div class="box">
+  <div class="box-header">
+    
+    <ob_link><a class="btn" href="{:url('blogrollAdd')}"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
+  </div>
+    
+  <div class="box-body table-responsive">
+
+    <table  class="table table-bordered table-hover table-striped">
+      <form action="{:url('site/siteSys')}" method="post">
+          {notempty name='list'}
+      <thead>
+      {volist name='list' id='vo'}
+      <tr>
+          <th>系统开关{$vo.sys_status}</th>
+          <th>提现开关{$vo.withdrawl_switch}</th>
+          <th>最低提现(默认：{$vo.withdrawl_min})</th>
+          <th>最高提现(默认：{$vo.withdrawl_max})</th>
+          <th>提现倍率(默认:{$vo.withdrawl_mult})</th>
+          <th>提现手续费（默认：{$vo.withdrawl_server}）</th>
+          <th>最低充值(默认:{$vo.recharge_min})</th>
+          <th>最高充值(默认：{$vo.recharge_max})</th>
+          <th>充值倍率(默认:{$vo.recharge_mult})</th>
+      </tr>
+      </thead>
+
+        <tbody>
+                <tr>
+                  <td><label><input name="sys_status" type="radio" value="0" />关 </label>
+                      <label><input name="sys_status" checked="true"type="radio" value="1" />开 </label>
+                      </td>
+                  <td><label><input name="withdrawl_switch" type="radio" value="0" />关 </label>
+                      <label><input name="withdrawl_switch"checked="true" type="radio" value="1" />开 </label> </td>
+                  <td><input type="number" style="width:120px;" name="withdrawl_min"placeholder="默认100"  value="{$vo.withdrawl_min}"></td>
+                  <td><input type="number" style="width:120px;" name="withdrawl_max"placeholder="默认1000"  value="{$vo.withdrawl_max}"></td>
+                  <td><input type="number" style="width:120px;" name="withdrawl_mult"placeholder="默认100"  value="{$vo.withdrawl_mult}"></td>
+                  <td><input type="text" style="width: 120px;" name="server"placeholder="默认0.05" oninput="value=value.replace(/^\D*(\d*(?:\.\d{0,3})?).*$/g, '$1')" value="{$vo.withdrawl_server}"></td>
+                  <td><input type="number" style="width:120px;" name="recharge_min"placeholder="默认100"  value="{$vo.recharge_min}"></td>
+                  <td><input type="number" style="width:120px;" name="recharge_max"placeholder="默认1000"  value="{$vo.recharge_max}"></td>
+                  <td><input type="number" style="width:120px;" name="recharge_mult"placeholder="默认100"  value="{$vo.recharge_mult}"></td>
+                    <td><input  name="id" hidden value="{$vo.id}"></td>
+                  <td class="col-md-2 text-center">
+                      <button type="submit" class='badge bg-green'>保存</button>
+                    </form> 
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+      {/notempty}
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      
+  </div>
+
+</div>

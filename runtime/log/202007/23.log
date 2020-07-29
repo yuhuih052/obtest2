@@ -1,0 +1,28 @@
+---------------------------------------------------------------
+[ 2020-07-23T11:28:01+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.066003s][吞吐率：15.15req/s] [内存消耗：2,579.42kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected '=', expecting ']'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:323]
+---------------------------------------------------------------
+[ 2020-07-23T11:28:17+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,579.52kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:323]
+---------------------------------------------------------------
+[ 2020-07-23T14:33:44+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：3,011.05kb] [文件加载：75]
+[ error ] [8]未定义数组索引: tuijian_co[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:110]
+---------------------------------------------------------------
+[ 2020-07-23T15:04:34+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,579.49kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ')'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:150]
+---------------------------------------------------------------
+[ 2020-07-23T15:32:21+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：3,022.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->walet[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-23T18:04:09+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,579.52kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'dd' (T_STRING)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:165]
+---------------------------------------------------------------
+[ 2020-07-23T18:17:12+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：2,998.30kb] [文件加载：76]
+[ error ] [0]致命错误: Call to a member function setDec() on int[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:165]

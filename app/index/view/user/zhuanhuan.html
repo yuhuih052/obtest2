@@ -1,0 +1,25 @@
+<form action="{:url('user/zhuanhuan1')}" method="post" class="form_single">
+  {:token()}
+    <div class="box" style="margin: 40px;">
+      <div class="box-body">
+              <label>输入额度：</label>
+              
+              <input class="form-control" name="zhuanhuan" required="required" placeholder="请输入正整数" type="text" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+      </div>
+      <select name="zhuanhuan_type">
+        <option value="1">现金币转报单币</option>
+        <option value="2">现金币转保管金</option>
+        <option value="3">保管金转报单币</option>
+      </select>
+      <div class="box-footer">
+        <button  type="submit" class="btn ladda-button ajax-post" data-style="slide-up" target-form="form_single">
+    <span class="ladda-label"><i class="fa fa-send"></i> 转换</span>
+</button>
+<a class="btn" href="{:url('user/index',['id'=> $Request.session.user_id2])}"><i class="fa fa-history"></i> 返 回</a>
+        
+      </div>
+    </div>
+</form>
+<script type="text/javascript">
+  
+</script>

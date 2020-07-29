@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>商品</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+    	.layui-layer-page .layui-layer-content {
+		    overflow: inherit !important;
+		}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<div class="shoptype_search">
+			<i class="iconfont icon-search search_icon"></i>
+			<input type="text" placeholder="输入关键字...">
+		</div>
+	</header>
+	<div class="content-view content-footer">
+		<div class="center-flex prom_cell">
+			<a class="prom_cell_span prom_active_1">综合</a>
+			<a class="prom_cell_span">销量</a>
+			<a class="prom_cell_span">价格</a>
+		</div>
+		<div class="typexq_view">
+			<div class="typexq_cell">
+				<div class="typexq_img"><img src="images/shop_01.jpg" /> </div>
+				<div class="typexq_cell_text">
+					<div class="typexq_cell_title"> 大屋原浆酒（浓酱兼香型白酒）500ml*53%vol</div>
+					<p class="typexq_cell_yj">2395.00</p>
+					<div class="typexq_cell_price"><span>￥2178</span><span class="typexq_buynow" id="xqbuynow">购买</span></div>
+				</div>
+			</div>
+			<div></div>
+			<!--<div class="typexq_cell">
+				<div class="typexq_img"><img src="images/shop_01.jpg" /> </div>
+				<div class="typexq_cell_text">
+					<div class="typexq_cell_title"> 大屋原浆酒（浓酱兼香型白酒）500ml*53%vol</div>
+					<p class="typexq_cell_yj">2395.00</p>
+					<div class="typexq_cell_price"><span>￥2178</span><span class="typexq_buynow">购买</span></div>
+				</div>
+			</div>-->
+		</div>
+		
+		
+		<div id="xqpurchase" style="display: none;">
+			<div class="buynow_view" >			
+				<div class="buynow-img">
+					<img src="images/shop_01.jpg" />
+				</div>
+				<p class="buynow_view_price">￥2,178.00</p>
+				<div class="buynow_view_number">
+					<div class="buynow_view_number_cell">数量</div>
+					<div class="mui-numbox buynow_view_numbox" data-numbox-min='1'>
+						<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+						<input class="mui-input-numbox" type="number" />
+						<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+					</div>			
+				</div>
+				<div class="iconfont icon-guanbi4 closeicon" id="closeicon"></div>
+			</div>
+			<div class="ml_flex">
+				<a href="" class="buynow_view_btn bgcolorh">加入购物车</a>
+				<a href="gobuy.html" class="buynow_view_btn">立即购买</a>
+			</div>			
+		</div>
+		
+	</div>
+	<footer>
+		<nav class="mui-bar mui-bar-tab nav-bg">
+			<a class="mui-tab-item nav-item link" href="index.html">
+				<span class="mui-icon iconfont icon-shouye9"></span>
+				<span class="mui-tab-label">商城首页</span>
+			</a>
+			<a class="mui-tab-item nav-item link mui-active" href="shoptype.html">
+				<span class="mui-icon iconfont icon-liebiao2"></span>
+				<span class="mui-tab-label">全部商品</span>
+			</a>
+			<a class="mui-tab-item nav-item link" href="shopcar.html">
+				<span class="mui-icon iconfont icon-goumai1"></span>
+				<span class="mui-tab-label">购物车</span>
+			</a>				
+			<a class="mui-tab-item nav-item  link" href="center.html">
+				<span class="mui-icon iconfont icon-huiyuan"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+	</footer>
+	
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="layui/layui.all.js" ></script>
+	<script>	
+		mui('body').on('tap', '#xqbuynow', function() {
+			layer.open({
+				type: 1,
+				shade: false,
+				title: false,
+				shade: .1,
+				closeBtn: 0,				
+				offset: 'b',
+				area:'100%',
+				content: $('#xqpurchase')
+			});
+		});
+		mui('body').on('tap', '#closeicon', function() {
+			layer.closeAll();
+			$('#xqpurchase').hide();
+		});
+	</script>
+	<script>
+		
+		mui('body').on('tap', '.link', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });		
+        mui('.prom_cell').on('tap', '.prom_cell_span', function() {
+			$(this).siblings().removeClass('prom_active_1');
+	        $(this).addClass('prom_active_1');  
+		}); 
+		
+	</script>
+</html>

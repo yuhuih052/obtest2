@@ -1,0 +1,46 @@
+
+<div class="box">
+  <div class="box-header">
+    
+    <ob_link><a class="btn" href="{:url('blogrollAdd')}"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
+  </div>
+  <div>
+    <form action="searchCashier" method="post">
+      <input type="date" name="date" value="">
+      <button type="submit">查询</button>
+    </form>
+  </div>
+    
+  <div class="box-body table-responsive">
+    
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          <th>日期</th>
+          <th>拨出</th>
+          <th>入账</th>
+          <th>拨出比</th>
+      </tr>
+      </thead>
+      {notempty name='list'}
+        <tbody>
+          {volist name='list' id='vo'}
+                <tr>
+                  <td>{$vo.month_day}</td>
+                  <td>{$vo.out_account}</td>
+                  <td>{$vo.entry}</td>
+                  <td>{$vo.pp * 100}%</td>
+                </tr>
+          {/volist}
+        </tbody>
+        {/notempty}
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      
+  </div>
+
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+</div>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="css/jquery.hiSlider.min.css" />
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+    	.layui-layer-page .layui-layer-content {
+		    overflow: inherit !important;
+		}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<h1 class="mui-title header-h1">商品详情</h1>
+	</header>
+	<div class="content-view content-footer">
+		<div class="buy_header">
+			<i class="iconfont icon-ico code_click"></i>
+			<img src="images/shop_01.jpg" />
+		</div>
+		<div class="buy_body">
+			<div class="buy_cell">
+				<div class="buy_cell_text">大屋原浆酒（浓酱兼香型白酒）500ml*53%vol</div>
+				<a class="buy_cell_share">
+			        <i class="iconfont icon icon-fenxiang10 share_icon"></i>
+			        <p>分享</p>
+			    </a>
+			</div>
+			<div class="buy_cell">
+		        <span class="text_danger">新疆、西藏、香港特区、澳门特区、台湾省、境外等地区邮费另行咨询</span>
+		    </div>
+			<div class="buy_cell">
+        		<div class="buy_price">
+					<span class="min_price">¥2178 <span class="original">¥2398.00</span></span>
+        		</div>
+            </div>
+            <div class="buy_cell buy_price_title">
+                <p>快递：16.00 </p>
+                <p>销量：103 件 </p>
+                <p>河北省 唐山市</p>
+			</div>
+			<div class="buy_cell sale border_top">
+				<div class="buy_cell_sale">活动</div>
+				<div class="sale_line">
+	                <span class="sale_tip">积分</span>
+	                <span>购买赠送 <span class="color_red">300</span>积分  </span>
+	            </div>
+				<div class="arrow"></div>
+			</div>
+		</div>
+		<div class="buy_cell sale buy_cell_count-bg">
+			<div class="buy_cell_count">请选择数量</div>				
+			<div class="arrow"></div>
+		</div>
+		<div class="buy_cell buy_cell_count-bg">
+		    <a class="buy_home" href="index.html">
+		        <div class="buy_home_logo">
+		            <img src="images/buy.jpg">
+		        </div>
+		        <div class="buy_home_inner">
+		            <div class="title">亿翔博越云商</div>
+		            <div class="subtitle">新零售分享共享经济</div>
+		        </div>
+		        <div class="buy_home_angle">
+		            <span class="goshop">进店逛逛</span>
+		        </div>
+		    </a>
+		</div>
+		<div class="buy_home_btn">
+			<a class="buy_btn_a buy_btn_active">详情</a>
+			<a class="buy_btn_a">参数</a>
+		</div>
+		<div class="list1">
+			<div class="ml-picture">
+		        <a href="javascript:;">
+				    <img src="images/shop.jpg">
+				</a>
+		    </div>
+		</div>
+		<div class="list2">
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">全国统一零售价</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">2391元/瓶</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">产品名称</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">酒酒酒</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">主要原料</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">高粱、水</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">生产商</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">迁安市贯头山酒业有限公司</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">特约经销商</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">迁安市贯头山酒业有限公司</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">产地</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">河北、唐山</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">贮存条件</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">在常温下保存</div>
+			</div>
+			<div class="mui-row parameter_cell">
+				<div class="mui-col-xs-3 parameter_cell_text">温馨提示</div>
+				<div class="mui-col-xs-9 parameter_cell_pl">过度饮酒 有害健康</div>
+			</div>
+		</div>	
+	</div>
+	
+	<div id="purchase" style="display: none;">
+		
+		<div class="buynow_view" >			
+			<div class="buynow-img">
+				<img src="images/shop_01.jpg" />
+			</div>
+			<p class="buynow_view_price">￥2,178.00</p>
+			<div class="buynow_view_number">
+				<div class="buynow_view_number_cell">数量</div>
+				<div class="mui-numbox buynow_view_numbox" data-numbox-min='1'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>			
+			</div>
+			<div class="iconfont icon-guanbi4 closeicon" id="closeicon"></div>
+		</div>
+		<a href="gobuy.html" class="buynow_view_btn">确定</a>
+		
+	</div>	
+	
+	
+	<div class="footer_view">
+		<div class="buy-bar buy-bar-tab">
+			<a class="buy-tab-item nav-item">
+				<span class="mui-icon iconfont icon-guanzhu"></span>
+				<span class="buy-tab-label">关注</span>
+			</a>
+			<a class="buy-tab-item nav-item" href="">
+				<span class="mui-icon iconfont icon-dianpu7"></span>
+				<span class="buy-tab-label">店铺</span>
+			</a>
+			<a class="buy-tab-item nav-ite" href="shopcar.html">
+				<span class="mui-icon iconfont icon-goumai1"></span>
+				<span class="buy-tab-label">购物车</span>
+			</a>				
+			<span class="buy-tab-item nav-item buy_now" href="" id="buynow">
+				立刻购买
+			</span>
+		</div>
+	</div>
+	
+
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="layui/layui.all.js" ></script>
+	<script>
+		mui('body').on('tap', 'a', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });	
+		mui('.buy_home_btn').on('tap', 'a', function() {
+			$(this).siblings().removeClass('buy_btn_active');
+	        $(this).addClass('buy_btn_active');  
+		}); 
+		mui('.buy_home_btn').on('tap', '.buy_home_btn a:first-child', function() {
+			$('.list2').hide();
+			$('.list1').show();
+		});
+		mui('.buy_home_btn').on('tap', '.buy_home_btn a:last-child', function() {
+			$('.list1').hide();
+			$('.list2').show();
+		});
+		
+	</script>
+	<script>	
+		mui('body').on('tap', '#buynow', function() {
+			layer.open({
+				type: 1,
+				shade: false,
+				title: false,
+				shade: .1,
+				closeBtn: 0,				
+				offset: 'b',
+				area:'100%',
+				content: $('#purchase')
+			});
+		});
+		mui('body').on('tap', '#closeicon', function() {
+			layer.closeAll();
+			$('#purchase').hide();
+		});
+	</script>
+</html>

@@ -1,0 +1,144 @@
+---------------------------------------------------------------
+[ 2020-07-02T09:39:17+08:00 ] 127.0.0.1 127.0.0.1 POST /install.php/index/step2.html
+[ info ] www.obtest.com/install.php/index/step2.html [运行时间：0.035002s][吞吐率：28.57req/s] [内存消耗：1,642.52kb] [文件加载：54]
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2020-07-02T09:42:12+08:00 ] 127.0.0.1 127.0.0.1 POST /install.php/index/step2.html
+[ info ] www.obtest.com/install.php/index/step2.html [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：1,642.53kb] [文件加载：54]
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2020-07-02T09:42:30+08:00 ] 127.0.0.1 127.0.0.1 POST /install.php/index/step2.html
+[ info ] www.obtest.com/install.php/index/step2.html [运行时间：0.031002s][吞吐率：32.26req/s] [内存消耗：1,642.53kb] [文件加载：54]
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2020-07-02T09:43:46+08:00 ] 127.0.0.1 127.0.0.1 POST /install.php/index/step2.html
+[ info ] www.obtest.com/install.php/index/step2.html [运行时间：0.044003s][吞吐率：22.73req/s] [内存消耗：1,705.48kb] [文件加载：57]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1044 Access denied for user 'obroot'@'localhost' to database 'onebase'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-02T09:44:27+08:00 ] 127.0.0.1 127.0.0.1 POST /install.php/index/step2.html
+[ info ] www.obtest.com/install.php/index/step2.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：1,642.53kb] [文件加载：54]
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2020-07-02T16:33:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/article/articleadd.html
+[ info ] www.obtest.com/admin.php/article/articleadd.html [运行时间：0.153009s][吞吐率：6.54req/s] [内存消耗：3,449.15kb] [文件加载：86]
+[ error ] [8]未定义变量: addons_data[D:\phpstudy_pro\WWW\obtest\runtime\temp\5d3e3f74adf53d73ead180b5b70cef7b.php:207]
+---------------------------------------------------------------
+[ 2020-07-02T17:09:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:09:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.115007s][吞吐率：8.70req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:09:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:09:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:09:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:09:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.067003s][吞吐率：14.92req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.083004s][吞吐率：12.05req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:33+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:33+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.049001s][吞吐率：20.41req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=1 [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=2 [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,864.80kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]
+---------------------------------------------------------------
+[ 2020-07-02T17:12:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3
+[ info ] www.obtest.com/admin.php/addon/execute/addon_name/region/controller_name/Index/action_name/getOptions.html?upid=0&select_id=0&level=3 [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,858.86kb] [文件加载：81]
+[ error ] [0]致命错误: Class 'addon\region\model\ModelBase' not found[D:\phpstudy_pro\WWW\obtest\addon\region\model\Region.php:17]

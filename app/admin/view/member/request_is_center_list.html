@@ -1,0 +1,51 @@
+
+<div class="box">
+  <div class="box-header">
+    
+    <ob_link><a class="btn" href="{:url('blogrollAdd')}"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
+  </div>
+    
+  <div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          <th>申请人</th>
+          <th>申请报单中心</th>
+        
+          <th>操作</th>
+      </tr>
+      </thead>
+      
+      {notempty name='list'}
+        <tbody>
+            {volist name='list' id='vo'}
+                <tr>
+                  <td>{$vo.username}</td>
+
+                  <td>
+                    {if $vo.re_is_center == 2}申请二级报单中心
+                    {elseif $vo.re_is_center == 1}申请一级报单中心
+                    {elseif $vo.re_is_center == 3}申请商务报单中心
+                    {/if}
+                  </td>
+                  
+                  <td class="col-md-2 text-center">
+                      <ob_link><a href="{:url('requestAgree', array('id' => $vo['id'],'re_is_center'=>$vo['re_is_center']))}" class="btn"><i class="fa fa-edit"></i> 同意</a></ob_link>
+                      &nbsp;
+                      <ob_link><a href="{:url('requestDisagreen', array('id' => $vo['id']))}" class="btn"><i class="fa fa-edit"></i> 拒绝</a></ob_link>
+                  </td>
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+      {/notempty}
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      
+  </div>
+
+</div>

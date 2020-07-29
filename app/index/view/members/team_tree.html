@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="__STATIC__/module/index/js/ztree/css/zTreeStyle/zTreeStyle.css">
+<script type="text/javascript" src="__STATIC__/module/index/js/ztree/js/jquery.ztree.all.min.js"></script>
+<style type="text/css" media="screen">
+    .ztree * {
+        font-size: 16px;
+    }
+    .button{box-shadow: none;}
+    ul{border-bottom: 0;}
+</style>
+<!-- 背景图 -->
+<div class="body"></div>
+<div class="head">
+    <a href="javascript:history.back();" class="back_btn"><i class="iconfont icon-zuo-"></i></a>
+    第{$Request.param.level}层会员
+</div>
+<div class="container">
+    <div class="fs-tab">
+       <table class="table-fs">
+            <tr>
+                <th>会员编号</th>
+                <th>手机</th>
+                <th>等级</th>
+            </tr>
+            <php>$list = $member->xiaji(request()->param('level'));</php>
+            <volist name="$list" id="vo">
+                <tr>
+                   <td><span>{$vo.username}</span></td>
+                   <td><span>{$vo.mobile}</span></td>
+                   <td>{$vo.level_html|raw}</td>
+                </tr>
+            </volist>
+       </table>
+    </div>
+</div>
+<div align="center">{$list->render()}</div>
+
+
+<div style="height: 30px"></div>
+
+<script LANGUAGE="JavaScript">
+var zTreeObj;
+var setting = {
+    callback: {
+        onClick: get_members,
+        onExpand: get_members
+    },
+    view: {
+        nameIsHTML: true,
+        showIcon: false
+    }
+};
+var zNodes = {$data};
+$(document).ready(function() {
+    zTreeObj = $.fn.zTree.init($("#ztree"), setting, zNodes);
+});
+
+var map = { {$root.id} : true };
+
+function get_members(event, treeId, treeNode, clickFlag) {
+    if (map[treeNode.id] || !treeNode.children) {
+        return;
+    }
+    $.ajax({
+        url: "{:url('getChildrenMembers2')}",
+        data: { "pid": treeNode.id },
+        success: function(data) {
+            if (data.code == 1) {
+                var jsondata = eval(data.msg);
+                if (jsondata == null || jsondata == "") {
+                    //末节点的数据为空   所以不再添加节点  这里可以根据业务需求自己写
+                } else {
+                    var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                    var parentZNode = treeObj.getNodeByParam("id", treeNode.id, null); //获取指定父节点
+                    newNode = treeObj.addNodes(parentZNode, jsondata, false);
+                    map[treeNode.id] = true;
+                }
+            }else{
+                obalert(data);
+            }
+
+        }
+    });
+};
+</script>

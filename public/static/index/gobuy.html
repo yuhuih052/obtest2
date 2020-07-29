@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>确认订单</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="css/jquery.hiSlider.min.css" />
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<h1 class="mui-title header-h1">确认订单</h1>
+	</header>
+	<div class="content-view content-footer">
+		<div class="gobuy_view_add">
+			<a class="address" href="address.html">
+				<div class="gobuy_addicon"><i class="iconfont icon-dizhi3 gobuy_icon"></i></div>
+				<div class="gobuy_card">
+					<div>收货人：<span class="gobuy_name">2</span>1357841254196</div>
+					<div class="gobuy_card_add">北京市北京辖区东城区 2</div>
+				</div>
+				<div class="gobuy_arrow">
+					<i class="iconfont icon-jiantou"></i>
+				</div>
+			</a>	
+		</div>
+		<div class="gobuy_view_store">
+			<div class="gobuy_view_storename"><i class="iconfont icon-dianpu1 gobuy_storeicon"></i>商店名称</div>
+			<div class="gobuy_view_storehome">
+				<div class="store_img">
+					<img src="images/shop_01.jpg" />
+				</div>
+				<div class="store_name">大屋原浆酒（浓酱兼香型白酒）500ml*53%vol  </div>
+				<div class="store_count">
+					<div class="store_count_right">￥2178</div>
+					<div class="mui-numbox store_numbox" data-numbox-min='0'>
+						<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+						<input class="mui-input-numbox" type="number" />
+						<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+					</div>
+				</div>
+			</div>
+			<div class="gobuy_storecount">
+				共<span>1</span>件商品<em>共计：</em><span>￥2178</span>
+			</div>
+		</div>
+		<div class="leave_cell">
+			<div class="leave_title">买家留言</div>
+			<textarea placeholder="50字以内(选填)" class="leave_text"></textarea>
+		</div>
+		<div class="gobuy_row">
+			<div class="gobuy_row_text">商品小计</div>
+			<div class="gobuy_row_count">￥2178</div>
+		</div>
+		<div class="gobuy_row">
+			<div class="gobuy_row_text">运费</div>
+			<div class="gobuy_row_count">￥16.00</div>
+		</div>
+
+	</div>
+	<div>
+		<div class="buy-bar buy-bar-tab">
+			<a class="buy-tab-item nav-item buy_pay">
+				需付：<span>￥2,194.00</span>
+			</a>				
+			<a class="buy-tab-item nav-item buy_now" href="">
+				立即支付
+			</a>
+		</div>
+	</div>
+	
+	
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		mui('body').on('tap', 'a', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });		
+	</script>
+</html>

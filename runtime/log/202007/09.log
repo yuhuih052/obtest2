@@ -1,0 +1,312 @@
+---------------------------------------------------------------
+[ 2020-07-09T08:49:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/record.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/record.html?_pjax=.content [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,101.78kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T09:02:37+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/index.html?_pjax=.content [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,091.20kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T09:02:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/record.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/record.html?_pjax=.content [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,101.91kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T09:02:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/index.html?_pjax=.content [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：3,091.20kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T09:22:53+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index.html
+[ info ] www.obtest.com/user/index.html [运行时间：0.048002s][吞吐率：20.83req/s] [内存消耗：2,453.97kb] [文件加载：71]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\app\index\controller\User.php:24]
+---------------------------------------------------------------
+[ 2020-07-09T09:25:55+08:00 ] 127.0.0.1 127.0.0.1 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.066003s][吞吐率：15.15req/s] [内存消耗：2,615.01kb] [文件加载：75]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'daozhang' doesn't have a default value[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-09T09:27:38+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：2,648.41kb] [文件加载：75]
+[ error ] [2]Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:141]
+---------------------------------------------------------------
+[ 2020-07-09T09:30:25+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,682.64kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-09T09:31:25+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,682.64kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-09T09:31:43+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,647.13kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 0[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:138]
+---------------------------------------------------------------
+[ 2020-07-09T09:59:55+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,677.02kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-09T10:24:31+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/01.html
+[ info ] www.obtest.com/user/userrecommonder/username/01.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,553.14kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'public' (T_PUBLIC)[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:163]
+---------------------------------------------------------------
+[ 2020-07-09T10:41:14+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,655.09kb] [文件加载：75]
+[ error ] [8]未定义数组下标: -1[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:146]
+---------------------------------------------------------------
+[ 2020-07-09T11:09:42+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,681.94kb] [文件加载：75]
+[ error ] [8]Array to string conversion[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:144]
+---------------------------------------------------------------
+[ 2020-07-09T11:15:58+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：2,649.91kb] [文件加载：75]
+[ error ] [8]未定义变量: res[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:160]
+---------------------------------------------------------------
+[ 2020-07-09T11:18:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/index.html?_pjax=.content [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：3,091.36kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T11:18:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/record.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/record.html?_pjax=.content [运行时间：0.101005s][吞吐率：9.90req/s] [内存消耗：3,102.08kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T11:19:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/withdrawl/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/withdrawl/index.html?_pjax=.content [运行时间：0.072005s][吞吐率：13.89req/s] [内存消耗：3,085.76kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T11:53:31+08:00 ] 127.0.0.1 127.0.0.1 GET /user/tuijiantu/id/11.html
+[ info ] www.obtest.com/user/tuijiantu/id/11.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,626.68kb] [文件加载：74]
+[ error ] [2]array_pop() expects parameter 1 to be array, string given[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:291]
+---------------------------------------------------------------
+[ 2020-07-09T12:32:20+08:00 ] 127.0.0.1 127.0.0.1 GET /user/tuijiantu/id/11.html
+[ info ] www.obtest.com/user/tuijiantu/id/11.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：2,956.36kb] [文件加载：78]
+[ error ] [8]未定义变量: user_id[D:\phpstudy_pro\WWW\obtest\runtime\temp\0555a3ee534d4dba38d7af367eb7ecf8.php:98]
+---------------------------------------------------------------
+[ 2020-07-09T12:32:38+08:00 ] 127.0.0.1 127.0.0.1 GET /user/tuijiantu/id/11.html
+[ info ] www.obtest.com/user/tuijiantu/id/11.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,956.41kb] [文件加载：78]
+[ error ] [8]未定义数组索引: member_level[D:\phpstudy_pro\WWW\obtest\runtime\temp\0555a3ee534d4dba38d7af367eb7ecf8.php:99]
+---------------------------------------------------------------
+[ 2020-07-09T12:32:52+08:00 ] 127.0.0.1 127.0.0.1 GET /user/tuijiantu/id/11.html
+[ info ] www.obtest.com/user/tuijiantu/id/11.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,956.33kb] [文件加载：78]
+[ error ] [8]未定义变量: user_id[D:\phpstudy_pro\WWW\obtest\runtime\temp\0555a3ee534d4dba38d7af367eb7ecf8.php:113]
+---------------------------------------------------------------
+[ 2020-07-09T13:15:35+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index.html
+[ info ] www.obtest.com/user/index.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,548.40kb] [文件加载：71]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest\app\index\controller\User.php:24]
+---------------------------------------------------------------
+[ 2020-07-09T14:42:53+08:00 ] 127.0.0.1 127.0.0.1 POST /user/message.html
+[ info ] www.obtest.com/user/message.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,365.30kb] [文件加载：62]
+[ error ] [64]Cannot redeclare app\index\controller\User::message()[D:\phpstudy_pro\WWW\obtest\app\index\controller\User.php:190]
+---------------------------------------------------------------
+[ 2020-07-09T14:43:51+08:00 ] 127.0.0.1 127.0.0.1 POST /user/message.html
+[ info ] www.obtest.com/user/message.html [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：2,877.45kb] [文件加载：77]
+[ error ] [2]Use of undefined constant user - assumed 'user' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\runtime\temp\fdaaa5a718a90534af7f179310e08781.php:60]
+---------------------------------------------------------------
+[ 2020-07-09T14:46:37+08:00 ] 127.0.0.1 127.0.0.1 POST /user/message.html
+[ info ] www.obtest.com/user/message.html [运行时间：0.085004s][吞吐率：11.76req/s] [内存消耗：2,877.48kb] [文件加载：77]
+[ error ] [8]未定义变量: Resquest[D:\phpstudy_pro\WWW\obtest\runtime\temp\fdaaa5a718a90534af7f179310e08781.php:61]
+---------------------------------------------------------------
+[ 2020-07-09T15:05:46+08:00 ] 127.0.0.1 127.0.0.1 POST /user/messagel/id/11.html
+[ info ] www.obtest.com/user/messagel/id/11.html [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：2,576.55kb] [文件加载：72]
+[ error ] [0]语法解析错误: syntax error, unexpected '}'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:301]
+---------------------------------------------------------------
+[ 2020-07-09T15:07:16+08:00 ] 127.0.0.1 127.0.0.1 POST /user/messagel/id/11.html
+[ info ] www.obtest.com/user/messagel/id/11.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,536.93kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->name[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-09T15:08:01+08:00 ] 127.0.0.1 127.0.0.1 POST /user/messagel/id/11.html
+[ info ] www.obtest.com/user/messagel/id/11.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,542.88kb] [文件加载：75]
+[ error ] [2]Illegal string offset 'name'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:299]
+---------------------------------------------------------------
+[ 2020-07-09T15:08:20+08:00 ] 127.0.0.1 127.0.0.1 POST /user/messagel/id/11.html
+[ info ] www.obtest.com/user/messagel/id/11.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,636.57kb] [文件加载：75]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:299]
+---------------------------------------------------------------
+[ 2020-07-09T15:27:53+08:00 ] 127.0.0.1 127.0.0.1 POST /user/messagel/id/6.html
+[ info ] www.obtest.com/user/messagel/id/6.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,601.38kb] [文件加载：74]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:29:53+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/6.html
+[ info ] www.obtest.com/user/index/id/6.html [运行时间：0.042003s][吞吐率：23.81req/s] [内存消耗：2,455.88kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ')'[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:311]
+---------------------------------------------------------------
+[ 2020-07-09T15:30:55+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.044002s][吞吐率：22.73req/s] [内存消耗：2,518.45kb] [文件加载：73]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\obtest\app\index\controller\User.php:204]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:22+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,609.05kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:23+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,515.37kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：2,515.37kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.040003s][吞吐率：25.00req/s] [内存消耗：2,515.37kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.039002s][吞吐率：25.64req/s] [内存消耗：2,515.37kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.040002s][吞吐率：25.00req/s] [内存消耗：2,515.37kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T15:31:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/messagerecord/id/6.html
+[ info ] www.obtest.com/user/messagerecord/id/6.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：2,515.37kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->messageRecord[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-09T16:00:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：3,080.17kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T16:00:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,322.77kb] [文件加载：87]
+[ error ] [0]类的属性不存在:app\common\model\Message->re_withdrawl[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-09T16:01:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,271.08kb] [文件加载：85]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ')'[D:\phpstudy_pro\WWW\obtest\runtime\temp\5f5ee6a162bd645fdda6243a2192d78d.php:227]
+---------------------------------------------------------------
+[ 2020-07-09T16:07:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：3,339.11kb] [文件加载：89]
+[ error ] [8]未定义数组下标: 2[D:\phpstudy_pro\WWW\obtest\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-07-09T16:08:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,339.11kb] [文件加载：89]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-07-09T16:08:19+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,266.89kb] [文件加载：85]
+[ error ] [0]语法解析错误: syntax error, unexpected '" id="' (T_CONSTANT_ENCAPSED_STRING), expecting ')'[D:\phpstudy_pro\WWW\obtest\runtime\temp\5f5ee6a162bd645fdda6243a2192d78d.php:227]
+---------------------------------------------------------------
+[ 2020-07-09T16:09:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.113007s][吞吐率：8.85req/s] [内存消耗：3,339.11kb] [文件加载：89]
+[ error ] [8]未定义数组下标: 2[D:\phpstudy_pro\WWW\obtest\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-07-09T16:19:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.099005s][吞吐率：10.10req/s] [内存消耗：3,080.30kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T16:48:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,003.22kb] [文件加载：80]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest\public/../app/admin\view\messages\responseedit.html[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-07-09T16:48:59+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：3,272.29kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:199]
+---------------------------------------------------------------
+[ 2020-07-09T16:49:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.128007s][吞吐率：7.81req/s] [内存消耗：3,271.88kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:203]
+---------------------------------------------------------------
+[ 2020-07-09T16:50:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.113006s][吞吐率：8.85req/s] [内存消耗：3,272.30kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:199]
+---------------------------------------------------------------
+[ 2020-07-09T16:56:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：3,342.41kb] [文件加载：89]
+[ error ] [8]未定义变量: user_id[D:\phpstudy_pro\WWW\obtest\runtime\temp\5f5ee6a162bd645fdda6243a2192d78d.php:237]
+---------------------------------------------------------------
+[ 2020-07-09T16:56:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.132008s][吞吐率：7.58req/s] [内存消耗：3,342.55kb] [文件加载：89]
+[ error ] [8]未定义变量: user_id[D:\phpstudy_pro\WWW\obtest\runtime\temp\5f5ee6a162bd645fdda6243a2192d78d.php:259]
+---------------------------------------------------------------
+[ 2020-07-09T16:56:31+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html?_pjax=.content [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：3,171.72kb] [文件加载：83]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:6]
+---------------------------------------------------------------
+[ 2020-07-09T16:56:31+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：3,266.28kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:198]
+---------------------------------------------------------------
+[ 2020-07-09T16:57:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.126007s][吞吐率：7.94req/s] [内存消耗：3,271.95kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:198]
+---------------------------------------------------------------
+[ 2020-07-09T16:57:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：3,266.22kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:198]
+---------------------------------------------------------------
+[ 2020-07-09T16:57:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：3,266.22kb] [文件加载：86]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\obtest\runtime\temp\1e05485e0f34102f7aa381f0917342da.php:198]
+---------------------------------------------------------------
+[ 2020-07-09T17:03:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,303.37kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected 'view' (T_STRING)[D:\phpstudy_pro\WWW\obtest\app\admin\controller\Messages.php:36]
+---------------------------------------------------------------
+[ 2020-07-09T17:03:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,081.02kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T17:10:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,081.02kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T17:19:04+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/messages/responseedit/id/2.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/2.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：3,005.57kb] [文件加载：79]
+[ error ] [0]类的属性不存在:app\admin\logic\Messages->param[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-09T17:24:30+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.082004s][吞吐率：12.19req/s] [内存消耗：3,022.57kb] [文件加载：82]
+[ error ] [8]未定义数组索引: reaponse[D:\phpstudy_pro\WWW\obtest\app\admin\logic\Messages.php:34]
+---------------------------------------------------------------
+[ 2020-07-09T17:28:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：3,077.58kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T17:32:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest.com/admin.php/messages/index.html [运行时间：0.119006s][吞吐率：8.40req/s] [内存消耗：3,340.95kb] [文件加载：89]
+[ error ] [2]Illegal string offset 'username'[D:\phpstudy_pro\WWW\obtest\runtime\temp\5f5ee6a162bd645fdda6243a2192d78d.php:236]
+---------------------------------------------------------------
+[ 2020-07-09T17:33:11+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：3,028.59kb] [文件加载：82]
+[ error ] [8]未定义变量: date[D:\phpstudy_pro\WWW\obtest\app\admin\logic\Messages.php:35]
+---------------------------------------------------------------
+[ 2020-07-09T17:35:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,083.34kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T17:36:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,018.64kb] [文件加载：81]
+[ error ] [8]未定义数组索引: response[D:\phpstudy_pro\WWW\obtest\app\admin\logic\Messages.php:33]
+---------------------------------------------------------------
+[ 2020-07-09T17:36:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/responseedit/id/1.html
+[ info ] www.obtest.com/admin.php/messages/responseedit/id/1.html [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：3,018.93kb] [文件加载：81]
+[ error ] [8]未定义数组索引: response[D:\phpstudy_pro\WWW\obtest\app\admin\logic\Messages.php:33]
+---------------------------------------------------------------
+[ 2020-07-09T17:36:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/index.html?_pjax=.content [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：3,082.73kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T17:36:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：3,077.61kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T17:36:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/index.html?_pjax=.content [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,077.01kb] [文件加载：83]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-09T18:19:15+08:00 ] 127.0.0.1 127.0.0.1 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,546.30kb] [文件加载：69]
+[ error ] [0]语法解析错误: syntax error, unexpected '}', expecting ';'[D:\phpstudy_pro\WWW\obtest\app\index\logic\Login.php:158]
+---------------------------------------------------------------
+[ 2020-07-09T18:19:51+08:00 ] 127.0.0.1 127.0.0.1 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：2,640.21kb] [文件加载：74]
+[ error ] [8]未定义数组索引: [D:\phpstudy_pro\WWW\obtest\app\index\logic\Login.php:133]
+---------------------------------------------------------------
+[ 2020-07-09T18:20:20+08:00 ] 127.0.0.1 127.0.0.1 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,619.30kb] [文件加载：75]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key '唯一'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-09T18:22:33+08:00 ] 127.0.0.1 127.0.0.1 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：2,619.30kb] [文件加载：75]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6' for key '唯一'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-09T18:40:40+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：2,456.26kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'dump' (T_STRING)[D:\phpstudy_pro\WWW\obtest\app\index\logic\User.php:153]

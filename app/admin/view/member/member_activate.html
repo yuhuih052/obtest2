@@ -1,0 +1,31 @@
+<form action="{:url('member/acSave')}" method="post">
+	<div class="form-group">
+              <label>用户名</label>
+              <span>（用户名，主要用于登录）</span>
+              <input class="form-control" name="username" readonly value="{$info['username']}" type="text">
+            </div>
+	<div class="form-group">
+              <label>激活/锁定</label>
+              &nbsp
+              &nbsp
+              <span>当前状态：
+                {if $info['status'] == 0}未激活
+                {elseif $info['status'] == 1 /}已激活(已开启)
+                {elseif $info['status'] == 2 /}锁定
+                {/if}
+              </span>
+              <select id="status" name="status" class="form-control">
+                
+                <option value="0">操作：未激活</option>
+                <option value="1">操作：激活</option>
+                <option value="1">操作：开启会员</option>
+                <option value="2">操作：锁定会员</option>
+              </select>
+            </div>
+            <button type="submit" style="margin: 10px">确定</button>
+</form>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+<script type="text/javascript">  
+     var ss = {$info['status']};
+     $(" select option[value='"+ss+"']").attr("selected","selected");
+</script> 

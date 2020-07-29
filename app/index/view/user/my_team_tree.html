@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="__STATIC__/module/index/js/ztree/css/zTreeStyle/zTreeStyle.css">
+<style type="text/css">
+    .search .btn{ vertical-align: top; height: 40px; margin-right: 20px; width: 80px; background-color: #c39535; text-align: center; color: #fff; line-height: 40px; padding: 0;  }
+    .search .btn:hover{  color: #fff; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.4)}
+    .ztree *{ font-family: '微软雅黑'; font-size: 14px; }
+    .ztree li{ line-height: 16px; }
+    .ztree-rank{ color: #f8ba27; }
+    .ztree li span.button.ico_open{  background-size: cover !important;}
+    .ztree li span.button.ico_close{ background-size: cover !important;}
+    .ztree li span.button.ico_docu{ background-size: cover !important;}
+    .dlzhitui{width: calc(100% - 500px); float: left;}
+    .forbid span{ color: #999 !important; }
+
+
+    @media(max-width: 768px){
+        .contentbox{padding: 0}
+        .dlzhitui{ width: 100%; float: none; }
+        .finance .search{ float: none !important; }
+        .finance{padding: 0;}
+        .finance .search input[type="text"]{ width: 70%; }
+        .finance .search input[type="button"]{width: 30%;}
+    }
+</style>
+
+<script type="text/javascript" src="__STATIC__/module/index/js/ztree/js/jquery.ztree.all.min.js"></script>
+<header class="mui-bar mui-bar-nav own-main-background-color" style="height: 50px">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="history.back()"></a>
+    <h1 class="mui-title">雙軌關係圖</h1>
+</header>
+<div class="contentbox">
+    <div class="ibox-content finance" style="border: none; border-bottom:1px dashed #ddd;">
+        <div style=" padding-bottom: 0px; margin-top: 60px">
+            <dl class="dlzhitui">
+                <dd>直推人數：{$root.0.zhitui_all}人</dd>
+                <dd>團隊人數：{$root.0.team_all}人</dd>
+            </dl>
+            <div class="pull-right search" style="margin-top: 20px;">
+                <if condition="$root.id neq $member.id">
+                    <a href="#" class="btn">返回頂級</a>
+                </if>
+
+                <form method="get" action="{:url('teamTree')}" style="display: inline-block; width: 100%;">
+                    <input type="text" value="{$Request.param.root_id}" placeholder="會員賬號" name="root_id">
+                    <input type="button" value="查詢" name="">
+                </form>
+            </div>{$data}
+            <div class="clearfix"></div>
+        </div>
+        <div style="width: 100%; overflow: auto;">
+        <ul id="ztree" class="ztree"></ul>
+        </div>
+    </div>
+</div>
+
+<script LANGUAGE="JavaScript">
+    var zTreeObj;
+    var setting = {
+        callback: {
+            onClick: get_members,
+            onExpand: get_members
+        },
+        view: {
+            nameIsHTML: true
+        }
+    };
+    var zNodes = {$data};
+    $(document).ready(function() {
+        zTreeObj = $.fn.zTree.init($("#ztree"), setting, zNodes);
+    });
+    //至今为止我们完全不知道为什么不能用map作为变量，我们也不敢问
+    var flag = { {$root.0.id} : true };
+    function get_members(event, treeId, treeNode, clickFlag) {
+        if (flag[treeNode.id] || !treeNode.children) {
+            return;
+        }
+        $.ajax({
+            url: "{:url('getChildrenMembers')}",
+            data: { "pid": treeNode.id },
+            success: function(data) {
+                if (data.code == 1) {
+                    var jsondata = eval(data.msg);
+                    if (jsondata == null || jsondata == "") {
+                        //末节点的数据为空   所以不再添加节点  这里可以根据业务需求自己写
+
+                    } else {
+                        var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                        var parentZNode = treeObj.getNodeByParam("id", treeNode.id, null); //获取指定父节点
+                        newNode = treeObj.addNodes(parentZNode, jsondata, false);
+                        flag[treeNode.id] = true;
+                    }
+                }else{
+                    obalert(data);
+                }
+
+            }
+        });
+    };
+</script>

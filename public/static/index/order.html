@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<h1 class="mui-title header-h1">我的订单</h1>
+		
+	</header>
+	<div class="content-view content-footer">
+		<div class="center-flex prom_cell">
+			<a class="prom_cell_a prom_active">全部</a>
+			<a class="prom_cell_a">待付款</a>
+			<a class="prom_cell_a">待发货</a>
+			<a class="prom_cell_a">待收货</a>
+			<a class="prom_cell_a">已完成</a>
+		</div>
+
+		<div class="orderlist1">
+			<div class="gobuy_view_store">
+				<a href="index.html" class="ml_block">
+					<div class="order_cell_title">订单号: SH20191216152329118852 <span class="order_cancel">已取消</span></div>
+					<div class="gobuy_view_storehome">
+						<div class="store_img">
+							<img src="images/shop_01.jpg" />
+						</div>
+						<div class="store_name">大屋原浆酒（浓酱兼香型白酒）500ml*53%vol  </div>
+						<div class="store_count">
+							<div class="store_count_right">￥2178</div>
+							<div class="store_count_right color666">x1</div>
+						</div>
+					</div>
+					<div class="gobuy_storecount color666">
+						共1件商品<em>实付：</em><span>￥2178</span>
+					</div>
+				</a>
+				<div class="del_order_cell">
+					<!--<div class="del_order1 ml_right"><span>支付订单</span></div>-->
+					<div class="del_order ml_right"><span>删除订单</span></div>
+					
+				</div>
+			</div>
+			<div class="gobuy_view_store">
+				<a href="index.html" class="ml_block">
+					<div class="order_cell_title">订单号: SH20191216152329118852 <span class="order_cancel">已取消</span><!--<span class="order_cancel">待付款</span>--></div>
+					<div class="gobuy_view_storehome">
+						<div class="store_img">
+							<img src="images/shop_01.jpg" />
+						</div>
+						<div class="store_name">大屋原浆酒（浓酱兼香型白酒）500ml*53%vol  </div>
+						<div class="store_count">
+							<div class="store_count_right">￥2178</div>
+							<div class="store_count_right color666">x1</div>
+						</div>
+					</div>
+					<div class="gobuy_storecount color666">
+						共1件商品<em>实付：</em><span>￥2178</span>
+					</div>
+				</a>
+				<div class="del_order_cell">
+					<div class="del_order1 ml_right"><span>支付订单</span></div>
+					<div class="del_order ml_right"><span>删除订单</span></div>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="orderlist2" style="display: none;">
+			<div class="no_shop_view">
+				<div class="no_shop_img">
+					<img src="images/nolist.png" />
+				</div>
+				<p class="shopcar_hint">您暂时没有任何订单哦！</p>
+				<a href="index.html" class="go_index">去首页逛逛吧</a>
+			</div>
+		</div>
+		
+	</div>
+	<footer>
+		<nav class="mui-bar mui-bar-tab nav-bg">
+			<a class="mui-tab-item nav-item link" href="index.html">
+				<span class="mui-icon iconfont icon-shouye9"></span>
+				<span class="mui-tab-label">商城首页</span>
+			</a>
+			<a class="mui-tab-item nav-item link" href="shoptype.html">
+				<span class="mui-icon iconfont icon-liebiao2"></span>
+				<span class="mui-tab-label">全部商品</span>
+			</a>
+			<a class="mui-tab-item nav-item link" href="shopcar.html">
+				<span class="mui-icon iconfont icon-goumai1"></span>
+				<span class="mui-tab-label">购物车</span>
+			</a>				
+			<a class="mui-tab-item nav-item mui-active link" href="center.html">
+				<span class="mui-icon iconfont icon-huiyuan"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+	</footer>
+	
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		mui('body').on('tap', '.link', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });		
+        mui('.prom_cell').on('tap', '.prom_cell_a', function() {
+			$(this).siblings().removeClass('prom_active');
+	        $(this).addClass('prom_active');  
+		}); 
+		mui('.prom_cell').on('tap', '.prom_cell a:first-child', function() {
+			$('.orderlist2').hide();
+			$('.orderlist1').show();
+		});
+		mui('.prom_cell').on('tap', '.prom_cell a:nth-child(n+2)', function() {
+			$('.orderlist1').hide();
+			$('.orderlist2').show();
+		});
+	</script>
+</html>

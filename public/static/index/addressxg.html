@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>编辑地址</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<h1 class="mui-title header-h1">编辑地址</h1>
+		<span class="title_del">删除</span>
+	</header>
+	<div class="content-view">
+		<div class="mui-row code_cell">
+			<div class="mui-col-xs-4"><label>收货人</label></div>
+			<div class="mui-col-xs-8"><input type="text" class="code_input" placeholder="" value="111"></div>
+		</div>
+		<div class="mui-row code_cell">
+			<div class="mui-col-xs-4"><label>联系电话</label></div>
+			<div class="mui-col-xs-8"><input type="text" class="code_input" placeholder="" value="1485268425574"></div>
+		</div>
+		<div class="mui-row code_cell">
+			<div class="mui-col-xs-4"><label>所在地区</label></div>
+			<div class="mui-col-xs-8"><input type="text" class="code_input" placeholder="" value="北京市 北京辖区 东城区"></div>
+		</div>
+		<div class="mui-row code_cell">
+			<div class="mui-col-xs-4"><label>详细地址</label></div>
+			<div class="mui-col-xs-8"><input type="text" class="code_input" placeholder="" value="1111"></div>
+		</div>
+		<a class="code_btn">保存地址</a>
+	</div>
+	
+	
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		
+		mui('body').on('tap', 'a', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+       });		
+		
+	</script>
+</html>

@@ -1,0 +1,34 @@
+<div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          <th>用户</th>
+          <th>数额</th>
+          <th>手续费</th>
+          <th>到账</th>
+           <th>申请时间</th>
+           <th>结果</th>
+         
+      </tr>
+      </thead>
+      
+      {notempty name='data'}
+        <tbody>
+            {volist name='data' id='vo'}
+                <tr>
+                  <td>{$vo.user_name}</td>
+                  <td>{$vo.amount}</td>
+                  <td>{$vo.server}</td>
+                  <td>{$vo.daozhang}</td>
+                  <td>{$vo.time}</td>
+                  <td>{$vo.shuoming}</td>
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+      {/notempty}
+    </table>
+  </div>
+  <a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>
+  <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>

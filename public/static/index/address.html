@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>收货地址</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="css/jquery.hiSlider.min.css" />
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<h1 class="mui-title header-h1">收货地址</h1>
+	</header>
+	<div class="content-view content-footer">
+		<div class="gobuy_view_add plb20">
+			<div class="gobuy_card">
+				<div class="gobuy_name_1"><span class="gobuy_name">2</span>1357841254196</div>
+				<div class="gobuy_card_add color666">北京市北京辖区东城区 2</div>
+			</div>
+			<div class="address_input">
+				<div class="address_checkbox mui-checkbox mui-left">		
+	    			<input type="checkbox" checked=""/><span>设置默认</span>
+	    		</div> 
+				<span class="pull_right"><a href="addressxg.html"><i class="iconfont icon-bianji1 addicon"></i>编辑</a><a class="pl15"><i class="iconfont icon-shanchu2 addicon"></i>删除</a></span>
+			</div>
+		</div>
+		<a class="address_add" href="">
+			+新增收货地址
+		</a>
+	
+	
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		mui('body').on('tap', 'a', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });		
+	</script>
+</html>

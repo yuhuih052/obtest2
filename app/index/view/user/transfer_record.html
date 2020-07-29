@@ -1,0 +1,30 @@
+<div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          <th>转出用户</th>
+          <th>数额</th>
+          <th>转入用户</th>
+          <th>操作时间</th>
+         
+      </tr>
+      </thead>
+      
+      {notempty name='data'}
+        <tbody>
+            {volist name='data' id='vo'}
+                <tr>
+                  <td>{$vo.out_name}</td>
+                  <td>{$vo.money}</td>
+                  <td>{$vo.input_name}</td>
+                  <td>{$vo.time}</td>
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+      {/notempty}
+    </table>
+  </div>
+  <a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>
+  <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
