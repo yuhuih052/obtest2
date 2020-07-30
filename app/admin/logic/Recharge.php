@@ -55,6 +55,7 @@ class Recharge extends AdminBase
         //dump($data);die;
         $data1 = [
             'wallet' => $userwallet + $data['charge'],
+            're_recharge' => $user[0]['re_recharge'] + $data['charge'],
             'request_chongzhi' => 0,
         ];
         //dump($data1);die;

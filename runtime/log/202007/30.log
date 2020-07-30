@@ -10,3 +10,35 @@
 [ 2020-07-30T09:42:42+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/gather.html
 [ info ] www.obtest2.com/futou/gather.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,534.27kb] [文件加载：70]
 [ error ] [0]语法解析错误: syntax error, unexpected '；' (T_STRING), expecting ';'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:217]
+---------------------------------------------------------------
+[ 2020-07-30T10:56:29+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,960.64kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ',' or ';'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:124]
+---------------------------------------------------------------
+[ 2020-07-30T10:56:41+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：2,960.64kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ',' or ';'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:124]
+---------------------------------------------------------------
+[ 2020-07-30T10:56:42+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,701.67kb] [文件加载：74]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ',' or ';'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:124]
+---------------------------------------------------------------
+[ 2020-07-30T11:52:54+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：3,067.26kb] [文件加载：77]
+[ error ] [0]类的属性不存在:app\common\model\Member->baogaunjin[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-30T11:54:54+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.160009s][吞吐率：6.25req/s] [内存消耗：3,178.49kb] [文件加载：79]
+[ error ] [8]未定义数组索引: bonus[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-30T11:58:08+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.156009s][吞吐率：6.41req/s] [内存消耗：3,186.30kb] [文件加载：79]
+[ error ] [8]未定义数组索引: bonus[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-30T11:58:14+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.190011s][吞吐率：5.26req/s] [内存消耗：3,181.79kb] [文件加载：79]
+[ error ] [8]未定义数组索引: bonus[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-30T12:00:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.140008s][吞吐率：7.14req/s] [内存消耗：3,188.05kb] [文件加载：79]
+[ error ] [8]未定义数组索引: baoguanjin[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]

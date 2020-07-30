@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:74:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\futou\futou_list.html";i:1596071359;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:74:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\futou\futou_list.html";i:1596077888;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,6 +95,9 @@
           <th>接点人</th>
           <th>现金币</th>
           <th>报单币</th>
+          <th>CFI</th>
+          <th>保管金</th>
+          <th>总奖金</th>
           <th>操作</th>
       </tr>
       </thead>
@@ -105,7 +108,7 @@
                 <tr>
                   <td><?php echo $vo['member_number']; ?></td>
                   <td><?php echo $vo['username']; ?></td>
-                  <td><?php echo $vo['activate_time']; ?></td>
+                  <td><?php echo $vo['create_time']; ?></td>
                     <?php if($vo['status'] == 1): ?>
                     <td>已激活</td>
                     <?php elseif($vo['status'] == 0): ?>
@@ -118,6 +121,9 @@
                   <td><?php echo $vo['father_name']; ?></td>
                   <td><?php echo $vo['bonus']; ?></td>
                   <td><?php echo $vo['wallet']; ?></td>
+                  <td><?php echo $vo['CFI']; ?></td>
+                  <td><?php echo $vo['baoguanjin']; ?></td>
+                  <td><?php echo $vo['all_bonus']; ?></td>
                   <td class="text-center">
                       <ob_link><a href="<?php echo url('futou/getInto', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>进入子账号</span></a></ob_link>
 
@@ -135,7 +141,6 @@
 
   <div class="box-footer clearfix text-center">
       </div>
-      <div><a href="<?php echo url('futou/futou'); ?>">增加</a></div>
       <a href="<?php echo url('user/index',['id' => \think\Request::instance()->session('user_id2')]); ?>">个人列表</a>
 <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 </div>

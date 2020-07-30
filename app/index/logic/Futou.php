@@ -94,7 +94,8 @@ class Futou extends IndexBase
 
                 //更新直推人的奖励
                 $re_zhi = [
-                    'bonus' => $p_zhi[0]['bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+                    'bonus' => $p_zhi[0]['bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.9,
+                    'baoguanjin' => $p_zhi[0]['baoguanjin'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.1,
                     'all_bonus' =>  $p_zhi[0]['all_bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
                 ];
                 
@@ -116,6 +117,7 @@ class Futou extends IndexBase
                     'user_name' => $p_person[0]['username'],
                     'activate' => "-".$check_dis['baodanbi_co'],
                     'baodanbi_all'=>$check_dis['baodanbi_co'],
+                    'shuoming' => "注册子账号",
                 ];
                 $this->modelBill->setInfo($bill12);
 
@@ -214,7 +216,7 @@ class Futou extends IndexBase
         $this->modelMember->where('master_id',$member_info2[0]['id'])
                             ->where('status','=',1)
                                 ->update(['wallet'=>0,'bonus'=>0]);
-        $this->bill($v['id'],$v['username'],"+".$sl_baodanbi,"+".$sl_bonus);
+        $this->bill($v['id'],$v['username'],"+".$sl_baodanbi,"+".$sl_bonus,$sl_bonus*0.1);
         return [RESULT_SUCCESS,'收取成功'];
 
     }
@@ -225,7 +227,8 @@ class Futou extends IndexBase
                         'user_id' => $id,
                         'user_name' => $name,
                         'wallet'   => $number,
-                        'bonus' =>$number2
+                        'bonus' =>$number2,
+                        'shuoming' => "收取子账户资金",
                     ];
 
                     $this->modelBill->setInfo($bill_ct6);

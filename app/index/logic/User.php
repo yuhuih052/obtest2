@@ -126,7 +126,8 @@ class User extends IndexBase
                 
                 //更新直推人的奖励
                 $re_zhi = [
-                    'bonus' => $p_zhi[0]['bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+                    'bonus' => $p_zhi[0]['bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.9,
+                    'baoguanjin'=>$p_zhi[0]['baoguanjin'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.1,
                     'all_bonus' =>  $p_zhi[0]['all_bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
                 ];
                 
@@ -137,8 +138,8 @@ class User extends IndexBase
                 $bill1 = [
                     'user_id' => $p_zhi[0]['id'],
                     'user_name' => $p_zhi[0]['username'],
-                    //'activate'  => "-".$check_dis['baodanbi_co'],
-                    'tuijian'   => "+".$check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+                    'baoguanjin'  => "+".$check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.1,
+                    'tuijian'   => "+".$check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.9,
                 ];
                 $this->modelBill->setInfo($bill1);
 
@@ -188,13 +189,19 @@ class User extends IndexBase
                 static $a = 7;
                 $b = $this->modelMember->where('id',$id)->value('is_center');
                 if($b == 1 && $a > 0){
-                    $this->modelMember->where('id',$id)->setInc('bonus',$check_dis['baodanbi_co'] * 0.02);
+                    $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * 0.02*0.9)
+                                                        ->inc('baoguanjin',$check_dis['baodanbi_co'] * 0.02*0.1)
+                                                        ->update();
                     $a = $a-2;
                 }elseif($b == 2 && $a > 0){
-                    $this->modelMember->where('id',$id)->setInc('bonus',$check_dis['baodanbi_co'] * 0.05);
+                    $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * 0.05*0.9)
+                                                        ->inc('baoguanjin',$check_dis['baodanbi_co'] * 0.05*0.1)
+                                                        ->update();
                     $a = $a-5;
                 }elseif($b == 3 && $a > 0){
-                    $this->modelMember->where('id',$id)->setInc('bonus',$check_dis['baodanbi_co'] * $a *0.01);
+                    $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * $a *0.01*0.9)
+                                                        ->inc('baoguanjin',$check_dis['baodanbi_co'] * $a *0.01*0.1)
+                                                        ->update();
                     $a = $a-7;
                 }
             }
@@ -245,7 +252,8 @@ class User extends IndexBase
                     if($ct<6){
                         //发放见点奖
                         $ct6 = [
-                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                        'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                         'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                         ];
                     if($D_value3 > $p_id_rank_bonus){
@@ -257,7 +265,8 @@ class User extends IndexBase
                 }else if ($ct<9) {
                     if($p_id_info[0]['member_rank'] > 1){
                         $ct9 = [
-                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                        'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                         'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                         ];
                         if($D_value3 > $p_id_rank_bonus){
@@ -272,7 +281,8 @@ class User extends IndexBase
                     if($p_id_info[0]['member_rank'] > 2){
                         if($D_value3 > $p_id_rank_bonus){
                         $ct14 = [
-                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                        'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                         'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                         ];
                     $this->modelMember->where('id',$p_id[$last_id])->update($ct14);
@@ -286,7 +296,8 @@ class User extends IndexBase
                     if($p_id_info[0]['member_rank'] > 3){
                         if($D_value3 > $p_id_rank_bonus){
                         $ct16 = [
-                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                        'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                         'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                         ];
                     $this->modelMember->where('id',$p_id[$last_id])->update($ct16);
@@ -300,7 +311,8 @@ class User extends IndexBase
                     if($p_id_info[0]['member_rank'] > 4){
                         if($D_value3 > $p_id_rank_bonus){
                         $ct21 = [
-                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                        'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                         'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                         ];
                     $this->modelMember->where('id',$p_id[$last_id])->update($ct21);
@@ -313,7 +325,8 @@ class User extends IndexBase
                     if($p_id_info[0]['member_rank'] > 5){
                         if($D_value3 > $p_id_rank_bonus){
                         $ct26 = [
-                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                        'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                        'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                         'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                         ];
                     $this->modelMember->where('id',$p_id[$last_id])->update($ct26);
@@ -495,7 +508,8 @@ class User extends IndexBase
                   $dp_info_rank_bonus = $dp_info_rank['baodanbi_co'] * $dp_info_rank['duipeng_co'];
 
                     $bonus_dp =[
-                        'bonus' => $dp_info[0]['all_bonus'] + $dp_info_rank_bonus,
+                        'bonus' => $dp_info[0]['bonus'] + $dp_info_rank_bonus*0.9,
+                        'baoguanjin' => $dp_info[0]['baoguanjin'] + $dp_info_rank_bonus*0.1,
                         'all_bonus' => $dp_info[0]['all_bonus'] + $dp_info_rank_bonus,
                     ];
                     //发放对碰奖，更新数据库
@@ -513,6 +527,7 @@ class User extends IndexBase
                         'user_id' => $dp_info[0]['id'],
                         'user_name' => $dp_info[0]['username'],
                         'duipeng'   => "+".$dp_info_rank_bonus,
+                        'baoguanjin'=>$dp_info_rank_bonus*0.1,
                     ];
                     $this->modelBill->setInfo($bill1);
 
@@ -529,7 +544,8 @@ class User extends IndexBase
                         //未达到日上限，但接近上限值，剩余上限值不够
                     }elseif ($D_value > 0 && $D_value < $dp_info_rank_bonus ) {
                         $bonus_dp1 =[
-                        'bonus' => $dp_info[0]['all_bonus'] + $D_value,
+                        'bonus' => $dp_info[0]['bonus'] + $D_value*0.9,
+                        'baoguanjin' => $dp_info[0]['baoguanjin'] + $D_value*0.1,
                         'all_bonus' => $dp_info[0]['all_bonus'] + $D_value,
                     ];
                          //产生对碰奖，账单流水记录,记录接点人
@@ -537,6 +553,7 @@ class User extends IndexBase
                         'user_id' => $dp_info[0]['id'],
                         'user_name' => $dp_info[0]['username'],
                         'duipeng'   => "+".$D_value,
+                        'baoguanjin' => $D_value*0.1,
                     ];
                     $this->modelBill->setInfo($bill2);
 
@@ -553,7 +570,7 @@ class User extends IndexBase
                         $this->modelMember->where('id',$value)->update($bonus_dp1);
                     }else{//已到达获奖日上限
                         $bonus_dp2 =[
-                        'bonus' => $dp_info[0]['all_bonus'] + 0,
+                        'bonus' => $dp_info[0]['bonus'] + 0,
                         'all_bonus' => $dp_info[0]['all_bonus'] + 0,
                     ];
                         //产生对碰奖，账单流水记录,记录接点人
@@ -598,10 +615,11 @@ class User extends IndexBase
                     $first_father_rank_bonus = $first_father_rank['baodanbi_co'] * $first_father_rank['guanli_co'];
                     //日封顶与当日获奖差值
                     $D_value1 = $first_father_rank['bonus_day'] - $first_father_rank_bonus;
-                    
+                    //dd($first_father_info);
                     if($D_value1 > $first_father_rank_bonus){
                         $first_father_guanli_bonus = [
-                        'bonus' => $first_father_info['bonus'] + $first_father_rank_bonus,
+                        'bonus' => $first_father_info[0]['bonus'] + $first_father_rank_bonus*0.9,
+                        'baoguanjin' => $first_father_info[0]['baoguanjin'] + $first_father_rank_bonus*0.1,
                         'all_bonus' => $first_father_info[0]['all_bonus'] + $first_father_rank_bonus,
                     ];
 
@@ -610,6 +628,7 @@ class User extends IndexBase
                         'user_id' => $first_father_info[0]['id'],
                         'user_name' => $first_father_info[0]['username'],
                         'guanli'   => "+".$first_father_rank_bonus,
+                        'baoguanjin' => $first_father_rank_bonus*0.1,
                     ];
                     $this->modelBill->setInfo($bill1);
 
@@ -626,7 +645,8 @@ class User extends IndexBase
                     $this->modelMember->where('id',$dp_p_id_path[0])->update($first_father_guanli_bonus);
                     }elseif($D_value1 >0 &&$D_value1< $first_father_rank_bonus){
                         $first_father_guanli_bonus = [
-                        'bonus' => $first_father_info['bonus'] + $D_value1,
+                        'bonus' => $first_father_info['bonus'] + $D_value1*0.9,
+                        'baoguanjin' => $first_father_info['baoguanjin'] + $D_value1*0.1,
                         'all_bonus' => $first_father_info[0]['all_bonus'] + $D_value1,
                     ];
 
@@ -635,6 +655,7 @@ class User extends IndexBase
                         'user_id' => $first_father_info[0]['id'],
                         'user_name' => $first_father_info[0]['username'],
                         'guanli'   => "+".$D_value1,
+                        'baoguanjin'=>$D_value1*0.1,
                     ];
                     $this->modelBill->setInfo($bill1);
 
@@ -694,7 +715,8 @@ class User extends IndexBase
                            
                             if($D_value2 > $f_father_rank_bonus){
                                  $f_father_guanli_bonus = [
-                            'bonus' => $f_father_info[0]['bonus']+$f_father_rank_bonus,
+                            'bonus' => $f_father_info[0]['bonus']+$f_father_rank_bonus*0.9,
+                            'baoguanjin' => $f_father_info[0]['baoguanjin']+$f_father_rank_bonus*0.1,
                             'all_bonus' => $f_father_info[0]['all_bonus'] + $f_father_rank_bonus,
                             ];
                             //管理奖，账单流水记录,记录对碰层上面三级内的接点人
@@ -702,6 +724,7 @@ class User extends IndexBase
                             'user_id' => $f_father_info[0]['id'],
                             'user_name' => $f_father_info[0]['username'],
                             'guanli'   => "+".$f_father_rank_bonus,
+                            'baoguanjin' => $f_father_rank_bonus*0.1,
                         ];
                         $this->modelBill->setInfo($bill1);
 
@@ -720,7 +743,8 @@ class User extends IndexBase
                             }elseif($D_value2 >0 && $D_value2 < $f_father_rank_bonus){
 
                                 $f_father_guanli_bonus = [
-                            'bonus' => $f_father_info[0]['bonus']+$D_value2,
+                            'bonus' => $f_father_info[0]['bonus']+$D_value2*0.9,
+                            'baoguanjin' => $f_father_info[0]['baoguanjin']+$D_value2*0.1,
                             'all_bonus' => $f_father_info[0]['all_bonus'] + $D_value2,
                             ];
                             //管理奖，账单流水记录,记录对碰层上面三级内的接点人
@@ -728,6 +752,7 @@ class User extends IndexBase
                             'user_id' => $f_father_info[0]['id'],
                             'user_name' => $f_father_info[0]['username'],
                             'guanli'   => "+".$D_value2,
+                            'baoguanjin' => $D_value2*0.1,
                         ];
                         $this->modelBill->setInfo($bill1);
 
