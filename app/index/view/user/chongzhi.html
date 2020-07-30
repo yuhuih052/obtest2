@@ -1,0 +1,19 @@
+<form action="{:url('user/chongzhi1')}" method="post" class="form_single">
+  {:token()}
+    <div class="box" style="margin: 40px;">
+      <div class="box-body">
+              <label>输入充值额度</label><span>最小充值{$data.0.recharge_min},最大充值{$data.0.recharge_max},充值倍率{$data.0.recharge_mult}</span><br>
+              
+              <input class="form-control" name="request_chongzhi" placeholder="请输入100的倍数" value="" type="number">
+
+      </div>
+      <div class="box-footer">
+        <button  type="submit" class="btn ladda-button ajax-post" data-style="slide-up" target-form="form_single">
+    <span class="ladda-label"><i class="fa fa-send"></i> 充值</span>
+</button>
+<a class="btn" href="{:url('user/index',['id'=> $Request.session.user_id2])}"><i class="fa fa-history"></i> 返 回</a>
+        
+      </div>
+    </div>
+</form>
+<a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>

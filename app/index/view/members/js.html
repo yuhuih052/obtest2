@@ -1,0 +1,50 @@
+<script type="text/javascript">
+var table;
+layui.cache.page = 'system'; 
+layui.use(['larry'], function() {
+    var $ = layui.$;
+    var zTreeObj;
+    var setting = {
+        callback: {
+            onClick: get_members,
+            onExpand: get_members
+        },
+        view: {
+            nameIsHTML: true,
+            showIcon: false,
+        }
+    };
+    var zNodes ={$data|raw};
+    $(document).ready(function() {
+        zTreeObj = $.fn.zTree.init($("#ztree"), setting, zNodes);
+    });
+
+    var map = { {$root.id} : true };
+
+    function get_members(event, treeId, treeNode, clickFlag) {
+        if (map[treeNode.id] || !treeNode.children) {
+            return;
+        }
+        $.ajax({
+            url: "{:url('getChildrenMembers')}",
+            data: { "pid": treeNode.id },
+            success: function(data) {
+                if (data.code == 1) {
+                    var jsondata = eval(data.msg);
+                    if (jsondata == null || jsondata == "") {
+                        //末节点的数据为空   所以不再添加节点  这里可以根据业务需求自己写
+                    } else {
+                        var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                        var parentZNode = treeObj.getNodeByParam("id", treeNode.id, null); //获取指定父节点
+                        newNode = treeObj.addNodes(parentZNode, jsondata, false);
+                        map[treeNode.id] = true;
+                    }
+                }else{
+                    obalert(data);
+                }
+
+            }
+        });
+    };
+});
+</script>

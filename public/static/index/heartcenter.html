@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>爱心中心</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="content-footer">
+		<div class="center_header heart_header_view">
+			<div class="center_header_img">
+				<img src="images/tx.jpg" />
+			</div>
+			<div class="center_header_text">
+				<p>开发会员系统：124504752447</p>
+				<p><em>推荐人：总店</em></p>
+				<span class="heart_header">爱心0阶</span>
+			</div>
+		</div>
+		<div class="center-flex heart_view">
+			<div class="heart_cell">
+				<a href="team.html">
+				<div class="heart_icon"><i class="iconfont icon-crmtubiao28 iconcolorc"></i></div>			
+					<div class="heart_cell_text">
+						<p class="heart_cell_title">帮扶推广用户</p>
+						<p>已帮扶推广0人</p>
+					</div>
+				</a>
+			</div>
+			<div class="heart_cell">
+				<a href="promotiondd.html">
+					<div class="heart_icon"><i class="iconfont icon-dingdanmingxi iconcolorl"></i></div>
+					<div class="heart_cell_text">
+						<p class="heart_cell_title">推广订单</p>
+						<p>已推广0笔</p>
+					</div>
+				</a>
+			</div>
+		</div>	
+		<div class="center-flex">
+			<div class="heart_cell">
+				<a href="lovedd.html">
+					<div class="heart_icon"><i class="iconfont icon-money iconcolorh"></i></div>
+					<div class="heart_cell_text">
+						<p class="heart_cell_title">得爱心订单</p>
+						<p>已得到0笔</p>
+					</div>
+				</a>
+			</div>
+			<div class="heart_cell">
+				<a href="mylovedd.html">
+					<div class="heart_icon"><i class="iconfont icon-aixinjuanzeng iconcolorred"></i></div>
+					<div class="heart_cell_text">
+						<p class="heart_cell_title">我的献爱心</p>
+						<p>已献出0笔</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<ul class="mui-table-view center-tab-cell center-bg heart_view">
+			<li class="mui-table-view-cell center-cell-view">					
+				<a href="code.html" class="mui-navigate-right center-cell-text"><i class="iconfont icon-QR hearticon_list"></i>收款二维码</a>
+			</li>
+		</ul>				
+	</div>
+   
+	<footer>
+		<nav class="mui-bar mui-bar-tab nav-bg">
+			<a class="mui-tab-item nav-item" href="index.html">
+				<span class="mui-icon iconfont icon-shouye9"></span>
+				<span class="mui-tab-label">商城首页</span>
+			</a>
+			<a class="mui-tab-item nav-item" href="">
+				<span class="mui-icon iconfont icon-liebiao2"></span>
+				<span class="mui-tab-label">全部商品</span>
+			</a>
+			<a class="mui-tab-item nav-item" href="shopcar.html">
+				<span class="mui-icon iconfont icon-goumai1"></span>
+				<span class="mui-tab-label">购物车</span>
+			</a>				
+			<a class="mui-tab-item nav-item mui-active" href="center.html">
+				<span class="mui-icon iconfont icon-huiyuan"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+	</footer>
+	</body>
+	
+	<script type="text/javascript" src="js/mui.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<script>		
+		mui('body').on('tap', 'a', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });	
+	</script>
+	
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>收款二维码</title>
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav headernav-bg">	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+		<h1 class="mui-title header-h1">收款二维码</h1>
+	</header>
+	<div class="content-view">
+		<div class="mui-row code_cell">
+			<div class="mui-col-xs-4"><label>收款名称</label></div>
+			<div class="mui-col-xs-8"><input type="text" class="code_input" placeholder="请填写收款名称"></div>
+		</div>
+		<div class="mui-row code_cell">
+			<div class="mui-col-xs-4"><label>收款二维码</label></div>
+			<div class="mui-col-xs-8"><div class="code_img"><img src="images/code.png"> </div></div>
+		</div>
+		<a class="code_btn">保存</a>
+	</div>
+	
+	
+</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		
+		mui('body').on('tap', 'a', function() {
+            var id = this.getAttribute('href');
+            var href = this.href;
+            mui.openWindow({
+                id: id,
+                url: this.href,
+                show: {
+                    autoShow: true
+                }
+            });
+        });		
+		
+	</script>
+</html>

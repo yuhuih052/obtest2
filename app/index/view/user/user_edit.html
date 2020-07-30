@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>注册</title>
+    <link rel="stylesheet" href="__STATIC__/index/css/mui.min.css"/>
+    <link rel="stylesheet" href="__STATIC__/index/fonts/iconfont.css" />
+    <link rel="stylesheet" href="__STATIC__/index/css/style.css" />
+</head>
+<body>
+<header class="mui-bar mui-bar-nav headernav-bg">
+    <a href="javascript:window.history.go(-1);" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+    <h1 class="mui-title header-h1">修改个人信息</h1>
+</header>
+<form id="form1" action="{:url('user/userEdit')}" method="post">
+    <div class="content-view">
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>会员编号</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="member_number" class="code_input" value="{$data.member_number}"  readonly  unselectable="on" ></div>
+        </div>
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>手机号</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="mobile" class="code_input" value="{$data.mobile}" placeholder="{$data.mobile}" maxlength="11" id="mobile" oninput = "value=value.replace(/[^\d]/g,'')"></div>
+        </div>
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>银行名称</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="bankname" class="code_input" value="{$data.bankname}" placeholder="{$data.bankname}" maxlength="30" id="bankname"></div>
+        </div>
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>银行卡号</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="bankcard" class="code_input" value="{$data.bankcard}" placeholder="{$data.bankcard}" maxlength="30" id="bankcard" oninput = "value=value.replace(/[^\d]/g,'')"></div>
+        </div>
+
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>用户名</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="realname" class="code_input" value="{$data.username}" readonly  unselectable="on" placeholder="{$data.username}"></div>
+        </div>
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>昵称</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="nickname" class="code_input" value="{$data.nickname}"  placeholder="{$data.nickname}"></div>
+        </div>
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>密保问题</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="mibaowenti" class="code_input" value="{$data.mibaowenti}" placeholder="{$data.mibaowenti}"></div>
+        </div>
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>密保答案</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="mibaodaan" class="code_input" value="{$data.mibaodaan}" placeholder="{$data.mibaodaan}"></div>
+        </div>
+        <button type="submit" class="code_btn" style="line-height: 14px" >立即修改</button>
+    </div>
+</form>
+<a href="{:url('user/index',['id'=>$data.id])}">个人中心</a>
+
+</body>
+
+
+</html>

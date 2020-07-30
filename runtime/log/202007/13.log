@@ -1,0 +1,524 @@
+---------------------------------------------------------------
+[ 2020-07-13T08:57:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/money/index.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/money/index.html?_pjax=.content [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,102.45kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-13T09:40:26+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder.html
+[ info ] www.obtest.com/user/userrecommonder.html [运行时间：0.046003s][吞吐率：21.74req/s] [内存消耗：2,449.58kb] [文件加载：69]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-07-13T09:40:37+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder.html
+[ info ] www.obtest.com/user/userrecommonder.html [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：2,543.27kb] [文件加载：69]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-07-13T09:41:46+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder.html
+[ info ] www.obtest.com/user/userrecommonder.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：2,449.58kb] [文件加载：69]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-07-13T09:43:41+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder.html
+[ info ] www.obtest.com/user/userrecommonder.html [运行时间：0.048002s][吞吐率：20.83req/s] [内存消耗：2,449.58kb] [文件加载：69]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-07-13T15:23:31+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/6.html
+[ info ] www.obtest.com/user/index/id/6.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,920.63kb] [文件加载：75]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ')'[D:\phpstudy_pro\WWW\obtest\runtime\temp\63fae9852019aaa8e30295c49c7243c6.php:143]
+---------------------------------------------------------------
+[ 2020-07-13T15:23:47+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.044002s][吞吐率：22.73req/s] [内存消耗：2,492.73kb] [文件加载：73]
+[ error ] [0]method not exist:think\db\Query->_checkUser[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T15:24:15+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,586.52kb] [文件加载：73]
+[ error ] [0]method not exist:think\db\Query->_levelConfirm[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T15:24:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：2,492.84kb] [文件加载：73]
+[ error ] [0]method not exist:think\db\Query->_levelConfirm[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T15:25:05+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,585.79kb] [文件加载：73]
+[ error ] [0]method not exist:think\db\Query->Mi_Cheng[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T15:25:06+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,492.10kb] [文件加载：73]
+[ error ] [0]method not exist:think\db\Query->Mi_Cheng[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T15:26:01+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.054004s][吞吐率：18.52req/s] [内存消耗：2,589.30kb] [文件加载：74]
+[ error ] [8]Uninitialized string offset: 1[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:38]
+---------------------------------------------------------------
+[ 2020-07-13T15:27:38+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,584.66kb] [文件加载：73]
+[ error ] [0]method not exist:think\db\Query->AC_Color[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:15+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,584.16kb] [文件加载：73]
+[ error ] [0]类不存在:app\common\model\Merber[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:28+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,611.02kb] [文件加载：75]
+[ error ] [8]未定义变量: _SESSION[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:31+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.049002s][吞吐率：20.41req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: _SESSION[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:32+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,611.02kb] [文件加载：75]
+[ error ] [8]未定义变量: _SESSION[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:32+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: _SESSION[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:32+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: _SESSION[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:28:32+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: _SESSION[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:01+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,611.02kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.051002s][吞吐率：19.61req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.045003s][吞吐率：22.22req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:04+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.044002s][吞吐率：22.73req/s] [内存消耗：2,605.08kb] [文件加载：75]
+[ error ] [8]未定义变量: session[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:84]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:15+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,616.60kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.047002s][吞吐率：21.28req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:16+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.044002s][吞吐率：22.73req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:29:17+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,610.66kb] [文件加载：75]
+[ error ] [8]未定义数组索引: ID[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:85]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,611.57kb] [文件加载：74]
+[ error ] [0]类不存在:app\common\model\Merber[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:13+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,573.18kb] [文件加载：76]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_string' in 'where clause'[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:42+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,618.70kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:43+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:44+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:44+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:45+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:45+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:45+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:45+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:30:45+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,612.77kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:163]
+---------------------------------------------------------------
+[ 2020-07-13T15:32:36+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,624.35kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:173]
+---------------------------------------------------------------
+[ 2020-07-13T15:32:37+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,618.41kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:173]
+---------------------------------------------------------------
+[ 2020-07-13T15:32:37+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,618.41kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:173]
+---------------------------------------------------------------
+[ 2020-07-13T15:32:37+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,618.41kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:173]
+---------------------------------------------------------------
+[ 2020-07-13T15:32:51+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.065003s][吞吐率：15.38req/s] [内存消耗：2,624.33kb] [文件加载：75]
+[ error ] [8]未定义变量: uLevel[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:174]
+---------------------------------------------------------------
+[ 2020-07-13T15:34:31+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,624.38kb] [文件加载：75]
+[ error ] [8]未定义变量: uLevel[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:174]
+---------------------------------------------------------------
+[ 2020-07-13T15:35:27+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,624.52kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:35:29+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,618.58kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:35:29+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,618.58kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:35:30+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,618.58kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:35:30+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.065003s][吞吐率：15.38req/s] [内存消耗：2,618.58kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:37:05+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：2,624.52kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:37:06+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,618.58kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:187]
+---------------------------------------------------------------
+[ 2020-07-13T15:37:38+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,623.27kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:189]
+---------------------------------------------------------------
+[ 2020-07-13T15:37:39+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,617.33kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:189]
+---------------------------------------------------------------
+[ 2020-07-13T15:37:40+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.050002s][吞吐率：20.00req/s] [内存消耗：2,617.33kb] [文件加载：75]
+[ error ] [8]未定义变量: isPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:189]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:05+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,617.50kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->mumber_number[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:07+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：2,611.55kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->mumber_number[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:29+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：2,624.42kb] [文件加载：75]
+[ error ] [8]未定义变量: uisPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:276]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:30+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,618.48kb] [文件加载：75]
+[ error ] [8]未定义变量: uisPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:276]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:30+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,618.48kb] [文件加载：75]
+[ error ] [8]未定义变量: uisPay[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:276]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:43+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,624.40kb] [文件加载：75]
+[ error ] [8]未定义变量: Leve[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:277]
+---------------------------------------------------------------
+[ 2020-07-13T15:38:52+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,623.52kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __URL__ - assumed '__URL__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:287]
+---------------------------------------------------------------
+[ 2020-07-13T15:39:07+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,623.05kb] [文件加载：75]
+[ error ] [8]未定义变量: ColorUA[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:304]
+---------------------------------------------------------------
+[ 2020-07-13T15:40:37+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：2,624.05kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:314]
+---------------------------------------------------------------
+[ 2020-07-13T15:40:38+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,617.89kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:314]
+---------------------------------------------------------------
+[ 2020-07-13T15:40:38+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,617.89kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:314]
+---------------------------------------------------------------
+[ 2020-07-13T15:40:39+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,617.89kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:314]
+---------------------------------------------------------------
+[ 2020-07-13T15:40:39+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：2,617.89kb] [文件加载：75]
+[ error ] [8]未定义变量: Nums[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:314]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:01+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.082004s][吞吐率：12.19req/s] [内存消耗：2,625.53kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:41:03+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T15:42:38+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.068003s][吞吐率：14.71req/s] [内存消耗：2,625.53kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T16:04:01+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,625.53kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T16:04:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T16:04:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T16:04:02+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,619.37kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 17[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:335]
+---------------------------------------------------------------
+[ 2020-07-13T16:07:27+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：2,634.98kb] [文件加载：75]
+[ error ] [2]Use of undefined constant __PUBLIC__ - assumed '__PUBLIC__' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:353]
+---------------------------------------------------------------
+[ 2020-07-13T16:08:10+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.091006s][吞吐率：10.99req/s] [内存消耗：2,631.00kb] [文件加载：74]
+[ error ] [0]method not exist:think\db\Query->assign[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T16:26:24+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,632.98kb] [文件加载：74]
+[ error ] [0]method not exist:think\db\Query->assign[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T16:26:46+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.083004s][吞吐率：12.05req/s] [内存消耗：2,632.05kb] [文件加载：75]
+[ error ] [8]未定义变量: mi_c[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:227]
+---------------------------------------------------------------
+[ 2020-07-13T16:26:46+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,625.89kb] [文件加载：75]
+[ error ] [8]未定义变量: mi_c[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:227]
+---------------------------------------------------------------
+[ 2020-07-13T16:26:47+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：2,625.89kb] [文件加载：75]
+[ error ] [8]未定义变量: mi_c[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:227]
+---------------------------------------------------------------
+[ 2020-07-13T16:26:47+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：2,625.89kb] [文件加载：75]
+[ error ] [8]未定义变量: mi_c[D:\phpstudy_pro\WWW\obtest\app\index\logic\TreeAction.php:227]
+---------------------------------------------------------------
+[ 2020-07-13T16:27:17+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：2,628.13kb] [文件加载：74]
+[ error ] [0]系统跳转失败:http://www.obtest.com6[D:\phpstudy_pro\WWW\obtest\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-07-13T16:27:21+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,628.13kb] [文件加载：74]
+[ error ] [0]系统跳转失败:http://www.obtest.com6[D:\phpstudy_pro\WWW\obtest\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-07-13T16:27:21+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,621.96kb] [文件加载：74]
+[ error ] [0]系统跳转失败:http://www.obtest.com6[D:\phpstudy_pro\WWW\obtest\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-07-13T16:27:44+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：2,627.96kb] [文件加载：74]
+[ error ] [0]系统跳转失败:http://www.obtest.com6[D:\phpstudy_pro\WWW\obtest\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-07-13T16:32:37+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,560.77kb] [文件加载：70]
+[ error ] [0]逻辑层引用需前缀:logic[D:\phpstudy_pro\WWW\obtest\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-07-13T16:44:37+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,566.73kb] [文件加载：70]
+[ error ] [0]类不存在:app\common\logic\Tree2[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-07-13T16:45:18+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,616.76kb] [文件加载：75]
+[ error ] [8]未定义变量: rs[D:\phpstudy_pro\WWW\obtest\app\index\controller\TreeAction.php:114]
+---------------------------------------------------------------
+[ 2020-07-13T16:47:12+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,619.12kb] [文件加载：74]
+[ error ] [0]逻辑层引用需前缀:logic[D:\phpstudy_pro\WWW\obtest\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-07-13T16:51:55+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,635.49kb] [文件加载：75]
+[ error ] [8]未定义变量: mi_c[D:\phpstudy_pro\WWW\obtest\app\index\controller\TreeAction.php:220]
+---------------------------------------------------------------
+[ 2020-07-13T17:08:01+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.091006s][吞吐率：10.99req/s] [内存消耗：2,643.76kb] [文件加载：74]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest\public/../app/index\view\tree_action\Tree2.html[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-07-13T17:23:10+08:00 ] 127.0.0.1 127.0.0.1 GET /tree_action/tree2.html
+[ info ] www.obtest.com/tree_action/tree2.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,622.95kb] [文件加载：75]
+[ error ] [8]Array to string conversion[D:\phpstudy_pro\WWW\obtest\app\index\controller\TreeAction.php:175]
+---------------------------------------------------------------
+[ 2020-07-13T17:41:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.045002s][吞吐率：22.22req/s] [内存消耗：2,475.49kb] [文件加载：72]
+[ error ] [0]method not exist:think\db\Query->twoPathway[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-07-13T17:41:32+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,662.90kb] [文件加载：73]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-13T17:43:12+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,695.23kb] [文件加载：74]
+[ error ] [0]查询表达式错误:father_id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-13T17:43:13+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：2,689.28kb] [文件加载：74]
+[ error ] [0]查询表达式错误:father_id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-13T17:44:43+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,695.23kb] [文件加载：74]
+[ error ] [0]查询表达式错误:father_id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-13T17:50:07+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：2,663.79kb] [文件加载：73]
+[ error ] [0]语法解析错误: syntax error, unexpected ')', expecting ']'[D:\phpstudy_pro\WWW\obtest\app\common\logic\Tree.php:15]
+---------------------------------------------------------------
+[ 2020-07-13T17:50:19+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,694.21kb] [文件加载：74]
+[ error ] [0]查询表达式错误:father_id[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-13T17:50:57+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,694.65kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->b0[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:53:22+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：2,694.65kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->b0[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:00+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,693.17kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->leftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:01+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->leftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:02+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->leftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:19+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：2,693.17kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->left_child[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:20+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->left_child[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:39+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,693.17kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->lift_child[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:40+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->lift_child[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:51+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,693.17kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->liftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:52+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->liftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:52+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->liftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:58:52+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,687.01kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->liftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T17:59:23+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,693.17kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->liftChild[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T18:04:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：2,693.11kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->level_html[D:\phpstudy_pro\WWW\obtest\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-13T18:04:19+08:00 ] 127.0.0.1 127.0.0.1 GET /user/twopathway.html
+[ info ] www.obtest.com/user/twopathway.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,999.43kb] [文件加载：78]
+[ error ] [0]致命错误: Call to undefined function raw()[D:\phpstudy_pro\WWW\obtest\runtime\temp\f46a939edc59ae7d300858737033bbba.php:112]

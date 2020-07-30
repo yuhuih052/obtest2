@@ -1,0 +1,28 @@
+<form action="{:url('user/memberEdit')}" method="post" class="form_single" style="margin: 30px;">
+            <div class="form-group">
+              <label>用户名</label>
+              <input class="form-control" name="username" readonly value="{$info['username']}" type="text">
+            </div>
+ 
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>设置激活状态</label>
+                {if $info['status'] == 0}
+                <label><input name="status" type="radio" value="0" checked />未激活 </label>
+                <label><input name="status" type="radio" value="1" />激活 </label>
+                {else}
+                <label><input name="status" type="radio" value="1" checked/>已激活 </label>
+                {/if}
+            </div>
+          </div>
+
+      <div class="box-footer">
+        
+        <input type="hidden" name="id" value="{$info['id']|default='0'}"/>
+          
+        {include file="layout/edit_btn_group"/}
+        
+      </div>
+    
+</form>
+<a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>

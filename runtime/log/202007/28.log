@@ -1,0 +1,352 @@
+---------------------------------------------------------------
+[ 2020-07-28T08:41:39+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/6.html
+[ info ] www.obtest2.com/user/index/id/6.html [运行时间：0.143008s][吞吐率：6.99req/s] [内存消耗：2,994.76kb] [文件加载：73]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:26]
+---------------------------------------------------------------
+[ 2020-07-28T09:36:01+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：2,932.92kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:131]
+---------------------------------------------------------------
+[ 2020-07-28T09:36:50+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,561.96kb] [文件加载：75]
+[ error ] [8]未定义变量: member_info[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:45]
+---------------------------------------------------------------
+[ 2020-07-28T09:37:18+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,717.72kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:38:55+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,717.64kb] [文件加载：75]
+[ error ] [0]查询表达式错误:father_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:39:57+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：2,687.84kb] [文件加载：74]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ')'[D:\phpstudy_pro\WWW\obtest2\app\common\logic\Tree.php:97]
+---------------------------------------------------------------
+[ 2020-07-28T09:40:18+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：2,695.11kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:40:19+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,689.16kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:41:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,694.50kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:41:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,688.55kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:41:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,688.55kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:42:06+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,694.20kb] [文件加载：75]
+[ error ] [0]查询表达式错误:p_level[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:03+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,695.11kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:04+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.068003s][吞吐率：14.71req/s] [内存消耗：2,689.16kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:05+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,689.16kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:05+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：2,689.16kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:06+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,689.16kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:06+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,689.16kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:45:18+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,694.81kb] [文件加载：75]
+[ error ] [0]查询表达式错误:p_level[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T09:48:45+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.097005s][吞吐率：10.31req/s] [内存消耗：2,659.71kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u_num' in 'order clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-28T09:48:46+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,653.76kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u_num' in 'order clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-28T10:34:17+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,694.30kb] [文件加载：75]
+[ error ] [0]查询表达式错误:is_inside[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T10:34:44+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,729.93kb] [文件加载：75]
+[ error ] [0]查询表达式错误:father_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-07-28T10:36:03+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,733.52kb] [文件加载：76]
+[ error ] [2]Illegal offset type[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:1180]
+---------------------------------------------------------------
+[ 2020-07-28T10:36:04+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.065003s][吞吐率：15.38req/s] [内存消耗：2,727.78kb] [文件加载：76]
+[ error ] [2]Illegal offset type[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:1180]
+---------------------------------------------------------------
+[ 2020-07-28T10:38:18+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,733.52kb] [文件加载：76]
+[ error ] [2]Illegal offset type[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:1180]
+---------------------------------------------------------------
+[ 2020-07-28T10:38:46+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,734.02kb] [文件加载：76]
+[ error ] [2]Illegal offset type[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:1180]
+---------------------------------------------------------------
+[ 2020-07-28T10:38:49+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,728.00kb] [文件加载：76]
+[ error ] [2]Illegal offset type[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:1180]
+---------------------------------------------------------------
+[ 2020-07-28T10:39:00+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：2,734.02kb] [文件加载：76]
+[ error ] [2]Illegal offset type[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:1180]
+---------------------------------------------------------------
+[ 2020-07-28T11:06:10+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：2,664.61kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T11:08:26+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.077005s][吞吐率：12.99req/s] [内存消耗：2,665.72kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T11:08:27+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：2,659.98kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T11:08:27+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：2,659.98kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T14:56:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.093006s][吞吐率：10.75req/s] [内存消耗：2,713.53kb] [文件加载：76]
+[ error ] [8]未定义变量: param[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:32]
+---------------------------------------------------------------
+[ 2020-07-28T14:56:50+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：2,713.55kb] [文件加载：76]
+[ error ] [8]未定义数组索引: realname[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:38]
+---------------------------------------------------------------
+[ 2020-07-28T14:56:52+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,707.81kb] [文件加载：76]
+[ error ] [8]未定义数组索引: realname[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:38]
+---------------------------------------------------------------
+[ 2020-07-28T14:57:57+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：2,713.55kb] [文件加载：76]
+[ error ] [8]未定义数组索引: cneter_id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:39]
+---------------------------------------------------------------
+[ 2020-07-28T14:57:58+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,707.81kb] [文件加载：76]
+[ error ] [8]未定义数组索引: cneter_id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:39]
+---------------------------------------------------------------
+[ 2020-07-28T14:57:59+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,707.81kb] [文件加载：76]
+[ error ] [8]未定义数组索引: cneter_id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:39]
+---------------------------------------------------------------
+[ 2020-07-28T14:58:10+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：2,713.52kb] [文件加载：76]
+[ error ] [8]未定义数组索引: realname[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:44]
+---------------------------------------------------------------
+[ 2020-07-28T14:58:11+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：2,707.78kb] [文件加载：76]
+[ error ] [8]未定义数组索引: realname[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:44]
+---------------------------------------------------------------
+[ 2020-07-28T14:58:12+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.074005s][吞吐率：13.51req/s] [内存消耗：2,707.78kb] [文件加载：76]
+[ error ] [8]未定义数组索引: realname[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:44]
+---------------------------------------------------------------
+[ 2020-07-28T14:59:05+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.081005s][吞吐率：12.34req/s] [内存消耗：2,707.50kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info2[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T14:59:06+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：2,701.77kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info2[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T14:59:17+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：2,707.50kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T14:59:18+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：2,701.77kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T14:59:18+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,701.77kb] [文件加载：74]
+[ error ] [0]类的属性不存在:app\index\logic\Futou->member_info[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-28T15:10:46+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,693.48kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'u_num' doesn't have a default value[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-28T15:19:00+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest2.com/futou/futou.html [运行时间：0.083004s][吞吐率：12.05req/s] [内存消耗：2,699.50kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'u_num' doesn't have a default value[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-28T15:34:55+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：3,016.81kb] [文件加载：79]
+[ error ] [8]Undefined property: think\template\driver\File::$modelMember[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:38:25+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,703.13kb] [文件加载：75]
+[ error ] [8]未定义数组索引: center_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-28T15:40:59+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,679.31kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T15:45:15+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.073005s][吞吐率：13.70req/s] [内存消耗：2,996.53kb] [文件加载：79]
+[ error ] [8]未定义变量: na[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:49:27+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,709.52kb] [文件加载：75]
+[ error ] [8]未定义变量: na[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:14]
+---------------------------------------------------------------
+[ 2020-07-28T15:50:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：2,961.81kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected ')', expecting ',' or ';'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:52:09+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.069003s][吞吐率：14.49req/s] [内存消耗：3,013.72kb] [文件加载：78]
+[ error ] [0]致命错误: Call to undefined method think\template\driver\File::centername()[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:52:30+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：3,017.67kb] [文件加载：79]
+[ error ] [8]未定义变量: fuTou[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:52:31+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,886.94kb] [文件加载：77]
+[ error ] [8]未定义变量: fuTou[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:52:31+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,886.94kb] [文件加载：77]
+[ error ] [8]未定义变量: fuTou[D:\phpstudy_pro\WWW\obtest2\runtime\temp\7aab0b35309115a946ba723725e8d0f7.php:115]
+---------------------------------------------------------------
+[ 2020-07-28T15:56:16+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,681.48kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T15:56:47+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.067003s][吞吐率：14.92req/s] [内存消耗：2,681.42kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T15:56:48+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,675.47kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T15:58:14+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list/id/28.html
+[ info ] www.obtest2.com/futou/list/id/28.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,681.42kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:14]
+---------------------------------------------------------------
+[ 2020-07-28T15:59:01+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,680.96kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:14]
+---------------------------------------------------------------
+[ 2020-07-28T16:00:28+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,298.08kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected 'dd' (T_STRING)[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:00:29+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,204.38kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected 'dd' (T_STRING)[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:00:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：2,681.16kb] [文件加载：75]
+[ error ] [8]未定义变量: na[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:12]
+---------------------------------------------------------------
+[ 2020-07-28T16:00:39+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,675.21kb] [文件加载：75]
+[ error ] [8]未定义变量: na[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:12]
+---------------------------------------------------------------
+[ 2020-07-28T16:00:39+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：2,675.21kb] [文件加载：75]
+[ error ] [8]未定义变量: na[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:12]
+---------------------------------------------------------------
+[ 2020-07-28T16:00:40+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,675.21kb] [文件加载：75]
+[ error ] [8]未定义变量: na[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:12]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:35+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,680.06kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:36+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.045002s][吞吐率：22.22req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.055003s][吞吐率：18.18req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,674.11kb] [文件加载：74]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Futou::centername(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php on line 12 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:16]
+---------------------------------------------------------------
+[ 2020-07-28T16:02:02+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,682.09kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:02:03+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,676.13kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:02:03+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：2,676.13kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:02:03+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,676.13kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:02:03+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,676.13kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, object given[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Futou.php:13]
+---------------------------------------------------------------
+[ 2020-07-28T16:07:36+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,533.55kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'return' (T_RETURN)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:15]
+---------------------------------------------------------------
+[ 2020-07-28T16:07:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：2,439.85kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'return' (T_RETURN)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:15]
+---------------------------------------------------------------
+[ 2020-07-28T16:07:37+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.040003s][吞吐率：25.00req/s] [内存消耗：2,439.85kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'return' (T_RETURN)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:15]
+---------------------------------------------------------------
+[ 2020-07-28T16:07:38+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：2,439.85kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'return' (T_RETURN)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:15]
+---------------------------------------------------------------
+[ 2020-07-28T16:08:10+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/list.html
+[ info ] www.obtest2.com/futou/list.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：2,680.58kb] [文件加载：75]
+[ error ] [2]array_push() expects parameter 1 to be array, null given[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:14]

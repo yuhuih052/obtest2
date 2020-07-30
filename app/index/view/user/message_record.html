@@ -1,0 +1,40 @@
+<div class="box">
+    
+       
+  <div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          
+          <th>留言信息</th>
+          <th>留言时间</th>
+          <th>回复信息</th>
+          <th>回复时间</th>
+          
+      </tr>
+      </thead>
+      
+      {notempty name='list'}
+        <tbody>
+            {volist name='list' id='vo'}
+                <tr>
+                  
+                  <td>{$vo.message}</td>
+                  <td>{$vo.message_time}</td>
+                  <td>{$vo.response}</td>
+                  <td>{$vo.response_time}</td>
+                  
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+      {/notempty}
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      </div>
+      <a href="{:url('user/index',['id'=> $Request.session.user_id2])}">个人列表</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+</div>
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------
+[ 2020-07-21T08:51:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/config/setting/group/3.html
+[ info ] www.obtest2.com/admin.php/config/setting/group/3.html [运行时间：0.235014s][吞吐率：4.26req/s] [内存消耗：2,288.63kb] [文件加载：58]
+[ error ] [2]unlink(D:\phpstudy_pro\WWW\obtest2\runtime\cache\01\f1f824749e48843962f3f27dca3286.php): Permission denied[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\cache\driver\File.php:245]
+---------------------------------------------------------------
+[ 2020-07-21T09:19:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/23.html
+[ info ] www.obtest2.com/user/index/id/23.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,298.04kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected '}', expecting ';'[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:128]
+---------------------------------------------------------------
+[ 2020-07-21T09:43:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index.html
+[ info ] www.obtest2.com/user/index.html [运行时间：0.046003s][吞吐率：21.74req/s] [内存消耗：2,484.70kb] [文件加载：71]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:25]
+---------------------------------------------------------------
+[ 2020-07-21T11:32:19+08:00 ] 127.0.0.1 127.0.0.1 POST /user/transfer.html
+[ info ] www.obtest2.com/user/transfer.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,178.98kb] [文件加载：79]
+[ error ] [2]Illegal string offset 'out_name'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\f4ee4bcd6fb9b02e9e64efb3af51ee07.php:76]
+---------------------------------------------------------------
+[ 2020-07-21T15:15:13+08:00 ] 127.0.0.1 127.0.0.1 POST /user/zhuanhuan1.html
+[ info ] www.obtest2.com/user/zhuanhuan1.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,970.96kb] [文件加载：74]
+[ error ] [8]未定义变量: bill[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:901]
+---------------------------------------------------------------
+[ 2020-07-21T15:43:19+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/6.html
+[ info ] www.obtest2.com/user/index/id/6.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,577.95kb] [文件加载：71]
+[ error ] [0]语法解析错误: syntax error, unexpected 'return' (T_RETURN)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:951]
+---------------------------------------------------------------
+[ 2020-07-21T16:39:53+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/6.html
+[ info ] www.obtest2.com/user/index/id/6.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：3,184.16kb] [文件加载：75]
+[ error ] [0]语法解析错误: syntax error, unexpected 'else' (T_ELSE)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\892c99f1167172921edf374a754c4e8d.php:101]
+---------------------------------------------------------------
+[ 2020-07-21T16:41:42+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/6.html
+[ info ] www.obtest2.com/user/index/id/6.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：3,184.16kb] [文件加载：75]
+[ error ] [0]语法解析错误: syntax error, unexpected 'else' (T_ELSE)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\892c99f1167172921edf374a754c4e8d.php:101]
+---------------------------------------------------------------
+[ 2020-07-21T16:58:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html?_pjax=.content [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：3,124.32kb] [文件加载：80]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\request_is_center_list.html[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-07-21T16:58:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.073005s][吞吐率：13.70req/s] [内存消耗：3,135.59kb] [文件加载：81]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\request_is_center_list.html[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-07-21T17:05:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：3,368.77kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->user_name[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-21T17:05:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,368.73kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->request[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-21T17:05:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,362.12kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->request[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-21T17:06:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,327.20kb] [文件加载：81]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e0e5ff819e7fcae180cc0439310862c8.php:225]
+---------------------------------------------------------------
+[ 2020-07-21T17:35:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.111006s][吞吐率：9.01req/s] [内存消耗：3,174.73kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-07-21T17:45:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberlist.html
+[ info ] www.obtest2.com/admin.php/member/memberlist.html [运行时间：0.108006s][吞吐率：9.26req/s] [内存消耗：3,447.82kb] [文件加载：85]
+[ error ] [0]类的属性不存在:app\common\model\Member->CFI[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]

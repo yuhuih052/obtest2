@@ -1,0 +1,52 @@
+
+<div class="box">
+  <div class="box-header">
+    
+    <ob_link><a class="btn" href="{:url('blogrollAdd')}"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
+  </div>
+    
+  <div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          <th>申请人</th>
+          <th>账户奖金币余额</th>
+          <th>提现申请</th>
+          <th>申请时间</th>
+          
+          <th>手续费</th>
+          <th>累计到账</th>
+          <th>操作</th>
+      </tr>
+      </thead>
+      
+      {notempty name='list'}
+        <tbody>
+            {volist name='list' id='vo'}
+                <tr>
+                  <td>{$vo.username}</td>
+                  <td>{$vo.bonus}</td>
+                  <td>{$vo.re_withdrawl}</td>
+                  <td>{$vo.request_time}</td>
+                  <td>{$vo.daozhang}</td>
+                  
+                  <td class="col-md-2 text-center">
+                    <ob_link><a href="{:url('withdrawlAgree', array('id' => $vo['id'],'withdrawl' => $vo['re_withdrawl']))}" id="btn"><button type="submit" class='badge bg-red'>同意</button></a></ob_link>
+                      &nbsp;
+                      <ob_link><a href="{:url('withdrawlAgreenot', array('id' => $vo['id'],'withdrawl' => $vo['re_withdrawl']))}" id="btn"><button type="submit" class='badge bg-red'>拒绝</button></a></ob_link>
+                      
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+      {/notempty}
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      
+  </div>
+
+</div>

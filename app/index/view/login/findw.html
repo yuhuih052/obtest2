@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>注册</title>
+    <link rel="stylesheet" href="__STATIC__/index/css/mui.min.css"/>
+    <link rel="stylesheet" href="__STATIC__/index/fonts/iconfont.css" />
+    <link rel="stylesheet" href="__STATIC__/index/css/style.css" />
+</head>
+<body>
+<header class="mui-bar mui-bar-nav headernav-bg">
+    <a href="javascript:window.history.go(-1);" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left header-a1"></a>
+    <h1 class="mui-title header-h1">找回密码</h1>
+</header>
+<form id="form1" action="{:url('/index/login/findPassword')}" method="post">
+    <div class="content-view">
+        <div class="mui-row code_cell">
+            <div class="mui-col-xs-4"><label>用户名</label></div>
+            <div class="mui-col-xs-8"><input type="text" name="username" class="code_input" value="" placeholder="请输入用户名"></div>
+        </div>
+        <button type="submit" class="code_btn" style="line-height: 14px" >找回密码</button>
+    </div>
+</form>
+
+</body>
+
+
+</html>

@@ -1,0 +1,48 @@
+---------------------------------------------------------------
+[ 2020-07-24T09:07:02+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.118006s][吞吐率：8.47req/s] [内存消耗：2,994.57kb] [文件加载：75]
+[ error ] [8]未定义数组下标: 0[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-24T09:32:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/request_is_center/is_center/1/re_is_center/1.html
+[ info ] www.obtest2.com/user/request_is_center/is_center/1/re_is_center/1.html [运行时间：0.047002s][吞吐率：21.28req/s] [内存消耗：2,747.27kb] [文件加载：71]
+[ error ] [0]类的属性不存在:app\common\logic\User->param[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-24T09:57:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/memberlist.html
+[ info ] www.obtest2.com/admin.php/member/memberlist.html [运行时间：0.116006s][吞吐率：8.62req/s] [内存消耗：3,449.74kb] [文件加载：85]
+[ error ] [0]类的属性不存在:app\common\model\Member->dianzibi[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-07-24T10:15:27+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest2.com/user/userrecommonder/username/123.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,580.34kb] [文件加载：72]
+[ error ] [8]未定义变量: member[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:69]
+---------------------------------------------------------------
+[ 2020-07-24T14:44:48+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest2.com/user/userrecommonder/username/123.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,672.71kb] [文件加载：71]
+[ error ] [0]语法解析错误: syntax error, unexpected ',', expecting ']'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:131]
+---------------------------------------------------------------
+[ 2020-07-24T14:45:40+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.111006s][吞吐率：9.01req/s] [内存消耗：3,062.40kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'user_name' at row 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-07-24T14:47:04+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.112006s][吞吐率：8.93req/s] [内存消耗：2,990.28kb] [文件加载：76]
+[ error ] [8]未定义数组索引: tuijian_co[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-07-24T15:10:23+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.134007s][吞吐率：7.46req/s] [内存消耗：3,076.54kb] [文件加载：77]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:245]
+---------------------------------------------------------------
+[ 2020-07-24T15:41:02+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,579.62kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected 'as' (T_AS), expecting ';'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:168]
+---------------------------------------------------------------
+[ 2020-07-24T15:42:22+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.057004s][吞吐率：17.54req/s] [内存消耗：2,579.59kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ')', expecting ';'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:168]
+---------------------------------------------------------------
+[ 2020-07-24T15:42:37+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,579.59kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ')', expecting ';'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:168]
+---------------------------------------------------------------
+[ 2020-07-24T15:52:48+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest2.com/user/memberedit.html [运行时间：0.104005s][吞吐率：9.61req/s] [内存消耗：3,012.91kb] [文件加载：76]
+[ error ] [0]致命错误: Call to undefined function app\common\logic\conut()[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:249]

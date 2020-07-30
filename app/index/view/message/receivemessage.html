@@ -1,0 +1,61 @@
+<div class="box">
+    
+  <div class="box-header">
+
+    <div class="row"> 
+        
+        <div class="col-sm-7">
+
+        </div>
+    </div>
+    
+  </div>
+    
+    
+  <div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          <th>发件人</th>
+          <th>留言信息</th>
+          <th>留言时间</th>
+          <th>回复</th>
+          <th>回复时间</th>
+          <th>操作</th>
+      </tr>
+      </thead>
+      
+      {notempty name='list'}
+        <tbody>
+            {volist name='list' id='vo'}
+                <tr>
+                  <td>{$vo.username}</td>
+                  <td>{$vo.message}</td>
+                  <td>{$vo.message_time}</td>
+                  {if $vo.response == Null}
+                  <td>
+                    <form action="{:url('response', ['id' => $vo['id']])}" method="post">
+                      <textarea name="response" placeholder="输入回复内容"></textarea>
+                  </td>
+                  {else/}
+                  <td>{$vo.response}</td>
+                  {/if}
+                  <td>{$vo.response_time}</td>
+                  <td class="text-center">
+                      <button type="submit" class='badge bg-green'>回复</button>
+                  </td>
+                  </form>
+                </tr>
+            {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+      {/notempty}
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      </div>
+<a class="btn" href="{:url('user/index',['id'=>$vo.receive_id])}"><i class="fa fa-history"></i> 返回个人中心</a>
+</div>
+
