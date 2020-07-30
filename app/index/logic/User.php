@@ -120,7 +120,11 @@ class User extends IndexBase
                     'wallet' => $p_person[0]['wallet'] - $check_dis['baodanbi_co'],
                 ];
                 $res = $this->modelMember->where('id','=',$user[0]['id'])->update($re);
-
+                    //记录激活会员时报单币入账
+                $ac_bdb_all = [
+                    'baodanbi_all' => $check_dis['baodanbi_co'],
+                ];
+                $this->modelBill->setInfo($ac_bdb_all);
                 //直推人数
                 $this->modelMember->where('id',$p_zhi[0]['id'])->setInc('zhitui_all',1);
                 

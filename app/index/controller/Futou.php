@@ -28,4 +28,7 @@ class Futou extends IndexBase
 	public function gather(){
 		$this->jump($this->logicFutou->gather());
 	}
+	public function gatherOne(){
+		$this->jump($this->logicFutou->gatherOne($this->param));
+	}
 }

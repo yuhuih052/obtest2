@@ -62,6 +62,11 @@ class Futou extends IndexBase
         
         if($p_person[0]['wallet'] >= $check_dis['baodanbi_co']){
     		$result = $this->modelMember->setInfo($sl);
+            //激活会员时，统计报单币入账
+            $ac_bdb_all = [
+                    'baodanbi_all' => $check_dis['baodanbi_co'],
+                ];
+                $this->modelBill->setInfo($ac_bdb_all);
             //dd($result);
     		$this->modelMember->where('id',$master[0]['id'])->setInc('u_num',1);
 /*****************奖励发放****/
@@ -207,7 +212,8 @@ class Futou extends IndexBase
                                 ->where('status','=',1)
                                 ->where('wallet >0 OR bonus >0')
                                 ->select();
-        //dd($sl);
+        
+        if(count($sl) > 0){
         foreach ($sl as $key => $v) {
             
             $this->bill($v['id'],$v['username'],"-".$v['wallet'],"-".$v['bonus']);
@@ -216,10 +222,24 @@ class Futou extends IndexBase
         $this->modelMember->where('master_id',$member_info2[0]['id'])
                             ->where('status','=',1)
                                 ->update(['wallet'=>0,'bonus'=>0]);
-        $this->bill($v['id'],$v['username'],"+".$sl_baodanbi,"+".$sl_bonus,$sl_bonus*0.1);
+        $this->bill($v['id'],$v['username'],"+".$sl_baodanbi,"+".$sl_bonus);
+        return [RESULT_SUCCESS,'收取成功'];
+        }
+        return [RESULT_SUCCESS,'没有可收取账户'];
+
+    }
+
+     public function gatherOne($data){
+        $member_info2 = session('member_info2');
+        $sl_info = $this->modelMember->where('username',$data['username'])->select();
+        $this->modelMember->where('id',$member_info2[0]['id'])->inc('bonus',$sl_info[0]['bonus'])->inc('wallet',$sl_info[0]['wallet'])->update();
+        $this->bill($member_info2[0]['id'],$member_info2[0]['username'],"+".$sl_info[0]['bonus'],"+".$sl_info[0]['wallet']);
+        $this->modelMember->where('username',$data['username'])->update(['bonus'=>0,'wallet'=>0]);
+        $this->bill($sl_info[0]['id'],$sl_info[0]['username'],"-".$sl_info[0]['wallet'],"-".$sl_info[0]['bonus']);
         return [RESULT_SUCCESS,'收取成功'];
 
     }
+
     //增加账单流水和奖金记录
     public function bill($id,$name,$number,$number2){
                 //账单流水记录,记录接点人

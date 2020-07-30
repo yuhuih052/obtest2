@@ -19,9 +19,11 @@ class User extends IndexBase
     // 首页
     public function index()
     {
-        //dump($this->request->param());die;
-        //$id = $this->request->param()['id'];
+        
         $id = session('user_id2');
+        if($id == Null){
+            return view('login/login');
+        }
         if(session('user_id2') == $id){
         $data = $this->logicUser->index($id);
         //dump($data);die;

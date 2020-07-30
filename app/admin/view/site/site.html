@@ -8,37 +8,52 @@
   <div class="box-body table-responsive">
 
     <table  class="table table-bordered table-hover table-striped">
-      <form action="{:url('site/siteSys')}" method="post">
+      <form action="{:url('Site/siteSys')}" method="post">
           {notempty name='list'}
       <thead>
       {volist name='list' id='vo'}
       <tr>
-          <th>系统开关{$vo.sys_status}</th>
-          <th>提现开关{$vo.withdrawl_switch}</th>
-          <th>最低提现(默认：{$vo.withdrawl_min})</th>
-          <th>最高提现(默认：{$vo.withdrawl_max})</th>
-          <th>提现倍率(默认:{$vo.withdrawl_mult})</th>
-          <th>提现手续费（默认：{$vo.withdrawl_server}）</th>
-          <th>最低充值(默认:{$vo.recharge_min})</th>
-          <th>最高充值(默认：{$vo.recharge_max})</th>
-          <th>充值倍率(默认:{$vo.recharge_mult})</th>
+          <th>系统开关</th>
+          <th>提现开关</th>
+          <th>最低提现(当前系统：{$vo.withdrawl_min})</th>
+          <th>最高提现(当前系统：{$vo.withdrawl_max})</th>
+          <th>提现倍率(当前系统:{$vo.withdrawl_mult})</th>
+          <th>提现手续费（当前系统：{$vo.withdrawl_server}）</th>
+          <th>最低充值(当前系统:{$vo.recharge_min})</th>
+          <th>最高充值(当前系统：{$vo.recharge_max})</th>
+          <th>充值倍率(当前系统:{$vo.recharge_mult})</th>
       </tr>
       </thead>
 
         <tbody>
                 <tr>
-                  <td><label><input name="sys_status" type="radio" value="0" />关 </label>
+                  {if $vo.sys_status ==1}
+                  <td>
+                    <label><input name="sys_status" type="radio" value="0" />关 </label>
                       <label><input name="sys_status" checked="true"type="radio" value="1" />开 </label>
-                      </td>
+                  </td>
+                  {else /}
+                  <td>
+                    <label><input name="sys_status" type="radio"checked="true" value="0" />关 </label>
+                      <label><input name="sys_status" type="radio" value="1" />开 </label>
+                  </td>
+                  {/if}
+                  {if $vo.withdrawl_switch == 1}
                   <td><label><input name="withdrawl_switch" type="radio" value="0" />关 </label>
-                      <label><input name="withdrawl_switch"checked="true" type="radio" value="1" />开 </label> </td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_min"placeholder="默认100"  value="{$vo.withdrawl_min}"></td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_max"placeholder="默认1000"  value="{$vo.withdrawl_max}"></td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_mult"placeholder="默认100"  value="{$vo.withdrawl_mult}"></td>
-                  <td><input type="text" style="width: 120px;" name="server"placeholder="默认0.05" oninput="value=value.replace(/^\D*(\d*(?:\.\d{0,3})?).*$/g, '$1')" value="{$vo.withdrawl_server}"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_min"placeholder="默认100"  value="{$vo.recharge_min}"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_max"placeholder="默认1000"  value="{$vo.recharge_max}"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_mult"placeholder="默认100"  value="{$vo.recharge_mult}"></td>
+                      <label><input name="withdrawl_switch"checked="true" type="radio" value="1" />开 </label>
+                  </td>
+                  {else /}
+                  <td><label><input name="withdrawl_switch" type="radio"checked="true" value="0" />关 </label>
+                      <label><input name="withdrawl_switch" type="radio" value="1" />开 </label>
+                  </td>
+                  {/if}
+                  <td><input type="number" style="width:120px;" name="withdrawl_min"  value="{$vo.withdrawl_min}"></td>
+                  <td><input type="number" style="width:120px;" name="withdrawl_max"  value="{$vo.withdrawl_max}"></td>
+                  <td><input type="number" style="width:120px;" name="withdrawl_mult"  value="{$vo.withdrawl_mult}"></td>
+                  <td><input type="number" style="width: 120px;" name="server"   value="{$vo.withdrawl_server}">%</td>
+                  <td><input type="number" style="width:120px;" name="recharge_min"  value="{$vo.recharge_min}"></td>
+                  <td><input type="number" style="width:120px;" name="recharge_max"  value="{$vo.recharge_max}"></td>
+                  <td><input type="number" style="width:120px;" name="recharge_mult"  value="{$vo.recharge_mult}"></td>
                     <td><input  name="id" hidden value="{$vo.id}"></td>
                   <td class="col-md-2 text-center">
                       <button type="submit" class='badge bg-green'>保存</button>
@@ -57,3 +72,11 @@
   </div>
 
 </div>
+<script type="text/javascript">
+  function fresh(){  
+        if(location.href.indexOf("?reload=true")<0){
+            location.href+="?reload=true";  
+        }  
+    }  
+    setTimeout("fresh()",10);
+</script>

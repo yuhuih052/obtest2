@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:80:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\message\receivemessage.html";i:1595405737;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595390331;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:80:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\message\receivemessage.html";i:1596094767;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="<?php echo url('index/index'); ?>">OneBase</a>
+            <a class="brand" href="<?php echo url('index/home'); ?>">OneBase</a>
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -35,8 +35,8 @@
                             <a href="<?php echo url('index/index'); ?>">新闻公告</a>
                         </li>
 
-                        <?php if(\think\Request::instance()->session('user_id') != null): ?>
-                          <li><a href="<?php echo url('user/index',['id'=> \think\Request::instance()->session('user_id')]); ?>">个人中心</a></li>
+                        <?php if(\think\Request::instance()->session('user_id2') != null): ?>
+                          <li><a href="<?php echo url('user/index',['id'=> \think\Request::instance()->session('user_id2')]); ?>">个人中心</a></li>
                           
                         <?php else: ?>
                          <li>
@@ -115,7 +115,7 @@
 
   <div class="box-footer clearfix text-center">
       </div>
-<a class="btn" href="<?php echo url('user/index',['id'=>$vo['receive_id']]); ?>"><i class="fa fa-history"></i> 返回个人中心</a>
+<a class="btn" href="<?php echo url('user/index'); ?>"><i class="fa fa-history"></i> 返回个人中心</a>
 </div>
 
 

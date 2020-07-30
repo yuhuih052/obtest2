@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\billdetail.html";i:1595317072;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595237332;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\billdetail.html";i:1595917370;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="<?php echo url('index/index'); ?>">OneBase</a>
+            <a class="brand" href="<?php echo url('index/home'); ?>">OneBase</a>
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -29,14 +29,14 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                         <li>
-                            <a href="<?php echo url('index/index'); ?>">首页</a>
+                            <a href="<?php echo url('index/home'); ?>">首页</a>
                         </li>
                         <li>
                             <a href="<?php echo url('index/index'); ?>">新闻公告</a>
                         </li>
 
-                        <?php if(\think\Request::instance()->session('user_id') != null): ?>
-                          <li><a href="<?php echo url('user/index',['id'=> \think\Request::instance()->session('user_id')]); ?>">个人中心</a></li>
+                        <?php if(\think\Request::instance()->session('user_id2') != null): ?>
+                          <li><a href="<?php echo url('user/index',['id'=> \think\Request::instance()->session('user_id2')]); ?>">个人中心</a></li>
                           
                         <?php else: ?>
                          <li>
@@ -87,7 +87,7 @@
       <?php endif; ?>
     </table>
   </div>
-  <a href="<?php echo url('user/index',['id' => \think\Request::instance()->session('user_id')]); ?>">个人列表</a>
+  <a href="<?php echo url('user/index',['id' => \think\Request::instance()->session('user_id2')]); ?>">个人列表</a>
   <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 <footer class="footer">
   <div class="container">

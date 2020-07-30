@@ -15,14 +15,15 @@ class Site extends AdminBase
 
 	public function siteSys($data = []){
 		//dump($data);die;
+		$si = $this->modelSiteArgm->where('id',1)->select();
 		$check = [
-			'recharge_min' => ($data['recharge_min'] == null) ? 100 :$data['recharge_min'],
-			'recharge_max' => ($data['recharge_max'] == null) ? 1000 :$data['recharge_max'],
-			'recharge_mult' => ($data['recharge_mult'] == null) ? 100 :$data['recharge_mult'],
-			'withdrawl_min' => ($data['withdrawl_min'] == null) ? 100 :$data['withdrawl_min'],
-			'withdrawl_max' => ($data['withdrawl_max'] == null) ? 1000 :$data['withdrawl_max'],
-			'withdrawl_mult' => ($data['withdrawl_mult'] == null) ? 100 :$data['withdrawl_mult'],
-			'withdrawl_server' => ($data['server'] == null) ? 100 :$data['server'],
+			'recharge_min' => ($data['recharge_min'] == null) ? $si[0]['recharge_min'] :$data['recharge_min'],
+			'recharge_max' => ($data['recharge_max'] == null) ? $si[0]['recharge_max'] :$data['recharge_max'],
+			'recharge_mult' => ($data['recharge_mult'] == null) ? $si[0]['recharge_mult'] :$data['recharge_mult'],
+			'withdrawl_min' => ($data['withdrawl_min'] == null) ? $si[0]['withdrawl_min'] :$data['withdrawl_min'],
+			'withdrawl_max' => ($data['withdrawl_max'] == null) ? $si[0]['withdrawl_max'] :$data['withdrawl_max'],
+			'withdrawl_mult' => ($data['withdrawl_mult'] == null) ? $si[0]['withdrawl_mult'] :$data['withdrawl_mult'],
+			'withdrawl_server' => ($data['server'] == null) ? $si[0]['withdrawl_server'] :$data['server'],
 			'sys_status'	=> $data['sys_status'],
 			'withdrawl_switch'	=> $data['withdrawl_switch'],
 		];

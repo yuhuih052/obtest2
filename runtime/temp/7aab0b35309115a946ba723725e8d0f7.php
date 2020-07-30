@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:74:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\futou\futou_list.html";i:1596077888;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:74:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\futou\futou_list.html";i:1596085881;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,7 +128,9 @@
                       <ob_link><a href="<?php echo url('futou/getInto', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>进入子账号</span></a></ob_link>
 
                       &nbsp;
-                      <ob_link><a class="confirm ajax-get"  href="<?php echo url('#', array('id' => $vo['id'])); ?>"><span class='badge bg-red'>收取资金</span></a></ob_link>
+                      <?php if($vo['bonus'] > 0 && $vo['wallet'] > 0): ?>
+                      <ob_link><a class="confirm ajax-get"  href="<?php echo url('futou/gatherOne', array('username' => $vo['username'])); ?>"><span class='badge bg-red'>收取资金</span></a></ob_link>
+                      <?php endif; ?>
                   </td>
                 </tr>
             <?php endforeach; endif; else: echo "" ;endif; ?>

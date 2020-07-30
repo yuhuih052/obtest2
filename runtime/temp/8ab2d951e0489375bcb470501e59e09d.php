@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\message\sendmessage.html";i:1595405557;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1596102784;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,62 +57,39 @@
         </div>
     </div>
 </div>
-<div class="box">
-    
-  <div class="box-header">
 
-    <div class="row"> 
-        
-        <div class="col-sm-7">
-
-        </div>
-    </div>
-    
-  </div>
-    
-    
-  <div class="box-body table-responsive">
-    <table  class="table table-bordered table-hover table-striped">
+    <table  class="table table-bordered">
       <thead>
       <tr>
-          <th>编号</th>
-          <th>留言信息</th>
-          <th>留言时间</th>
-          <th>收件人</th>
-          <th>回复</th>
-          <th>回复时间</th>
-          <th>操作</th>
+          <th>当前cfi价格:<?php echo $list['0']['cfi_price']; ?></th>
+          <th>买入</th>  
+          <th>卖出</th>
       </tr>
       </thead>
-      
-      <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
         <tbody>
-            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tr>
-                  <td><?php echo $vo['username']; ?></td>
-                  <td><?php echo $vo['message']; ?></td>
-                  <td><?php echo $vo['message_time']; ?></td>
-                  <td><?php echo $vo['receive_name']; ?></td>
-                  <td><?php echo $vo['response']; ?></td>
-                  <td><?php echo $vo['response_time']; ?></td>
-                  <td class="text-center">
-                      {<button type="submit" class='badge bg-green'>del</button>}
-                  </td>
+                  <td></td>
+                  <td>当前价格<?php echo $list['0']['cfi_price']; ?></td>
+                  <td>当前价格<?php echo $list['0']['cfi_price']; ?></td> 
                 </tr>
-            <?php endforeach; endif; else: echo "" ;endif; ?>
+                <tr>
+                  <td>操作</td>
+                  <form>
+                  <td><input type="number" name="cfi_amount" value="">
+                    <input hidden="" name="cfi_price" value="<?php echo $list['0']['cfi_price']; ?>">
+                      <button type="submit">买入</button>
+                  </td>
+                  </form>
+                  <form>
+                  <td><input type="number" name="cfi_amount" value="">
+                      <button type="submit">卖出</button>
+                  </td>
+                  </form>
+                </tr>
+       
         </tbody>
-        <?php else: ?>
-        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
-      <?php endif; ?>
     </table>
-  </div>
-
-  <div class="box-footer clearfix text-center">
-      </div>
-<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
-</div>
-
-
+ 
 <footer class="footer">
   <div class="container">
       <p> 本站由 <strong><a href="http://www.onebase.org" target="_blank">OneBase</a></strong> 强力驱动</p>

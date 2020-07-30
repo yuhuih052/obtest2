@@ -41,25 +41,28 @@ class Bonus extends AdminBase
     }
     
     public function record(){
-        $info = $this->modelMember->whereTime('ac_time','d' )->select()->toArray();
-        //dump(count($info));die;
-        $data['tatol'] = count($info) * 1000;
-        $tobonus = $this->modelBonusDetail->whereTime('create_time','d')->sum('bonus_amount');
-        $data['sum'] = $tobonus == NULL ? 0 : $tobonus;
-        $data['pp'] = $data['tatol'] == 0 ? 0 : $tobonus / $data['tatol'];
+        $baodanbi_all = $this->modelBill->whereTime('create_time','d' )->sum('baodanbi_all');
+        
+        $totalbonus = $this->modelBonusDetail->whereTime('create_time','d')->sum('bonus_amount');
+        
+        $baodanbi_all = $baodanbi_all == NULL ? 0 : $baodanbi_all;
+        $totalbonus = $totalbonus == NULL ? 0 : $totalbonus;
+        //dd($baodanbi_all);
+        if(!$baodanbi_all == 0){
+        $pp =  $totalbonus/$baodanbi_all;
+        }else{
+            $pp = 0;
+        }
         //dump($data);die;
         $datarecord = [
             'month_day' => date('Y-m-d H:i:s', time()),
-            'entry' => $data['tatol'],
-            'out_account' => $data['sum'],
-            'pp' => $data['pp'],
+            'entry' => $baodanbi_all,
+            'out_account' => $totalbonus,
+            'pp' => $pp,
         ];
         //dump($data['sum']);die;
-        $result = $this->modelBonus->setInfo($datarecord);
-        //dd($result);
-        //$result = 1;
+        $this->modelBonus->setInfo($datarecord);
         
-        return $result;
     }
 
     public function search($data){

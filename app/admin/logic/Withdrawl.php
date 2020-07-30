@@ -41,7 +41,7 @@ class Withdrawl extends AdminBase
         $user = $this->modelMember->where('id','=',$data['id'])->select()->toArray();
         $server = $this->modelSiteArgm->where('id',1)->select();
         //dump($server[0]['withdrawl_server'] *100);die;
-        $ser = $server[0]['withdrawl_server'] *100;
+        $ser = $server[0]['withdrawl_server'] /100;
         $userwithdrawl = $user[0]['re_withdrawl'];
         //dump($user);die;
 
@@ -49,9 +49,9 @@ class Withdrawl extends AdminBase
             'user_id' => $data['id'],
             'user_name' => $user[0]['username'],
             'amount' => $data['withdrawl'],
-            'server' => $ser.'%',
+            'server' => $server[0]['withdrawl_server'].'%',
             'time' =>  date('Y-m-d h:i:s', time()),
-            'daozhang' =>$data['withdrawl'] - $data['withdrawl'] * $server[0]['withdrawl_server'],
+            'daozhang' =>$data['withdrawl'] - $data['withdrawl'] * $ser,
             'shuoming' => '提现成功',
         ];
          $data1 = [
@@ -97,7 +97,7 @@ class Withdrawl extends AdminBase
             'user_id' => $data['id'],
             'user_name' => $user[0]['username'],
             'amount' => $data['withdrawl'],
-            'server' => '%5',
+            'server' => '本次不扣手续费',
             'time' =>  date('Y-m-d h:i:s', time()),
             'daozhang' =>0,
             'shuoming' => '提现申请被拒绝，奖金币已退回原账户',

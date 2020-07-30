@@ -69,7 +69,9 @@
                       <ob_link><a href="{:url('futou/getInto', array('id' => $vo['id']))}"><span class='badge bg-green'>进入子账号</span></a></ob_link>
 
                       &nbsp;
-                      <ob_link><a class="confirm ajax-get"  href="{:url('#', array('id' => $vo['id']))}"><span class='badge bg-red'>收取资金</span></a></ob_link>
+                      {if $vo.bonus > 0 && $vo.wallet > 0}
+                      <ob_link><a class="confirm ajax-get"  href="{:url('futou/gatherOne', array('username' => $vo['username']))}"><span class='badge bg-red'>收取资金</span></a></ob_link>
+                      {/if}
                   </td>
                 </tr>
             {/volist}
