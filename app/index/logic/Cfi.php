@@ -167,11 +167,42 @@ class CFI extends IndexBase
 						}
 
 
-					}else{//购买数量超过30000
-						$now_new_price = $this->price()->cfi_price + 0.2;
+					}else{//买完第一轮后还需要购买数量超过30000
+						$now_new_price = $this->price()->cfi_price + 0.1;
+						if($now_new_price < 4 ){
+							//如果第二轮购买没达到拆分
+							$cfi_price = $now_new_price;
+							$deal = 0;
+							$cfi_total = $this->price()->cfi_total - 15000;
+							$this->priceUd($cfi_price,$deal,$cfi_total);
+							//
+							$tt_amount = $after_amount - 15000;
+							$tt_pay = $tt_amount * $this->price()->cfi_price;
+							//购买第二轮15000后剩余的购买力
+							$over_tt_pay = $over_pay - $tt_pay;
+							$last_amount = floor($over_tt_pay / $now_new_price);
+							$now_new_price2 = $this->price()->cfi_price + 0.1;
+							if($now_new_price2 < 4){
+								if($last_amount > 15000){
+									$cfi_price = $now_new_price2;
+									$deal = 0;
+									$cfi_total = $this->price()->cfi_total - 15000;
+									$this->priceUd($cfi_price,$deal,$cfi_total);
 
+									
+									$this->modelMember->where('id',$id)->inc('CFI',$rise_capacity+30000+$last_amount)
+															->dec('dianzibi',$now_pay+$after_pay+$tt_pay)->update();
+									$this->bill($id,$member['username'],'dianzibi_all',$now_pay+$after_pay+$tt_pay);
+									return [RESULT_SUCCESS,'购买成功'];
+								}
 
+								}else{
+									
+								}
+							}
+							
 					}
+				
 
 			}else{ //购买后达到拆分
 
@@ -180,6 +211,7 @@ class CFI extends IndexBase
 		}	
 
 	}
+	
 	//添加流水账单
 	public function bill($id,$name,$type,$number){
 		$bill = [
@@ -210,10 +242,11 @@ class CFI extends IndexBase
 	}
 	//拆分股票
 	public function splitCfi(){
+		$a = $this->price()->cfi_price / 2;
 		$pre = [
 				'cfi_price' =>2,
 				'deal' => 0,
-				'cfi_total' => $this->price()->cfi_total *2,
+				'cfi_total' => $this->price()->cfi_total *$a,
 			];
 		$this->modelPrice->where('id',1)->update($pre);
 
@@ -223,11 +256,11 @@ class CFI extends IndexBase
 		foreach ($user_split as $key => $v) {
 			//用户拆分封顶
 			$v_info_rank = $this->logicUser->checkMember_rank($v->member_rank);
-			if($v->CFI *2 <= $v_info_rank['CFI_split']){
+			if($v->CFI *$a <= $v_info_rank['CFI_split']){
 				$this->modelMember->where('id',$v->id)->inc('CFI',$v->CFI)->update();
 			}else{
 				$this->modelMember->where('id',$v->id)->update(['CFI'=>$v_info_rank['CFI_split']]);
-				$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *2 - $v_info_rank['CFI_split']);
+				$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *$a - $v_info_rank['CFI_split']);
 			}
 			
 		}
