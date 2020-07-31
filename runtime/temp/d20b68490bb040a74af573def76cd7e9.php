@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1596161046;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\message_record.html";i:1595917438;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,40 +57,46 @@
         </div>
     </div>
 </div>
-
-    <table  class="table table-bordered">
+<div class="box">
+    
+       
+  <div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
       <thead>
       <tr>
-          <th>当前cfi价格:<?php echo $list['cfi_price']; ?></th>
-          <th>买入</th>  
-          <th>卖出</th>
+          
+          <th>留言信息</th>
+          <th>留言时间</th>
+          <th>回复信息</th>
+          <th>回复时间</th>
+          
       </tr>
       </thead>
+      
+      <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
         <tbody>
+            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tr>
-                  <td></td>
-                  <td>当前价格：$<?php echo $list['cfi_price']; ?></td>
-                  <td>当前价格：$<?php echo $list['cfi_price']; ?></td> 
+                  
+                  <td><?php echo $vo['message']; ?></td>
+                  <td><?php echo $vo['message_time']; ?></td>
+                  <td><?php echo $vo['response']; ?></td>
+                  <td><?php echo $vo['response_time']; ?></td>
+                  
                 </tr>
-                <tr>
-                  <td>操作</td>
-                  <form action="<?php echo url('Cfi/sys_buy'); ?>" method="post">
-                  <td><input type="number" name="cfi_amount" value="">
-                    <input hidden="" name="cfi_price" value="<?php echo $list['cfi_price']; ?>">
-                      <button type="submit">买入</button>
-                  </td>
-                  </form>
-                  <form action="" method="post">
-                  <td><input type="number" name="cfi_amount" value="">
-                    <input hidden="" name="cfi_price" value="<?php echo $list['cfi_price']; ?>">
-                      <button type="submit">卖出</button>
-                  </td>
-                  </form>
-                </tr>
-       
+            <?php endforeach; endif; else: echo "" ;endif; ?>
         </tbody>
+        <?php else: endif; ?>
     </table>
- 
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      </div>
+      <a href="<?php echo url('user/index',['id'=> \think\Request::instance()->session('user_id2')]); ?>">个人列表</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+</div>
+
+
 <footer class="footer">
   <div class="container">
       <p> 本站由 <strong><a href="http://www.onebase.org" target="_blank">OneBase</a></strong> 强力驱动</p>

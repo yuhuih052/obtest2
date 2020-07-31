@@ -2,7 +2,7 @@
     <table  class="table table-bordered">
       <thead>
       <tr>
-          <th>当前cfi价格:{$list.0.cfi_price}</th>
+          <th>当前cfi价格:{$list.cfi_price}</th>
           <th>买入</th>  
           <th>卖出</th>
       </tr>
@@ -10,20 +10,20 @@
         <tbody>
                 <tr>
                   <td></td>
-                  <td>当前价格{$list.0.cfi_price}</td>
-                  <td>当前价格{$list.0.cfi_price}</td> 
+                  <td>当前价格：${$list.cfi_price}</td>
+                  <td>当前价格：${$list.cfi_price}</td> 
                 </tr>
                 <tr>
                   <td>操作</td>
-                  <form action="" method="post">
+                  <form action="{:url('Cfi/sys_buy')}" method="post">
                   <td><input type="number" name="cfi_amount" value="">
-                    <input hidden="" name="cfi_price" value="{$list.0.cfi_price}">
+                    <input hidden="" name="cfi_price" value="{$list.cfi_price}">
                       <button type="submit">买入</button>
                   </td>
                   </form>
                   <form action="" method="post">
                   <td><input type="number" name="cfi_amount" value="">
-                    <input hidden="" name="cfi_price" value="{$list.0.cfi_price}">
+                    <input hidden="" name="cfi_price" value="{$list.cfi_price}">
                       <button type="submit">卖出</button>
                   </td>
                   </form>
