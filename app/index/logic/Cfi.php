@@ -23,23 +23,59 @@ class CFI extends IndexBase
 		//获取会员等级信息
 		$member_rank = $this->logicUser->checkMember_rank($member['member_rank']);
 
-		if($data['cfi_amount']+$member['CFI'] > $member_rank['CFI_split']){
-			return [RESULT_SUCCESS,'当前会员等级最多只能持有'.$member_rank['CFI_split']];
-		}
-		$pay = $this->price()->cfi_price * $data['cfi_amount'];
+		$pay = $data['cfi_amount'];
 		if($pay > $member['dianzibi'] ){
 			return [RESULT_SUCCESS,'电子币余额不足'];
 		}
+		$this->modelMember->where('id',$id)->dec('dianzibi',$pay)->update();
+		$buyer = $this->modelShop->where('user_id',$id)->find();
+
+		if(empty($buyer)){
+			$re =[
+				'user_id' => $id,
+				'dianzibi' => $pay,
+				'create_time' => time(),
+			];
+			//$this->modelShop->setInfo($re);
+			//$this->bill($id,$member['username'],'dianzibi_all',$pay,'挂买CFI');
+		}else{
+			$re =[
+				'dianzibi' => $buyer->dianzibi + $pay,
+				'update_time' => time(),
+			];
+			//$this->modelShop->where('user_id',$id)->update($re);
+			//$this->bill($id,$member['username'],'dianzibi_all',$pay,'挂买CFI');
+		}
+		$this->transaction($id,1);
+		return [RESULT_SUCCESS,'挂买成功'];
+
+	}
+
+	public function transaction($id,$status){
+		$now_price = $this->price()->cfi_price;
+		$buyer_list = $this->modelShop->where('dianzibi','>',0)->select();
+		$seller_list = $this->modelShop->where('sell','>',0)->select();
+		//当没有用户挂卖时，从系统账户购买
+		if(count($seller_list) == 0){
+			$buyer = $this->modelShop->where('user_id',$id)->find();
+			
+		}else{
+			foreach ($seller_list as $key => $v) {
+			dd($v);
+			}
+		}
+		
 		
 
 	}
 	
 	//添加流水账单
-	public function bill($id,$name,$type,$number){
+	public function bill($id,$name,$type,$number,$shuoming){
 		$bill = [
 			'user_id' => $id,
 			'user_name' => $name,
 			$type => "-".$number,
+			'shuoming' =>$shuoming,
 		];
 		$this->modelBill->setInfo($bill);
 	}
@@ -71,6 +107,13 @@ class CFI extends IndexBase
 				'cfi_total' => $this->price()->cfi_total *$a,
 			];
 		$this->modelPrice->where('id',1)->update($pre);
+		$seller = $this->modelShop->where('sell','>',0)->select();
+		foreach ($seller as $key => $va) {
+			if($va->status == 1){
+				$this->modelShop->where('user_id',$va->user_id)->update(['sell'=>0,'update_time'=>time()]);
+				$this->modelMember->where('id',$va->user_id)->dec('CFI',$va->sell)->update();
+			}
+		}
 
 		$user_split = $this->modelMember->where('CFI','>',0)
 										->where('status',1)
