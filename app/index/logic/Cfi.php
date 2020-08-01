@@ -30,6 +30,7 @@ class CFI extends IndexBase
 		if($pay > $member['dianzibi'] ){
 			return [RESULT_SUCCESS,'电子币余额不足'];
 		}
+		
 
 	}
 	

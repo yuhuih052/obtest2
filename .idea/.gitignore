@@ -7,3 +7,13 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 /app/database.php
+
+/thinkphp/
+/vendor/
+/runtime/
+*.log
+LICENSE.txt
+/log/
+.idea/
+composer.json
+composer.lock
