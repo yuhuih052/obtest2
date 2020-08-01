@@ -1,0 +1,1 @@
+[ 2020-08-01T09:19:28+08:00 ][ error ] [8]unserialize(): Error at offset 0 of 335 bytes[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\cache\driver\File.php:122]
