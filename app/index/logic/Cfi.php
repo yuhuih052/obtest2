@@ -18,7 +18,7 @@ class CFI extends IndexBase
 
 		return $this->modelShop->where('user_id',$this->info()->id)->find();
 	}
-
+	//挂买CFI
 	public function sys_buy($data){
 		
 		$id = $this->info()->id;
@@ -26,7 +26,7 @@ class CFI extends IndexBase
 		
 		//获取会员等级信息
 		$member_rank = $this->logicUser->checkMember_rank($member['member_rank']);
-
+		$data['cfi_amount'] = $data['cfi_amount'] == Null ? 0:$data['cfi_amount'];
 		$pay = $data['cfi_amount'];
 		if($pay > $member['dianzibi'] ){
 			return [RESULT_SUCCESS,'电子币余额不足'];
@@ -81,7 +81,8 @@ class CFI extends IndexBase
 			if($rise_ca >= $amount){
 				if($cfi_total >$amount){
 					if($b >= $amount){
-						$this->modelShop->where('user_id',$id)->update(['dianzibi'=>0]);
+						$now_pay = $amount * $this->price()->cfi_price;
+						$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
 						$this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
 						$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total - $amount);
 						return 1;
@@ -170,19 +171,28 @@ class CFI extends IndexBase
 			//交易市场有人挂卖时
 		}elseif(!count($seller_list) == 0){//有人挂卖时
 			foreach ($seller_list as $key => $v) {
+				
 				if($amount >= $v->sell){//购买需求大于当前挂卖数量
 					if($rise_ca > $v->sell && $rise_ca  > $amount){//涨价空间足够完成这笔交易时 A1
 						if($b >= $v->sell){//账户能购买的数量足够时
-							$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$v->sell * $now_price)->update();
+							
+							$this->modelMember->where('id',$v->user_id)->inc('bonus',$v->sell * $now_price*0.54)
+																		->inc('wallet',$v->sell * $now_price*0.27,)
+																		->inc('baoguanjin',$v->sell * $now_price*0.09,)
+																		->update();
 							$this->modelMember->where('id',$id)->inc('CFI',$v->sell)->update();
-							$this->modelShop->where('user_id',$v->userid)->dec('sell',$v->sell)->update();
+							$this->modelShop->where('user_id',$v->user_id)->dec('sell',$v->sell)->update();
 							$this->modelShop->where('user_id',$id)->dec('dianzibi',$v->sell * $now_price)->update();
 							$this->priceUd($now_price,$this->price()->deal+$v->sell,$this->price()->cfi_total);
 							return 1;
 						}else{//账户能购买的数量不够时
-							$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$b * $now_price)->update();
+																	
+							$this->modelMember->where('id',$v->user_id)->inc('bonus',$b * $now_price*0.54)
+																	->inc('wallet',$b * $now_price*0.27,)
+																	->inc('baoguanjin',$b * $now_price*0.09,)
+																	->update();
 							$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
-							$this->modelShop->where('user_id',$v->userid)->dec('sell',$b)->update();
+							$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
 							$this->modelShop->where('user_id',$id)->dec('dianzibi',$b * $now_price)->update();
 							$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 							return 1;
@@ -194,17 +204,24 @@ class CFI extends IndexBase
 						if($b >= $rise_ca){//账户能购买的数量足够时
 							$now_pay = $rise_ca *$now_price;
 							$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-							$this->modelMember->where('id',$id)->dec('CFI',$rise_ca)->update();
+							$this->modelMember->where('id',$id)->inc('CFI',$rise_ca)->update();
 							$this->modelShop->where('user_id',$v->user_id)->dec('sell',$rise_ca)->update();
-							$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+							
+							$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																		->inc('wallet',$now_pay * 0.27,)
+																		->inc('baoguanjin',$now_pay *0.09,)
+																		->update();
 							$this->priceUd($now_price+0.1,$this->price()->deal+$cfi_total,$this->price()->cfi_total);
 							$v = $this->modelShop->where('user_id',$v->user_id)->find();
 						}else{//账户能购买的数量不够时
 							$now_pay = $b *$now_price;
 							$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-							$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+							$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 							$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-							$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+							$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																	->inc('wallet',$now_pay * 0.27,)
+																	->inc('baoguanjin',$now_pay *0.09,)
+																	->update();
 							$this->priceUd($now_price+0.1,$this->price()->deal+$b,$this->price()->cfi_total);
 							return 1;
 						}
@@ -227,34 +244,46 @@ class CFI extends IndexBase
 								if($b >= $v->sell){
 									$now_pay = $v->sell * $now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$v->sell)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$v->sell)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$v->sell)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																			->inc('wallet',$now_pay * 0.27,)
+																			->inc('baoguanjin',$now_pay *0.09,)
+																			->update();
 									$this->priceUd($now_price,$this->price()->deal+$v_sell,$this->price()->cfi_total);
 									continue;
 								}
 									$now_pay = $b *$now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 									return 2;
 							}else{//购买需求小于当前卖家
 								if($b >= $amount){
 									$now_pay = $amount * $now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$amount)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$amount)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
 									return 2;
 								}else{
 									$now_pay = $b *$now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 									return 2;
 								}
@@ -263,17 +292,23 @@ class CFI extends IndexBase
 							if($b >= $rise_ca){
 								$now_pay = $rise_ca * $now_price;
 								$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-								$this->modelMember->where('id',$id)->dec('CFI',$rise_ca)->update();
+								$this->modelMember->where('id',$id)->inc('CFI',$rise_ca)->update();
 								$this->modelShop->where('user_id',$v->user_id)->dec('sell',$rise_ca)->update();
-								$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+								$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																			->inc('wallet',$now_pay * 0.27,)
+																			->inc('baoguanjin',$now_pay *0.09,)
+																			->update();
 								$this->priceUd($now_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total);
 								$v = $this->modelShop->where('user_id',$v->user_id)->find();
 							}else{
 								$now_pay = $b *$now_price;
 								$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-								$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+								$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 								$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-								$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+								$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																			->inc('wallet',$now_pay * 0.27,)
+																			->inc('baoguanjin',$now_pay *0.09,)
+																			->update();
 								$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 								return 2;
 							}
@@ -291,34 +326,46 @@ class CFI extends IndexBase
 								if($b >= $v->sell){
 									$now_pay = $v->sell * $now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$v->sell)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$v->sell)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$v->sell)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$v_sell,$this->price()->cfi_total);
 									continue;
 								}
 									$now_pay = $b *$now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 									return 2;
 							}else{//购买需求小于当前卖家
 								if($b >= $amount){
 									$now_pay = $amount * $now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$amount)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$amount)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
 									return 2;
 								}else{
 									$now_pay = $b *$now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 									return 2;
 								}
@@ -330,14 +377,14 @@ class CFI extends IndexBase
 						if($b >= $amount){//账户能购买的数量足够时
 							$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$amount * $now_price)->update();
 							$this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
-							$this->modelShop->where('user_id',$v->userid)->dec('sell',$amount)->update();
+							$this->modelShop->where('user_id',$v->user_id)->dec('sell',$amount)->update();
 							$this->modelShop->where('user_id',$id)->dec('dianzibi',$amount * $now_price)->update();
 							$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
 							return 1;
 						}else{//账户能购买的数量不够时
 							$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$b * $now_price)->update();
 							$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
-							$this->modelShop->where('user_id',$v->userid)->dec('sell',$b)->update();
+							$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
 							$this->modelShop->where('user_id',$id)->dec('dianzibi',$b * $now_price)->update();
 							$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 							return 1;
@@ -383,17 +430,23 @@ class CFI extends IndexBase
 								if($b >= $amount){
 									$now_pay = $amount * $now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$amount)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$amount)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
 									return 2;
 								}else{
 									$now_pay = $b *$now_price;
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-									$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
+									$this->modelMember->where('id',$id)->inc('CFI',$b)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 									return 2;
 								}
@@ -402,9 +455,12 @@ class CFI extends IndexBase
 							if($b >= $rise_ca){
 								$now_pay = $rise_ca * $now_price;
 								$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-								$this->modelMember->where('id',$id)->dec('CFI',$rise_ca)->update();
+								$this->modelMember->where('id',$id)->inc('CFI',$rise_ca)->update();
 								$this->modelShop->where('user_id',$v->user_id)->dec('sell',$rise_ca)->update();
-								$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+								$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																			->inc('wallet',$now_pay * 0.27,)
+																			->inc('baoguanjin',$now_pay *0.09,)
+																			->update();
 								$this->priceUd($now_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total);
 								$v = $this->modelShop->where('user_id',$v->user_id)->find();
 							}else{
@@ -412,7 +468,10 @@ class CFI extends IndexBase
 								$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
 								$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
 								$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-								$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+								$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																			->inc('wallet',$now_pay * 0.27,)
+																			->inc('baoguanjin',$now_pay *0.09,)
+																			->update();
 								$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 								return 2;
 							}
@@ -432,7 +491,10 @@ class CFI extends IndexBase
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
 									$this->modelMember->where('id',$id)->dec('CFI',$amount)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$amount)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
 									return 2;
 								}else{
@@ -440,7 +502,10 @@ class CFI extends IndexBase
 									$this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
 									$this->modelMember->where('id',$id)->dec('CFI',$b)->update();
 									$this->modelShop->where('user_id',$v->user_id)->dec('sell',$b)->update();
-									$this->modelMember->where('id',$v->user_id)->inc('dianzibi',$now_pay)->update();
+									$this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
+																				->inc('wallet',$now_pay * 0.27,)
+																				->inc('baoguanjin',$now_pay *0.09,)
+																				->update();
 									$this->priceUd($now_price,$this->price()->deal+$b,$this->price()->cfi_total);
 									return 2;
 								}
