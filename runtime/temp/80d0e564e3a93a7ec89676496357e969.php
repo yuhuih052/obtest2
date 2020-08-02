@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:67:"/home/workplace/zs/obtest2/public/../app/index/view/user/index.html";i:1596353760;s:63:"/home/workplace/zs/obtest2/public/../app/index/view/layout.html";i:1585716400;s:67:"/home/workplace/zs/obtest2/public/../app/index/view/layout/top.html";i:1585716400;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/header.html";i:1595917326;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:67:"/home/workplace/zs/obtest2/public/../app/index/view/user/index.html";i:1596354389;s:63:"/home/workplace/zs/obtest2/public/../app/index/view/layout.html";i:1585716400;s:67:"/home/workplace/zs/obtest2/public/../app/index/view/layout/top.html";i:1585716400;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/header.html";i:1595917326;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -150,8 +150,7 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="<?php echo url('Cfi/price_buy'); ?>">买入CFI</a></li>
-        <li><a href="#">卖出CFI</a></li>
+        <li><a href="<?php echo url('Cfi/price_buy'); ?>">CFI交易</a></li>
         <li><a href="">买入记录</a></li>
         <li><a href="#">卖出记录</a></li>
       </ul>

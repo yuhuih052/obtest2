@@ -10,8 +10,16 @@
         <tbody>
                 <tr>
                   <td></td>
-                  <td>当前价格：${$list.cfi_price}</td>
-                  <td>当前价格：${$list.cfi_price}</td> 
+                  <td>当前市场单价：${$list.cfi_price} &nbsp;&nbsp;&nbsp;&nbsp;
+                    {if !$list2 == Null}
+                      当前账户正在挂买:{$list2.dianzibi} 币
+                    {/if}
+                  </td>
+                  <td>当前市场单价：${$list.cfi_price} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {if !$list2 == Null}
+                      当前账户正在挂卖：{$list2.sell}个
+                    {/if}
+                  </td> 
                 </tr>
                 <tr>
                   <td>操作</td>
