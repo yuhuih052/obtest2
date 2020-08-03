@@ -26,11 +26,20 @@ class CFI extends IndexBase
 		
 		//获取会员等级信息
 		$member_rank = $this->logicUser->checkMember_rank($member['member_rank']);
-
-		$data['cfi_amount'] = $data['cfi_amount'] == Null ? 0:$data['cfi_amount'];
+		
 		$pay = $data['cfi_amount'];
+		$amount = floor($data['cfi_amount'] / $this->price()->cfi_price);
+		if($pay < $this->price()->cfi_price){
+			return [RESULT_SUCCESS,'请输入不低于单价'];
+		}
+		if($amount > $member_rank['CFI_split']){
+			return [RESULT_SUCCESS,'当前价格挂买金额超过账户CFI封顶额'];
+		}
+		if($member->CFI >= $member_rank['CFI_split']){
+			return [RESULT_SUCCESS,'账户CFI已达到封顶'];
+		}
 		if($pay > $member['dianzibi'] ){
-			return [RESULT_SUCCESS,'电子币余额不足'];
+			return [RESULT_SUCCESS,'电子币不足'];
 		}
 		$this->modelMember->where('id',$id)->dec('dianzibi',$pay)->update();
 			$re =[
@@ -45,9 +54,9 @@ class CFI extends IndexBase
 		
 		switch($re){
             case 1 :
-			    return [RESULT_SUCCESS,'挂买成功'];break;
+			    return [RESULT_SUCCESS,'排队成功'];break;
             case 2 :
-			    return [RESULT_SUCCESS,'挂买成功,当前价格已刷新，请留意交易价格,如继续购买请点击继续'];break;
+			    return [RESULT_SUCCESS,'挂买成功,请留意交易价格,如继续购买请点击继续'];break;
             case 3 :
                 return [RESULT_SUCCESS,'请检查账户交易钱包'];break;
 		}
@@ -56,292 +65,49 @@ class CFI extends IndexBase
 	}
 	//购买逻辑
 	public function transaction($id,$member_rank){
-        //dd($member_rank);
-		$now_price = $this->price()->cfi_price;
-		$cfi_total = $this->price()->cfi_total;
-		$buyer_list = $this->modelShop->where('dianzibi','>',0)->select();
-		$seller_list = $this->modelShop->where('sell','>',0)->select(); 
-		$buyer = $this->modelShop->where('user_id',$id)->find();
-		//当前账户挂买需求能购买的个数
-		$amount = floor($buyer->dianzibi / $now_price);
-
-		//判断账户目前能购买的最大数
-		$b = $member_rank['CFI_split'] - $this->info($id)->CFI;
-        if($amount < 1){
-            return 3;
-        }
-		//距离涨价的个数
+		$seller_list = $this->modelShop->where('sell','>',0)->where('status',1)->order('create_time','asc')->select();
+		//当前价格挂买数量
+		$amount = floor($buyer->dianzibi / $this->price()->cfi_price);
 		$rise_ca = $this->price()->default_deal - $this->price()->deal;
-		//当没有用户挂卖且系统账户有剩余，从系统账户购买
-		if(count($seller_list) == 0 && $cfi_total >0){
-			if($rise_ca >= $amount){
-				if($cfi_total >$amount){
-					if($b >= $amount){
-						$now_pay = $amount * $this->price()->cfi_price;
-						$this->upDataSys($id,$now_pay,$amount,$now_price);
-
-						return 1;
-					}
-					$now_pay = $b * $now_price;
-
-                    $this->upDataSys($id,$now_pay,$b,$now_price);
-					return 1;
-				}else{
-					if($b >= $cfi_total){
-					    $now_pay = $now_price * $cfi_total;
-                        $this->upDataSys($id,$now_pay,$cfi_total,$now_price);
-						return 1;
-					}
-					$now_pay = $b * $now_price;
-                    $this->upDataSys($id,$now_pay,$b,$now_price);
-					return 1;
-				}
-			}else{
-				$after_buy = $amount - $rise_ca;
-				//如果账户接近封顶数
-				if($b < $rise_ca){
-					$now_pay = $b * $now_price;
-                    $this->upDataSys($id,$now_pay,$b,$now_price);
-					return 1;
-				}
-				//先结算未涨价部分
-                $now_pay = $rise_ca * $now_price;
-                $this->upDataSys($id,$now_pay,$amount,$now_price+0.1);
-				//刷新购买者账户信息
-				$buyer = $this->modelShop->where('user_id',$id)->find();
-
-				//判断涨价后是否达到拆分条件
-				if($this->price()->cfi_price >=4){
-					$this->splitCfi();
-					return 2;
-				}else{//没达到拆分条件
-					//账户当前能购买的数量
-					$after_amount = floor($buyer->dianzibi / $this->price()->cfi_price);
-					//距离涨价的个数
-					$rise_ca = $this->price()->default_deal - $this->price()->deal;
-					$now_price = $this->price()->cfi_price;
-					$cfi_total = $this->price()->cfi_total;
-					//再次交易
-					if($cfi_total >$after_amount){
-						//如果账户接近封顶数
-						if($b < $after_amount){
-							$now_pay = $b * $now_price;
-                            $this->upDataSys($id,$now_pay,$b,$now_price);
-							return 1;
-						}
-						$now_pay = $after_amount * $now_price;
-                        $this->upDataSys($id,$now_pay,$after_amount,$now_price);
-						return 2;
-					}else{
-						//如果账户接近封顶数
-						if($b < $cfi_total){
-							$now_pay = $b * $now_price;
-                            $this->upDataSys($id,$now_pay,$b,$now_price);
-							return 1;
-						}
-						$now_pay = $now_price * $cfi_total;
-                        $this->upDataSys($id,$now_pay,$cfi_total,$now_price);
-						return 2;
-					}
-
-				}
-			}
-
-			//交易市场有人挂卖时
-		}elseif(!count($seller_list) == 0){//有人挂卖时
-			foreach ($seller_list as $key => $v) {
+		$buyer = $this->modelShop->where('user_id',id)->where('status',1)->order('create_time','asc')->find();
+		if(count($seller_list) == 0){
+			if($this->price()->$cfi_total > 0){
 				
-				if($amount >= $v->sell){//购买需求大于当前挂卖数量
-					if($rise_ca > $v->sell && $rise_ca  > $amount){//涨价空间足够完成这笔交易时 A1
-						if($b >= $v->sell){//账户能购买的数量足够时
-							$now_pay = $v->sell * $now_price;
-                            $this->updata($id,$v,$now_pay,$v->sell,$now_price);
-							return 1;
-						}else{//账户能购买的数量不够时
-						    $now_pay = $b * $now_price;
-                            $this->updata($id,$v,$now_pay,$b,$now_price);
-							return 1;
-						}
-						
-					}else{//涨价空间不够完成这笔交易时 A1
-						
-						//首先完成未涨价部分的交易
-						if($b >= $rise_ca){//账户能购买的数量足够时
-							$now_pay = $rise_ca *$now_price;
-                            $this->updata($id,$v,$now_pay,$rise_ca,$now_price);
-							$v = $this->modelShop->where('user_id',$v->user_id)->find();
-						}else{//账户能购买的数量不够时
-							$now_pay = $b *$now_price;
-                            $this->updata($id,$v,$now_pay,$b,$now_price);
-							return 1;
-						}
-							//进行涨价后进行交易
-							if($this->price()->cfi_price >= 4){
-								$this->splitCfi();
-								return 2;
-							}
-						//当前账户挂买电子币剩余
-						$buyer_dianzibi = $buyer->dianzibi - $now_pay;
-						$after_amount = floor($buyer_dianzibi / $this->price()->cfi_price);
-						//涨价后距离下一次涨价的个数
-						$rise_ca = $this->price()->default_deal - $this->price()->deal;
-						//目前账户所能购买最大数额
-						$b = $member_rank['CFI_split'] - $this->info($id)->CFI;
-						$now_price = $this->price()->cfi_price;
-						$v = $this->modelShop->where('user_id',$v->user_id)->find();
-						if($after_amount < $rise_ca || $v->sell <$rise_ca){//剩余交易大于一次涨价的交易量
-							if($after_amount >= $v->sell){//购买需求大于当前卖家
-								if($b >= $v->sell){
-									$now_pay = $v->sell * $now_price;
-                                    $this->updata($id,$v,$now_pay,$v->sell,$now_price);
-									continue;
-								}
-									$now_pay = $b *$now_price;
-                                    $this->updata($id,$v,$now_pay,$b,$now_price);
-									return 2;
-							}else{//购买需求小于当前卖家
-								if($b >= $amount){
-									$now_pay = $amount * $now_price;
-                                    $this->updata($id,$v,$now_pay,$amount,$now_price);
-									return 2;
-								}else{
-									$now_pay = $b *$now_price;
-                                    $this->updata($id,$v,$now_pay,$b,$now_price);
-									return 2;
-								}
-							}
-						}else{
-							if($b >= $rise_ca){
-								$now_pay = $rise_ca * $now_price;
-                                $this->updata($id,$v,$now_pay,$rise_ca,$now_price+0.1);
-								$v = $this->modelShop->where('user_id',$v->user_id)->find();
-							}else{
-								$now_pay = $b *$now_price;
-                                $this->updata($id,$v,$now_pay,$b,$now_price);
-								return 2;
-							}
-							//继续购买剩余需求
-							//当前账户挂买电子币剩余
-							$buyer_dianzibi = $buyer->dianzibi - $now_pay;
-							$after_amount = floor($buyer_dianzibi / $this->price()->cfi_price);
-							//涨价后距离下一次涨价的个数
-							$rise_ca = $this->price()->default_deal - $this->price()->deal;
-							//目前账户所能购买最大数额
-							$b = $member_rank['CFI_split'] - $this->info($id)->CFI;
-							$now_price = $this->price()->cfi_price;
-							$v = $this->modelShop->where('user_id',$v->user_id)->find();
-							if($after_amount >= $v->sell){//购买需求大于当前卖家
-								if($b >= $v->sell){
-									$now_pay = $v->sell * $now_price;
-                                    $this->updata($id,$v,$now_pay,$v->sell,$now_price);
-									continue;
-								}
-									$now_pay = $b *$now_price;
-                                    $this->updata($id,$v,$now_pay,$b,$now_price);
-									return 2;
-							}else{//购买需求小于当前卖家
-								if($b >= $amount){
-									$now_pay = $amount * $now_price;
-                                    $this->updata($id,$v,$now_pay,$amount,$now_price);
-									return 2;
-								}else{
-									$now_pay = $b *$now_price;
-                                    $this->updata($id,$v,$now_pay,$b,$now_price);
-									return 2;
-								}
-							}
-						}
+				if($amount < $rise_ca){
+					if($amount <= $cfi_total){
+						$now_pay = $amount * $this->price()->cfi_price;
+						$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+					}else{
+						$now_pay = $cfi_total * $this->price()->cfi_price;
+						$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
 					}
-				}else{//购买需求小于当前用户挂卖数量
-					if($rise_ca > $v->sell && $rise_ca  > $amount){//涨价条件交易量足够时
-						if($b >= $amount){//账户能购买的数量足够时
-						    $now_pay = $amount * $now_price;
-                            $this->updata($id,$v,$now_pay,$amount,$now_price);
-							return 1;
-						}else{//账户能购买的数量不够时
-						    $now_pay = $b * $now_price;
-                            $this->updata($id,$v,$now_pay,$b,$now_price);
-							return 1;
-						}
+				}else{
+					//先计算未涨价部分
+					$now_pay = $rise_ca * $this->price()->cfi_price;
+					$this->upDataSys($id,$buyer->id,$now_pay,$rise_ca,$this->price()->cfi_price+0.1);
+					//再计算涨价后的
+					$amount = $amount - $rise_ca;
 
-					}else{//涨价空间不够完成这笔交易时 A1
+					$now_pay = $amount * $this->price()->cfi_price;
+					$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+				}
+				
+			}else{
+				return 1;
+			}	
+		}else{
+			foreach($seller_list as $key=>$v){
+				if($amount > $v->sell){
+					if($v->sell <$rise_ca){
+						$now_pay = $v->sell * $this->price()->cfi_price;
+						$this->upData($buyer,$v,$now_pay,$amount,$this->price()->cfi_price);
+					}else{
 						
-						/*首先完成未涨价部分的交易*/
-
-						if($b >= $rise_ca){//账户能购买的数量足够时
-							$now_pay = $rise_ca *$now_price;
-                            $this->updata($id,$v,$now_pay,$rise_ca,$now_price);
-							$v = $this->modelShop->where('user_id',$v->user_id)->find();
-						}else{//账户能购买的数量不够时
-							$now_pay = $b *$now_price;
-                            $this->updata($id,$v,$now_pay,$b,$now_price+0.1);
-							return 1;
-						}
-						/*进行涨价后进行交易*/
-						if($this->price()->cfi_price >= 4){
-							$this->splitCfi();
-							return 2;
-						}
-						//当前账户挂买电子币剩余
-						$buyer_dianzibi = $buyer->dianzibi - $now_pay;
-						$after_amount = floor($buyer_dianzibi / $this->price()->cfi_price);
-						//涨价后距离下一次涨价的个数
-						$rise_ca = $this->price()->default_deal - $this->price()->deal;
-						//目前账户所能购买最大数额
-						$b = $member_rank['CFI_split'] - $this->info($id)->CFI;
-						$now_price = $this->price()->cfi_price;
-						$v = $this->modelShop->where('user_id',$v->user_id)->find();
-						if($after_amount < $rise_ca || $v->sell <$rise_ca){//剩余交易大于一次涨价的交易量
-							//购买需求小于当前卖家
-								if($b >= $amount){
-									$now_pay = $amount * $now_price;
-                                    $this->updata($id,$v,$now_pay,$amount,$now_price);
-									return 2;
-								}else{
-									$now_pay = $b *$now_price;
-                                    $this->updata($id,$v,$now_pay,$b,$now_price);
-									return 2;
-								}
-							
-						}else{
-							if($b >= $rise_ca){
-								$now_pay = $rise_ca * $now_price;
-                                $this->updata($id,$v,$now_pay,$rise_ca,$now_price+0.1);
-								$v = $this->modelShop->where('user_id',$v->user_id)->find();
-							}else{
-								$now_pay = $b *$now_price;
-                                $this->updata($id,$v,$now_pay,$b,$now_price);
-								return 2;
-							}
-							//继续购买剩余需求
-							//当前账户挂买电子币剩余
-							$buyer_dianzibi = $buyer->dianzibi - $now_pay;
-							$after_amount = floor($buyer_dianzibi / $this->price()->cfi_price);
-							//涨价后距离下一次涨价的个数
-							$rise_ca = $this->price()->default_deal - $this->price()->deal;
-							//目前账户所能购买最大数额
-							$b = $member_rank['CFI_split'] - $this->info($id)->CFI;
-							$now_price = $this->price()->cfi_price;
-							$v = $this->modelShop->where('user_id',$v->user_id)->find();
-							//购买需求小于当前卖家
-								if($b >= $amount){
-									$now_pay = $amount * $now_price;
-                                    $this->updata($id,$v,$now_pay,$amount,$now_price);
-									return 2;
-								}else{
-									$now_pay = $b *$now_price;
-                                    $this->updata($id,$v,$now_pay,$b,$now_price);
-									return 2;
-								}
-						}
-
 					}
 				}
 			}
 		}
 		
-		
-
 	}
 	//挂卖逻辑
     public function transaction2($id){
@@ -591,12 +357,18 @@ class CFI extends IndexBase
         }
 	}
     //跟系统交易时刷新数据
-    public function upDataSys($id,$now_pay,$amount,$now_price){
-	    //dump($id);dump($now_price);dump($amount);dump($now_price);die;
-        $this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
+    public function upDataSys($id,$s_id,$now_pay,$amount,$now_price){
+		
+		
+		$this->modelShop->where('id',$s_id)->dec('dianzibi',$now_pay)->inc('buy',$amount)->update();
         $this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
         $this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total - $amount);
-        $user_name = $this->modelMember->where('id',$id)->value('username');
+		$user_name = $this->modelMember->where('id',$id)->value('username');
+		$buyer = $this->modelShop('id',$s_id)->find();
+		if($buy->dianzibi < $this->price()->cfi_price){
+			$this->modelMember->where('id',$buyer->user_id)->inc('dianzibi',$buyer->dianzibi)->update();
+			$this->midelShop->where('id',$s_id)->update(['status'=>2]);
+		}
         $re = [
             'buyer_id' => $id,
             'seller_id' => 0,
@@ -604,12 +376,16 @@ class CFI extends IndexBase
             'deal_number' => $amount,
         ];
         $this->modelDealRecord->setInfo($re);
-    }
+	}
 	//刷新数据
-	public function upData($id,$v,$now_pay,$amount,$now_price){
-        $this->modelShop->where('user_id',$id)->dec('dianzibi',$now_pay)->update();
-        $this->modelMember->where('id',$id)->dec('CFI',$amount)->update();
-        $this->modelShop->where('user_id',$v->user_id)->dec('sell',$amount)->update();
+	public function upData1(){
+
+	}
+	//刷新数据
+	public function upData($buyere,$v,$now_pay,$amount,$now_price){
+        $this->modelShop->where('id',$buyer->id)->dec('dianzibi',$now_pay)->update();
+        $this->modelMember->where('id',$buyer->user_id)->inc('CFI',$amount)->update();
+        $this->modelShop->where('id',$v->id)->dec('sell',$amount)->update();
         $this->modelMember->where('id',$v->user_id)->inc('bonus',$now_pay * 0.54)
             ->inc('wallet',$now_pay * 0.27)
             ->inc('baoguanjin',$now_pay *0.09)
@@ -631,7 +407,10 @@ class CFI extends IndexBase
             'deal_number' => $amount,
         ];
         $this->modelDealRecord->setInfo($rerer);
-        $this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
+		$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
+		if($v->sell < 1){
+			$this->modelShop->where('id',$v->id)->update(['status'=>2]);
+		}
     }
 	//添加流水账单
 	public function bill($id,$name,$type,$number,$shuoming){

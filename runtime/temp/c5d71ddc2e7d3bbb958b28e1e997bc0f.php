@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"/home/workplace/zs/obtest2/public/../app/index/view/cfi/cfi_shop.html";i:1596357056;s:63:"/home/workplace/zs/obtest2/public/../app/index/view/layout.html";i:1585716400;s:67:"/home/workplace/zs/obtest2/public/../app/index/view/layout/top.html";i:1585716400;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/header.html";i:1595917326;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"/home/workplace/zs/obtest2/public/../app/index/view/cfi/cfi_shop.html";i:1596456503;s:63:"/home/workplace/zs/obtest2/public/../app/index/view/layout.html";i:1585716400;s:67:"/home/workplace/zs/obtest2/public/../app/index/view/layout/top.html";i:1585716400;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/header.html";i:1595917326;s:70:"/home/workplace/zs/obtest2/public/../app/index/view/layout/footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,31 +73,73 @@
                     <?php if(!$list2 == Null): ?>
                       当前账户正在挂买:<?php echo $list2['dianzibi']; ?> 币
                     <?php endif; ?>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      当前账户持有CFI： <?php echo $list3['CFI']; ?> 个
                   </td>
                   <td>当前市场单价：$<?php echo $list['cfi_price']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php if(!$list2 == Null): ?>
                       当前账户正在挂卖：<?php echo $list2['sell']; ?>个
                     <?php endif; ?>
-                  </td> 
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      当前账户持有CFI： <?php echo $list3['CFI']; ?> 个
+                  </td>
                 </tr>
                 <tr>
                   <td>操作</td>
-                  <form action="<?php echo url('Cfi/sys_buy'); ?>" method="post">
-                  <td><input type="number" name="cfi_amount" value="">
+                  <form action="" method="post" name="form1">
+                  <td><input type="number" name="cfi_amount" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                             onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                     <input hidden="" name="cfi_price" value="<?php echo $list['cfi_price']; ?>">
-                      <button type="submit">买入</button>
+                      <input hidden name="dianzibi" value="<?php echo $list2['dianzibi']; ?>">
+                      <button onclick="buy()">买入</button>
+                      <button onclick="cont()">继续</button>
+                      <button onclick="withdralbuy()">撤销挂买</button>
                   </td>
                   </form>
-                  <form action="" method="post">
-                  <td><input type="number" name="cfi_amount" value="">
+                  <form action="" method="post" name="form2">
+                  <td><input type="number" name="cfi_amount" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                             onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                     <input hidden="" name="cfi_price" value="<?php echo $list['cfi_price']; ?>">
-                      <button type="submit">卖出</button>
+                      <input hidden name="cfi" value="<?php echo $list2['sell']; ?>">
+                      <button onclick="sell()">卖出</button>
+                      <button onclick="withdralsell()">撤销挂卖</button>
                   </td>
                   </form>
                 </tr>
        
         </tbody>
     </table>
+
+    <script>
+        function buy(){
+//        document.("表单的name值").action
+//        document.("表单的name值").submit;
+          
+            document.form1.action="<?php echo url('Cfi/sys_buy'); ?>";
+
+            document.form1.submit();
+        }
+        function sell() {
+            document.form2.action = "<?php echo url('Cfi/sys_sell'); ?>";
+            document.form2.submit();
+        }
+        function cont(){
+            document.form1.action="<?php echo url('Cfi/sys_buy'); ?>";
+            document.form1.submit();
+        }
+        function withdralbuy() {
+            document.form1.action = "<?php echo url('Cfi/withdralbuy'); ?>";
+            document.form1.submit();
+        }
+        function withdralsell() {
+            document.form2.action = "<?php echo url('Cfi/withdralsell'); ?>";
+            document.form2.submit();
+        }
+        $(function () {
+            //禁用“确认重新提交表单”
+            window.history.replaceState(null, null, window.location.href);
+        })
+    </script>
  
 <footer class="footer">
   <div class="container">

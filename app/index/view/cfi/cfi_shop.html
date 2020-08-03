@@ -54,8 +54,10 @@
     <script>
         function buy(){
 //        document.("表单的name值").action
-//        document.("表单的name值").submit
+//        document.("表单的name值").submit;
+          
             document.form1.action="{:url('Cfi/sys_buy')}";
+
             document.form1.submit();
         }
         function sell() {
