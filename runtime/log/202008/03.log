@@ -1,0 +1,68 @@
+---------------------------------------------------------------
+[ 2020-08-03T08:57:13+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.040002s][吞吐率：25.00req/s] [内存消耗：2,142.84kb] [文件加载：53]
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2020-08-03T08:57:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.047002s][吞吐率：21.28req/s] [内存消耗：2,288.88kb] [文件加载：58]
+[ error ] [8]unserialize(): Error at offset 0 of 335 bytes[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\cache\driver\File.php:122]
+---------------------------------------------------------------
+[ 2020-08-03T08:57:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：2,804.25kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T08:57:53+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.063003s][吞吐率：15.87req/s] [内存消耗：2,798.30kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T08:58:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,804.71kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T10:39:39+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：3,039.02kb] [文件加载：78]
+[ error ] [0]语法解析错误: syntax error, unexpected 'cfi_price' (T_STRING), expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\8ab2d951e0489375bcb470501e59e09d.php:93]
+---------------------------------------------------------------
+[ 2020-08-03T10:40:15+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：3,106.57kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Shop->member_rank[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-03T10:47:15+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：3,106.57kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Shop->member_rank[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-03T11:00:58+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.094006s][吞吐率：10.64req/s] [内存消耗：2,802.58kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:01:02+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,802.16kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:01:06+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.098006s][吞吐率：10.20req/s] [内存消耗：2,802.58kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:01:15+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.056004s][吞吐率：17.86req/s] [内存消耗：2,796.20kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:02:02+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,802.32kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:02:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,796.37kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:02:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,796.20kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T11:05:10+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.082004s][吞吐率：12.19req/s] [内存消耗：2,735.41kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id2' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-03T11:28:07+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：2,785.40kb] [文件加载：76]
+[ error ] [0]method not exist:think\db\Query->modelMember[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1596101804;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1596415587;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -150,8 +150,7 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="<?php echo url('Cfi/price_buy'); ?>">买入CFI</a></li>
-        <li><a href="#">卖出CFI</a></li>
+        <li><a href="<?php echo url('Cfi/price_buy'); ?>">CFI交易</a></li>
         <li><a href="">买入记录</a></li>
         <li><a href="#">卖出记录</a></li>
       </ul>
@@ -266,6 +265,10 @@
             <div class="mui-col-xs-4"><label>电子币</label></div>
             <div class="mui-col-xs-8"><?php echo $data['dianzibi']; ?></div>
         </div>
+        <div class="mui-row code_cell">
+          <div class="mui-col-xs-4"><label>CFI</label></div>
+          <div class="mui-col-xs-8"><?php echo $data['CFI']; ?></div>
+      </div>
         <div class="mui-row code_cell">
             <div class="mui-col-xs-4"><label>提现申请</label></div>
             <div class="mui-col-xs-8"><?php echo $data['re_withdrawl']; ?></div>

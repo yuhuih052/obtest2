@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1596161046;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1596422406;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,8 +69,16 @@
         <tbody>
                 <tr>
                   <td></td>
-                  <td>当前价格：$<?php echo $list['cfi_price']; ?></td>
-                  <td>当前价格：$<?php echo $list['cfi_price']; ?></td> 
+                  <td>当前市场单价：$<?php echo $list['cfi_price']; ?> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <?php if(!$list2 == Null): ?>
+                      当前账户正在挂买:<?php echo $list2['dianzibi']; ?> 币
+                    <?php endif; ?>
+                  </td>
+                  <td>当前市场单价：$<?php echo $list['cfi_price']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <?php if(!$list2 == Null): ?>
+                      当前账户正在挂卖：<?php echo $list2['sell']; ?>个
+                    <?php endif; ?>
+                  </td> 
                 </tr>
                 <tr>
                   <td>操作</td>
@@ -80,7 +88,7 @@
                       <button type="submit">买入</button>
                   </td>
                   </form>
-                  <form action="" method="post">
+                  <form action="<?php echo url('Cfi/sys_sell'); ?>" method="post">
                   <td><input type="number" name="cfi_amount" value="">
                     <input hidden="" name="cfi_price" value="<?php echo $list['cfi_price']; ?>">
                       <button type="submit">卖出</button>

@@ -18,4 +18,7 @@ class CFI extends IndexBase
 	public function sys_buy(){
 		$this->jump($this->logicCfi->sys_buy($this->param));
 	}
+    public function sys_sell(){
+        $this->jump($this->logicCfi->sys_sell($this->param));
+    }
 }
