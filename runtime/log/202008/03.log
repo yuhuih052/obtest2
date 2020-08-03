@@ -66,3 +66,59 @@
 [ 2020-08-03T11:28:07+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
 [ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：2,785.40kb] [文件加载：76]
 [ error ] [0]method not exist:think\db\Query->modelMember[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-03T14:38:02+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,773.39kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T14:38:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,767.27kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-03T15:06:35+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：3,074.52kb] [文件加载：80]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':where_user_id' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-08-03T15:18:57+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.090006s][吞吐率：11.11req/s] [内存消耗：3,123.27kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:608]
+---------------------------------------------------------------
+[ 2020-08-03T16:05:23+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/withdralsell.html
+[ info ] www.obtest2.com/index.php/cfi/withdralsell.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,783.72kb] [文件加载：74]
+[ error ] [0]method not exist:think\db\Query->uodate[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-03T16:05:46+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/withdralbuy.html
+[ info ] www.obtest2.com/index.php/cfi/withdralbuy.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,777.72kb] [文件加载：74]
+[ error ] [0]method not exist:think\db\Query->uodate[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-03T16:13:17+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.120007s][吞吐率：8.33req/s] [内存消耗：3,187.84kb] [文件加载：81]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'obtest2.ob_deal_record' doesn't exist[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-03T16:16:46+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/withdralbuy.html
+[ info ] www.obtest2.com/index.php/cfi/withdralbuy.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,863.09kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':where_user_id' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-08-03T17:00:36+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/index/id/114.html
+[ info ] www.obtest2.com/index.php/user/index/id/114.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：3,262.61kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected 'Cfi' (T_STRING), expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\892c99f1167172921edf374a754c4e8d.php:155]
+---------------------------------------------------------------
+[ 2020-08-03T17:00:54+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/index/id/114.html
+[ info ] www.obtest2.com/index.php/user/index/id/114.html [运行时间：0.092006s][吞吐率：10.87req/s] [内存消耗：3,262.80kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected 'buyrecord' (T_STRING), expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\892c99f1167172921edf374a754c4e8d.php:154]
+---------------------------------------------------------------
+[ 2020-08-03T17:00:56+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/index/id/114.html
+[ info ] www.obtest2.com/index.php/user/index/id/114.html [运行时间：0.068003s][吞吐率：14.71req/s] [内存消耗：3,042.49kb] [文件加载：74]
+[ error ] [0]语法解析错误: syntax error, unexpected 'buyrecord' (T_STRING), expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\892c99f1167172921edf374a754c4e8d.php:154]
+---------------------------------------------------------------
+[ 2020-08-03T17:08:05+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/buyrecord.html
+[ info ] www.obtest2.com/index.php/cfi/buyrecord.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：3,093.42kb] [文件加载：80]
+[ error ] [2]Use of undefined constant vo - assumed 'vo' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\1e51076fc7eb2cbc2a3be49af86e00f8.php:90]
+---------------------------------------------------------------
+[ 2020-08-03T17:08:16+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/buyrecord.html
+[ info ] www.obtest2.com/index.php/cfi/buyrecord.html [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：3,084.95kb] [文件加载：78]
+[ error ] [0]类的属性不存在:app\common\model\DealRecord->buyer[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-03T17:13:08+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：3,112.53kb] [文件加载：76]
+[ error ] [8]未定义数组索引: cfi_amount[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:30]

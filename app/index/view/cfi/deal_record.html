@@ -1,0 +1,52 @@
+<div class="box">
+
+    <div class="box-header">
+
+        <div class="row">
+
+            <div class="col-sm-7">
+                <div class="box-tools search-form pull-right">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box-body table-responsive">
+        <table  class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th hidden>头像</th>
+                <th>单价</th>
+                <th>成交量</th>
+                <th>时间</th>
+            </tr>
+            </thead>
+
+            {notempty name='list'}
+            <tbody>
+            {volist name='list' id='vo'}
+            <tr>
+                <td>{$vo.deal_price}</td>
+                {if $vo.buyer_id == $Request.session.user_id2}
+                <td>{$vo.deal_number}&nbsp&nbsp&nbsp(买入)</td>
+                {else/}
+                <td>{$vo.deal_number}&nbsp&nbsp&nbsp(卖出)</td>
+                {/if}
+                <td>{$vo.create_time}</td>
+
+            </tr>
+            {/volist}
+            </tbody>
+            {else/}
+            <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+            {/notempty}
+        </table>
+    </div>
+
+    <div class="box-footer clearfix text-center">
+    </div>
+    <a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>
+    <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+</div>
+
