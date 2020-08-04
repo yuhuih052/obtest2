@@ -1362,7 +1362,7 @@ public function teamTree3($root_id)
         $re = [];
         $status = ['正常', '未激活', '封号'];
         foreach ($this->modelMember->where('leader_id', $member2->id)->select() as $vo) {
-        dd($vo);
+        //dd($vo);
             $data = [
                 'id' => $vo->id,
                 // 'status' => $vo->getData('status'),
@@ -1473,7 +1473,8 @@ public function teamTree3($root_id)
     public function billDetail(){
         $id = session('user_id2');
         return $this->modelBill->where('user_id',$id)
-                            ->where('wallet|bonus|baoguanjin','not null')
+                            ->where('wallet|bonus|baoguanjin|dianzibi_all','not null')
+                            ->order('create_time','desc')
                             ->select();
     }
     //申请报单中心

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1596446032;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1596533229;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,7 +93,7 @@
                       <input hidden name="dianzibi" value="<?php echo $list2['dianzibi']; ?>">
                       <button onclick="buy()">买入</button>
                       <button onclick="cont()">继续</button>
-                      <button onclick="withdralbuy()">撤销挂买</button>
+                      <button onclick="withBuyS()">撤销挂买</button>
                   </td>
                   </form>
                   <form action="" method="post" name="form2">
@@ -102,19 +102,76 @@
                     <input hidden="" name="cfi_price" value="<?php echo $list['cfi_price']; ?>">
                       <input hidden name="cfi" value="<?php echo $list2['sell']; ?>">
                       <button onclick="sell()">卖出</button>
-                      <button onclick="withdralsell()">撤销挂卖</button>
+                      <button onclick="withSellS()">撤销挂卖</button>
                   </td>
                   </form>
                 </tr>
        
         </tbody>
     </table>
+<table class="table table-bordered" style="width: 48%;float: left">
+    <thead>
+    <tr>
+        <td>挂买</td>
+        <td>剩余成交</td>
+        <td>状态</td>
+    </tr>
+    </thead>
+    <?php if(!(empty($list4) || (($list4 instanceof \think\Collection || $list4 instanceof \think\Paginator ) && $list4->isEmpty()))): ?>
+    <tbody>
+    <?php if(is_array($list4) || $list4 instanceof \think\Collection || $list4 instanceof \think\Paginator): $i = 0; $__LIST__ = $list4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo4): $mod = ($i % 2 );++$i;?>
+    <tr>
 
+        <td><?php echo $vo4['buy']; ?></td>
+        <td><?php echo $vo4['dianzibi']; ?></td>
+        <td><?php if($vo4['status'] == 1): ?>挂买中
+            <?php elseif($vo4['status'] ==2): ?>订单完成
+            <?php elseif($vo4['status'] ==3): ?>订单关闭
+            <?php endif; ?>
+        </td>
+
+    </tr>
+    <?php endforeach; endif; else: echo "" ;endif; ?>
+    </tbody>
+    <?php else: ?>
+    <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
+    <?php endif; ?>
+</table>
+    <table class="table table-bordered" style="width: 48%;float: right">
+        <thead>
+        <tr>
+            <td>挂卖</td>
+            <td>剩余成交</td>
+            <td>状态</td>
+        </tr>
+        </thead>
+        <?php if(!(empty($list5) || (($list5 instanceof \think\Collection || $list5 instanceof \think\Paginator ) && $list5->isEmpty()))): ?>
+        <tbody>
+        <?php if(is_array($list5) || $list5 instanceof \think\Collection || $list5 instanceof \think\Paginator): $i = 0; $__LIST__ = $list5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo5): $mod = ($i % 2 );++$i;?>
+        <tr>
+
+            <td><?php echo $vo5['sell_a']; ?></td>
+            <td><?php echo $vo5['sell']; ?></td>
+            <td><?php if($vo5['status'] == 1): ?>挂卖中
+                <?php elseif($vo5['status'] ==2): ?>订单完成
+                <?php elseif($vo5['status'] ==3): ?>订单关闭
+                <?php endif; ?>
+            </td>
+
+        </tr>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+        </tbody>
+        <?php else: ?>
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
+        <?php endif; ?>
+    </table>
     <script>
         function buy(){
 //        document.("表单的name值").action
-//        document.("表单的name值").submit
+//        document.("表单的name值").submit;
+          
             document.form1.action="<?php echo url('Cfi/sys_buy'); ?>";
+
             document.form1.submit();
         }
         function sell() {
@@ -125,12 +182,12 @@
             document.form1.action="<?php echo url('Cfi/sys_buy'); ?>";
             document.form1.submit();
         }
-        function withdralbuy() {
-            document.form1.action = "<?php echo url('Cfi/withdralbuy'); ?>";
+        function withBuyS() {
+            document.form1.action = "<?php echo url('Cfi/withBuyS'); ?>";
             document.form1.submit();
         }
-        function withdralsell() {
-            document.form2.action = "<?php echo url('Cfi/withdralsell'); ?>";
+        function withSellS() {
+            document.form2.action = "<?php echo url('Cfi/withSellS'); ?>";
             document.form2.submit();
         }
         $(function () {

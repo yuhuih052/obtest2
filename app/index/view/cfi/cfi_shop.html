@@ -34,7 +34,7 @@
                       <input hidden name="dianzibi" value="{$list2.dianzibi}">
                       <button onclick="buy()">买入</button>
                       <button onclick="cont()">继续</button>
-                      <button onclick="withdralbuy()">撤销挂买</button>
+                      <button onclick="withBuyS()">撤销挂买</button>
                   </td>
                   </form>
                   <form action="" method="post" name="form2">
@@ -43,14 +43,69 @@
                     <input hidden="" name="cfi_price" value="{$list.cfi_price}">
                       <input hidden name="cfi" value="{$list2.sell}">
                       <button onclick="sell()">卖出</button>
-                      <button onclick="withdralsell()">撤销挂卖</button>
+                      <button onclick="withSellS()">撤销挂卖</button>
                   </td>
                   </form>
                 </tr>
        
         </tbody>
     </table>
+<table class="table table-bordered" style="width: 48%;float: left">
+    <thead>
+    <tr>
+        <td>挂买</td>
+        <td>剩余成交</td>
+        <td>状态</td>
+    </tr>
+    </thead>
+    {notempty name='list4'}
+    <tbody>
+    {volist name='list4' id='vo4'}
+    <tr>
 
+        <td>{$vo4.buy}</td>
+        <td>{$vo4.dianzibi}</td>
+        <td>{if $vo4.status == 1}挂买中
+            {elseif $vo4.status ==2/}订单完成
+            {elseif $vo4.status ==3/}订单关闭
+            {/if}
+        </td>
+
+    </tr>
+    {/volist}
+    </tbody>
+    {else/}
+    <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+    {/notempty}
+</table>
+    <table class="table table-bordered" style="width: 48%;float: right">
+        <thead>
+        <tr>
+            <td>挂卖</td>
+            <td>剩余成交</td>
+            <td>状态</td>
+        </tr>
+        </thead>
+        {notempty name='list5'}
+        <tbody>
+        {volist name='list5' id='vo5'}
+        <tr>
+
+            <td>{$vo5.sell_a}</td>
+            <td>{$vo5.sell}</td>
+            <td>{if $vo5.status == 1}挂卖中
+                {elseif $vo5.status ==2/}订单完成
+                {elseif $vo5.status ==3/}订单关闭
+                {/if}
+            </td>
+
+        </tr>
+        {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+        {/notempty}
+    </table>
     <script>
         function buy(){
 //        document.("表单的name值").action
@@ -68,12 +123,12 @@
             document.form1.action="{:url('Cfi/sys_buy')}";
             document.form1.submit();
         }
-        function withdralbuy() {
-            document.form1.action = "{:url('Cfi/withdralbuy')}";
+        function withBuyS() {
+            document.form1.action = "{:url('Cfi/withBuyS')}";
             document.form1.submit();
         }
-        function withdralsell() {
-            document.form2.action = "{:url('Cfi/withdralsell')}";
+        function withSellS() {
+            document.form2.action = "{:url('Cfi/withSellS')}";
             document.form2.submit();
         }
         $(function () {

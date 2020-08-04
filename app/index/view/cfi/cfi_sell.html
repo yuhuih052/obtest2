@@ -1,0 +1,36 @@
+<div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>用户</th>
+            <th>总挂卖</th>
+            <th>以成交</th>
+            <th>挂买时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+        {notempty name='list'}
+        <tbody>
+        {volist name='list' id='vo'}
+        <form action="{:url('Cfi/withdralsell')}" method="post">
+            <tr>
+                <input hidden name="id" value="{$vo.id}">
+                <input hidden name="cfi" value="{$vo.sell}">
+                <td>{$vo.user_name}</td>
+                <td>{$vo.sell_a}</td>
+                <td>{$vo.sell}</td>
+                <td>{$vo.create_time}</td>
+                <td><button type="submit">撤销挂买</button></td>
+            </tr>
+        </form>
+        {/volist}
+        </tbody>
+        {else/}
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+        {/notempty}
+    </table>
+</div>
+{list->render}
+<a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>

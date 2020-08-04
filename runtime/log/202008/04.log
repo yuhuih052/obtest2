@@ -1,0 +1,132 @@
+---------------------------------------------------------------
+[ 2020-08-04T08:39:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.153009s][吞吐率：6.54req/s] [内存消耗：2,778.49kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-04T08:39:45+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,778.94kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-04T08:39:49+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：2,778.77kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-04T08:42:55+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/index/id/114.html
+[ info ] www.obtest2.com/index.php/user/index/id/114.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,143.52kb] [文件加载：53]
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2020-08-04T08:43:41+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/index/id/114.html
+[ info ] www.obtest2.com/index.php/user/index/id/114.html [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：2,289.31kb] [文件加载：58]
+[ error ] [8]unserialize(): Error at offset 0 of 335 bytes[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\cache\driver\File.php:122]
+---------------------------------------------------------------
+[ 2020-08-04T09:43:44+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.119007s][吞吐率：8.40req/s] [内存消耗：3,119.77kb] [文件加载：79]
+[ error ] [2]Use of undefined constant id - assumed 'id' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:72]
+---------------------------------------------------------------
+[ 2020-08-04T09:45:34+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.124007s][吞吐率：8.06req/s] [内存消耗：3,093.85kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:457]
+---------------------------------------------------------------
+[ 2020-08-04T09:50:10+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：3,101.52kb] [文件加载：79]
+[ error ] [0]method not exist:think\db\Query->modelShop[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-04T09:54:26+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：3,097.90kb] [文件加载：78]
+[ error ] [0]类的属性不存在:app\index\logic\CFI->midelShop[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-04T10:27:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/billdetail.html
+[ info ] www.obtest2.com/index.php/user/billdetail.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：3,270.22kb] [文件加载：78]
+[ error ] [0]类的属性不存在:app\common\model\Bill->dianzibi[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-04T10:29:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/billdetail.html
+[ info ] www.obtest2.com/index.php/user/billdetail.html [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：2,985.05kb] [文件加载：77]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dianzibi' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-04T10:31:48+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/billdetail.html
+[ info ] www.obtest2.com/index.php/user/billdetail.html [运行时间：0.072005s][吞吐率：13.89req/s] [内存消耗：3,143.32kb] [文件加载：78]
+[ error ] [2]call_user_func_array() expects parameter 1 to be a valid callback, class 'think\Collection' does not have a method 'select'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Paginator.php:384]
+---------------------------------------------------------------
+[ 2020-08-04T10:32:02+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/user/billdetail.html
+[ info ] www.obtest2.com/index.php/user/billdetail.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：3,059.76kb] [文件加载：75]
+[ error ] [0]致命错误: Call to undefined method think\Collection::paginate()[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:1478]
+---------------------------------------------------------------
+[ 2020-08-04T11:43:09+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.084004s][吞吐率：11.90req/s] [内存消耗：3,137.15kb] [文件加载：78]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:453]
+---------------------------------------------------------------
+[ 2020-08-04T14:40:57+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,158.24kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:503]
+---------------------------------------------------------------
+[ 2020-08-04T14:48:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,534.71kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected '$this' (T_VARIABLE)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:241]
+---------------------------------------------------------------
+[ 2020-08-04T14:48:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.046003s][吞吐率：21.74req/s] [内存消耗：2,441.18kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected '$this' (T_VARIABLE)[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:241]
+---------------------------------------------------------------
+[ 2020-08-04T15:30:31+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：3,159.77kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:506]
+---------------------------------------------------------------
+[ 2020-08-04T15:34:02+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,159.77kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:506]
+---------------------------------------------------------------
+[ 2020-08-04T15:51:53+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.107006s][吞吐率：9.35req/s] [内存消耗：3,124.24kb] [文件加载：78]
+[ error ] [0]method not exist:think\db\Query->modelShop[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-04T15:52:18+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：3,092.86kb] [文件加载：77]
+[ error ] [0]类的属性不存在:app\index\logic\CFI->midelShop[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-04T15:52:43+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.115006s][吞吐率：8.70req/s] [内存消耗：3,099.20kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:474]
+---------------------------------------------------------------
+[ 2020-08-04T16:38:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.095006s][吞吐率：10.53req/s] [内存消耗：3,207.63kb] [文件加载：81]
+[ error ] [8]未定义变量: status[D:\phpstudy_pro\WWW\obtest2\runtime\temp\8ab2d951e0489375bcb470501e59e09d.php:127]
+---------------------------------------------------------------
+[ 2020-08-04T16:41:44+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_sell.html
+[ info ] www.obtest2.com/index.php/cfi/sys_sell.html [运行时间：0.092006s][吞吐率：10.87req/s] [内存消耗：3,162.29kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:506]
+---------------------------------------------------------------
+[ 2020-08-04T16:46:09+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,162.78kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:507]
+---------------------------------------------------------------
+[ 2020-08-04T16:47:07+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,095.86kb] [文件加载：77]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:31]
+---------------------------------------------------------------
+[ 2020-08-04T16:49:02+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.115006s][吞吐率：8.70req/s] [内存消耗：3,162.78kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:507]
+---------------------------------------------------------------
+[ 2020-08-04T16:51:49+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,162.82kb] [文件加载：79]
+[ error ] [2]Division by zero[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:508]
+---------------------------------------------------------------
+[ 2020-08-04T16:56:55+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：3,138.17kb] [文件加载：79]
+[ error ] [0]系统跳转失败:[D:\phpstudy_pro\WWW\obtest2\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-08-04T16:59:00+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：3,138.17kb] [文件加载：79]
+[ error ] [0]系统跳转失败:[D:\phpstudy_pro\WWW\obtest2\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-08-04T17:35:43+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/withdralbuy/id/74.html
+[ info ] www.obtest2.com/index.php/cfi/withdralbuy/id/74.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,915.02kb] [文件加载：75]
+[ error ] [8]未定义数组索引: dianzibi[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:619]
+---------------------------------------------------------------
+[ 2020-08-04T17:57:42+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/sellrecord.html
+[ info ] www.obtest2.com/index.php/cfi/sellrecord.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：3,059.41kb] [文件加载：77]
+[ error ] [0]语法解析错误: syntax error, unexpected 'else' (T_ELSE), expecting end of file[D:\phpstudy_pro\WWW\obtest2\runtime\temp\1e51076fc7eb2cbc2a3be49af86e00f8.php:81]
+---------------------------------------------------------------
+[ 2020-08-04T18:00:55+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/withbuys.html
+[ info ] www.obtest2.com/index.php/cfi/withbuys.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：3,009.51kb] [文件加载：77]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ',' or ';'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\bcf17ad500197c5cf91e7a58eb3787d2.php:80]

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\deal_record.html";i:1596535085;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_sell.html";i:1596534228;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,57 +57,40 @@
         </div>
     </div>
 </div>
-<div class="box">
+<div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>总挂卖</th>
+            <th>以成交</th>
+            <th>挂买时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
 
-    <div class="box-header">
-
-        <div class="row">
-
-            <div class="col-sm-7">
-                <div class="box-tools search-form pull-right">
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="box-body table-responsive">
-        <table  class="table table-bordered table-hover table-striped">
-            <thead>
+        <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
+        <tbody>
+        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+        <form action="<?php echo url('Cfi/withdralsell'); ?>" method="post">
             <tr>
-                <th hidden>头像</th>
-                <th>单价</th>
-                <th><?php if($data == 1): ?>成交值（买入）
-                    <?php else: ?>成交量（卖出）CFI
-                    <?php endif; ?>
-                </th>
-                <th>时间</th>
-            </tr>
-            </thead>
-
-            <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
-            <tbody>
-            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-            <tr>
-                <td><?php echo $vo['deal_price']; ?></td>
-                <td><?php echo $vo['deal_number']; ?>&nbsp&nbsp&nbsp</td>
+                <input hidden name="id" value="<?php echo $vo['id']; ?>">
+                <input hidden name="cfi" value="<?php echo $vo['sell']; ?>">
+                <td><?php echo $vo['sell_a']; ?></td>
+                <td><?php echo $vo['sell']; ?></td>
                 <td><?php echo $vo['create_time']; ?></td>
+                <td><button type="submit">撤销挂买</button></td>
             </tr>
-            <?php endforeach; endif; else: echo "" ;endif; ?>
-            </tbody>
-            <?php else: ?>
-            <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
-            <?php endif; ?>
-        </table>
-    </div>
-
-    <div class="box-footer clearfix text-center">
-    </div>
-    <a href="<?php echo url('user/index',['id' => \think\Request::instance()->session('user_id2')]); ?>">个人列表</a>
-    <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+        </form>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+        </tbody>
+        <?php else: ?>
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
+        <?php endif; ?>
+    </table>
 </div>
-
-
+{list->render}
+<a href="<?php echo url('user/index',['id' => \think\Request::instance()->session('user_id2')]); ?>">个人列表</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 <footer class="footer">
   <div class="container">
       <p> 本站由 <strong><a href="http://www.onebase.org" target="_blank">OneBase</a></strong> 强力驱动</p>

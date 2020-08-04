@@ -6,6 +6,7 @@
           <th>报单币</th>
           <th>现金币</th>
           <th>保管金</th>
+          <th>电子币</th>
            <th>时间</th>
 
       </tr>
@@ -19,6 +20,7 @@
                   <td>{$vo.wallet}</td>
                   <td>{$vo.bonus}</td>
                   <td>{$vo.baoguanjin}</td>
+                    <td>{$vo.dianzibi_all}</td>
                   <td>{$vo.create_time}</td>
                 </tr>
             {/volist}
@@ -28,5 +30,6 @@
       {/notempty}
     </table>
   </div>
+{list->render}
   <a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>
   <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
