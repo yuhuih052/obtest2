@@ -93,6 +93,7 @@ class CFI extends IndexBase
 						$now_pay = $cfi_total * $this->price()->cfi_price;
          $this->priceUd($this->price()->cfi_price,$this->price()->deal+$cfi_total,$this->price()->cfi_total - $cfi_total);
 						$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+						return 2;
 					}
 				}else{
 					//先计算未涨价部分
@@ -111,6 +112,7 @@ class CFI extends IndexBase
 					$now_pay = $amount * $this->price()->cfi_price;
 					$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
                     $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total-$amount);
+                    return 2;
 				}
 				
 			}else{
@@ -124,15 +126,11 @@ class CFI extends IndexBase
 				    //挂卖小于涨价空间
 					if($v->sell <$rise_ca){
 						$now_pay = $v->sell * $this->price()->cfi_price;
-
 						$this->upData($buyer,$v,$now_pay,$v->sell,$this->price()->cfi_price);
-
 						continue;
 					}else{
 						$now_pay = $this->price()->cfi_prce * $rise_ca;
-
                         $this->upData($buyer,$v,$now_pay,$rise_ca,$this->price()->cfi_price+0.1);
-
                             if($this->price()->cfi_price >= 4){
                                 $this->splitCfi();
                                 return 2;
@@ -145,20 +143,16 @@ class CFI extends IndexBase
                             }
                             $now_pay = $amount * $this->price()->cfi_price;
                             $this->upData($buyer,$v,$now_pay,$amount,$this->price()->cfi_price);
-
 					}
 				}else{
                     //挂买小于涨价空间
                     if($amount <$rise_ca){
-
                         $now_pay = $amount * $this->price()->cfi_price;
                         $this->upData($buyer,$v,$now_pay,$amount,$this->price()->cfi_price);
-
                         return 1;
                     }else{
                         $now_pay = $this->price()->cfi_prce * $rise_ca;
                         $this->upData($buyer,$v,$now_pay,$rise_ca,$this->price()->cfi_price+0.1);
-
                         if($this->price()->cfi_price >= 4){
                             $this->splitCfi();
                             return 2;
@@ -171,15 +165,67 @@ class CFI extends IndexBase
                         }
                         $now_pay = $amount * $this->price()->cfi_price;
                         $this->upData($buyer,$v,$now_pay,$amount,$this->price()->cfi_price);
-
                         return 2;
                     }
                 }
 			}
-			return 2;
+			$this->buyAndsys($id);
 		}
 		
 	}
+	//与系统交易
+    public function buyAndsys($id){
+        $seller_list = $this->modelShop->where('sell','>',0)
+            ->where('status',1)
+            ->order('create_time','asc')
+            ->select();
+        $buyer = $this->modelShop->where('user_id',$id)
+            ->where('status',1)
+            ->where('dianzibi','>',0)
+            ->order('create_time','asc')
+            ->find();
+        //当前价格挂买数量
+        $amount = floor($buyer->dianzibi / $this->price()->cfi_price);
+        $rise_ca = $this->price()->default_deal - $this->price()->deal;
+        if($this->price()->cfi_total > 0){
+            $cfi_total = $this->price()->cfi_total;
+            if($amount < $rise_ca){
+                if($amount <= $cfi_total){
+                    $now_pay = $amount * $this->price()->cfi_price;
+                    $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total - $amount);
+                    $this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+                    return 2;
+                }else{
+                    $now_pay = $cfi_total * $this->price()->cfi_price;
+                    $this->priceUd($this->price()->cfi_price,$this->price()->deal+$cfi_total,$this->price()->cfi_total - $cfi_total);
+                    $this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+                    return 2;
+                }
+            }else{
+                //先计算未涨价部分
+                $now_pay = $rise_ca * $this->price()->cfi_price;
+                $this->upDataSys($id,$buyer->id,$now_pay,$rise_ca,$this->price()->cfi_price);
+                $this->priceUd($this->price()->cfi_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total-$rise_ca);
+
+                //判断是否达到拆分条件
+                if($this->price()->cfi_price >= 4){
+                    $this->splitCfi();
+                    return 3;
+                }
+                //再计算涨价后的
+                $amount = $amount - $rise_ca;
+
+                $now_pay = $amount * $this->price()->cfi_price;
+                $this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+                $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total-$amount);
+                return 2;
+            }
+
+        }else{
+            return 1;
+        }
+    }
+    /*******与系统交易函数结束*/
     //挂卖
     public function sys_sell($data){
         $id = $this->info(session('user_id2'))->id;
