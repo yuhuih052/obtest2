@@ -130,3 +130,7 @@
 [ 2020-08-04T18:00:55+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/withbuys.html
 [ info ] www.obtest2.com/index.php/cfi/withbuys.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：3,009.51kb] [文件加载：77]
 [ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ',' or ';'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\bcf17ad500197c5cf91e7a58eb3787d2.php:80]
+---------------------------------------------------------------
+[ 2020-08-04T18:45:03+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.155008s][吞吐率：6.45req/s] [内存消耗：3,212.89kb] [文件加载：79]
+[ error ] [0]系统跳转失败:[D:\phpstudy_pro\WWW\obtest2\thinkphp\helper.php:59]

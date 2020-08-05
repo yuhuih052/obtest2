@@ -1,0 +1,64 @@
+---------------------------------------------------------------
+[ 2020-08-05T08:43:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.167009s][吞吐率：5.99req/s] [内存消耗：2,917.61kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-05T08:43:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/cfi/price_buy.html
+[ info ] www.obtest2.com/index.php/cfi/price_buy.html [运行时间：0.066003s][吞吐率：15.15req/s] [内存消耗：2,912.95kb] [文件加载：77]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:19]
+---------------------------------------------------------------
+[ 2020-08-05T09:33:21+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：3,110.33kb] [文件加载：77]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:31]
+---------------------------------------------------------------
+[ 2020-08-05T09:55:00+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/cfi/sys_buy.html
+[ info ] www.obtest2.com/index.php/cfi/sys_buy.html [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,207.45kb] [文件加载：79]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Cfi.php:518]
+---------------------------------------------------------------
+[ 2020-08-05T10:25:20+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.083004s][吞吐率：12.05req/s] [内存消耗：2,946.28kb] [文件加载：77]
+[ error ] [8]未定义变量: list[D:\phpstudy_pro\WWW\obtest2\runtime\temp\d16230fd4e18630b3a907baefc88eea7.php:64]
+---------------------------------------------------------------
+[ 2020-08-05T10:26:55+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：2,935.77kb] [文件加载：77]
+[ error ] [8]未定义变量: list[D:\phpstudy_pro\WWW\obtest2\runtime\temp\d16230fd4e18630b3a907baefc88eea7.php:88]
+---------------------------------------------------------------
+[ 2020-08-05T10:49:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：2,693.70kb] [文件加载：76]
+[ error ] [8]Undefined property: think\db\Query::$find[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:11]
+---------------------------------------------------------------
+[ 2020-08-05T10:51:24+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/ep/sys_buyep.html
+[ info ] www.obtest2.com/index.php/ep/sys_buyep.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,461.59kb] [文件加载：73]
+[ error ] [0]类型错误: Too few arguments to function app\index\logic\Ep::sys_buyEp(), 0 passed in D:\phpstudy_pro\WWW\obtest2\app\index\controller\Ep.php on line 16 and exactly 1 expected[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:13]
+---------------------------------------------------------------
+[ 2020-08-05T11:56:46+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/ep/sys_sellep.html
+[ info ] www.obtest2.com/index.php/ep/sys_sellep.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：2,988.05kb] [文件加载：79]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'fukuan_time' doesn't have a default value[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-08-05T11:57:58+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/ep/sys_sellep.html
+[ info ] www.obtest2.com/index.php/ep/sys_sellep.html [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：2,988.02kb] [文件加载：79]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'amount' doesn't have a default value[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-08-05T12:11:22+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,670.59kb] [文件加载：75]
+[ error ] [0]method not exist:think\db\Query->sys_sell_list[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-05T12:11:57+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,005.09kb] [文件加载：79]
+[ error ] [0]类的属性不存在:app\common\model\Ep->sell_a[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-05T12:15:10+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/ep/sys_sellep.html
+[ info ] www.obtest2.com/index.php/ep/sys_sellep.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：2,984.92kb] [文件加载：77]
+[ error ] [0]系统跳转失败:[D:\phpstudy_pro\WWW\obtest2\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-08-05T12:27:59+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,531.63kb] [文件加载：70]
+[ error ] [0]语法解析错误: syntax error, unexpected ')'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:46]
+---------------------------------------------------------------
+[ 2020-08-05T16:57:20+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/ep/sys_buyep.html
+[ info ] www.obtest2.com/index.php/ep/sys_buyep.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,719.73kb] [文件加载：77]
+[ error ] [8]Object of class app\common\model\SiteArgm could not be converted to number[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:145]
+---------------------------------------------------------------
+[ 2020-08-05T18:07:55+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_shop.html
+[ info ] www.obtest2.com/index.php/ep/ep_shop.html [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：2,296.14kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected '}'[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Ep.php:35]

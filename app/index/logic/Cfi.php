@@ -41,6 +41,7 @@ class CFI extends IndexBase
 		if($pay > $member['dianzibi'] ){
 			return [RESULT_SUCCESS,'电子币不足'];
 		}
+
 		$this->modelMember->where('id',$id)->dec('dianzibi',$pay)->update();
 			$re =[
 				'user_id' => $id,
@@ -49,7 +50,9 @@ class CFI extends IndexBase
                 'buy' => $pay,
 				'create_time' => time(),
 			];
+			
 			$this->modelShop->setInfo($re);
+
 			$this->bill($id,$member['username'],'dianzibi_all',$pay,'挂买CFI');
 
 		$re = $this->transaction($id,$member_rank);
@@ -87,18 +90,18 @@ class CFI extends IndexBase
 					if($amount <= $cfi_total){
 						$now_pay = $amount * $this->price()->cfi_price;
                         $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total - $amount);
-						$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+						$this->upDataSys($buyer,$now_pay,$amount,$this->price()->cfi_price);
 						return 2;
 					}else{
 						$now_pay = $cfi_total * $this->price()->cfi_price;
          $this->priceUd($this->price()->cfi_price,$this->price()->deal+$cfi_total,$this->price()->cfi_total - $cfi_total);
-						$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+						$this->upDataSys($buyer,$now_pay,$amount,$this->price()->cfi_price);
 						return 2;
 					}
 				}else{
 					//先计算未涨价部分
 					$now_pay = $rise_ca * $this->price()->cfi_price;
-                    $this->upDataSys($id,$buyer->id,$now_pay,$rise_ca,$this->price()->cfi_price);
+                    $this->upDataSys($buyer,$now_pay,$rise_ca,$this->price()->cfi_price);
                     $this->priceUd($this->price()->cfi_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total-$rise_ca);
 
 					//判断是否达到拆分条件
@@ -110,7 +113,7 @@ class CFI extends IndexBase
 					$amount = $amount - $rise_ca;
 
 					$now_pay = $amount * $this->price()->cfi_price;
-					$this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+					$this->upDataSys($buyer,$now_pay,$amount,$this->price()->cfi_price);
                     $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total-$amount);
                     return 2;
 				}
@@ -169,7 +172,9 @@ class CFI extends IndexBase
                     }
                 }
 			}
-			$this->buyAndsys($id);
+			$id1 = $buyer->id;
+			$this->buyAndsys($id1);
+			return 2;
 		}
 		
 	}
@@ -179,7 +184,7 @@ class CFI extends IndexBase
             ->where('status',1)
             ->order('create_time','asc')
             ->select();
-        $buyer = $this->modelShop->where('user_id',$id)
+        $buyer = $this->modelShop->where('id',$id)
             ->where('status',1)
             ->where('dianzibi','>',0)
             ->order('create_time','asc')
@@ -193,18 +198,18 @@ class CFI extends IndexBase
                 if($amount <= $cfi_total){
                     $now_pay = $amount * $this->price()->cfi_price;
                     $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total - $amount);
-                    $this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+                    $this->upDataSys($buyer,$now_pay,$amount,$this->price()->cfi_price);
                     return 2;
                 }else{
                     $now_pay = $cfi_total * $this->price()->cfi_price;
                     $this->priceUd($this->price()->cfi_price,$this->price()->deal+$cfi_total,$this->price()->cfi_total - $cfi_total);
-                    $this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+                    $this->upDataSys($buyer,$now_pay,$amount,$this->price()->cfi_price);
                     return 2;
                 }
             }else{
                 //先计算未涨价部分
                 $now_pay = $rise_ca * $this->price()->cfi_price;
-                $this->upDataSys($id,$buyer->id,$now_pay,$rise_ca,$this->price()->cfi_price);
+                $this->upDataSys($buyer,$now_pay,$rise_ca,$this->price()->cfi_price);
                 $this->priceUd($this->price()->cfi_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total-$rise_ca);
 
                 //判断是否达到拆分条件
@@ -216,7 +221,7 @@ class CFI extends IndexBase
                 $amount = $amount - $rise_ca;
 
                 $now_pay = $amount * $this->price()->cfi_price;
-                $this->upDataSys($id,$buyer->id,$now_pay,$amount,$this->price()->cfi_price);
+                $this->upDataSys($buyer,$now_pay,$amount,$this->price()->cfi_price);
                 $this->priceUd($this->price()->cfi_price,$this->price()->deal+$amount,$this->price()->cfi_total-$amount);
                 return 2;
             }
@@ -508,29 +513,26 @@ class CFI extends IndexBase
     }
 
     //跟系统交易时刷新数据
-    public function upDataSys($id,$s_id,$now_pay,$amount,$now_price){
+    public function upDataSys($buyer,$now_pay,$amount,$now_price){
 
-		$this->modelShop->where('id',$s_id)->dec('dianzibi',$now_pay)->inc('buy',$amount)->update();
-        $this->modelMember->where('id',$id)->inc('CFI',$amount)->update();
+		$this->modelShop->where('id',$buyer->id)->dec('dianzibi',$now_pay)->update();
+        $this->modelMember->where('id',$buyer->user_id)->inc('CFI',$amount)->update();
         $this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total - $amount);
-		$user_name = $this->modelMember->where('id',$id)->value('username');
-		$buyer = $this->modelShop->where('id',$s_id)->find();
+		$user_name = $this->modelMember->where('id',$buyer->user_id)->value('username');
+		$buyer = $this->modelShop->where('id',$buyer->id)->find();
 		if($buyer->dianzibi < $this->price()->cfi_price){
 			$this->modelMember->where('id',$buyer->user_id)->inc('dianzibi',$buyer->dianzibi)->update();
-			$this->modelShop->where('id',$s_id)->update(['status'=>2]);
+			$this->modelShop->where('id',$buyer->id)->update(['dianzibi'=>0,'status'=>2]);
 		}
         $re = [
-            'buyer_id' => $id,
+            'buyer_id' => $buyer->user_id,
             'seller_id' => 0,
             'deal_price' => $now_pay / $amount,
             'deal_number' => $amount,
         ];
         $this->modelDealRecord->setInfo($re);
 	}
-	//刷新数据
-	public function upData1(){
 
-	}
 	//刷新数据
 	public function upData($buyer,$v,$now_pay,$amount,$now_price){
 

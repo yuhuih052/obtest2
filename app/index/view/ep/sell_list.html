@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-bordered" style="width: 48%;">
+    <thead>
+    <tr>
+        <td>交易量</td>
+        <td>金额</td>
+        <td>状态</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    {notempty name='list'}
+    <tbody>
+    {volist name='list' id='vo'}
+    <tr>
+
+        <td>{$vo.num}</td>
+        <td>{$vo.money}</td>
+        <td>{if $vo.flag == 1}等待打款
+            {elseif $vo.flag ==2/}等待确认
+            {elseif $vo.flag ==3/}完成交易
+            {elseif $vo.flag ==4/}交易关闭
+            {elseif $vo.flag ==-4/}拒绝交易
+            {elseif $vo.flag ==-1/}仲裁
+            {elseif $vo.flag ==5/}00
+            {/if}
+        </td>
+        <td>
+            {if $vo.flag == 1}等待打款
+            {elseif $vo.flag ==2/}等待确认
+            {elseif $vo.flag ==3/}完成交易
+            {elseif $vo.flag ==4/}交易关闭
+            {elseif $vo.flag ==-4/}拒绝交易
+            {elseif $vo.flag ==-1/}仲裁
+            {elseif $vo.flag ==5/}00
+            {/if}
+        </td>
+
+    </tr>
+    {/volist}
+    </tbody>
+    {else/}
+    <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+    {/notempty}
+</table>
+</body>
+</html>
