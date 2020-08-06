@@ -11,6 +11,7 @@
         <td>交易量</td>
         <td>金额</td>
         <td>状态</td>
+        <td>时间</td>
         <td>操作</td>
     </tr>
     </thead>
@@ -18,9 +19,8 @@
     <tbody>
     {volist name='list' id='vo'}
     <tr>
-
-        <td>{$vo.num}</td>
-        <td>{$vo.money}</td>
+        <td>{$vo.ep_amount}</td>
+        <td>{$vo.ep_money}</td>
         <td>{if $vo.flag == 1}等待打款
             {elseif $vo.flag ==2/}等待确认
             {elseif $vo.flag ==3/}完成交易
@@ -30,15 +30,32 @@
             {elseif $vo.flag ==5/}00
             {/if}
         </td>
+        <td>{$vo.ac_time}</td>
         <td>
-            {if $vo.flag == 1}等待打款
-            {elseif $vo.flag ==2/}等待确认
+            {if $vo.flag == 1}
+<!--            上传打款凭证-->
+            <form action="{:url('Ep/upload')}" enctype="multipart/form-data" method="post">
+                <span>请选择付款截图</span><br>
+                <input type="file" name="image" /> <br>
+                <input hidden name="id" value="{$vo.id}">
+                <input type="submit" value="上传"></input><br>
+
+            </form>
+            <form action="{:url('ep/cancel_deal')}" method="post">
+               <input type="submit" value="取消订单">
+                <input hidden name="id" value="{$vo.id}">
+            </form>
+            <form name="form1" action="" method="post">
+            {elseif $vo.flag ==2/}
+                <img src="/{$vo.screenshot}" alt="付款截图"> <br>
+                等待卖家确认收款
             {elseif $vo.flag ==3/}完成交易
             {elseif $vo.flag ==4/}交易关闭
             {elseif $vo.flag ==-4/}拒绝交易
             {elseif $vo.flag ==-1/}仲裁
             {elseif $vo.flag ==5/}00
             {/if}
+            </form>
         </td>
 
     </tr>
@@ -48,5 +65,13 @@
     <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
     {/notempty}
 </table>
+<a class="btn" href="{:url('ep/ep_shop')}"><i class="fa fa-history"></i> 返 回</a>
 </body>
+<script>
+
+    $(function () {
+        //禁用“确认重新提交表单”
+        window.history.replaceState(null, null, window.location.href);
+    })
+</script>
 </html>

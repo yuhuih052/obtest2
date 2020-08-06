@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_shop.html";i:1596623237;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_shop.html";i:1596703213;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +62,7 @@
       <thead>
       <tr>
           <th>当前cfi价格:</th>
-          <th>买入</th>  
+          <th>买入</th>
           <th>卖出</th>
       </tr>
       </thead>
@@ -81,13 +81,13 @@
                   <form action="" method="post" name="form1">
                   <td><input type="number" name="amount" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                       <button onclick="buy()">挂买</button>
-                      <button onclick="withBuyS()">撤销挂买</button>
+                      <button onclick="withBuyS()">挂买列表</button>
                       <button onclick="buy_list()">交易列表</button>
                   </td>
                   </form>
+
                   <form action="" method="post" name="form2">
                   <td>
-<!--                      <input type="number" name="amount" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">-->
                       <button onclick="sell()">挂卖</button>
                       <button onclick="withSellS()">撤销挂卖</button>
                       <button onclick="sell_list()">交易列表</button>
@@ -97,7 +97,7 @@
        
         </tbody>
     </table>
-    <table class="table table-bordered" style="width: 48%;float: right">
+    <table class="table table-bordered" style="width: 48%;float: left">
         <thead>
         <tr>
             <td>挂卖</td>
@@ -106,24 +106,25 @@
             <td>操作</td>
         </tr>
         </thead>
-        <?php if(!(empty($list5) || (($list5 instanceof \think\Collection || $list5 instanceof \think\Paginator ) && $list5->isEmpty()))): ?>
+        <?php if(!(empty($list3) || (($list3 instanceof \think\Collection || $list3 instanceof \think\Paginator ) && $list3->isEmpty()))): ?>
         <tbody>
-        <?php if(is_array($list5) || $list5 instanceof \think\Collection || $list5 instanceof \think\Paginator): $i = 0; $__LIST__ = $list5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo5): $mod = ($i % 2 );++$i;?>
+        <?php if(is_array($list3) || $list3 instanceof \think\Collection || $list3 instanceof \think\Paginator): $i = 0; $__LIST__ = $list3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo3): $mod = ($i % 2 );++$i;?>
         <form action="" method="post" name="form3">
         <tr>
-            <input name="id" hidden value="<?php echo $vo5['id']; ?>">
-            <td><?php echo $vo5['num_a']; ?></td>
-            <td><?php echo $vo5['num']; ?></td>
-            <td><?php if($vo5['status'] == 1): ?>挂卖中
-                <?php elseif($vo5['status'] ==2): ?>订单完成
-                <?php elseif($vo5['status'] ==3): ?>订单关闭
+            <input name="id" hidden value="<?php echo $vo3['id']; ?>">
+            <td><?php echo $vo3['num_a']; ?></td>
+            <td><?php echo $vo3['num']; ?></td>
+            <td><?php if($vo3['status'] == 1): ?>挂卖中
+                <?php elseif($vo3['status'] ==2): ?>订单完成
+                <?php elseif($vo3['status'] ==3): ?>订单关闭
                 <?php endif; ?>
             </td>
             <td>
-                <input type="number" name="buy_amount" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                <input type="number" name="buy_alist" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                 <button onclick="buy_ali()">部分交易</button>
-                <input hidden name="buyall" value="<?php echo $vo5['num']; ?>">
-                <button onclick="buy_all()">全部交易</button>
+                <input hidden name="buy_all" value="<?php echo $vo3['num']; ?>">
+                <input hidden name="ep_pro" value="<?php echo $list2['ep_pro']; ?>">
+                <button onclick="buy_all_1()">全部交易</button>
             </td>
         </tr>
         </form>
@@ -133,27 +134,60 @@
         <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
         <?php endif; ?>
     </table>
+    <table class="table table-bordered" style="width: 48%;float: right">
+        <thead>
+        <tr>
+            <td>挂买</td>
+            <td>剩余成交</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <?php if(!(empty($list4) || (($list4 instanceof \think\Collection || $list4 instanceof \think\Paginator ) && $list4->isEmpty()))): ?>
+        <tbody>
+        <?php if(is_array($list4) || $list4 instanceof \think\Collection || $list4 instanceof \think\Paginator): $i = 0; $__LIST__ = $list4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo4): $mod = ($i % 2 );++$i;?>
+        <form action="" method="post" name="form4">
+            <tr>
+                <input name="id" hidden value="<?php echo $vo4['id']; ?>">
+                <td><?php echo $vo4['num_a']; ?></td>
+                <td><?php echo $vo4['num']; ?></td>
+                <td><?php if($vo4['status'] == 1): ?>挂买中
+                    <?php elseif($vo4['status'] ==2): ?>订单完成
+                    <?php elseif($vo4['status'] ==3): ?>订单关闭
+                    <?php endif; ?>
+                </td>
+                <td>
+                    <input type="number" name="sell_alist" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                    <button onclick="sell_ali()">部分交易</button>
+                    <input hidden name="sell_all" value="<?php echo $vo4['num']; ?>">
+                    <input hidden name="ep_pro" value="<?php echo $list2['ep_pro']; ?>">
+                    <button onclick="sell_all_1()">全部交易</button>
+                </td>
+            </tr>
+        </form>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+        </tbody>
+        <?php else: ?>
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
+        <?php endif; ?>
+    </table>
+    <a class="btn" href="<?php echo url('user/index'); ?>"><i class="fa fa-history"></i> 返 回</a>
     <script>
         function buy(){
             document.form1.action="<?php echo url('Ep/sys_buyEp'); ?>";
             document.form1.submit();
         }
+        function buy_list() {
+            document.form1.action = "<?php echo url('Ep/buy_list'); ?>";
+            document.form1.submit();
+        }
+        function withBuyS() {
+            document.form1.action = "<?php echo url('Ep/withBuy_list'); ?>";
+            document.form1.submit();
+        }
         function sell() {
             document.form2.action = "<?php echo url('Ep/sys_sellEp'); ?>";
             document.form2.submit();
-        }
-        function buy_ali() {
-            document.form3.action = "<?php echo url('Ep/buy_ali'); ?>";
-            document.form3.submit();
-        }
-        function buy_all() {
-            document.form3.action = "<?php echo url('Ep/buy_all'); ?>";
-            document.form3.submit();
-        }
-
-        function withBuyS() {
-            document.form1.action = "<?php echo url('Ep/withBuyEp'); ?>";
-            document.form1.submit();
         }
         function withSellS() {
             document.form2.action = "<?php echo url('Ep/withSellEp'); ?>";
@@ -163,10 +197,24 @@
             document.form2.action = "<?php echo url('Ep/sell_list'); ?>";
             document.form2.submit();
         }
-        function buy_list() {
-            document.form2.action = "<?php echo url('Ep/buy_list'); ?>";
-            document.form2.submit();
+        function buy_ali() {
+            document.form3.action = "<?php echo url('Ep/buy_ali'); ?>";
+            document.form3.submit();
         }
+        function buy_all_1() {
+            document.form3.action = "<?php echo url('Ep/buy_all'); ?>";
+            document.form3.submit();
+        }
+        function sell_ali() {
+            document.form4.action = "<?php echo url('Ep/sell_ali'); ?>";
+            document.form4.submit();
+        }
+        function sell_all_1() {
+            document.form4.action = "<?php echo url('Ep/sell_all'); ?>";
+            document.form4.submit();
+        }
+
+
         $(function () {
             //禁用“确认重新提交表单”
             window.history.replaceState(null, null, window.location.href);

@@ -13,11 +13,13 @@ class Ep extends IndexBase{
     public function ep_buy_list(){
         return $this->modelEp->where('type',1)
                                 ->where('status',1)
+                                ->where('num','>',0)
                                 ->select();
     }
     public function ep_sell_list(){
         return $this->modelEp->where('type',2)
                             ->where('status',1)
+                            ->where('num','>',0)
                             ->select();
     }
     //挂卖
@@ -29,9 +31,12 @@ class Ep extends IndexBase{
                                         ->where('type','=',2)
                                         ->where('status','=',1)
                                         ->find();
+        $mem_eprecord = $this->modelEpRecord->where('seller_id',session('user_id2'))
+                                            ->where('flag','in','1,2')
+                                            ->find();
 
-        if(!$member_record==null){
-            return [RESULT_SUCCESS,'当前还有挂卖订单'];
+        if(!$member_record==null && !$mem_eprecord == null){
+            return [RESULT_ERROR,'当前还有未完成订单'];
         }
         $member_rank = $this->logicUser->checkMember_rank($member->member_rank);
 
@@ -47,11 +52,10 @@ class Ep extends IndexBase{
             'flag' => 0,
         ];
         $result_id = $this->modelEp->setInfo($re);
-        $r = $this->sellEp($result_id);
 
-        switch($r){
+        switch(1){
             case 1 :
-                return [RESULT_SUCCESS,'排队成功'];break;
+                return [RESULT_SUCCESS,'挂卖订单发布成功'];break;
             case 2 :
                 return [RESULT_SUCCESS,'匹配到订单,已进行交易'];break;
             case 3 :
@@ -60,30 +64,44 @@ class Ep extends IndexBase{
 
 
     }
-
-
+    //撤销挂卖
+    public function withSellEP(){
+        $sellinfo = $this->modelEp->where('member_id',session('user_id2'))
+                                    ->where('type',2)
+                                    ->where('num','>',0)
+                                    ->where('status',1)
+                                    ->find();
+        if($sellinfo == Null){
+            return [RESULT_ERROR,'当前暂无挂卖中的订单，请检查交易列表订单完成情况'];
+        }
+        $this->modelMember->where('id',$sellinfo->member_id)->inc('bouns',$sellinfo->num)->update();
+        $this->modelEp->where('id',$sellinfo->id)->data(['num'=>0,'status'=>3])->update();
+        return [RESULT_SUCCESS,'操作成功'];
+    }
+    //交易列表
     public function sell_list(){
-        return $this->modelEp->where('seller|buyer','=',session('user_id2'))
-                                ->where('status',1)
+        return $this->modelEpRecord->where('seller_id','=',session('user_id2'))
+                                ->where('flag','in','1,2')
                                 ->select();
     }
+    //交易列表
     public function buy_list(){
-        return $this->modelEp->where('seller|buyer','=',session('user_id2'))
-                                ->where('status',1)
+        return $this->modelEpRecord->where('buyer_id','=',session('user_id2'))
+                                ->where('flag','in','1,2')
                                 ->select();
     }
+    //挂买
     public function sys_buyEp($data){
         $member = $this->modelMember->where('id',session('user_id2'))->find();
 
-        $member_record = $this->modelEp->where('member_id',session('user_id2'))
-                                        ->where('type','=',1)
-                                        ->where('status','=',1)
+        $member_record = $this->modelEpRecord->where('buyer_id',session('user_id2'))
+                                        ->where('flag','=',1)
                                         ->find();
 
         if(!$member_record==null){
-            return [RESULT_SUCCESS,'当前还有挂买订单'];
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'当前还有订单未未付款',$url];
         }
-
         $re = [
             'member_id' => session('user_id2'),
             'num'   => $data['amount'],
@@ -99,13 +117,187 @@ class Ep extends IndexBase{
 
         switch(1){
             case 1 :
-                return [RESULT_SUCCESS,'排队成功'];break;
+                return [RESULT_SUCCESS,'挂买成功'];break;
             case 2 :
                 return [RESULT_SUCCESS,'匹配到订单,已进行交易'];break;
             case 3 :
                 return [RESULT_SUCCESS,'匹配到订单'];break;
         }
     }
+    //挂买未交易列表
+    public function withBuy_list(){
+        return $this->modelEp->where('member_id',session('user_id2'))
+                        ->where('num','>',0)
+                        ->where('type','=',1)
+                        ->select();
+    }
+    //撤销挂买
+    public function withBuyEP($data){
 
+        $this->modelEp->where('id',$data['id'])->data(['status'=>3])->update();
+        return [RESULT_SUCCESS,'操作成功'];
+    }
+    //部分购买
+    public function buy_ali($data){
+        $member_record = $this->modelEpRecord->where('buyer_id',session('user_id2'))
+            ->where('flag','=',1)
+            ->find();
 
+        if(!$member_record==null){
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'当前还有订单未未付款',$url];
+        }
+        $sell_info = $this->modelEp->where('id',$data['id'])->find();
+        $re = [
+            'ep_id'=>$data['id'],
+            'buyer_id' => session('user_id2'),
+            'seller_id'=>$sell_info->member_id,
+            'ep_amount'=>$data['buy_alist'],
+            'ep_pro'=>$data['ep_pro'],
+            'ep_money'=>$data['buy_alist'] * $data['ep_pro'],
+            'ac_time'=>time(),
+            'flag'=>1,
+            'deal_status'=>1,
+        ];
+
+        $result = $this->modelEpRecord->setInfo($re);
+        $this->modelEp->where('id',$data['id'])
+                        ->dec('num',$data['buy_alist'])
+                        ->data(['deal_status'=>2])
+                        ->update();
+        $url = url('ep/buy_list');
+        return $result>0? [RESULT_SUCCESS,'购买成功，请及时付款',$url] :[RESULT_ERROR,$this->modelEpRecord->getError()];
+    }
+    //全部购买
+    public function buy_all($data){
+        $member_record = $this->modelEpRecord->where('buyer_id',session('user_id2'))
+            ->where('flag','=',1)
+            ->find();
+
+        if(!$member_record==null){
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'当前还有订单未未付款',$url];
+        }
+        $sell_info = $this->modelEp->where('id',$data['id'])->find();
+        $re = [
+            'ep_id'=>$data['id'],
+            'buyer_id' => session('user_id2'),
+            'seller_id'=>$sell_info->member_id,
+            'ep_amount'=>$data['buy_alist'],
+            'ep_pro'=>$data['ep_pro'],
+            'ep_money'=>$data['buy_alist'] * $data['ep_pro'],
+            'ac_time'=>time(),
+            'flag'=>1,
+            'deal_status'=>2,
+        ];
+
+        $result = $this->modelEpRecord->setInfo($re);
+        $this->modelEp->where('id',$data['id'])
+            ->dec('num',$data['buy_all'])
+            ->data(['deal_status'=>3])
+            ->update();
+        $url = url('ep/buy_list');
+        return $result>0? [RESULT_SUCCESS,'购买成功，请及时付款',$url] :[RESULT_ERROR,$this->modelEpRecord->getError()];
+    }
+    //部分出售
+    public function sell_ali($data){
+        $buy_info = $this->modelEp->where('id',$data['id'])->find();
+        $re = [
+            'ep_id'=>$data['id'],
+            'buyer_id' =>$buy_info->member_id,
+            'seller_id'=> session('user_id2'),
+            'ep_amount'=>$data['sell_alist'],
+            'ep_pro'=>$data['ep_pro'],
+            'ep_money'=>$data['sell_alist'] * $data['ep_pro'],
+            'ac_time'=>time(),
+            'flag'=>1,
+            'deal_status'=>1,
+        ];
+
+        $result = $this->modelEpRecord->setInfo($re);
+        $this->modelMember->where('id',$re['seller_id'])
+            ->dec('bonus',$data['sell_alist'])
+            ->update();
+        $this->modelEp->where('id',$data['id'])
+            ->dec('num',$data['sell_alist'])
+            ->data(['deal_status'=>2])
+            ->update();
+        $url = url('ep/sell_list');
+        return $result>0? [RESULT_SUCCESS,'出售成功，正在跳转交易列表',$url] :[RESULT_ERROR,$this->modelEpRecord->getError()];
+    }
+    //全部出售
+    public function sell_all($data){
+        $buy_info = $this->modelEp->where('id',$data['id'])->find();
+        $re = [
+            'ep_id'=>$data['id'],
+            'buyer_id' =>$buy_info->member_id,
+            'seller_id'=> session('user_id2'),
+            'ep_amount'=>$data['sell_all'],
+            'ep_pro'=>$data['ep_pro'],
+            'ep_money'=>$data['sell_all'] * $data['ep_pro'],
+            'ac_time'=>time(),
+            'flag'=>1,
+            'deal_status'=>2,
+        ];
+
+        $result = $this->modelEpRecord->setInfo($re);
+        $this->modelEp->where('id',$data['id'])
+            ->dec('num',$data['sell_all'])
+            ->data(['deal_status'=>3])
+            ->update();
+        $this->modelMember->where('id',$re['seller_id'])->dec('bonus',$re['ep_amount'])->update();
+        $url = url('ep/sell_list');
+        return $result>0? [RESULT_SUCCESS,'出售成功，正在跳转交易列表',$url] :[RESULT_ERROR,$this->modelEpRecord->getError()];
+    }
+    public function upload($info,$id){
+
+        $filePath = 'public' . DS . 'uploads'. DS .$info->getSaveName();
+        $getInfo = $info->getInfo();
+        //获取图片的原名称
+        $name = $getInfo['name'];
+        //整理数据,写入数据库
+        $data = [
+            'screenshot' => $filePath,
+            'fukuan_time' => time(),
+            'flag'=>2,
+        ];
+
+        $result = $this->modelEpRecord->where('id',$id)->update($data);
+        return $result>0? [RESULT_SUCCESS,'上传成功']:[RESULT_ERROR,$this->modelEpRecord->getError()];
+    }
+    //确认收款
+    public function comfirm_money($data){
+        $ep_record = $this->modelEpRecord->where('id',$data['id'])->find();
+            //交易成功，给买家账户增加EP币
+            $this->modelMember->where('id',$ep_record->buyer_id)->inc('bonus',$ep_record->ep_amount)->update();
+            //如果是一笔全部交易
+            if($ep_record->deal_status == 2){
+                $this->modelEp->where('id',$ep_record->ep_id)->data(['status'=>2,'deal_status'=>3])->pdate();
+                $this->modelEpRecord->where('id',$data['id'])->data(['flag'=>3])->update();
+            }
+        $this->modelEpRecord->where('id',$data['id'])->data(['flag'=>3])->update();
+            return [RESULT_SUCCESS,'交易成功'];
+    }
+    //订单取消
+    public function cancel_deal($data){
+        $deal_record = $this->modelEpRecord->where('id',$data['id'])->find();
+
+        $ep_record = $this->modelEp->where('id',$deal_record->ep_id)->find();
+        if($deal_record->ep_amount == $ep_record->num_a){
+            $this->modelEp->where('id',$deal_record->ep_id)
+                ->data([
+                    'num'=>$ep_record->num+$deal_record->ep_amount,
+                    'deal_status'=>1,
+                ])->update();
+            $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>6]);
+        }else{
+            $this->modelEp->where('id',$deal_record->ep_id)
+                ->data([
+                    'num'=>$ep_record->num+$deal_record->ep_amount,
+                    'deal_status'=>2,
+                ])->update();
+            $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>6]);
+        }
+        return [RESULT_SUCCESS,'操作成功'];
+    }
 }

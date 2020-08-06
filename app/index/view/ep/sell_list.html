@@ -17,10 +17,10 @@
     {notempty name='list'}
     <tbody>
     {volist name='list' id='vo'}
-    <tr>
 
-        <td>{$vo.num}</td>
-        <td>{$vo.money}</td>
+    <tr>
+        <td>{$vo.ep_amount}</td>
+        <td>{$vo.ep_money}</td>
         <td>{if $vo.flag == 1}等待打款
             {elseif $vo.flag ==2/}等待确认
             {elseif $vo.flag ==3/}完成交易
@@ -30,23 +30,39 @@
             {elseif $vo.flag ==5/}00
             {/if}
         </td>
-        <td>
-            {if $vo.flag == 1}等待打款
-            {elseif $vo.flag ==2/}等待确认
-            {elseif $vo.flag ==3/}完成交易
-            {elseif $vo.flag ==4/}交易关闭
-            {elseif $vo.flag ==-4/}拒绝交易
-            {elseif $vo.flag ==-1/}仲裁
-            {elseif $vo.flag ==5/}00
-            {/if}
-        </td>
+            <td>
+                <form action="{:url('ep/comfirm_money')}" method="post">
+                {if $vo.flag == 1}等待买家付款
+                {elseif $vo.flag ==2/}
+                <input hidden name="id" value="{$vo.id}">
+                <button type="submit">确认收款</button>
+                {elseif $vo.flag ==3/}完成交易
+                {elseif $vo.flag ==4/}交易关闭
+                {elseif $vo.flag ==-4/}拒绝交易
+                {elseif $vo.flag ==-1/}仲裁
+                {elseif $vo.flag ==5/}00
+                {/if}
+                </form>
+            </td>
 
     </tr>
+
     {/volist}
     </tbody>
     {else/}
     <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
     {/notempty}
 </table>
+<a class="btn" href="{:url('ep/ep_shop')}"><i class="fa fa-history"></i> 返 回</a>
 </body>
+<script>
+    function comfir(){
+        document.form.action="{:url('Ep/comfirm_money')}";
+        document.form.submit();
+    }
+    $(function () {
+        //禁用“确认重新提交表单”
+        window.history.replaceState(null, null, window.location.href);
+    })
+</script>
 </html>

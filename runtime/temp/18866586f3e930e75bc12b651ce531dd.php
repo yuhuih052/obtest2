@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\sell_list.html";i:1596700783;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\withbuy_list.html";i:1596705334;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,45 +67,36 @@
 <table class="table table-bordered" style="width: 48%;">
     <thead>
     <tr>
-        <td>交易量</td>
-        <td>金额</td>
+        <td>总挂买量</td>
+        <td>剩余未交易量</td>
         <td>状态</td>
+        <td>时间</td>
         <td>操作</td>
     </tr>
     </thead>
     <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
     <tbody>
     <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-
     <tr>
-        <td><?php echo $vo['ep_amount']; ?></td>
-        <td><?php echo $vo['ep_money']; ?></td>
-        <td><?php if($vo['flag'] == 1): ?>等待打款
-            <?php elseif($vo['flag'] ==2): ?>等待确认
-            <?php elseif($vo['flag'] ==3): ?>完成交易
-            <?php elseif($vo['flag'] ==4): ?>交易关闭
-            <?php elseif($vo['flag'] ==-4): ?>拒绝交易
-            <?php elseif($vo['flag'] ==-1): ?>仲裁
-            <?php elseif($vo['flag'] ==5): ?>00
+        <td><?php echo $vo['num_a']; ?></td>
+        <td><?php echo $vo['num']; ?></td>
+        <td>
+            <?php if($vo['deal_status'] == 1): ?>未交易
+            <?php elseif($vo['deal_status'] == 2): ?>部分交易
             <?php endif; ?>
         </td>
-            <td>
-                <form action="<?php echo url('ep/comfirm_money'); ?>" method="post">
-                <?php if($vo['flag'] == 1): ?>等待买家付款
-                <?php elseif($vo['flag'] ==2): ?>
-                <input hidden name="id" value="<?php echo $vo['id']; ?>">
-                <button type="submit">确认收款</button>
-                <?php elseif($vo['flag'] ==3): ?>完成交易
-                <?php elseif($vo['flag'] ==4): ?>交易关闭
-                <?php elseif($vo['flag'] ==-4): ?>拒绝交易
-                <?php elseif($vo['flag'] ==-1): ?>仲裁
-                <?php elseif($vo['flag'] ==5): ?>00
-                <?php endif; ?>
-                </form>
-            </td>
+        <td><?php echo $vo['create_time']; ?></td>
+        <td>
+            <?php if($vo['status'] == 1): ?>
+        <form action="<?php echo url('ep/withBuyEP'); ?>">
+            <input hidden name="id" value="<?php echo $vo['id']; ?>">
+            <button type="submit">撤销挂买</button>
+        </form>
+            <?php elseif($vo['status'] == 3): ?>已撤销挂买
+            <?php endif; ?>
+        </td>
 
     </tr>
-
     <?php endforeach; endif; else: echo "" ;endif; ?>
     </tbody>
     <?php else: ?>
@@ -115,10 +106,7 @@
 <a class="btn" href="<?php echo url('ep/ep_shop'); ?>"><i class="fa fa-history"></i> 返 回</a>
 </body>
 <script>
-    function comfir(){
-        document.form.action="<?php echo url('Ep/comfirm_money'); ?>";
-        document.form.submit();
-    }
+
     $(function () {
         //禁用“确认重新提交表单”
         window.history.replaceState(null, null, window.location.href);
