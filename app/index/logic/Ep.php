@@ -12,15 +12,25 @@ class Ep extends IndexBase{
     }
     public function ep_buy_list(){
         return $this->modelEp->where('type',1)
-                                ->where('status',1)
+                                ->where('statuss',1)
                                 ->where('num','>',0)
                                 ->select();
     }
     public function ep_sell_list(){
         return $this->modelEp->where('type',2)
-                            ->where('status',1)
+                            ->where('statuss',1)
                             ->where('num','>',0)
                             ->select();
+    }
+    //添加流水账单
+    public function bill($id,$name,$number,$shuoming){
+        $bill = [
+            'user_id' => $id,
+            'user_name' => $name,
+            'bonus' => $number,
+            'shuoming' =>$shuoming,
+        ];
+        $this->modelBill->setInfo($bill);
     }
     //挂卖
     public function sys_sellEp($data){
@@ -29,7 +39,7 @@ class Ep extends IndexBase{
 
         $member_record = $this->modelEp->where('member_id',session('user_id2'))
                                         ->where('type','=',2)
-                                        ->where('status','=',1)
+                                        ->where('statuss','=',1)
                                         ->find();
         $mem_eprecord = $this->modelEpRecord->where('seller_id',session('user_id2'))
                                             ->where('flag','in','1,2')
@@ -41,6 +51,11 @@ class Ep extends IndexBase{
         $member_rank = $this->logicUser->checkMember_rank($member->member_rank);
 
         $sell_ep = $member_rank['baodanbi_co'] * 0.1;
+        if($member->bonus < $sell_ep){
+            return [RESULT_ERROR,'现金币不足'];
+        }
+        $this->modelMember->where('id',$member->member_id)->dec('bouns',$sell_ep)->update();
+        $this->bill($member->id,$member->username,'-'.$sell_ep,'挂卖现金币');
         $re = [
             'member_id' => session('user_id2'),
             'num'   => $sell_ep,
@@ -69,25 +84,29 @@ class Ep extends IndexBase{
         $sellinfo = $this->modelEp->where('member_id',session('user_id2'))
                                     ->where('type',2)
                                     ->where('num','>',0)
-                                    ->where('status',1)
+                                    ->where('statuss',1)
                                     ->find();
         if($sellinfo == Null){
             return [RESULT_ERROR,'当前暂无挂卖中的订单，请检查交易列表订单完成情况'];
         }
         $this->modelMember->where('id',$sellinfo->member_id)->inc('bouns',$sellinfo->num)->update();
-        $this->modelEp->where('id',$sellinfo->id)->data(['num'=>0,'status'=>3])->update();
+        $member = $this->modelMember->where('id',$sellinfo->id)->find();
+        $this->bill($sellinfo->member_id,$member->username,'+'.$sellinfo->num,'撤销挂卖现金币');
+        $this->modelEp->where('id',$sellinfo->id)->data(['num'=>0,'statuss'=>3])->update();
         return [RESULT_SUCCESS,'操作成功'];
     }
     //交易列表
     public function sell_list(){
         return $this->modelEpRecord->where('seller_id','=',session('user_id2'))
-                                ->where('flag','in','1,2')
+                                ->where('flag','in','1,2,5')
+                                ->where('complaint','in','0,1')
                                 ->select();
     }
     //交易列表
     public function buy_list(){
         return $this->modelEpRecord->where('buyer_id','=',session('user_id2'))
-                                ->where('flag','in','1,2')
+                                ->where('flag','in','1,2,5')
+                                ->where('complaint','in','0,1')
                                 ->select();
     }
     //挂买
@@ -134,7 +153,7 @@ class Ep extends IndexBase{
     //撤销挂买
     public function withBuyEP($data){
 
-        $this->modelEp->where('id',$data['id'])->data(['status'=>3])->update();
+        $this->modelEp->where('id',$data['id'])->data(['statuss'=>3])->update();
         return [RESULT_SUCCESS,'操作成功'];
     }
     //部分购买
@@ -166,7 +185,7 @@ class Ep extends IndexBase{
                         ->data(['deal_status'=>2])
                         ->update();
         $url = url('ep/buy_list');
-        return $result>0? [RESULT_SUCCESS,'购买成功，请及时付款',$url] :[RESULT_ERROR,$this->modelEpRecord->getError()];
+        return $result>0? [RESULT_SUCCESS,'生成订单，请及时付款',$url] :[RESULT_ERROR,$this->modelEpRecord->getError()];
     }
     //全部购买
     public function buy_all($data){
@@ -265,14 +284,32 @@ class Ep extends IndexBase{
         $result = $this->modelEpRecord->where('id',$id)->update($data);
         return $result>0? [RESULT_SUCCESS,'上传成功']:[RESULT_ERROR,$this->modelEpRecord->getError()];
     }
+    //重新上传截图
+    public function re_upload($info,$id){
+
+        $filePath = 'public' . DS . 'uploads'. DS .$info->getSaveName();
+        $getInfo = $info->getInfo();
+        //获取图片的原名称
+        $name = $getInfo['name'];
+        //整理数据,写入数据库
+        $data = [
+            'screenshot' => $filePath,
+            're_fukuan_time' => time(),
+        ];
+
+        $result = $this->modelEpRecord->where('id',$id)->update($data);
+        return $result>0? [RESULT_SUCCESS,'上传成功']:[RESULT_ERROR,$this->modelEpRecord->getError()];
+    }
     //确认收款
     public function comfirm_money($data){
         $ep_record = $this->modelEpRecord->where('id',$data['id'])->find();
             //交易成功，给买家账户增加EP币
             $this->modelMember->where('id',$ep_record->buyer_id)->inc('bonus',$ep_record->ep_amount)->update();
+            $member = $this->modelMember->where('id',$ep_record->buyer_id)->find();
+            $this->bill($member->id,$member->username,'+'.$ep_record->ep_amount,'购买现金币');
             //如果是一笔全部交易
             if($ep_record->deal_status == 2){
-                $this->modelEp->where('id',$ep_record->ep_id)->data(['status'=>2,'deal_status'=>3])->pdate();
+                $this->modelEp->where('id',$ep_record->ep_id)->data(['statuss'=>2,'deal_status'=>3])->pdate();
                 $this->modelEpRecord->where('id',$data['id'])->data(['flag'=>3])->update();
             }
         $this->modelEpRecord->where('id',$data['id'])->data(['flag'=>3])->update();
@@ -289,15 +326,24 @@ class Ep extends IndexBase{
                     'num'=>$ep_record->num+$deal_record->ep_amount,
                     'deal_status'=>1,
                 ])->update();
-            $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>6]);
+            $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>6,'shuoming'=>'买家取消订单']);
         }else{
             $this->modelEp->where('id',$deal_record->ep_id)
                 ->data([
                     'num'=>$ep_record->num+$deal_record->ep_amount,
                     'deal_status'=>2,
                 ])->update();
-            $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>6]);
+            $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>6,'shuoming'=>'买家取消订单']);
         }
         return [RESULT_SUCCESS,'操作成功'];
+    }
+    //发起仲裁
+    public function arb($data){
+        $this->modelEpRecord->where('id',$data['id'])->update(['flag'=>5,'complaint'=>1,'update_time'=>time()]);
+        return [RESULT_SUCCESS,'申请仲裁成功'];
+    }
+    //匹配订单记录，买入
+    public function ep_buy_in(){
+        return $this->modelEpRecord->where('buyer_id',session('user_id2'))->select();
     }
 }

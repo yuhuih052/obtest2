@@ -27,10 +27,10 @@
             {elseif $vo.flag ==4/}交易关闭
             {elseif $vo.flag ==-4/}拒绝交易
             {elseif $vo.flag ==-1/}仲裁
-            {elseif $vo.flag ==5/}00
+            {elseif $vo.flag ==5/}仲裁中
             {/if}
         </td>
-        <td>{$vo.ac_time}</td>
+        <td>{$vo.create_time}</td>
         <td>
             {if $vo.flag == 1}
 <!--            上传打款凭证-->
@@ -49,13 +49,22 @@
             {elseif $vo.flag ==2/}
                 <img src="/{$vo.screenshot}" alt="付款截图"> <br>
                 等待卖家确认收款
+            </form>
             {elseif $vo.flag ==3/}完成交易
             {elseif $vo.flag ==4/}交易关闭
             {elseif $vo.flag ==-4/}拒绝交易
             {elseif $vo.flag ==-1/}仲裁
-            {elseif $vo.flag ==5/}00
+            {elseif $vo.flag ==5/}
+                <img src="/{$vo.screenshot}" alt="付款截图"> <br>
+                <form action="{:url('Ep/re_upload')}" enctype="multipart/form-data" method="post">
+
+                    <input type="file" name="image" /> <br>
+                    <input hidden name="id" value="{$vo.id}">
+                    <input type="submit" value="重新上传付款截图"></input><br>
+
+                </form>
             {/if}
-            </form>
+
         </td>
 
     </tr>

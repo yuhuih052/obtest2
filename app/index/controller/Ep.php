@@ -108,4 +108,28 @@ class Ep extends IndexBase{
     public function cancel_deal(){
         $this->jump($this->logicEp->cancel_deal($this->param));
     }
+    //仲裁
+    public function arb(){
+        $this->jump($this->logicEp->arb($this->param));
+    }
+    //重新上传截图
+    public function re_upload(){
+        // 获取表单上传文件
+        $id = $this->param['id'];
+        $file = request()->file('image');
+        // 移动到框架应用根目录/public/uploads/ 目录下
+        $info = $file->validate(['ext'=>'jpg,png,gif'])->move(ROOT_PATH . 'public' . DS . 'uploads'. DS);
+        if($info){
+            $this->jump($this->logicEp->upload($info,$id));
+        }else{
+            // 上传失败获取错误信息
+            echo $file->getError();
+        }
+    }
+    //匹配订单，买入
+    public function ep_buy_in(){
+        $data = $this->logicEp->ep_buy_in();
+        $this->assign('list',$data);
+        return $this->fetch('ep_buy_in');
+    }
 }

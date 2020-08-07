@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-bordered" style="width: 48%;">
+    <thead>
+    <tr>
+        <td>买家</td>
+        <td>卖家</td>
+        <td>交易量</td>
+        <td>金额</td>
+        <td>状态</td>
+        <td>时间</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    {notempty name='list'}
+    <tbody>
+    {volist name='list' id='vo'}
+    <tr>
+        <td>
+            {php} use /think/Db; Db::query("select * from member where id=$vo.buyer_id")->username;{/php}
+        </td>
+        <td></td>
+        <td>{$vo.ep_amount}</td>
+        <td>{$vo.ep_money}</td>
+        <td>{if $vo.flag == 1}等待打款
+            {elseif $vo.flag ==2/}等待确认
+            {elseif $vo.flag ==3/}完成交易
+            {elseif $vo.flag ==4/}交易关闭
+            {elseif $vo.flag ==6/}取消订单
+            {elseif $vo.flag ==5/}仲裁
+            {/if}
+        </td>
+        <td>{$vo.create_time}</td>
+        <td>
+            {if $vo.flag == 1}
+            待付款
+            {elseif $vo.flag ==2/}等待确认
+            {elseif $vo.flag ==3/}完成交易
+            <img src="/{$vo.screenshot}" alt="付款截图">
+            {elseif $vo.flag ==4/}交易关闭
+            {elseif $vo.flag ==6/}取消订单
+            {elseif $vo.flag ==5/}
+            仲裁
+            <img src="/{$vo.screenshot}" alt="付款截图">
+            {/if}
+
+        </td>
+
+    </tr>
+    {/volist}
+    </tbody>
+    {else/}
+    <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+    {/notempty}
+</table>
+<a class="btn" href="{:url('ep/ep_shop')}"><i class="fa fa-history"></i> 返 回</a>
+</body>
+<script>
+
+    $(function () {
+        //禁用“确认重新提交表单”
+        window.history.replaceState(null, null, window.location.href);
+    })
+</script>
+</html>

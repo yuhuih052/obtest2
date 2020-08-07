@@ -19,6 +19,8 @@
     {volist name='list' id='vo'}
 
     <tr>
+        <td></td>
+        <td></td>
         <td>{$vo.ep_amount}</td>
         <td>{$vo.ep_money}</td>
         <td>{if $vo.flag == 1}等待打款
@@ -27,22 +29,28 @@
             {elseif $vo.flag ==4/}交易关闭
             {elseif $vo.flag ==-4/}拒绝交易
             {elseif $vo.flag ==-1/}仲裁
-            {elseif $vo.flag ==5/}00
+            {elseif $vo.flag ==5/}申请仲裁
             {/if}
         </td>
             <td>
-                <form action="{:url('ep/comfirm_money')}" method="post">
+
                 {if $vo.flag == 1}等待买家付款
                 {elseif $vo.flag ==2/}
+                <form action="{:url('ep/comfirm_money')}" method="post">
                 <input hidden name="id" value="{$vo.id}">
-                <button type="submit">确认收款</button>
+                <input type="submit" value="确认收款"></input>
+                </form>
+                <form action="{:url('ep/arb')}" method="post">
+                    <input hidden name="id" value="{$vo.id}">
+                    <input type="submit" value="申请仲裁">
+                </form>
                 {elseif $vo.flag ==3/}完成交易
-                {elseif $vo.flag ==4/}交易关闭
+                {elseif $vo.flag ==6/}交易关闭,订单被取消
                 {elseif $vo.flag ==-4/}拒绝交易
                 {elseif $vo.flag ==-1/}仲裁
-                {elseif $vo.flag ==5/}00
+                {elseif $vo.flag ==5/}仲裁结果可到匹配订单界面查看
                 {/if}
-                </form>
+
             </td>
 
     </tr>
