@@ -346,4 +346,25 @@ class Ep extends IndexBase{
     public function ep_buy_in(){
         return $this->modelEpRecord->where('buyer_id',session('user_id2'))->select();
     }
+    //匹配订单记录，卖出
+    public function ep_sell_out(){
+        return $this->modelEpRecord->where('seller_id',session('user_id2'))->select();
+    }
+    //挂卖记录
+    public function ep_sell_record(){
+        return $this->modelEp->where('member_id',session('user_id2'))
+                                ->where('type',2)
+                                ->select();
+    }
+    //挂卖记录
+    public function ep_buy_record(){
+        return $this->modelEp->where('member_id',session('user_id2'))
+            ->where('type',1)
+            ->select();
+    }
+    //记录详情
+    public function ep_record_detail($data){
+
+        return $this->modelEpRecord->where('ep_id',$data['id'])->select();
+    }
 }

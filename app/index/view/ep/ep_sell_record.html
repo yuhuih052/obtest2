@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-bordered" style="width: 48%;">
+    <thead>
+    <tr>
+
+        <td>总交易量</td>
+        <td>剩余交易量</td>
+        <td>状态</td>
+        <td>时间</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    {notempty name='list'}
+    <tbody>
+    {volist name='list' id='vo'}
+    <tr>
+        <td>{$vo.num_a}</td>
+        <td>{$vo.num}</td>
+        <td>{if $vo.statuss == 1}挂卖中
+            {elseif $vo.statuss == 2/}订单完成
+            {elseif $vo.statuss == 3/}提前关闭
+            {/if}
+        </td>
+        <td>{$vo.create_time}</td>
+        <td>
+            <form action="{:url('ep/ep_record_detail')}" method="post">
+                <input hidden name="id" value="{$vo.id}">
+                <input type="submit" value="详情">
+            </form>
+        </td>
+    </tr>
+    {/volist}
+    </tbody>
+    {else/}
+    <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
+    {/notempty}
+</table>
+<a class="btn" href="{:url('user/index')}"><i class="fa fa-history"></i> 返 回</a>
+</body>
+<script>
+
+    $(function () {
+        //禁用“确认重新提交表单”
+        window.history.replaceState(null, null, window.location.href);
+    })
+</script>
+</html>

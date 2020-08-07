@@ -16,5 +16,7 @@ namespace app\common\model;
  */
 class EpRecord extends ModelBase
 {
-
+    public function ep(){
+        return $this->belongsTo('ep');
+    }
 }

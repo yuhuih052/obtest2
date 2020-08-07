@@ -21,6 +21,17 @@
     <tbody>
     {volist name='list' id='vo'}
     <tr>
+        <td>
+            {php}
+            $mem = db('member') -> getById( $vo -> seller_id ) ;
+            {/php}
+            {$mem['username']}
+        </td>
+        <td>{php}
+            $mem = db('member') -> getById( $vo -> buyer_id ) ;
+            {/php}
+            {$mem['username']}
+        </td>
         <td>{$vo.ep_amount}</td>
         <td>{$vo.ep_money}</td>
         <td>{if $vo.flag == 1}等待打款

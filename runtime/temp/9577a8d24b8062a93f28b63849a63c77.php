@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:72:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\ep_deal\record.html";i:1596764211;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:72:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\ep_deal\record.html";i:1596789989;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -218,8 +218,17 @@
             <tbody>
             <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
             <tr>
-                <td><?php echo $vo['buyer_id']; ?></td>
-                <td><?php echo $vo['seller_id']; ?></td>
+                <td>
+                    <?php 
+                    $mem = db('member') -> getById( $vo -> buyer_id ) ;
+                     ?>
+                    <?php echo $mem['username']; ?>
+                </td>
+                <td><?php 
+                    $mem = db('member') -> getById( $vo -> seller_id ) ;
+                     ?>
+                    <?php echo $mem['username']; ?>
+                </td>
                 <td>$<?php echo $vo['ep_amount']; ?></td>
                 <td>1:<?php echo $vo['ep_pro']; ?></td>
                 <td>￥<?php echo $vo['ep_money']; ?></td>

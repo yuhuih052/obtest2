@@ -132,4 +132,28 @@ class Ep extends IndexBase{
         $this->assign('list',$data);
         return $this->fetch('ep_buy_in');
     }
+    //匹配订单，卖出
+    public function ep_sell_out(){
+        $data = $this->logicEp->ep_sell_out();
+        $this->assign('list',$data);
+        return $this->fetch('ep_sell_out');
+    }
+    //挂卖记录
+    public function ep_sell_record(){
+        $data = $this->logicEp->ep_sell_record();
+        $this->assign('list',$data);
+        return $this->fetch('ep_sell_record');
+    }
+    //挂买记录
+    public function ep_buy_record(){
+        $data = $this->logicEp->ep_buy_record();
+        $this->assign('list',$data);
+        return $this->fetch('ep_buy_record');
+    }
+    //具体挂买挂卖详情
+    public function ep_record_detail(){
+        $data = $this->logicEp->ep_record_detail($this->param);
+        $this->assign('list',$data);
+        return $this->fetch('ep_record_detail');
+    }
 }

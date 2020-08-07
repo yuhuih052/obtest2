@@ -16,5 +16,8 @@ namespace app\common\model;
  */
 class Ep extends ModelBase
 {
+    public function eprecords(){
+        return $this->hasMany('EpRecord');
+    }
 
 }

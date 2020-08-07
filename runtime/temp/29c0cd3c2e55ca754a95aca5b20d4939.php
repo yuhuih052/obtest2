@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_buy_in.html";i:1596789869;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:72:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_sell_out.html";i:1596789903;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,8 +67,8 @@
 <table class="table table-bordered" style="width: 48%;">
     <thead>
     <tr>
-        <td>买家</td>
         <td>卖家</td>
+        <td>买家</td>
         <td>交易量</td>
         <td>金额</td>
         <td>状态</td>
@@ -82,12 +82,12 @@
     <tr>
         <td>
             <?php 
-                $mem = db('member') -> getById( $vo -> buyer_id ) ;
+            $mem = db('member') -> getById( $vo -> seller_id ) ;
              ?>
             <?php echo $mem['username']; ?>
         </td>
         <td><?php 
-            $mem = db('member') -> getById( $vo -> seller_id ) ;
+            $mem = db('member') -> getById( $vo -> buyer_id ) ;
              ?>
             <?php echo $mem['username']; ?>
         </td>
@@ -95,10 +95,13 @@
         <td><?php echo $vo['ep_money']; ?></td>
         <td><?php if($vo['flag'] == 1): ?>等待打款
             <?php elseif($vo['flag'] ==2): ?>等待确认
+
             <?php elseif($vo['flag'] ==3): ?>完成交易
+
             <?php elseif($vo['flag'] ==4): ?>交易关闭
             <?php elseif($vo['flag'] ==6): ?>取消订单
             <?php elseif($vo['flag'] ==5): ?>仲裁
+
             <?php endif; ?>
         </td>
         <td><?php echo $vo['create_time']; ?></td>

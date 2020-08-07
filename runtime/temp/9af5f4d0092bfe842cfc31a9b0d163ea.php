@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_buy_in.html";i:1596789869;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_record_detail.html";i:1596792452;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,7 +82,7 @@
     <tr>
         <td>
             <?php 
-                $mem = db('member') -> getById( $vo -> buyer_id ) ;
+            $mem = db('member') -> getById( $vo -> buyer_id ) ;
              ?>
             <?php echo $mem['username']; ?>
         </td>
@@ -124,7 +124,7 @@
     <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
     <?php endif; ?>
 </table>
-<a class="btn" href="<?php echo url('ep/ep_shop'); ?>"><i class="fa fa-history"></i> 返 回</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 </body>
 <script>
 

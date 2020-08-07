@@ -13,8 +13,8 @@
         <table  class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
-                <th>买家Id</th>
-                <th>卖家Id</th>
+                <th>买家</th>
+                <th>卖家</th>
                 <th>数量</th>
                 <th>汇率</th>
                 <th>金额</th>
@@ -25,8 +25,17 @@
             <tbody>
             {volist name='list' id='vo'}
             <tr>
-                <td>{$vo.buyer_id}</td>
-                <td>{$vo.seller_id}</td>
+                <td>
+                    {php}
+                    $mem = db('member') -> getById( $vo -> buyer_id ) ;
+                    {/php}
+                    {$mem['username']}
+                </td>
+                <td>{php}
+                    $mem = db('member') -> getById( $vo -> seller_id ) ;
+                    {/php}
+                    {$mem['username']}
+                </td>
                 <td>${$vo.ep_amount}</td>
                 <td>1:{$vo.ep_pro}</td>
                 <td>￥{$vo.ep_money}</td>
