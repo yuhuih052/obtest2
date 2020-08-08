@@ -29,11 +29,11 @@
                     {elseif $vo.re_is_center == 3}申请商务报单中心
                     {/if}
                   </td>
-                  <td>{$vo.re_recharge}</td>
+                  <td>{$vo.all_recharge}</td>
                   <td class="col-md-2 text-center">
                       <ob_link><a href="{:url('requestAgree', array('id' => $vo['id'],'re_is_center'=>$vo['re_is_center']))}" class="btn"><i class="fa fa-edit"></i> 同意</a></ob_link>
                       &nbsp;
-                      <ob_link><a href="{:url('requestDisagreen', array('id' => $vo['id']))}" class="btn"><i class="fa fa-edit"></i> 拒绝</a></ob_link>
+                      <ob_link><a href="{:url('requestDisagree', array('id' => $vo['id']))}" class="btn"><i class="fa fa-edit"></i> 拒绝</a></ob_link>
                   </td>
                 </tr>
             {/volist}

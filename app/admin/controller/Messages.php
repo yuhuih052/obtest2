@@ -41,5 +41,11 @@ class Messages extends AdminBase
         
         return $this->fetch('messages_list');
     }
+    public function record(){
+        $data = $this->logicMessages->recordList($this->param);
+        $this->assign('list', $data);
+
+        return $this->fetch('messages_record');
+    }
     
 }

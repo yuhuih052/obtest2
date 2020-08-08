@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\buy_list.html";i:1596771769;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\buy_list.html";i:1596851112;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,7 +106,7 @@
             </form>
             <form name="form1" action="" method="post">
             <?php elseif($vo['flag'] ==2): ?>
-                <img src="/<?php echo $vo['screenshot']; ?>" alt="付款截图"> <br>
+                <img src="/<?php echo $vo['screenshot']; ?>" alt="付款截图" width="180px" height="90"> <br>
                 等待卖家确认收款
             </form>
             <?php elseif($vo['flag'] ==3): ?>完成交易
@@ -114,13 +114,11 @@
             <?php elseif($vo['flag'] ==-4): ?>拒绝交易
             <?php elseif($vo['flag'] ==-1): ?>仲裁
             <?php elseif($vo['flag'] ==5): ?>
-                <img src="/<?php echo $vo['screenshot']; ?>" alt="付款截图"> <br>
+                <img src="/<?php echo $vo['screenshot']; ?>" alt="付款截图" width="180px" height="90"> <br>
                 <form action="<?php echo url('Ep/re_upload'); ?>" enctype="multipart/form-data" method="post">
-
                     <input type="file" name="image" /> <br>
                     <input hidden name="id" value="<?php echo $vo['id']; ?>">
                     <input type="submit" value="重新上传付款截图"></input><br>
-
                 </form>
             <?php endif; ?>
 

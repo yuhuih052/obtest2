@@ -8,6 +8,7 @@
 <table class="table table-bordered" style="width: 48%;">
     <thead>
     <tr>
+        <td>买家</td>
         <td>交易量</td>
         <td>金额</td>
         <td>状态</td>
@@ -19,8 +20,13 @@
     {volist name='list' id='vo'}
 
     <tr>
-        <td></td>
-        <td></td>
+        <td>
+            {php}
+            $mem = db('member') -> getById( $vo -> buyer_id ) ;
+            {/php}
+            {$mem['username']}
+        </td>
+
         <td>{$vo.ep_amount}</td>
         <td>{$vo.ep_money}</td>
         <td>{if $vo.flag == 1}等待打款
@@ -37,7 +43,9 @@
                 {if $vo.flag == 1}等待买家付款
                 {elseif $vo.flag ==2/}
                 <form action="{:url('ep/comfirm_money')}" method="post">
+                    <img src="/{$vo.screenshot}" width="180px" height="90" alt="付款截图">
                 <input hidden name="id" value="{$vo.id}">
+
                 <input type="submit" value="确认收款"></input>
                 </form>
                 <form action="{:url('ep/arb')}" method="post">

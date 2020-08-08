@@ -1,0 +1,20 @@
+
+<form action="{:url('message/send')}" method="post" style="margin: 35px">
+    {:token()}
+    <label>
+        <span>给系统留言</span>
+        <input hidden name="id" value="0">
+    </label>
+    <label>
+        <span>内容 :</span>
+        <textarea id="message" name="message" placeholder="请输入留言信息"></textarea>
+    </label>
+
+    <label>
+        <span>&nbsp;</span>
+        <input type="submit" class="button" value="发送" />
+    </label>
+</form>
+
+<a href="{:url('user/index',['id'=>$Request.session.user_id])}">个人列表</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>

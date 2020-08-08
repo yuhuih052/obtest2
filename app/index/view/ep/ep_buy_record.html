@@ -31,7 +31,7 @@
         </td>
         <td>{$vo.create_time}</td>
         <td>
-            <form action="{:url('ep/ep_record_detail')}" method="post">
+            <form action="{:url('ep/ep_record_detail')}" method="get">
                 <input hidden name="id" value="{$vo.id}">
                 <input type="submit" value="详情">
             </form>

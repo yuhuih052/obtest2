@@ -22,8 +22,10 @@ class Recharge extends AdminBase
      */
     public function rechargeList($where = [], $field = true, $order = '', $paginate = 0)
     {
-         
-        $data = $this->modelRecharge->where('result','=',0)->select();
+         $where = [
+             'result'=>0,
+         ];
+        $data = $this->modelRecharge->getList($where, $field, $order, $paginate);
         //dump($data);
         return $data;
     }
@@ -32,7 +34,6 @@ class Recharge extends AdminBase
      */
     public function rechargeRecord($where = [], $field = true, $order = '', $paginate = 0)
     {
-         
         $data = $this->modelRecharge->where('create_time','> time','2016-1-1')->select()->toArray();
         //dump($data);
         return $data;

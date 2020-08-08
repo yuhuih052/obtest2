@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1596790860;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1596871059;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,7 +166,8 @@
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="<?php echo url('index/index'); ?>">新闻公告</a></li>
         <!-- <li><a href="<?php echo url('user/message'); ?>">写留言</a></li> -->
-        <li><a href="<?php echo url('message/witer'); ?>">写留言</a></li>
+        <li><a href="<?php echo url('message/witer',['w'=>1]); ?>">写留言</a></li>
+          <li><a href="<?php echo url('message/witer',['w'=>0]); ?>">给系统留言</a></li>
         <li><a href="<?php echo url('message/receiveMessage'); ?>">收件箱</a></li>
         <li><a href="<?php echo url('message/sendMessage'); ?>">发件箱</a></li>
       </ul>

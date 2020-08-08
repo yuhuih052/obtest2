@@ -8,7 +8,12 @@ class Message extends IndexBase
 {
 	
 	public function witer(){
-		return view();
+
+	    if($this->param['w'] == 0){
+	        return view('witer0');
+        }else{
+		    return view();
+        }
 	}
 
 	public function send(){

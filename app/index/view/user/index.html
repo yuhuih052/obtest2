@@ -107,7 +107,8 @@
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="{:url('index/index')}">新闻公告</a></li>
         <!-- <li><a href="{:url('user/message')}">写留言</a></li> -->
-        <li><a href="{:url('message/witer')}">写留言</a></li>
+        <li><a href="{:url('message/witer',['w'=>1])}">写留言</a></li>
+          <li><a href="{:url('message/witer',['w'=>0])}">给系统留言</a></li>
         <li><a href="{:url('message/receiveMessage')}">收件箱</a></li>
         <li><a href="{:url('message/sendMessage')}">发件箱</a></li>
       </ul>

@@ -1,16 +1,10 @@
 <div class="box">
-    
   <div class="box-header">
-
-    <div class="row"> 
-        
+    <div class="row">
         <div class="col-sm-7">
-
         </div>
     </div>
-    
   </div>
-    
     
   <div class="box-body table-responsive">
     <table  class="table table-bordered table-hover table-striped">
@@ -25,7 +19,6 @@
           <th>操作</th>
       </tr>
       </thead>
-      
       {notempty name='list'}
         <tbody>
             {volist name='list' id='vo'}
@@ -36,9 +29,6 @@
                   <td>{$vo.receive_name}</td>
                   <td>{$vo.response}</td>
                   <td>{$vo.response_time}</td>
-                  <td class="text-center">
-                      {<button type="submit" class='badge bg-green'>del</button>}
-                  </td>
                 </tr>
             {/volist}
         </tbody>
@@ -49,7 +39,8 @@
   </div>
 
   <div class="box-footer clearfix text-center">
+
       </div>
-<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+<a class="btn" href="{:url('user/index',['id'=>$Request.session.user_id2])}" ><i class="fa fa-history"></i> 返 回</a>
 </div>
 

@@ -116,7 +116,7 @@ class Futou extends IndexBase
                 ];
                 $this->modelBill->setInfo($bill1);
 
-                //报单中心扣除报单币记录
+                //报单币记录,复投激活会员
                 $bill12 = [
                     'user_id' => $p_person[0]['id'],
                     'user_name' => $p_person[0]['username'],
@@ -253,6 +253,5 @@ class Futou extends IndexBase
 
                     $this->modelBill->setInfo($bill_ct6);
     }
-
 
 }

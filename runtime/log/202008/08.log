@@ -1,0 +1,292 @@
+---------------------------------------------------------------
+[ 2020-08-08T09:08:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041002s][吞吐率：24.39req/s] [内存消耗：2,561.65kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:09:48+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,655.35kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:27+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:32+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:34+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.040003s][吞吐率：25.00req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:34+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:34+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042003s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:34+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:34+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041002s][吞吐率：24.39req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:36+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:36+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.044003s][吞吐率：22.73req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:36+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.045003s][吞吐率：22.22req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042003s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042003s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:38+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.044003s][吞吐率：22.73req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:22:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.042003s][吞吐率：23.81req/s] [内存消耗：2,561.00kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:45:15+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T09:47:27+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T10:01:25+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T10:02:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/ep/ep_record_detail.html
+[ info ] www.obtest2.com/index.php/ep/ep_record_detail.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,654.70kb] [文件加载：75]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:369]
+---------------------------------------------------------------
+[ 2020-08-08T10:39:00+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/ep/withsellep.html
+[ info ] www.obtest2.com/index.php/ep/withsellep.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,913.95kb] [文件加载：76]
+[ error ] [8]Trying to get property 'username' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:94]
+---------------------------------------------------------------
+[ 2020-08-08T11:04:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html?_pjax=.content [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：3,361.50kb] [文件加载：80]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:04:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.097005s][吞吐率：10.31req/s] [内存消耗：3,427.78kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:04:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html?_pjax=.content [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：3,355.86kb] [文件加载：80]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:04:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：3,428.00kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:06:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html?_pjax=.content [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：3,361.59kb] [文件加载：80]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:06:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,428.00kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:07:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html?_pjax=.content [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,361.60kb] [文件加载：80]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T11:07:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/request_is_center.html
+[ info ] www.obtest2.com/admin.php/member/request_is_center.html [运行时间：0.085005s][吞吐率：11.76req/s] [内存消耗：3,428.01kb] [文件加载：83]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-08T14:43:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.115007s][吞吐率：8.70req/s] [内存消耗：3,242.84kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T14:43:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：3,237.16kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T14:43:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.098005s][吞吐率：10.20req/s] [内存消耗：3,242.89kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T14:43:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.076004s][吞吐率：13.16req/s] [内存消耗：3,237.16kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T15:13:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/message/witer.html
+[ info ] www.obtest2.com/index.php/message/witer.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,535.21kb] [文件加载：71]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Message.php:11]
+---------------------------------------------------------------
+[ 2020-08-08T16:01:07+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/message/send.html
+[ info ] www.obtest2.com/index.php/message/send.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,689.34kb] [文件加载：76]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Message.php:13]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:38+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,254.96kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,254.97kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.089006s][吞吐率：11.24req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:04:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:05:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,254.97kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:05:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:05:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:05:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,249.23kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:13:15+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：3,292.34kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:13:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：3,286.60kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:13:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：3,286.60kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:13:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.068003s][吞吐率：14.71req/s] [内存消耗：3,286.60kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:13:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,286.60kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:13:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,254.97kb] [文件加载：85]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 'receive_id'  AND  = '='  AND  = 0  AND `status` <> ? LIMIT 1' at line 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T16:14:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,292.34kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:30:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html
+[ info ] www.obtest2.com/admin.php/messages/index.html [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：3,292.34kb] [文件加载：83]
+[ error ] [0]查询表达式错误:receive_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Builder.php:329]
+---------------------------------------------------------------
+[ 2020-08-08T16:45:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/record.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/record.html?_pjax=.content [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：3,249.33kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T17:01:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/index.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/index.html?_pjax=.content [运行时间：0.095006s][吞吐率：10.53req/s] [内存消耗：3,249.33kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T17:30:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/record.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/record.html?_pjax=.content [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：3,243.95kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-08T17:35:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/record.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/record.html?_pjax=.content [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：3,243.95kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]

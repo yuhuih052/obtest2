@@ -39,7 +39,7 @@ class Money extends AdminBase
             return 0;
 
         }else if(!empty($data['type_search']) && $data['username'] == Null && $data['date'] == Null){ //010
-            //dump($data['type_search']);die;
+            //dd($data['type_search']);
             return  $this->modelBill->whereNotNull($data['type_search'])->select();
         }else if(!empty($data['username']) && $data['type_search'] == Null && $data['date'] == Null){ //100
 

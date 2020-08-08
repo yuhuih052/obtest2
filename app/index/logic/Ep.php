@@ -90,7 +90,7 @@ class Ep extends IndexBase{
             return [RESULT_ERROR,'当前暂无挂卖中的订单，请检查交易列表订单完成情况'];
         }
         $this->modelMember->where('id',$sellinfo->member_id)->inc('bouns',$sellinfo->num)->update();
-        $member = $this->modelMember->where('id',$sellinfo->id)->find();
+        $member = $this->modelMember->where('id',$sellinfo->member_id)->find();
         $this->bill($sellinfo->member_id,$member->username,'+'.$sellinfo->num,'撤销挂卖现金币');
         $this->modelEp->where('id',$sellinfo->id)->data(['num'=>0,'statuss'=>3])->update();
         return [RESULT_SUCCESS,'操作成功'];
@@ -237,6 +237,7 @@ class Ep extends IndexBase{
         $this->modelMember->where('id',$re['seller_id'])
             ->dec('bonus',$data['sell_alist'])
             ->update();
+
         $this->modelEp->where('id',$data['id'])
             ->dec('num',$data['sell_alist'])
             ->data(['deal_status'=>2])
@@ -270,7 +271,7 @@ class Ep extends IndexBase{
     }
     public function upload($info,$id){
 
-        $filePath = 'public' . DS . 'uploads'. DS .$info->getSaveName();
+        $filePath =  'uploads'. DS .$info->getSaveName();
         $getInfo = $info->getInfo();
         //获取图片的原名称
         $name = $getInfo['name'];
@@ -287,7 +288,7 @@ class Ep extends IndexBase{
     //重新上传截图
     public function re_upload($info,$id){
 
-        $filePath = 'public' . DS . 'uploads'. DS .$info->getSaveName();
+        $filePath = 'uploads'. DS .$info->getSaveName();
         $getInfo = $info->getInfo();
         //获取图片的原名称
         $name = $getInfo['name'];
