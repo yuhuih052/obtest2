@@ -343,11 +343,21 @@ class Database extends AdminBase
         $this->modelMember->where('is_inside','<>',1)->delete();
         $this->modelBill->where('id','>',0)->delete();
         $this->modelBonus->where('id','>',0)->delete();
+        $this->modelEp->where('id','>',0)->delete();
+        $this->modelEpRecord->where('id','>',0)->delete();
+        $this->modelShop->where('id','>',0)->delete();
         $this->modelBonusDetail->where('id','>',0)->delete();
         $this->modelMessage->where('id','>',0)->delete();
         $this->modelOutinput->where('id','>',0)->delete();
         $this->modelRecharge->where('id','>',0)->delete();
         $this->modelWithdrawl->where('id','>',0)->delete();
+        $re = [
+            'cfi_price' =>2.0,
+            'deal' => 0,
+            'default_deal' =>15000,
+            'cfi_total' => 300000,
+        ];
+        $this->modelPrice->where('id',1)->update($re);
         return [RESULT_SUCCESS, '数据库清除成功'];
     }
 }

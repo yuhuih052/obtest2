@@ -68,7 +68,28 @@
       {/notempty}
     </table>
   </div>
-
+  <hr style="width: 100%; size: 2px">
+  <table style="margin-top: 20px" class="table table-bordered">
+    <form action="{:url('Site/cfi_deal')}" method="post">
+    <tr>
+      <td>
+        默认涨价成交量(当前系统：{$list2.default_deal})
+      </td>
+      <td>
+        股票初始发行总量(当前系统:{$list2.cfi_total})
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="number" name="default_deal" value="{$list2.default_deal}">
+      </td>
+      <td>
+        <input type="number" name="cfi_total" value="{$list2.cfi_total}">
+      </td>
+      <td><input type="submit" value="保存"></td>
+    </tr>
+    </form>
+  </table>
   <div class="box-footer clearfix text-center">
       
   </div>

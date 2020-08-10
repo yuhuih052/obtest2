@@ -12,6 +12,9 @@ class Site extends AdminBase
 	//dump($data);die;
 	return $data;
 	}
+	public function price_table(){
+		return $this->modelPrice->where('id',1)->find();
+	}
 
 	public function siteSys($data = []){
 		//dump($data);die;
@@ -30,6 +33,16 @@ class Site extends AdminBase
 		];
 		//dump($check);die;
 		$result = $this->modelSiteArgm->where('id',$data['id'])->update($check);
-		return $result ? [RESULT_SUCCESS, '保存成功'] : [RESULT_ERROR, $this->modelBlogroll->getError()];
+		return $result ? [RESULT_SUCCESS, '保存成功'] : [RESULT_ERROR, $this->modelSiteArgm->getError()];
+	}
+	public function cfi_deal($data){
+		$c = $this->modelPrice->where('id',1)->find();
+		$cc = [
+			
+            'default_deal' =>($data['default_deal'] == null) ? $c['default_deal'] :$data['default_deal'],
+            'cfi_total' => ($data['cfi_total'] == null) ? $c['cfi_total'] :$data['cfi_total'],
+		];
+		$result = $this->modelPrice->where('id',1)->update($cc);
+		return $result ? [RESULT_SUCCESS, '保存成功'] : [RESULT_ERROR, $this->modelPrice->getError()];
 	}
 }

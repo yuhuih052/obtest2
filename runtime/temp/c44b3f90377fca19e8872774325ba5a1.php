@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:67:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\site\site.html";i:1597050522;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:79:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\database\data_restore.html";i:1585716400;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -191,109 +191,83 @@
           </h1>
           <?php echo $crumbs_view; ?>
         </section>
-<div class="box">
-  <div class="box-header">
-    
-    <ob_link><a class="btn" href="<?php echo url('blogrollAdd'); ?>"><i class="fa fa-plus"></i> 新 增</a></ob_link>
-    
-  </div>
-    
-  <div class="box-body table-responsive">
+<div class="callout callout-warning">
+    <h4>注意：数据还原前请先备份当前数据，防止还原过程出现异常。</h4>
+</div>
 
+<div class="box">
+  <div class="box-body table-responsive">
     <table  class="table table-bordered table-hover table-striped">
-      <form action="<?php echo url('Site/siteSys'); ?>" method="post">
-          <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
       <thead>
-      <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
       <tr>
-          <th>系统开关</th>
-          <th>提现开关</th>
-          <th>最低提现(当前系统：<?php echo $vo['withdrawl_min']; ?>)</th>
-          <th>最高提现(当前系统：<?php echo $vo['withdrawl_max']; ?>)</th>
-          <th>提现倍率(当前系统:<?php echo $vo['withdrawl_mult']; ?>)</th>
-          <th>提现手续费（当前系统：<?php echo $vo['withdrawl_server']; ?>）</th>
-          <th>最低充值(当前系统:<?php echo $vo['recharge_min']; ?>)</th>
-          <th>最高充值(当前系统：<?php echo $vo['recharge_max']; ?>)</th>
-          <th>充值倍率(当前系统:<?php echo $vo['recharge_mult']; ?>)</th>
-          <th>订单超时时间(小时)</th>
+          <th>备份名称</th>
+          <th>压缩</th>
+          <th>数据大小</th>
+          <th>备份时间</th>
+          <th>还原状态</th>
+          <th>操作</th>
       </tr>
       </thead>
-
+      
+      <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
         <tbody>
+            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tr>
-                  <?php if($vo['sys_status'] ==1): ?>
-                  <td>
-                    <label><input name="sys_status" type="radio" value="0" />关 </label>
-                      <label><input name="sys_status" checked="true"type="radio" value="1" />开 </label>
+                  <td><?php echo date('Ymd-His',$vo['time']); ?></td>
+                  <td><?php echo $vo['compress']; ?></td>
+                  <td><?php echo format_bytes($vo['size']); ?></td>
+                  <td><?php echo $key; ?></td>
+                  <td>-</td>
+                  <td style="width: 200px;">
+                      <ob_link><a class="btn ajax-get db-import" href="<?php echo url('dataRestoreHandle?time='.$vo['time']); ?>" class="btn"><i class="fa fa-exchange"></i> 还 原</a></ob_link>
+                      &nbsp;
+                      <ob_link><a class="btn ajax-get" href="<?php echo url('backupDel?time='.$vo['time']); ?>"><i class="fa fa-trash-o"></i> 删 除</a></ob_link>
                   </td>
-                  <?php else: ?>
-                  <td>
-                    <label><input name="sys_status" type="radio"checked="true" value="0" />关 </label>
-                      <label><input name="sys_status" type="radio" value="1" />开 </label>
-                  </td>
-                  <?php endif; if($vo['withdrawl_switch'] == 1): ?>
-                  <td><label><input name="withdrawl_switch" type="radio" value="0" />关 </label>
-                      <label><input name="withdrawl_switch"checked="true" type="radio" value="1" />开 </label>
-                  </td>
-                  <?php else: ?>
-                  <td><label><input name="withdrawl_switch" type="radio"checked="true" value="0" />关 </label>
-                      <label><input name="withdrawl_switch" type="radio" value="1" />开 </label>
-                  </td>
-                  <?php endif; ?>
-                  <td><input type="number" style="width:120px;" name="withdrawl_min"  value="<?php echo $vo['withdrawl_min']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_max"  value="<?php echo $vo['withdrawl_max']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_mult"  value="<?php echo $vo['withdrawl_mult']; ?>"></td>
-                  <td><input type="number" style="width: 120px;" name="server"   value="<?php echo $vo['withdrawl_server']; ?>">%</td>
-                  <td><input type="number" style="width:120px;" name="recharge_min"  value="<?php echo $vo['recharge_min']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_max"  value="<?php echo $vo['recharge_max']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_mult"  value="<?php echo $vo['recharge_mult']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="overtime"  value="<?php echo $vo['overtime'] /3600; ?>"></td>
-                    <td><input  name="id" hidden value="<?php echo $vo['id']; ?>"></td>
-                  <td class="col-md-2 text-center">
-                      <button type="submit" class='badge bg-green'>保存</button>
-                    </form> 
                 </tr>
             <?php endforeach; endif; else: echo "" ;endif; ?>
         </tbody>
         <?php else: ?>
-        <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
+        <tbody><tr class="odd"><td colspan="6" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
       <?php endif; ?>
     </table>
   </div>
-  <hr style="width: 100%; size: 2px">
-  <table style="margin-top: 20px" class="table table-bordered">
-    <form action="<?php echo url('Site/cfi_deal'); ?>" method="post">
-    <tr>
-      <td>
-        默认涨价成交量(当前系统：<?php echo $list2['default_deal']; ?>)
-      </td>
-      <td>
-        股票初始发行总量(当前系统:<?php echo $list2['cfi_total']; ?>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="number" name="default_deal" value="<?php echo $list2['default_deal']; ?>">
-      </td>
-      <td>
-        <input type="number" name="cfi_total" value="<?php echo $list2['cfi_total']; ?>">
-      </td>
-      <td><input type="submit" value="保存"></td>
-    </tr>
-    </form>
-  </table>
-  <div class="box-footer clearfix text-center">
-      
-  </div>
-
 </div>
+
 <script type="text/javascript">
-  function fresh(){  
-        if(location.href.indexOf("?reload=true")<0){
-            location.href+="?reload=true";  
-        }  
-    }  
-    setTimeout("fresh()",10);
+    $(".db-import").click(function(){
+        var self = this, status = ".";
+        $.get(self.href, success, "json");
+        window.onbeforeunload = function(){ return "正在还原数据库，请不要关闭！" }
+        return false;
+
+        function success(data){
+            
+            if(data.status){
+                if(data.gz){
+                    data.msg += status;
+                    if(status.length === 5){
+                        status = ".";
+                    } else {
+                        status += ".";
+                    }
+                }
+                
+                $(self).parent().parent().prev().text(data.msg);
+                if(data.part){
+                    $.get(self.href, 
+                        {"part" : data.part, "start" : data.start}, 
+                        success, 
+                        "json"
+                    );
+                }  else {
+                    window.onbeforeunload = function(){ return null; }
+                }
+            } else {
+                
+                toast.warning(data.msg);
+            }
+        }
+    });
 </script>
     </section>
   </div>

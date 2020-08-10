@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\login\login.html";i:1596095143;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\login\login.html";i:1597030787;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +33,7 @@
             <div class="row-text">
                 <i class="iconfont icon-yanzhengma2 login-icon"></i>
                 <input type="text" name="verify" placeholder="请输入验证码" maxlength="6"/>
-                <img src="<?php echo captcha_src(); ?>" alt="captcha" onclick="this.src = '<?php echo captcha_src(); ?>'+Math.random()" class="login-auth"/>
+                <img src="<?php echo captcha_src(); ?>" alt="captcha" onclick="this.src = '<?php echo captcha_src(); ?>'" class="login-auth"/>
             </div>
         </div>
 
@@ -49,7 +49,7 @@
 
 
 </body>
-<script type="text/javascript" src="../index/js/mui.min.js" ></script>
+<script type="text/javascript" src="__STATIC__/index/js/mui.min.js" ></script>
 <script>
     mui('body').on('tap', 'a', function() {
         var id = this.getAttribute('href');

@@ -14,3 +14,11 @@
 [ 2020-08-10T09:21:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/record.html?_pjax=.content
 [ info ] www.obtest2.com/admin.php/messages/record.html?_pjax=.content [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：3,214.33kb] [文件加载：84]
 [ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-10T17:06:21+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/cfi_deal.html
+[ info ] www.obtest.com/admin.php/site/cfi_deal.html [运行时间：0.086005s][吞吐率：11.63req/s] [内存消耗：3,234.38kb] [文件加载：82]
+[ error ] [8]未定义数组索引: cfi_total[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:43]
+---------------------------------------------------------------
+[ 2020-08-10T17:06:41+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/cfi_deal.html
+[ info ] www.obtest.com/admin.php/site/cfi_deal.html [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,234.38kb] [文件加载：82]
+[ error ] [8]未定义数组索引: cfi_total[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:43]
