@@ -1,0 +1,16 @@
+---------------------------------------------------------------
+[ 2020-08-10T09:11:54+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/money/search
+[ info ] www.obtest2.com/admin.php/money/search [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,139.86kb] [文件加载：79]
+[ error ] [0]语法解析错误: syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Money.php:43]
+---------------------------------------------------------------
+[ 2020-08-10T09:12:42+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/money/search
+[ info ] www.obtest2.com/admin.php/money/search [运行时间：0.107006s][吞吐率：9.35req/s] [内存消耗：3,484.38kb] [文件加载：86]
+[ error ] [0]致命错误: Call to undefined method think\Collection::render()[D:\phpstudy_pro\WWW\obtest2\runtime\temp\9ef6dc975911981732d95c299b2c420b.php:248]
+---------------------------------------------------------------
+[ 2020-08-10T09:19:43+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/money/search
+[ info ] www.obtest2.com/admin.php/money/search [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：3,139.87kb] [文件加载：79]
+[ error ] [0]语法解析错误: syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Money.php:50]
+---------------------------------------------------------------
+[ 2020-08-10T09:21:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/messages/record.html?_pjax=.content
+[ info ] www.obtest2.com/admin.php/messages/record.html?_pjax=.content [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：3,214.33kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]

@@ -16,7 +16,8 @@ class EpDeal extends AdminBase
     }
     public function overtime($where = [], $field = true,$order = 'id desc',$paginate = 20)
     {
-        $data = $this->modelEpRecord->where('create_time','<',time()-43200)
+        $siteArgm = $this->modelSiteArgm->where('id',1)->find();
+        $data = $this->modelEpRecord->where('create_time','<',time()-$siteArgm->overtime)
                                         ->where('flag','=',1)
                                         ->order('create_time','desc')
                                         ->select();
@@ -48,7 +49,8 @@ class EpDeal extends AdminBase
     }
     public function overtime_comfirm($where = [], $field = true,$order = 'id desc',$paginate = 20)
     {
-        $data = $this->modelEpRecord->where('fukuan_time','<',time()-43200)
+        $siteArgm = $this->modelSiteArgm->where('id',1)->find();
+        $data = $this->modelEpRecord->where('fukuan_time','<',time()-$siteArgm->overtime)
             ->where('flag','=',2)
             ->order('create_time','desc')
             ->select();

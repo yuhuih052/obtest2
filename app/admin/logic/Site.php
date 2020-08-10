@@ -24,6 +24,7 @@ class Site extends AdminBase
 			'withdrawl_max' => ($data['withdrawl_max'] == null) ? $si[0]['withdrawl_max'] :$data['withdrawl_max'],
 			'withdrawl_mult' => ($data['withdrawl_mult'] == null) ? $si[0]['withdrawl_mult'] :$data['withdrawl_mult'],
 			'withdrawl_server' => ($data['server'] == null) ? $si[0]['withdrawl_server'] :$data['server'],
+			'overtime' => ($data['overtime'] == null) ? $si[0]['overtime'] :$data['overtime']*60*60,
 			'sys_status'	=> $data['sys_status'],
 			'withdrawl_switch'	=> $data['withdrawl_switch'],
 		];

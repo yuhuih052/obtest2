@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:67:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\site\site.html";i:1597025429;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:76:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\search_list.html";i:1597027948;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -192,71 +192,87 @@
           <?php echo $crumbs_view; ?>
         </section>
 <div class="box">
+    
   <div class="box-header">
-    
-    <ob_link><a class="btn" href="<?php echo url('blogrollAdd'); ?>"><i class="fa fa-plus"></i> 新 增</a></ob_link>
-    
+
+    <div class="row">
+        <div class="col-sm-5">
+            <ob_link><a class="btn" href="<?php echo url('memberAdd'); ?>"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+            &nbsp;
+            <ob_link><a class="btn export" url="<?php echo url('exportMemberList'); ?>"><i class="fa fa-download"></i> 导 出</a></ob_link>
+        </div>
+        
+    </div>
   </div>
     
+    
   <div class="box-body table-responsive">
-
     <table  class="table table-bordered table-hover table-striped">
-      <form action="<?php echo url('Site/siteSys'); ?>" method="post">
-          <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
       <thead>
-      <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
       <tr>
-          <th>系统开关</th>
-          <th>提现开关</th>
-          <th>最低提现(当前系统：<?php echo $vo['withdrawl_min']; ?>)</th>
-          <th>最高提现(当前系统：<?php echo $vo['withdrawl_max']; ?>)</th>
-          <th>提现倍率(当前系统:<?php echo $vo['withdrawl_mult']; ?>)</th>
-          <th>提现手续费（当前系统：<?php echo $vo['withdrawl_server']; ?>）</th>
-          <th>最低充值(当前系统:<?php echo $vo['recharge_min']; ?>)</th>
-          <th>最高充值(当前系统：<?php echo $vo['recharge_max']; ?>)</th>
-          <th>充值倍率(当前系统:<?php echo $vo['recharge_mult']; ?>)</th>
-          <th>订单超时时间(小时)</th>
+          <th>头像</th>
+          <th>昵称</th>
+          <th>用户名</th>
+          <th>ID编号</th>
+          <th>邮箱</th>
+          <th>手机</th>
+          <th>总奖金</th>
+          <th>现金币</th>
+          <th>报单币</th>
+          <th>CFI</th>
+          <th>电子币</th>
+          <th>保管金</th>
+          <th>报单中心</th>
+          <th>激活状态</th>
+          <th>上级</th>
+          <th>注册时间</th>
+          <th>操作</th>
       </tr>
       </thead>
-
+      
+      <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
         <tbody>
+            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <tr>
-                  <?php if($vo['sys_status'] ==1): ?>
                   <td>
-                    <label><input name="sys_status" type="radio" value="0" />关 </label>
-                      <label><input name="sys_status" checked="true"type="radio" value="1" />开 </label>
+                      <img class="img-circle" style="width: 30px; height: 30px;" src="<?php echo get_head_picture_url($vo['head_img_id']); ?>"/>
                   </td>
-                  <?php else: ?>
+                  <td><?php echo $vo['nickname']; ?></td>
+                  <td><?php echo $vo['username']; ?></td>
+                  <td><?php echo $vo['member_number']; ?></td>
+                  <td><?php echo (isset($vo['email']) && ($vo['email'] !== '')?$vo['email']:'未绑定'); ?></td>
+                  <td><?php echo (isset($vo['mobile']) && ($vo['mobile'] !== '')?$vo['mobile']:'未绑定'); ?></td>
+                  <td><?php echo $vo['all_bonus']; ?></td>
+                  <td><?php echo $vo['bonus']; ?></td>
+                  <td><?php echo $vo['wallet']; ?></td>
+                  <td><?php echo $vo['CFI']; ?></td>
+                  <td><?php echo $vo['dianzibi']; ?></td>
+                  <td><?php echo $vo['baoguanjin']; ?></td>
                   <td>
-                    <label><input name="sys_status" type="radio"checked="true" value="0" />关 </label>
-                      <label><input name="sys_status" type="radio" value="1" />开 </label>
+                    <?php if($vo['is_center'] == 0): ?>否
+                    <?php elseif($vo['is_center'] == 1): ?>是
+                    <?php endif; ?>
                   </td>
-                  <?php endif; if($vo['withdrawl_switch'] == 1): ?>
-                  <td><label><input name="withdrawl_switch" type="radio" value="0" />关 </label>
-                      <label><input name="withdrawl_switch"checked="true" type="radio" value="1" />开 </label>
+                  <td>
+                    <?php if($vo['status'] == 0): ?>未激活
+                <?php elseif($vo['status'] == 1): ?>已激活(已开启)
+                <?php elseif($vo['status'] == 2): ?>锁定
+                <?php endif; ?>
                   </td>
-                  <?php else: ?>
-                  <td><label><input name="withdrawl_switch" type="radio"checked="true" value="0" />关 </label>
-                      <label><input name="withdrawl_switch" type="radio" value="1" />开 </label>
+                  <td><?php echo $vo['Re_name']; ?></td>
+                  <td><?php echo $vo['create_time']; ?></td>
+                  <td class="text-center">
+                      <ob_link><a href="<?php echo url('memberEdit', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>编 辑</span></a></ob_link>
+                      &nbsp;
+                      <ob_link><a href="<?php echo url('memberAuth', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>授 权</span></a></ob_link>
+                      &nbsp;
+                      <ob_link><a class="confirm ajax-get"  href="<?php echo url('memberDel', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>删 除</span></a></ob_link>
                   </td>
-                  <?php endif; ?>
-                  <td><input type="number" style="width:120px;" name="withdrawl_min"  value="<?php echo $vo['withdrawl_min']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_max"  value="<?php echo $vo['withdrawl_max']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="withdrawl_mult"  value="<?php echo $vo['withdrawl_mult']; ?>"></td>
-                  <td><input type="number" style="width: 120px;" name="server"   value="<?php echo $vo['withdrawl_server']; ?>">%</td>
-                  <td><input type="number" style="width:120px;" name="recharge_min"  value="<?php echo $vo['recharge_min']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_max"  value="<?php echo $vo['recharge_max']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="recharge_mult"  value="<?php echo $vo['recharge_mult']; ?>"></td>
-                  <td><input type="number" style="width:120px;" name="overtime"  value="<?php echo $vo['overtime'] /3600; ?>"></td>
-                    <td><input  name="id" hidden value="<?php echo $vo['id']; ?>"></td>
-                  <td class="col-md-2 text-center">
-                      <button type="submit" class='badge bg-green'>保存</button>
-                    </form> 
                 </tr>
             <?php endforeach; endif; else: echo "" ;endif; ?>
         </tbody>
         <?php else: ?>
-        <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
+        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
       <?php endif; ?>
     </table>
   </div>
@@ -264,15 +280,15 @@
   <div class="box-footer clearfix text-center">
       
   </div>
-
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 </div>
-<script type="text/javascript">
-  function fresh(){  
-        if(location.href.indexOf("?reload=true")<0){
-            location.href+="?reload=true";  
-        }  
-    }  
-    setTimeout("fresh()",10);
+
+<script>
+    //导出功能
+    $(".export").click(function(){
+        
+        window.location.href = searchFormUrl($(".export"));
+    });
 </script>
     </section>
   </div>

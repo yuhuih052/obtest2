@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\message\sendmessage.html";i:1596871610;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\message\sendmessage.html";i:1596879301;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,8 +98,9 @@
   </div>
 
   <div class="box-footer clearfix text-center">
+
       </div>
-<a class="btn" href="<?php echo url('user/index',['id'=>\think\Request::instance()->session('user_id')]); ?>" ><i class="fa fa-history"></i> 返 回</a>
+<a class="btn" href="<?php echo url('user/index',['id'=>\think\Request::instance()->session('user_id2')]); ?>" ><i class="fa fa-history"></i> 返 回</a>
 </div>
 
 

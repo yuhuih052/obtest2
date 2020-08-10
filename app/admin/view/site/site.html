@@ -22,6 +22,7 @@
           <th>最低充值(当前系统:{$vo.recharge_min})</th>
           <th>最高充值(当前系统：{$vo.recharge_max})</th>
           <th>充值倍率(当前系统:{$vo.recharge_mult})</th>
+          <th>订单超时时间(小时)</th>
       </tr>
       </thead>
 
@@ -54,6 +55,7 @@
                   <td><input type="number" style="width:120px;" name="recharge_min"  value="{$vo.recharge_min}"></td>
                   <td><input type="number" style="width:120px;" name="recharge_max"  value="{$vo.recharge_max}"></td>
                   <td><input type="number" style="width:120px;" name="recharge_mult"  value="{$vo.recharge_mult}"></td>
+                  <td><input type="number" style="width:120px;" name="overtime"  value="{$vo.overtime /3600}"></td>
                     <td><input  name="id" hidden value="{$vo.id}"></td>
                   <td class="col-md-2 text-center">
                       <button type="submit" class='badge bg-green'>保存</button>

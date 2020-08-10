@@ -230,7 +230,7 @@ class Member extends AdminBase
         
         $result && action_log('编辑', '编辑会员，id：' . $data['id']);
         
-        return $result ? [RESULT_SUCCESS, '会员编辑成功', $url] : [RESULT_ERROR, $this->modelMember->getError()];
+        return $result>0 ? [RESULT_SUCCESS, '会员编辑成功', $url] : [RESULT_ERROR, $this->modelMember->getError()];
     }
 
     public function acSave($data){
@@ -485,12 +485,12 @@ class Member extends AdminBase
        
         $url = url('memberList');
         $result = $this->modelMember->where('id',$data['id'])->update(['is_center' => $data['re_is_center'],'re_is_center'=> 0]);
-        return $result ? [RESULT_SUCCESS,'已同意',$url] :[RESULT_ERROR,$this->modelMember->getError(),$url];
+        return [RESULT_SUCCESS,'已同意',$url];
     }
     public function requestDisagree($data){
         $url = url('memberList');
         $result = $this->modelMember->where('id',$data['id'])->update(['re_is_center' => 0]);
-        return $result ? [RESULT_SUCCESS,'已拒绝',$url] :[RESULT_ERROR,$this->modelMember->getError(),$url];
+        return [RESULT_SUCCESS,'已拒绝',$url];
     }
 
     //会员搜索
