@@ -22,3 +22,27 @@
 [ 2020-08-10T17:06:41+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/cfi_deal.html
 [ info ] www.obtest.com/admin.php/site/cfi_deal.html [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,234.38kb] [文件加载：82]
 [ error ] [8]未定义数组索引: cfi_total[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:43]
+---------------------------------------------------------------
+[ 2020-08-10T17:18:43+08:00 ] 192.168.100.21 192.168.200.9 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：2,858.49kb] [文件加载：77]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Login.php:114]
+---------------------------------------------------------------
+[ 2020-08-10T17:20:04+08:00 ] 127.0.0.1 127.0.0.1 POST /login/register.html
+[ info ] www.obtest.com/login/register.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,859.13kb] [文件加载：77]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Login.php:114]
+---------------------------------------------------------------
+[ 2020-08-10T17:43:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,347.64kb] [文件加载：83]
+[ error ] [0]致命错误: Call to a member function render() on array[D:\phpstudy_pro\WWW\obtest2\runtime\temp\0a43352fc5e286035db32823f3a1aa83.php:44]
+---------------------------------------------------------------
+[ 2020-08-10T17:43:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,428.64kb] [文件加载：86]
+[ error ] [0]致命错误: Call to a member function render() on array[D:\phpstudy_pro\WWW\obtest2\runtime\temp\0a43352fc5e286035db32823f3a1aa83.php:236]
+---------------------------------------------------------------
+[ 2020-08-10T17:47:13+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.085004s][吞吐率：11.76req/s] [内存消耗：3,224.30kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-10T17:47:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,224.30kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]

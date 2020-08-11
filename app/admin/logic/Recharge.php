@@ -20,7 +20,7 @@ class Recharge extends AdminBase
     /**
      * 获取充值申请列表
      */
-    public function rechargeList($where = [], $field = true, $order = '', $paginate = 0)
+    public function rechargeList($where = [], $field = true, $order = '', $paginate = 25)
     {
          $where = [
              'result'=>0,
@@ -32,9 +32,10 @@ class Recharge extends AdminBase
     /**
      * 获取充值申请记录
      */
-    public function rechargeRecord($where = [], $field = true, $order = '', $paginate = 0)
+    public function rechargeRecord($where = [], $field = true, $order = '', $paginate = 25)
     {
-        $data = $this->modelRecharge->where('create_time','> time','2016-1-1')->select()->toArray();
+        
+        $data = $this->modelRecharge->getList($where, $field, $order, $paginate);
         //dump($data);
         return $data;
     }
@@ -56,7 +57,7 @@ class Recharge extends AdminBase
         //dump($data);die;
         $data1 = [
             'wallet' => $userwallet + $data['charge'],
-            're_recharge' => $user[0]['re_recharge'] + $data['charge'],
+            'all_recharge' => $user[0]['all_recharge'] + $data['charge'],
             'request_chongzhi' => 0,
         ];
         //dump($data1);die;

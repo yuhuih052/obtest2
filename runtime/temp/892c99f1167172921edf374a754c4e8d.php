@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1596871059;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1597112259;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,7 +108,7 @@
         <li><a href="<?php echo url('user/request_is_center',['is_center'=>2,'re_is_center'=>2]); ?>">申请一级报单中心</a></li>
         <li><a href="<?php echo url('user/request_is_center',['is_center'=>3,'re_is_center'=>3]); ?>">申请商务报单中心</a></li>
         <?php elseif($data['re_is_center'] > 0): ?>
-        <li><a href="#">正在申请成为报单中心</a></li>
+        <li><a href="#">正在申请报单中心</a></li>
         <?php elseif($data['is_center'] == 1): ?>
         <li><a href="<?php echo url('user/request_is_center',['is_center'=>2,'re_is_center'=>2]); ?>">申请一级报单中心</a></li>
         <li><a href="<?php echo url('user/request_is_center',['is_center'=>3,'re_is_center'=>3]); ?>">申请商务报单中心</a></li>

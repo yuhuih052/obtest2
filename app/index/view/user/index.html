@@ -49,7 +49,7 @@
         <li><a href="{:url('user/request_is_center',['is_center'=>2,'re_is_center'=>2])}">申请一级报单中心</a></li>
         <li><a href="{:url('user/request_is_center',['is_center'=>3,'re_is_center'=>3])}">申请商务报单中心</a></li>
         {elseif $data.re_is_center > 0/}
-        <li><a href="#">正在申请成为报单中心</a></li>
+        <li><a href="#">正在申请报单中心</a></li>
         {elseif $data.is_center == 1/}
         <li><a href="{:url('user/request_is_center',['is_center'=>2,'re_is_center'=>2])}">申请一级报单中心</a></li>
         <li><a href="{:url('user/request_is_center',['is_center'=>3,'re_is_center'=>3])}">申请商务报单中心</a></li>

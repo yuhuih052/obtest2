@@ -53,10 +53,12 @@
                   <td>{$vo.Re_name}</td>
                   <td>{$vo.father_name}</td>
                   <td class="text-center">
+                    {if $vo.status==0/}
                       <ob_link><a href="{:url('memberEdit', array('id' => $vo['id']))}"><span class='badge bg-green'>进行激活</span></a></ob_link>
 
                       &nbsp;
                       <ob_link><a class="confirm ajax-get"  href="{:url('memberDel', array('id' => $vo['id']))}"><span class='badge bg-red'>删 除</span></a></ob_link>
+                      {/if}
                   </td>
                 </tr>
             {/volist}

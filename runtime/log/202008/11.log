@@ -1,0 +1,64 @@
+---------------------------------------------------------------
+[ 2020-08-11T09:40:54+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html?_pjax=.content [运行时间：0.111006s][吞吐率：9.01req/s] [内存消耗：3,259.64kb] [文件加载：81]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T09:40:54+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,270.89kb] [文件加载：82]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T09:52:57+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html?_pjax=.content [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：3,259.70kb] [文件加载：81]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T09:52:57+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html [运行时间：0.090001s][吞吐率：11.11req/s] [内存消耗：3,270.95kb] [文件加载：82]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T09:53:01+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：3,241.73kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-11T10:21:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.072005s][吞吐率：13.89req/s] [内存消耗：3,241.65kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-11T10:21:59+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：3,241.77kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-11T10:22:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html?_pjax=.content [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：3,265.39kb] [文件加载：81]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T10:22:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：3,270.91kb] [文件加载：82]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T10:23:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：3,207.13kb] [文件加载：80]
+[ error ] [0]类的属性不存在:app\common\model\Member->re_recharge[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-11T10:23:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargeagree/id/7/charge/10000.html
+[ info ] www.obtest.com/admin.php/recharge/rechargeagree/id/7/charge/10000.html [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：3,277.13kb] [文件加载：82]
+[ error ] [8]未定义数组索引: re_recharge[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Recharge.php:60]
+---------------------------------------------------------------
+[ 2020-08-11T10:25:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.093005s][吞吐率：10.75req/s] [内存消耗：3,247.48kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-11T10:52:45+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/2.html
+[ info ] www.obtest.com/user/index/id/2.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,817.11kb] [文件加载：71]
+[ error ] [0]语法解析错误: syntax error, unexpected ''baogaunjin'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:214]
+---------------------------------------------------------------
+[ 2020-08-11T10:53:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/index/id/2.html
+[ info ] www.obtest.com/user/index/id/2.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,817.11kb] [文件加载：71]
+[ error ] [0]语法解析错误: syntax error, unexpected ''baogaunjin'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:230]
+---------------------------------------------------------------
+[ 2020-08-11T10:54:18+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,155.97kb] [文件加载：78]
+[ error ] [8]未定义变量: p[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:570]
+---------------------------------------------------------------
+[ 2020-08-11T11:01:12+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.114006s][吞吐率：8.77req/s] [内存消耗：3,163.87kb] [文件加载：78]
+[ error ] [8]Trying to get property 'id' of non-object[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:203]

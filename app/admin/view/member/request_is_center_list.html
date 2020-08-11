@@ -2,7 +2,7 @@
 <div class="box">
   <div class="box-header">
     
-    <ob_link><a class="btn" href="{:url('blogrollAdd')}"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
     
   </div>
     
@@ -24,9 +24,9 @@
                   <td>{$vo.username}</td>
 
                   <td>
-                    {if $vo.re_is_center == 2}申请二级报单中心
-                    {elseif $vo.re_is_center == 1}申请一级报单中心
-                    {elseif $vo.re_is_center == 3}申请商务报单中心
+                    {if $vo.re_is_center == 1}申请成为二级报单中心
+                    {elseif $vo.re_is_center == 2}申请成为一级报单中心
+                    {elseif $vo.re_is_center == 3}申请成为商务报单中心
                     {/if}
                   </td>
                   <td>{$vo.all_recharge}</td>

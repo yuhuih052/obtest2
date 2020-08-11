@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\request_is_center_list.html";i:1596856149;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\request_is_center_list.html";i:1597112348;}*/ ?>
 
 <div class="box">
   <div class="box-header">
     
-    <ob_link><a class="btn" href="<?php echo url('blogrollAdd'); ?>"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
     
   </div>
     
@@ -25,9 +25,9 @@
                   <td><?php echo $vo['username']; ?></td>
 
                   <td>
-                    <?php if($vo['re_is_center'] == 2): ?>申请二级报单中心
-                    <?php elseif($vo['re_is_center'] == 1): ?>申请一级报单中心
-                    <?php elseif($vo['re_is_center'] == 3): ?>申请商务报单中心
+                    <?php if($vo['re_is_center'] == 1): ?>申请成为二级报单中心
+                    <?php elseif($vo['re_is_center'] == 2): ?>申请成为一级报单中心
+                    <?php elseif($vo['re_is_center'] == 3): ?>申请成为商务报单中心
                     <?php endif; ?>
                   </td>
                   <td><?php echo $vo['all_recharge']; ?></td>

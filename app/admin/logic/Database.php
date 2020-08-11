@@ -338,9 +338,19 @@ class Database extends AdminBase
             'yejir_Total' =>0,
             'totalChild' =>0,
             'u_num' =>0,
+            'wallet' => 100000,
+            'bonus' => 0,
+            'all_bonus' => 0,
+            'baoguanjin' => 0,
+            'dianzibi' => 10000,
+            'CFI' => 0,
+            'daozhang' => 0,
+            'is_center' => 1,
+            'baodan' =>0,
+            'member_rank' => 1,
         ];
         $this->modelMember->where('id',2)->update($res);
-        $this->modelMember->where('is_inside','<>',1)->delete();
+        $this->modelMember->where('id','>',2)->delete();
         $this->modelBill->where('id','>',0)->delete();
         $this->modelBonus->where('id','>',0)->delete();
         $this->modelEp->where('id','>',0)->delete();
@@ -351,6 +361,7 @@ class Database extends AdminBase
         $this->modelOutinput->where('id','>',0)->delete();
         $this->modelRecharge->where('id','>',0)->delete();
         $this->modelWithdrawl->where('id','>',0)->delete();
+        $this->modelDealRecord->where('id','>',0)->delete();
         $re = [
             'cfi_price' =>2.0,
             'deal' => 0,

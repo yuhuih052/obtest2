@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\recharge\recharge_index.html";i:1595212697;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\recharge\recharge_index.html";i:1597052882;}*/ ?>
 
 <div class="box">
   <div class="box-header">
     
-    <ob_link><a class="btn" href="<?php echo url('blogrollAdd'); ?>"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    
     
   </div>
     
@@ -44,7 +44,7 @@
   </div>
 
   <div class="box-footer clearfix text-center">
-      
+      <?php echo $list->render(); ?>
   </div>
 
 </div>

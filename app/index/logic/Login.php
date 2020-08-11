@@ -109,7 +109,7 @@ class Login extends IndexBase
             //$param = $this->param;
             //$member_number = time().rand(10,99);
             //最后一位会员编号
-            $last_number = $this->modelMember->where('is_inside',0)->limit(1)->order("id desc")->value('member_number');
+            $last_number = $this->modelMember->where('id','>',0)->limit(1)->order("id desc")->value('member_number');
             
             $new_number = preg_replace("/[a-zA-Z]/u",'',$last_number)+1;
             //dd($new_number);

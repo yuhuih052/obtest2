@@ -23,7 +23,7 @@ class Login extends ControllerBase
      */
     public function login()
     {
-
+        
         $lang = request()->param('lang');
         if (in_array($lang, ['zh-cn', 'en-us'])) {
             cookie('think_var', $lang);
