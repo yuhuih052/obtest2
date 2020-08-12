@@ -62,9 +62,15 @@ class Futou extends IndexBase
         
         if($p_person[0]['wallet'] >= $check_dis['baodanbi_co']){
     		$result = $this->modelMember->setInfo($sl);
+            $f_m = $this->modelMember->where('id',$result)->find();
             //激活会员时，统计报单币入账
             $ac_bdb_all = [
+                    'user_id' => $master[0]['id'],
+                    'user_name' => $master[0]['username']."（主账户）",
+                    'bonus_user_id'=>$f_m->id,
+                    'bonus_user_name'=>$f_m->username."（子账户）",
                     'baodanbi_all' => $check_dis['baodanbi_co'],
+                    'shuoming' =>'复投会员',
                 ];
                 $this->modelBill->setInfo($ac_bdb_all);
             //dd($result);
@@ -99,9 +105,9 @@ class Futou extends IndexBase
 
                 //更新直推人的奖励
                 $re_zhi = [
-                    'bonus' => $p_zhi[0]['bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.9,
-                    'baoguanjin' => $p_zhi[0]['baoguanjin'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co']*0.1,
-                    'all_bonus' =>  $p_zhi[0]['all_bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+                    'bonus' => $p_zhi[0]['bonus'] + $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.9,
+                    'baoguanjin' => $p_zhi[0]['baoguanjin'] + $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.1,
+                    'all_bonus' =>  $p_zhi[0]['all_bonus'] + $check_dis['baodanbi_co'] * $check_dis['tuijian_co'],
                 ];
                 
                 //直推人获奖更新
@@ -111,8 +117,13 @@ class Futou extends IndexBase
                 $bill1 = [
                     'user_id' => $p_zhi[0]['id'],
                     'user_name' => $p_zhi[0]['username'],
+                    'bonus_user_id'=>$f_m->id,
+                    'bonus_user_name'=>$f_m->username,
                     //'activate'  => "-".$check_dis['baodanbi_co'],
-                    'tuijian'   => "+".$check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+                    'tuijian'   => "+".$check_dis['baodanbi_co'] * $check_dis['tuijian_co'],
+                    'bonus' => $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.9,
+                    'baoguanjin' =>$check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.1,
+                    'shuoming' => '复投会员产生推荐奖',
                 ];
                 $this->modelBill->setInfo($bill1);
 
@@ -120,6 +131,8 @@ class Futou extends IndexBase
                 $bill12 = [
                     'user_id' => $p_person[0]['id'],
                     'user_name' => $p_person[0]['username'],
+                    'bonus_user_id'=>$f_m->id,
+                    'bonus_user_name'=>$f_m->username,
                     'activate' => "-".$check_dis['baodanbi_co'],
                     'baodanbi_all'=>$check_dis['baodanbi_co'],
                     'shuoming' => "注册子账号",
@@ -130,16 +143,16 @@ class Futou extends IndexBase
                 $bonus_detail1 = [
                     'user_id' => $p_zhi[0]['id'],
                     'user_name' => $p_zhi[0]['username'],
-                    'bonus_amount' => $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+                    'bonus_amount' => $check_dis['baodanbi_co'] * $check_dis['tuijian_co'],
                     'bonus_type'    => '直推奖',
                     'bonus_time'    => date('Y-m-d h:i:s', time()),
                 ];
                 $this->modelBonusDetail->setInfo($bonus_detail1);
 
                 //增加业绩
-                $this->logicUser->addYeji($p[0]['p_path_id'],$p[0]['id'],$check_dis['baodanbi_co']);
+                $this->logicUser->addYeji($p[0]['p_path_id'],$p[0]['id'],$check_dis['baodanbi_co'],$p,$check_dis);
                 //见点奖发放
-                $this->logicUser->jiandianjiang($p[0]['p_path_id']);
+                $this->logicUser->jiandianjiang($p[0]['p_path_id'],$p,$check_dis);
 
 
 /************奖励发放结束****/

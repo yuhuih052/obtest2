@@ -479,4 +479,10 @@ class User extends IndexBase
         }
         $this->error('只能往上升级');
     }
+    //奖金明细
+    public function bonusDetail(){
+        $data = $this->logicUser->bonusDetail($this->param);
+        $this->assign('data',$data);
+        return $this->fetch('bonus_detail');
+    }
 }

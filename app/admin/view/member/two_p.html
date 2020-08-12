@@ -1,0 +1,110 @@
+<style type="text/css">
+    td{
+        text-align: center;
+    }
+    .two-pathway{padding-bottom: 50px;}
+    .td{
+        border:1px solid #ccc;
+        height: 80px;
+        width: 150px;
+        display: inline-block;
+        padding: 5px;
+        margin: 5px;
+        margin-top: 30px;
+    }
+    .td{position: relative;}
+    .td:before{position: absolute; content: ''; height: 16px; width: 1px; background-color: #333; left: 50%; top: -16px}
+    .td:after{position: absolute; content: ''; height: 21px; width: 1px; background-color: #333; left: 50%; bottom: -21px}
+    table tr:first-child .td:before{display: none}
+    table tr:last-child .td:after{display: none}
+    table tr td{position: relative;}
+    table tr td:after{position: absolute; content: ''; height:1px; width: 50%; background-color: #333; left: 50%; bottom: -16px; left:25%;}
+    table tr:last-child td:after{display: none}
+
+    .no-data{
+        text-align: center;
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .btn-yellow:visited {
+        color: #fff; 
+    }
+
+    .btn-yellow{
+        line-height: 30px !important;
+    }
+
+    .two-pathway a{
+        color:#5db6e5;
+    }
+
+</style>
+<form action="" name="form" method="post">
+        用户：<input type="text" id="username" name="username" placeholder="输入用户名" value="">
+                
+                <input type="submit"  onclick="find()" value="查询"> 
+                <input type="submit"  onclick="ding()" value="顶层"> 
+               
+    </form>
+  <!-- E=头部 -->
+<div class="height-top"></div>
+
+<div class="container">
+    <div style="margin-bottom: 3rem;" >
+      <div style="width: 100%; overflow: auto;">
+            <div class="two-pathway" style="overflow-x:scroll;">
+                    {$html}
+                </div>
+        </div>
+    </div>
+</div>
+<div style="height: 30px"></div>
+
+<script type="text/javascript">
+
+    function left(){
+//        document.("表单的name值").action
+//        document.("表单的name值").submit
+        document.form.action="{:url('placeTreesize')}";
+        document.form.submit();
+    }
+    function right() {
+        document.form.action = "{:url('placeTreesize')}";
+        document.form.submit();
+    }
+    function find(){
+        document.form.action="{:url('twoPathwayfind')}";
+        document.form.submit();
+    }
+    function ding(){
+        document.form.action="{:url('twoP')}";
+        document.form.submit();
+    }
+
+
+      $(document).ready(function(){
+        var uaername = $('#username').val();
+        var level = $('#level').val();
+        
+          $("#left").click(function(){
+            var place = 0;
+            //alert(place);
+            $.post("placeTreesize",{
+                username:username.value,
+                level:level,
+                place:place,
+            },function(){
+                location.reload();
+            }); 
+        });
+        $("#right").click(function(){
+            var place = 1;
+            $.post("placeTreesize",{
+                username:username.value,
+                level:level,
+                place:place,
+            });      
+    });
+});
+</script>

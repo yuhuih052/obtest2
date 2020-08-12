@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\billdetail.html";i:1597200659;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:75:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\bonus_detail.html";i:1597195938;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,13 +61,10 @@
     <table  class="table table-bordered table-hover table-striped">
       <thead>
       <tr>
-          <th>用户</th>
-          <th>激活会员时报单币</th>
-          <th>报单币</th>
-          <th>现金币</th>
-          <th>保管金</th>
-          <th>电子币</th>
-           <th>时间</th>
+          <th>用户名</th>
+          <th>奖金金额</th>
+          <th>奖金类型</th>
+          <th>获奖时间</th>
           <th>说明</th>
       </tr>
       </thead>
@@ -75,15 +72,12 @@
       <?php if(!(empty($data) || (($data instanceof \think\Collection || $data instanceof \think\Paginator ) && $data->isEmpty()))): ?>
         <tbody>
             <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                <tr>
-                  <td><?php echo $vo['user_name']; ?></td>
-                  <td><?php echo $vo['activate']; ?></td>
-                  <td><?php echo $vo['wallet']; ?></td>
-                  <td><?php echo $vo['bonus']; ?></td>
-                  <td><?php echo $vo['baoguanjin']; ?></td>
-                    <td><?php echo $vo['dianzibi_all']; ?></td>
-                  <td><?php echo $vo['create_time']; ?></td>
-                  <td><?php echo $vo['shuoming']; ?></td>
+                 <tr>
+                    <td><?php echo $vo['user_name']; ?></td>
+                    <td><?php echo $vo['bonus_amount']; ?></td>
+                    <td><?php echo $vo['bonus_type']; ?></td>
+                    <td><?php echo $vo['bonus_time']; ?></td>
+                    <td><?php echo $vo['bonus_des']; ?></td>
                 </tr>
             <?php endforeach; endif; else: echo "" ;endif; ?>
         </tbody>

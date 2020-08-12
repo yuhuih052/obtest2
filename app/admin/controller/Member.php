@@ -150,4 +150,53 @@ class Member extends AdminBase
 
         
     }
+    //搜索日期
+    public function searchData(){
+        $data = $this->logicMember->searchData($this->param);
+        $this->assign('list',$data);
+        return $this->fetch('search_list');
+    }
+    //搜索Id段
+    public function searchId(){
+        $data = $this->logicMember->searchId($this->param);
+        $this->assign('list',$data);
+        return $this->fetch('search_list');
+    }
+    //搜索会员等级
+    public function searchRank(){
+        $data = $this->logicMember->searchRank($this->param);
+        $this->assign('list',$data);
+        return $this->fetch('search_list');
+    }
+    //双轨图
+    public function twoP(){
+
+       $this->assign('html', $this->logicMember->twoP($this->param));
+        
+        return $this->fetch('two_p');
+    }
+    //双轨图查询
+    public function twoPathwayfind(){
+        $data = $this->param;
+        if($data['username'] == Null){
+            echo '<script language="JavaScript">;alert("请输入用户名查询");location.href="twoP.html";</script>;';
+        }else{
+            $top_user = $this->logicMember->twoFind($data);
+            //如果通过用户名找不到用户
+            if (!$top_user) {
+            echo '<script language="JavaScript">;alert("暂无数据");location.href="twoP.html";</script>;';
+            }
+            $top_id = $top_user['id'];
+            $level = $this->logicMember->findLevel($top_id);
+            $data = [
+                'id' => $top_id,
+                'level' => $level,
+            ];
+        }
+
+        $this->assign('html', $this->logicMember->twoP($data));
+        
+        return $this->fetch('two_p');
+    }
+   
 }

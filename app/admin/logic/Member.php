@@ -35,7 +35,7 @@ class Member extends AdminBase
     /**
      * 获取会员列表
      */
-    public function getMemberList($where = [], $field = 'm.*,b.nickname as leader_nickname', $order = '', $paginate = DB_LIST_ROWS)
+    public function getMemberList($where = [], $field = 'm.*,b.nickname as leader_nickname', $order = '', $paginate = 25)
     {
         
         $this->modelMember->alias('m');
@@ -59,8 +59,8 @@ class Member extends AdminBase
         
         $list = $this->getMemberList($where, $field, $order, false);
         
-        $titles = "昵称,用户名,邮箱,手机,注册时间,上级";
-        $keys   = "nickname,username,email,mobile,create_time,leader_nickname";
+        $titles = "昵称,用户名,邮箱,手机,注册时间,接点人,推荐人,总奖金,现金币,报单币,CFI,电子币,保管金,会员等级";
+        $keys   = "nickname,username,email,mobile,create_time,father_name,Re_name,all_bonus,bonus,wallet,CFI,dianzibi,baoguanjin,member_rank";
         
         action_log('导出', '导出会员列表');
         
@@ -232,7 +232,7 @@ class Member extends AdminBase
         
         return $result>0 ? [RESULT_SUCCESS, '会员编辑成功', $url] : [RESULT_ERROR, $this->modelMember->getError()];
     }
-
+    //后台激活会员
     public function acSave($data){
        
         $uu_status = $this->modelMember->where('username',$data['username'])->value('status');
@@ -252,12 +252,13 @@ class Member extends AdminBase
         //配送电子币
         $this->modelMember->where('id',$p[0]['id'])->setInc('dianzibi',$check_dis['CF']);
         //直推人数
-        $this->modelMember->where('id',$p_zhi[0]['id'])->setInc('zhitui_all',1);
+        //$this->modelMember->where('id',$p_zhi[0]['id'])->setInc('zhitui_all',1);
         
         //更新直推人的奖励
         $re_zhi = [
-            'bonus' => $p_zhi[0]['bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
-            'all_bonus' =>  $p_zhi[0]['all_bonus'] + $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+            'bonus' => $p_zhi[0]['bonus'] + $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.9,
+            'baoguanjin' => $p_zhi[0]['baoguanjin'] + $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.1,
+            'all_bonus' =>  $p_zhi[0]['all_bonus'] + $check_dis['baodanbi_co'] * $check_dis['tuijian_co'],
         ];
         
         //直推人获奖更新
@@ -267,8 +268,13 @@ class Member extends AdminBase
         $bill1 = [
             'user_id' => $p_zhi[0]['id'],
             'user_name' => $p_zhi[0]['username'],
+            'bonus_user_id'=>$p[0]['id'],
+            'bonus_user_name'=>$p[0]['username'],
             //'activate'  => "-".$check_dis['baodanbi_co'],
-            'tuijian'   => "+".$check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+            'bonus' => $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.9,
+            'baoguanjin' => $check_dis['baodanbi_co'] * $check_dis['tuijian_co']*0.1,
+            'tuijian'   => "+".$check_dis['baodanbi_co'] * $check_dis['tuijian_co'],
+            'shuoming' => "后台激活会员",
         ];
         $this->modelBill->setInfo($bill1);
 
@@ -276,17 +282,17 @@ class Member extends AdminBase
         $bonus_detail1 = [
             'user_id' => $p_zhi[0]['id'],
             'user_name' => $p_zhi[0]['username'],
-            'bonus_amount' => $check_p_zhi['baodanbi_co'] * $check_p_zhi['tuijian_co'],
+            'bonus_amount' => $check_dis['baodanbi_co'] * $check_dis['tuijian_co'],
             'bonus_type'    => '直推奖',
             'bonus_time'    => date('Y-m-d h:i:s', time()),
         ];
         $this->modelBonusDetail->setInfo($bonus_detail1);
 
         //增加业绩
-        $this->logicActivateMember->addYeji($p[0]['p_path_id'],$p[0]['id'],$check_dis['baodanbi_co']);
+        $this->logicActivateMember->addYeji($p[0]['p_path_id'],$p[0]['id'],$check_dis['baodanbi_co'],$p,$check_dis);
 
         //见点奖发放
-        //获取被激活者推荐人的绝对路径id
+        //获取被激活者接点人的绝对路径id
         $p_id = explode(',', $p[0]['p_path_id']);
         array_shift($p_id);
         array_pop($p_id);
@@ -298,7 +304,7 @@ class Member extends AdminBase
             $p_id_rank = $this->logicActivateMember->checkMember_rank($p_id_info[0]['member_rank']);
             //dd($p_id_rank);
             //应获奖
-            $p_id_rank_bonus =  $p_id_rank['baodanbi_co'] * $p_id_rank['jiandian_co'];
+            $p_id_rank_bonus =  $check_dis['baodanbi_co'] * $check_dis['jiandian_co'];
             //dd($p_id_rank_bonus);
             //当日累计奖金
             $bonus_day = $this->logicActivateMember->checkBonus_day($p_id[$last_id]);
@@ -307,25 +313,27 @@ class Member extends AdminBase
             if($ct<6){
                 //发放见点奖
                 $ct6 = [
-                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                 'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                 ];
             if($D_value3 > $p_id_rank_bonus){
             $this->modelMember->where('id',$p_id[$last_id])->update($ct6);
             //增加账单流水和奖金记录
-            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖');
+            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖',$p);
             }
 
         }else if ($ct<9) {
             if($p_id_info[0]['member_rank'] > 1){
                 $ct9 = [
-                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                 'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                 ];
                 if($D_value3 > $p_id_rank_bonus){
             $this->modelMember->where('id',$p_id[$last_id])->update($ct9);
             //增加账单流水和奖金记录
-            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖');
+            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖',$p);
                 }
             }
             continue;
@@ -334,12 +342,13 @@ class Member extends AdminBase
             if($p_id_info[0]['member_rank'] > 2){
                 if($D_value3 > $p_id_rank_bonus){
                 $ct14 = [
-                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                 'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                 ];
             $this->modelMember->where('id',$p_id[$last_id])->update($ct14);
             //增加账单流水和奖金记录
-            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖');
+            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖',$p);
                 }
             }
             continue;
@@ -348,12 +357,13 @@ class Member extends AdminBase
             if($p_id_info[0]['member_rank'] > 3){
                 if($D_value3 > $p_id_rank_bonus){
                 $ct16 = [
-                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                 'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                 ];
             $this->modelMember->where('id',$p_id[$last_id])->update($ct16);
             //增加账单流水和奖金记录
-            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖');
+            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖',$p);
                 }
             }
             continue;
@@ -362,12 +372,13 @@ class Member extends AdminBase
             if($p_id_info[0]['member_rank'] > 4){
                 if($D_value3 > $p_id_rank_bonus){
                 $ct21 = [
-                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                 'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                 ];
             $this->modelMember->where('id',$p_id[$last_id])->update($ct21);
             //增加账单流水和奖金记录
-            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖');
+            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖',$p);
                 }
             }
             continue;
@@ -375,12 +386,13 @@ class Member extends AdminBase
             if($p_id_info[0]['member_rank'] > 5){
                 if($D_value3 > $p_id_rank_bonus){
                 $ct26 = [
-                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus,
+                'bonus' => $p_id_info[0]['bonus'] + $p_id_rank_bonus*0.9,
+                'baoguanjin' => $p_id_info[0]['baoguanjin'] + $p_id_rank_bonus*0.1,
                 'all_bonus' => $p_id_info[0]['all_bonus'] + $p_id_rank_bonus,
                 ];
             $this->modelMember->where('id',$p_id[$last_id])->update($ct26);
             //增加账单流水和奖金记录
-            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖');
+            $this->logicActivateMember->bill_bonus($p_id_info[0]['id'],$p_id_info[0]['username'],$p_id_rank_bonus,$type ='见点奖',$p);
                 }
             }
             continue;
@@ -474,7 +486,7 @@ class Member extends AdminBase
         return $result ? [RESULT_SUCCESS, '会员删除成功', $url] : [RESULT_ERROR, $this->modelMember->getError(), $url];
     }
 
-    //报单中心
+    //申请报单中心
     public function request_is_centerList($where = [], $field = true, $order = '', $paginate = 20)
     {
         $data = $this->modelMember->where('re_is_center','>',0)->select();
@@ -512,13 +524,7 @@ class Member extends AdminBase
                     return $this->modelMember->where('center_id',$id)->select();
                 case 4:
                     return $this->modelMember->where('baodan','<>',0)->select();
-                case 5:
-                    return $this->modelMember->where('create_time', 'between time', [$data['date1'], $data['date2']])->select();
-                case 6:
-                    $date1 = $this->modelMember->where('member_number',$data['Id1'])->value('create_time');
-                    $date2 = $this->modelMember->where('member_number',$data['Id2'])->value('create_time');
-
-                    return $result = $this->modelMember->where('create_time', 'between time', [$date1, $date2])->select();
+               
 
                 default:
                     return Null;
@@ -527,8 +533,49 @@ class Member extends AdminBase
 
         }
     }
+    //ID段搜索
+    public function searchId($data){
+
+        $date1 = $this->modelMember->where('member_number',$data['Id1'])->value('create_time');
+        $date2 = $this->modelMember->where('member_number',$data['Id2'])->value('create_time');
+
+        return $result = $this->modelMember->where('create_time', 'between time', [$date1, $date2])->select();
+    }
+    //时间段搜索
+    public function searchData($data){
+        
+        return $this->modelMember->where('create_time', 'between time', [$data['date1'], $data['date2']])->select();
+    }
+    public function seracrRank($data){
+        return $this->modelMember->where('member_rank','=',$data['select_rank'])->select();
+    }
+
+                    
 /**会员查询结束*/
 
+    //双轨图
+    public function twoP($data){
+        
+        if($data == Null || $data['username'] == Null){
+            $id = $this->modelMember->where('Re_path','=',',')->value('id');
+            $level = $this->modelMember->max('p_level');
+        }else{
+            $id = $data['id'];
+            $level = $data['level'];
+        }
+
+        return $this->logicTree_2->getTwoPathwayHtml($id, $level);
+    }
+    //双轨图查询
+    public function twofind($data){
+        return $this->modelMember->where('username',$data['username'])->find();
+    }
     
+    //查找当前用户为顶点，最大层数
+    public function findLevel($id){
+        $d = $this->modelMember->where('p_path_id','like','%'.$id.'%')
+                                ->max('p_level');
+        return $d;
+    }
 
 }

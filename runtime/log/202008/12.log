@@ -1,0 +1,84 @@
+---------------------------------------------------------------
+[ 2020-08-12T09:00:03+08:00 ] 127.0.0.1 127.0.0.1 GET /user/system.html
+[ info ] www.obtest.com/user/system.html [运行时间：0.085005s][吞吐率：11.76req/s] [内存消耗：3,111.16kb] [文件加载：76]
+[ error ] [8]未定义变量: list[D:\phpstudy_pro\WWW\obtest2\app\common\model\Member.php:151]
+---------------------------------------------------------------
+[ 2020-08-12T09:01:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/system.html
+[ info ] www.obtest.com/user/system.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：3,057.21kb] [文件加载：73]
+[ error ] [0]类的属性不存在:app\common\model\Member->member[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T09:14:11+08:00 ] 127.0.0.1 127.0.0.1 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.151008s][吞吐率：6.62req/s] [内存消耗：3,181.02kb] [文件加载：79]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1366 Incorrect decimal value: '日奖金达到上限' for column 'center_bonus' at row 1[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2020-08-12T09:31:59+08:00 ] 127.0.0.1 127.0.0.1 GET /user/bonusdetail.html
+[ info ] www.obtest.com/user/bonusdetail.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：3,319.80kb] [文件加载：78]
+[ error ] [0]类的属性不存在:app\common\model\BonusDetail->shuoming[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T14:41:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/twop.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.115006s][吞吐率：8.70req/s] [内存消耗：3,230.06kb] [文件加载：78]
+[ error ] [0]类型错误: Too few arguments to function app\admin\logic\Member::twoP(), 1 passed in D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Member.php on line 174 and exactly 2 expected[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:557]
+---------------------------------------------------------------
+[ 2020-08-12T14:41:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/twop.html
+[ info ] www.obtest.com/admin.php/member/twop.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：3,235.73kb] [文件加载：79]
+[ error ] [0]类型错误: Too few arguments to function app\admin\logic\Member::twoP(), 1 passed in D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Member.php on line 174 and exactly 2 expected[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:557]
+---------------------------------------------------------------
+[ 2020-08-12T14:44:19+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,235.11kb] [文件加载：79]
+[ error ] [0]类不存在:app\common\logic\User[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-12T14:44:20+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,229.38kb] [文件加载：79]
+[ error ] [0]类不存在:app\common\logic\User[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-12T14:44:51+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.097006s][吞吐率：10.31req/s] [内存消耗：3,258.05kb] [文件加载：79]
+[ error ] [0]method not exist:think\db\Query->findLevel[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-12T14:48:22+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,200.34kb] [文件加载：81]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p_id_rank' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-12T14:49:11+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest.com/futou/futou.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：3,121.20kb] [文件加载：77]
+[ error ] [8]未定义变量: master_id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:68]
+---------------------------------------------------------------
+[ 2020-08-12T14:50:02+08:00 ] 127.0.0.1 127.0.0.1 GET /futou/futou.html
+[ info ] www.obtest.com/futou/futou.html [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：3,083.71kb] [文件加载：78]
+[ error ] [8]Array to string conversion[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Futou.php:108]
+---------------------------------------------------------------
+[ 2020-08-12T14:51:26+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,236.88kb] [文件加载：79]
+[ error ] [0]类不存在:app\common\logic\User[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-12T14:53:14+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.092006s][吞吐率：10.87req/s] [内存消耗：3,240.99kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:562]
+---------------------------------------------------------------
+[ 2020-08-12T14:53:29+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twopathwayfind.html
+[ info ] www.obtest.com/admin.php/member/twopathwayfind.html [运行时间：0.119007s][吞吐率：8.40req/s] [内存消耗：3,294.02kb] [文件加载：80]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\two_pathway.html[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-08-12T14:56:53+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twop.html
+[ info ] www.obtest.com/admin.php/member/twop.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：3,238.68kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:562]
+---------------------------------------------------------------
+[ 2020-08-12T14:57:12+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twop.html
+[ info ] www.obtest.com/admin.php/member/twop.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：3,238.68kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:562]
+---------------------------------------------------------------
+[ 2020-08-12T14:58:48+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twop.html
+[ info ] www.obtest.com/admin.php/member/twop.html [运行时间：0.084004s][吞吐率：11.90req/s] [内存消耗：3,238.68kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:562]
+---------------------------------------------------------------
+[ 2020-08-12T14:58:49+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twop.html
+[ info ] www.obtest.com/admin.php/member/twop.html [运行时间：0.094006s][吞吐率：10.64req/s] [内存消耗：3,238.68kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:562]
+---------------------------------------------------------------
+[ 2020-08-12T15:01:41+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/member/twop.html
+[ info ] www.obtest.com/admin.php/member/twop.html [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：3,244.51kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:562]
+---------------------------------------------------------------
+[ 2020-08-12T15:12:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/twop.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,232.77kb] [文件加载：79]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:559]

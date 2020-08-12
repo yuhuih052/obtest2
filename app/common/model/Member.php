@@ -54,7 +54,7 @@ class Member extends ModelBase
         $color = '';
         $l = '';
         //顶部
-        $level = '经理';
+        $level = $this->getMemberRank($list['member_rank']);
         $sum = $this->getMemberAll($list['id']);
         $top = '<table width="100%" border="0" cellpadding="1" cellspacing="1">';
         $top .= '       <tbody>';
@@ -148,7 +148,7 @@ class Member extends ModelBase
         if ($count == 2) {
             foreach ($next_member as $k => $v) {
                 $l = '';
-                $level = '经理';
+                $level = $this->getMemberRank($v['member_rank']);
                 $sum = $this->getMemberAll($v['id']);
                 $layer_number1 = '          <td class="borderlrt" width="' . $accounted . '%" valign="top" title="第' . $v['p_level'] . '层"><img width="12" height="0"><br>';
                 //Generated 生成表格
@@ -201,7 +201,7 @@ class Member extends ModelBase
             foreach ($next_member as $k => $v) {
                 $l = '';
                 //报单等级
-                $level = '经理';
+                $level = $this->getMemberRank($v['member_rank']);
                 //左右区人数
                 $sum = $this->getMemberAll($v['id']);
                 $reg_blank = '<td class="borderlrt" width="' . $accounted . '%" valign="top" title="第' . '2' . '层"><img width="12" height="0"><br>';
@@ -373,7 +373,7 @@ class Member extends ModelBase
                 $sum = $this->getMemberAll($v['id']);
                 $color = '';
                 $l = '';
-                $level = '经理';
+                $level = $this->getMemberRank($v['member_rank']);
                 $layer_number1 = '          <td class="borderlrt" width="' . $acc . '%" valign="top" title="第' . $v['p_level'] . '层"><img width="12" height="0"><br>';
                 //Generated 生成表格
                 $generated = '                  <table border="0" cellpadding="0" cellspacing="1" class="tu_box" style="width:100px;">';
@@ -422,7 +422,7 @@ class Member extends ModelBase
             foreach ($next_member as $k => $v) {
 
                 $l = '';
-                $level = '经理';
+                $level = $this->getMemberRank($v['member_rank']);
                 $sum = $this->getMemberAll($v['id']);
                 $layer_number1 .= '         <td class="borderlrt" width="' . $acc . '%" valign="top" title="第' . $v['p_level'] . '层"><img width="12" height="0"><br>';
                 //Generated 生成表格
@@ -542,6 +542,34 @@ class Member extends ModelBase
         $arr['right'] = $right;
        
         return $arr;
+    }
+
+    //根据会员等级获取会员星级信息
+    public function getMemberRank($num){
+        switch ($num) {
+            case 1:
+                return "一星";
+                break;
+            case 2:
+                return "二星";
+                break;
+            case 3:
+                return "三星";
+                break;
+            case 4:
+                return "四星";
+                break;
+            case 5:
+                return "五星";
+                break;
+            case 6:
+                return "六星";
+                break;        
+            
+            default:
+                # code...
+                break;
+        }
     }
     
 }

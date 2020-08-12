@@ -21,6 +21,7 @@
                     <option value="duipeng">对碰奖</option>
                     <option value="guanli">管理奖</option>
                     <option value="jiandian" >见点奖</option>
+                    <option value="center_bonus">报单中心奖</option>
                     <option value="wallet">报单币流水</option>
                     <option value="bonus">现金币</option>
                     <option value="baoguanjin" >保管金</option>
@@ -44,7 +45,8 @@
     <table  class="table table-bordered table-hover table-striped">
       <thead>
       <tr>
-          <th>用户</th>
+          <th>账单用户</th>
+          <th>与账单产生有关的用户</th>
           <th>充值</th>
           <th>提现</th>
           <th>转账</th>
@@ -54,10 +56,13 @@
           <th>对碰奖</th>
           <th>管理奖</th>
           <th>见点奖</th>
+          <th>报单中心奖</th>
           <th>报单币流水</th>
           <th>现金币流水</th>
           <th>保管金流水</th>
           <th>电子币</th>
+          <th>激活会员系统入账</th>
+          <th>说明</th>
           <th>操作时间</th>
       </tr>
       </thead>
@@ -66,6 +71,7 @@
           {volist name='list' id='vo'}
                 <tr>
                   <td>{$vo.user_name}</td>
+                  <td>{$vo.bonus_user_name}</td>
                   <td>{$vo.recharge}</td>
                   <td>{$vo.withdrawl}</td>
                   <td>{$vo.transfer}</td>
@@ -75,10 +81,13 @@
                   <td>{$vo.duipeng}</td>
                   <td>{$vo.guanli}</td>
                   <td>{$vo.jiandian}</td>
+                  <td>{$vo.center_bonus}</td>
                     <td>{$vo.wallet}</td>
                     <td>{$vo.bonus}</td>
                     <td>{$vo.baoguanjin}</td>
                     <td>{$vo.dianzibi_all}</td>
+                    <td>{$vo.baodanbi_all}</td>
+                    <td>{$vo.shuoming}</td>
                   <td>{$vo.create_time}</td>
                 </tr>
           {/volist}

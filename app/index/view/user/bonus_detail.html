@@ -2,13 +2,10 @@
     <table  class="table table-bordered table-hover table-striped">
       <thead>
       <tr>
-          <th>用户</th>
-          <th>激活会员时报单币</th>
-          <th>报单币</th>
-          <th>现金币</th>
-          <th>保管金</th>
-          <th>电子币</th>
-           <th>时间</th>
+          <th>用户名</th>
+          <th>奖金金额</th>
+          <th>奖金类型</th>
+          <th>获奖时间</th>
           <th>说明</th>
       </tr>
       </thead>
@@ -16,15 +13,12 @@
       {notempty name='data'}
         <tbody>
             {volist name='data' id='vo'}
-                <tr>
-                  <td>{$vo.user_name}</td>
-                  <td>{$vo.activate}</td>
-                  <td>{$vo.wallet}</td>
-                  <td>{$vo.bonus}</td>
-                  <td>{$vo.baoguanjin}</td>
-                    <td>{$vo.dianzibi_all}</td>
-                  <td>{$vo.create_time}</td>
-                  <td>{$vo.shuoming}</td>
+                 <tr>
+                    <td>{$vo.user_name}</td>
+                    <td>{$vo.bonus_amount}</td>
+                    <td>{$vo.bonus_type}</td>
+                    <td>{$vo.bonus_time}</td>
+                    <td>{$vo.bonus_des}</td>
                 </tr>
             {/volist}
         </tbody>

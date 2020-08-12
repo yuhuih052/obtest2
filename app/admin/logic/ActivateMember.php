@@ -8,7 +8,7 @@ class ActivateMember extends AdminBase
 {
 	
 	//统计业绩
-    public function addYeji($member_path,$member_id,$bdb_del){
+    public function addYeji($member_path,$member_id,$bdb_del,$p){
     		//左右业绩统计
             //增加总业绩
             //获取接点人id
@@ -55,7 +55,8 @@ class ActivateMember extends AdminBase
                   $dp_info_rank_bonus = $dp_info_rank['baodanbi_co'] * $dp_info_rank['duipeng_co'];
 
                     $bonus_dp =[
-                        'bonus' => $dp_info[0]['all_bonus'] + $dp_info_rank_bonus,
+                        'bonus' => $dp_info[0]['bonus'] + $dp_info_rank_bonus*0.9,
+                        'baoguanjin' => $dp_info[0]['baoguanjin'] + $dp_info_rank_bonus*0.1,
                         'all_bonus' => $dp_info[0]['all_bonus'] + $dp_info_rank_bonus,
                     ];
                     //发放对碰奖，更新数据库
@@ -72,6 +73,10 @@ class ActivateMember extends AdminBase
                     $bill1 = [
                         'user_id' => $dp_info[0]['id'],
                         'user_name' => $dp_info[0]['username'],
+                        'bonus_user_id'=>$p[0]['id'],
+                        'bonus_user_name'=>$p[0]['username'],
+                        'bonus'=>$dp_info_rank_bonus*0.9,
+                        'baoguanjin'=>$dp_info_rank_bonus*0.1,
                         'duipeng'   => "+".$dp_info_rank_bonus,
                     ];
                     $this->modelBill->setInfo($bill1);
@@ -89,13 +94,18 @@ class ActivateMember extends AdminBase
                         //未达到日上限，但接近上限值，剩余上限值不够
                     }elseif ($D_value > 0 && $D_value < $dp_info_rank_bonus ) {
                         $bonus_dp1 =[
-                        'bonus' => $dp_info[0]['all_bonus'] + $D_value,
+                        'bonus' => $dp_info[0]['bonus'] + $D_value*0.9,
+                        'baoguanjin' => $dp_info[0]['baoguanjin'] + $D_value*0.1,
                         'all_bonus' => $dp_info[0]['all_bonus'] + $D_value,
                     ];
                          //产生对碰奖，账单流水记录,记录接点人
                     $bill2 = [
                         'user_id' => $dp_info[0]['id'],
                         'user_name' => $dp_info[0]['username'],
+                        'bonus_user_id'=>$p[0]['id'],
+                        'bonus_user_name'=>$p[0]['username'],
+                        'bonus'=>$D_value*0.9,
+                        'baoguanjin'=>$D_value*0.1,
                         'duipeng'   => "+".$D_value,
                     ];
                     $this->modelBill->setInfo($bill2);
@@ -158,7 +168,8 @@ class ActivateMember extends AdminBase
                     
                     if($D_value1 > $first_father_rank_bonus){
                         $first_father_guanli_bonus = [
-                        'bonus' => $first_father_info['bonus'] + $first_father_rank_bonus,
+                        'bonus' => $first_father_info['bonus'] + $first_father_rank_bonus*0.9,
+                        'baoguanjin' => $first_father_info['baoguanjin'] + $first_father_rank_bonus*0.1,
                         'all_bonus' => $first_father_info[0]['all_bonus'] + $first_father_rank_bonus,
                     ];
 
@@ -166,6 +177,10 @@ class ActivateMember extends AdminBase
                     $bill1 = [
                         'user_id' => $first_father_info[0]['id'],
                         'user_name' => $first_father_info[0]['username'],
+                        'bonus_user_id'=>$p[0]['id'],
+                        'bonus_user_name'=>$p[0]['username'],
+                        'bonus'=>$first_father_rank_bonus*0.9,
+                        'baoguanjin'=>$first_father_rank_bonus*0.1,
                         'guanli'   => "+".$first_father_rank_bonus,
                     ];
                     $this->modelBill->setInfo($bill1);
@@ -183,7 +198,8 @@ class ActivateMember extends AdminBase
                     $this->modelMember->where('id',$dp_p_id_path[0])->update($first_father_guanli_bonus);
                     }elseif($D_value1 >0 &&$D_value1< $first_father_rank_bonus){
                         $first_father_guanli_bonus = [
-                        'bonus' => $first_father_info['bonus'] + $D_value1,
+                        'bonus' => $first_father_info['bonus'] + $D_value1*0.9,
+                        'baoguanjin' => $first_father_info['baoguanjin'] + $D_value1*0.1,
                         'all_bonus' => $first_father_info[0]['all_bonus'] + $D_value1,
                     ];
 
@@ -191,6 +207,10 @@ class ActivateMember extends AdminBase
                     $bill1 = [
                         'user_id' => $first_father_info[0]['id'],
                         'user_name' => $first_father_info[0]['username'],
+                        'bonus_user_id'=>$p[0]['id'],
+                        'bonus_user_name'=>$p[0]['username'],
+                        'bonus'=>$D_value1*0.9,
+                        'baoguanjin'=>$D_value1*0.1,
                         'guanli'   => "+".$D_value1,
                     ];
                     $this->modelBill->setInfo($bill1);
@@ -208,7 +228,8 @@ class ActivateMember extends AdminBase
                     $this->modelMember->where('id',$dp_p_id_path[0])->update($first_father_guanli_bonus);
                 }else{
                     $first_father_guanli_bonus = [
-                        'bonus' => $first_father_info['bonus'] + $D_value1,
+                        'bonus' => $first_father_info['bonus'] + $D_value1*0.9,
+                        'baoguanjin' => $first_father_info['baoguanjin'] + $D_value1*0.1,
                         'all_bonus' => $first_father_info[0]['all_bonus'] + $D_value1,
                     ];
 
@@ -251,13 +272,18 @@ class ActivateMember extends AdminBase
                            
                             if($D_value2 > $f_father_rank_bonus){
                                  $f_father_guanli_bonus = [
-                            'bonus' => $f_father_info[0]['bonus']+$f_father_rank_bonus,
+                            'bonus' => $f_father_info[0]['bonus']+$f_father_rank_bonus*0.9,
+                            'baoguanjin' => $f_father_info[0]['baoguanjin']+$f_father_rank_bonus*0.1,
                             'all_bonus' => $f_father_info[0]['all_bonus'] + $f_father_rank_bonus,
                             ];
                             //管理奖，账单流水记录,记录对碰层上面三级内的接点人
                         $bill1 = [
                             'user_id' => $f_father_info[0]['id'],
                             'user_name' => $f_father_info[0]['username'],
+                            'bonus_user_id'=>$p[0]['id'],
+                            'bonus_user_name'=>$p[0]['username'],
+                            'bonus'=>$f_father_rank_bonus*0.9,
+                            'baoguanjin'=>$f_father_rank_bonus*0.1,
                             'guanli'   => "+".$f_father_rank_bonus,
                         ];
                         $this->modelBill->setInfo($bill1);
@@ -277,13 +303,18 @@ class ActivateMember extends AdminBase
                             }elseif($D_value2 >0 && $D_value2 < $f_father_rank_bonus){
 
                                 $f_father_guanli_bonus = [
-                            'bonus' => $f_father_info[0]['bonus']+$D_value2,
+                            'bonus' => $f_father_info[0]['bonus']+$D_value2*0.9,
+                            'baogaunjin' => $f_father_info[0]['baoguanjin']+$D_value2*0.1,
                             'all_bonus' => $f_father_info[0]['all_bonus'] + $D_value2,
                             ];
                             //管理奖，账单流水记录,记录对碰层上面三级内的接点人
                         $bill1 = [
                             'user_id' => $f_father_info[0]['id'],
                             'user_name' => $f_father_info[0]['username'],
+                            'bonus_user_id'=>$p[0]['id'],
+                            'bonus_user_name'=>$p[0]['username'],
+                            'bonus'=>$D_value2*0.9,
+                            'baoguanjin'=>$D_value2*0.1,
                             'guanli'   => "+".$D_value2,
                         ];
                         $this->modelBill->setInfo($bill1);
@@ -338,11 +369,13 @@ class ActivateMember extends AdminBase
         //return [RESULT_SUCCESS,'操作成功'];
     }
     //增加账单流水和奖金记录
-    public function bill_bonus($id,$name,$number,$type){
+    public function bill_bonus($id,$name,$number,$type,$p){
         //见点奖，账单流水记录,记录接点人
                     $bill_ct6 = [
                         'user_id' => $id,
                         'user_name' => $name,
+                        'bonus_user_name'=>$p[0]['username'],
+                        'bonus_user_id'=>$p[0]['id'],
                         'jiandian'   => "+".$number,
                     ];
 
@@ -447,7 +480,7 @@ class ActivateMember extends AdminBase
     public function checkBonus_day($id){
         return $this->modelBonusDetail->whereTime('create_time','d')
                                 ->where('user_id',$id)
-                                ->where('bonus_type','in','管理奖,对碰奖,见点奖')
+                                ->where('bonus_type','in','管理奖,对碰奖,见点奖,报单中心奖')
                                 ->sum('bonus_amount');
     }
 }
