@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:67:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\site\site.html";i:1597050522;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:67:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\site\site.html";i:1597227455;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -259,35 +259,70 @@
         <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
       <?php endif; ?>
     </table>
-  </div>
-  <hr style="width: 100%; size: 2px">
+    <hr style="width: 100%; size: 2px">
   <table style="margin-top: 20px" class="table table-bordered">
-    <form action="<?php echo url('Site/cfi_deal'); ?>" method="post">
+    <form action="" method="post" name="form">
     <tr>
+      <td>
+        当前成交量(当前系统:<?php echo $list2['deal']; ?>)
+      </td>
+      <td>
+        当前价格(当前系统:<?php echo $list2['cfi_price']; ?>)
+      </td>
+      <td>
+        CFI拆分价格
+      </td>
       <td>
         默认涨价成交量(当前系统：<?php echo $list2['default_deal']; ?>)
       </td>
+      
       <td>
         股票初始发行总量(当前系统:<?php echo $list2['cfi_total']; ?>)
       </td>
+      <td>操作</td>
     </tr>
     <tr>
       <td>
+        <input type="number" name="deal" value="<?php echo $list2['deal']; ?>">
+      </td>
+      <td>
+        <input type="number" name="cfi_price" onkeyup="value=value.replace(/[^\d\.]/g,'')" value="<?php echo $list2['cfi_price']; ?>">
+      </td>
+      <td>
+        <input type="number" name="default_price" onkeyup="value=value.replace(/[^\d\.]/g,'')" value="<?php echo $list2['default_price']; ?>">
+      </td>
+      <td>
         <input type="number" name="default_deal" value="<?php echo $list2['default_deal']; ?>">
       </td>
+      
       <td>
         <input type="number" name="cfi_total" value="<?php echo $list2['cfi_total']; ?>">
       </td>
-      <td><input type="submit" value="保存"></td>
+      <td>
+        <input type="submit" onclick="save()" value="保存">
+        <input type="submit" onclick="split()" value="拆分">
+      </td>
     </tr>
     </form>
   </table>
+  </div>
+  
   <div class="box-footer clearfix text-center">
       
   </div>
 
 </div>
 <script type="text/javascript">
+
+  function save() {
+        document.form.action = "<?php echo url('Site/cfi_deal'); ?>";
+        document.form.submit();
+    }
+    function split(){
+        document.form.action="<?php echo url('Site/splitCfi'); ?>";
+        document.form.submit();
+    }
+
   function fresh(){  
         if(location.href.indexOf("?reload=true")<0){
             location.href+="?reload=true";  

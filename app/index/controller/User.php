@@ -67,14 +67,17 @@ class User extends IndexBase
     //直接推荐人列表
     public function userRecommonder(){
        //$data = $username;
-       $member = session('member_info2');
+       $id = session('user_id');
+       $member = $this->logicUser->index($id);
        if($member[0]['is_center'] > 0){
        $data = $this->logicUser->recommonderList();
         $this->assign('list',$data);
 
         return $this->fetch('recommonder_list');
+        }else{
+            return "您不是报单中心，如果申请已通过，请重新登录再试";
         }
-        return "您不是报单中心，如果申请已通过，请重新登录再试";
+        
     }
 
     //推荐人激活会员

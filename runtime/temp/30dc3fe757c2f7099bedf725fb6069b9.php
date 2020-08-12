@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_buy_in.html";i:1596849740;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_buy_in.html";i:1596851112;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,12 +108,12 @@
             待付款
             <?php elseif($vo['flag'] ==2): ?>等待确认
             <?php elseif($vo['flag'] ==3): ?>完成交易
-            <img onload="ResizeImage(this,500)" src="/<?php echo $vo['screenshot']; ?>" alt="付款截图">
+            <img onload="ResizeImage(this,500)" src="/<?php echo $vo['screenshot']; ?>" width="180px" height="90" alt="付款截图">
             <?php elseif($vo['flag'] ==4): ?>交易关闭
             <?php elseif($vo['flag'] ==6): ?>取消订单
             <?php elseif($vo['flag'] ==5): ?>
             仲裁
-            <img onload="ResizeImage(this,500)" src="/<?php echo $vo['screenshot']; ?>" alt="付款截图">
+            <img onload="ResizeImage(this,500)" src="/<?php echo $vo['screenshot']; ?>" width="180px" height="90" alt="付款截图">
             <?php endif; ?>
 
         </td>

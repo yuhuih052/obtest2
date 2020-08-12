@@ -15,7 +15,8 @@ class Futou extends IndexBase
 	}	
 
 	public function futou(){
-		$master = session('member_info2');
+		$master = session('user_id2');
+        $master = $this->modelMember->where('id',$master)->select();
 		$leader = $this->modelMember->where('id',$master[0]['id'])->find();
 	        
 	        $params = $this->logicTree->getPlaceInfoTwo($leader);
@@ -63,16 +64,7 @@ class Futou extends IndexBase
         if($p_person[0]['wallet'] >= $check_dis['baodanbi_co']){
     		$result = $this->modelMember->setInfo($sl);
             $f_m = $this->modelMember->where('id',$result)->find();
-            //激活会员时，统计报单币入账
-            $ac_bdb_all = [
-                    'user_id' => $master[0]['id'],
-                    'user_name' => $master[0]['username']."（主账户）",
-                    'bonus_user_id'=>$f_m->id,
-                    'bonus_user_name'=>$f_m->username."（子账户）",
-                    'baodanbi_all' => $check_dis['baodanbi_co'],
-                    'shuoming' =>'复投会员',
-                ];
-                $this->modelBill->setInfo($ac_bdb_all);
+           
             //dd($result);
     		$this->modelMember->where('id',$master[0]['id'])->setInc('u_num',1);
 /*****************奖励发放****/

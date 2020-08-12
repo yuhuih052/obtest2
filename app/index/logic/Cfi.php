@@ -105,7 +105,7 @@ class CFI extends IndexBase
                     $this->priceUd($this->price()->cfi_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total-$rise_ca);
 
 					//判断是否达到拆分条件
-                    if($this->price()->cfi_price >= 4){
+                    if($this->price()->cfi_price >= $this->price()->default_price){
                         $this->splitCfi();
                         return 3;
                     }
@@ -213,7 +213,7 @@ class CFI extends IndexBase
                 $this->priceUd($this->price()->cfi_price+0.1,$this->price()->deal+$rise_ca,$this->price()->cfi_total-$rise_ca);
 
                 //判断是否达到拆分条件
-                if($this->price()->cfi_price >= 4){
+                if($this->price()->cfi_price >= $this->price()->default_price){
                     $this->splitCfi();
                     return 3;
                 }

@@ -4,6 +4,8 @@ namespace app\admin\logic;
 /**
  * 参数设置
  */
+use app\index\logic\User;
+
 class Site extends AdminBase
 {
 	public function indexList($where = [], $field = true, $order = '', $paginate = 0){
@@ -35,14 +37,144 @@ class Site extends AdminBase
 		$result = $this->modelSiteArgm->where('id',$data['id'])->update($check);
 		return $result ? [RESULT_SUCCESS, '保存成功'] : [RESULT_ERROR, $this->modelSiteArgm->getError()];
 	}
+	//修改cfi交易参数
 	public function cfi_deal($data){
+
 		$c = $this->modelPrice->where('id',1)->find();
 		$cc = [
-			
+			'deal' => ($data['default_deal'] == null) ? $c['deal'] :$data['deal'],
+			'cfi_price' => ($data['cfi_price'] == null) ? $c['cfi_price'] :$data['cfi_price'],
+			'default_price' => ($data['default_price'] == null) ? $c['default_price'] :$data['default_price'],
             'default_deal' =>($data['default_deal'] == null) ? $c['default_deal'] :$data['default_deal'],
             'cfi_total' => ($data['cfi_total'] == null) ? $c['cfi_total'] :$data['cfi_total'],
 		];
+	
 		$result = $this->modelPrice->where('id',1)->update($cc);
 		return $result ? [RESULT_SUCCESS, '保存成功'] : [RESULT_ERROR, $this->modelPrice->getError()];
 	}
+	//查看价格表
+	public function price(){
+		return $this->modelPrice->where('id',1)->find();
+	}
+	//股票拆分
+	public function splitCfi($data){
+		$a = $this->price()->cfi_price / 2;
+		$pre = [
+				'cfi_price' =>2,
+				'deal' => 0,
+				'default_deal' => $this->price()->default_deal *$a,
+				'default_price' => $this->price()->default_price * $a,
+				'cfi_total' => $this->price()->cfi_total *$a,
+			];
+		$this->modelPrice->where('id',1)->update($pre);
+		$seller = $this->modelShop->where('sell','>',0)->select();
+		foreach ($seller as $key => $va) {
+			if($va->status == 1){
+				//先返回挂卖市场未交易完成的部分
+				$this->modelShop->where('user_id',$va->user_id)->update(['sell'=>0,'update_time'=>time()]);
+				$this->modelMember->where('id',$va->user_id)->dec('CFI',$va->sell)->update();
+			}
+		}
+		//获取账户有CFI的会员
+		$user_split = $this->modelMember->where('CFI','>',0)
+										->where('status',1)
+										->select();
+		foreach ($user_split as $key => $v) {
+			//用户拆分封顶
+			$v_info_rank = $this->checkMember_rank($v->member_rank);
+			if($v->CFI *$a <= $v_info_rank['CFI_split']){
+				$this->modelMember->where('id',$v->id)->inc('CFI',$v->CFI)->update();
+			}else{
+				$this->modelMember->where('id',$v->id)->update(['CFI'=>$v_info_rank['CFI_split']]);
+				$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *$a - $v_info_rank['CFI_split']);
+			}
+			
+		}
+		//遍历持有cFi用户结束
+		
+		return [RESULT_SUCCESS,'操作成功'];
+				
+	}
+
+	//根据会员等级查询不同奖励值
+    public function checkMember_rank($mmm){
+        switch ($mmm) {
+            case 1:
+            $checkData = [
+                'CF' => 50,
+                'baodanbi_co' => 100,
+                'tuijian_co' => 0.05,
+                'duipeng_co' =>0.05,
+                'jiandian_co' =>0.005,
+                'guanli_co' =>0.02,
+                'bonus_day' => 100,
+                'CFI_split' => 400,
+            ];
+                break;
+            case 2:
+                $checkData = [
+                'CF' => 260,
+                'baodanbi_co' => 500,
+                'tuijian_co' => 0.06,
+                'duipeng_co' =>0.06,
+                'jiandian_co' =>0.005,
+                'guanli_co' =>0.02,
+                'bonus_day' => 500,
+                'CFI_split' => 2000,
+            ];
+                break;
+            case 3:
+                $checkData = [
+                'CF' => 540,
+                'baodanbi_co' => 1000,
+                'tuijian_co' => 0.07,
+                'duipeng_co' =>0.07,
+                'jiandian_co' =>0.005,
+                'guanli_co' =>0.03,
+                'bonus_day' => 1000,
+                'CFI_split' => 4000,
+            ];
+                break;
+            case 4:
+                $checkData = [
+                'CF' => 1120,
+                'baodanbi_co' => 2000,
+                'tuijian_co' => 0.08,
+                'duipeng_co' =>0.08,
+                'jiandian_co' =>0.005,
+                'guanli_co' =>0.04,
+                'bonus_day' => 2000,
+                'CFI_split' => 8000,
+            ];
+                break;
+            case 5:
+                $checkData = [
+                'CF' => 2900,
+                'baodanbi_co' => 5000,
+                'tuijian_co' => 0.10,
+                'duipeng_co' =>0.10,
+                'jiandian_co' =>0.005,
+                'guanli_co' =>0.05,
+                'bonus_day' => 5000,
+                'CFI_split' => 20000,
+            ];
+                break;
+            case 6:
+                 $checkData = [
+                'CF' => 6000,
+                'baodanbi_co' => 10000,
+                'tuijian_co' => 0.12,
+                'duipeng_co' =>0.12,
+                'jiandian_co' =>0.005,
+                'guanli_co' =>0.06,
+                'bonus_day' => 10000,
+                'CFI_split' => 40000,
+            ];
+                break;
+            default:
+                $checkData = Null;
+                break;
+        }
+        return $checkData;
+    }
 }

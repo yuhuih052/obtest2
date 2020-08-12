@@ -36,7 +36,6 @@ class Ep extends IndexBase{
     public function sys_sellEp($data){
 
         $member = $this->modelMember->where('id',session('user_id2'))->find();
-
         $member_record = $this->modelEp->where('member_id',session('user_id2'))
                                         ->where('type','=',2)
                                         ->where('statuss','=',1)
@@ -54,7 +53,7 @@ class Ep extends IndexBase{
         if($member->bonus < $sell_ep){
             return [RESULT_ERROR,'现金币不足'];
         }
-        $this->modelMember->where('id',$member->member_id)->dec('bouns',$sell_ep)->update();
+        $this->modelMember->where('id',$member->id)->dec('bouns',$sell_ep)->update();
         $this->bill($member->id,$member->username,'-'.$sell_ep,'挂卖现金币');
         $re = [
             'member_id' => session('user_id2'),

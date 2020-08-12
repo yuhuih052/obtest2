@@ -82,3 +82,71 @@
 [ 2020-08-12T15:12:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/twop.html?_pjax=.content
 [ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,232.77kb] [文件加载：79]
 [ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T15:34:30+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/member/twop.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.111007s][吞吐率：9.01req/s] [内存消耗：3,232.92kb] [文件加载：79]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T15:37:50+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/member/twop.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：3,227.19kb] [文件加载：79]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T15:46:15+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/member/twop.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.109007s][吞吐率：9.17req/s] [内存消耗：3,232.92kb] [文件加载：79]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T16:01:46+08:00 ] 192.168.100.21 192.168.200.9 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：3,131.39kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->member_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T16:15:25+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：3,132.06kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->member_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T16:15:40+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_buyep.html
+[ info ] www.obtest.com/ep/sys_buyep.html [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：2,919.69kb] [文件加载：77]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:130]
+---------------------------------------------------------------
+[ 2020-08-12T17:38:16+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/splitcfi.html
+[ info ] www.obtest.com/admin.php/site/splitcfi.html [运行时间：0.093006s][吞吐率：10.75req/s] [内存消耗：3,296.69kb] [文件加载：82]
+[ error ] [0]类不存在:app\common\logic\User[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-12T17:42:11+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/splitcfi.html
+[ info ] www.obtest.com/admin.php/site/splitcfi.html [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：3,247.47kb] [文件加载：82]
+[ error ] [0]系统跳转失败:[D:\phpstudy_pro\WWW\obtest2\thinkphp\helper.php:59]
+---------------------------------------------------------------
+[ 2020-08-12T18:13:17+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/cfi_deal.html
+[ info ] www.obtest.com/admin.php/site/cfi_deal.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,275.70kb] [文件加载：82]
+[ error ] [8]未定义数组索引: default_price[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:47]
+---------------------------------------------------------------
+[ 2020-08-12T18:13:18+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/cfi_deal.html
+[ info ] www.obtest.com/admin.php/site/cfi_deal.html [运行时间：0.101006s][吞吐率：9.90req/s] [内存消耗：3,269.97kb] [文件加载：82]
+[ error ] [8]未定义数组索引: default_price[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:47]
+---------------------------------------------------------------
+[ 2020-08-12T18:21:31+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,921.96kb] [文件加载：76]
+[ error ] [0]语法解析错误: syntax error, unexpected '.0' (T_DNUMBER), expecting ']'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:237]
+---------------------------------------------------------------
+[ 2020-08-12T18:27:12+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：3,135.18kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->member_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T18:27:13+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：3,135.18kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->member_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T18:28:16+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：3,140.91kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T18:29:02+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：3,140.91kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T18:30:14+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：3,135.18kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-12T18:30:15+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_sellep.html
+[ info ] www.obtest.com/ep/sys_sellep.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：3,135.18kb] [文件加载：76]
+[ error ] [0]类的属性不存在:app\common\model\Member->_id[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]

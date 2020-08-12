@@ -21,9 +21,12 @@ class Site extends AdminBase
 		$this->jump($this->logicSite->siteSys($this->param));
 
 	}
-
+	//cfi_参数设置
 	public function cfi_deal(){
 		$this->jump($this->logicSite->cfi_deal($this->param));
 	}
-	
+	//cfi拆分
+	public function splitCfi(){
+		$this->jump($this->logicSite->splitCfi($this->param));
+	}
 }

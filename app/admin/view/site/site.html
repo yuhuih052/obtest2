@@ -67,35 +67,70 @@
         <tbody><tr class="odd"><td colspan="7" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
       {/notempty}
     </table>
-  </div>
-  <hr style="width: 100%; size: 2px">
+    <hr style="width: 100%; size: 2px">
   <table style="margin-top: 20px" class="table table-bordered">
-    <form action="{:url('Site/cfi_deal')}" method="post">
+    <form action="" method="post" name="form">
     <tr>
+      <td>
+        当前成交量(当前系统:{$list2.deal})
+      </td>
+      <td>
+        当前价格(当前系统:{$list2.cfi_price})
+      </td>
+      <td>
+        CFI拆分价格
+      </td>
       <td>
         默认涨价成交量(当前系统：{$list2.default_deal})
       </td>
+      
       <td>
         股票初始发行总量(当前系统:{$list2.cfi_total})
       </td>
+      <td>操作</td>
     </tr>
     <tr>
       <td>
+        <input type="number" name="deal" value="{$list2.deal}">
+      </td>
+      <td>
+        <input type="number" name="cfi_price" onkeyup="value=value.replace(/[^\d\.]/g,'')" value="{$list2.cfi_price}">
+      </td>
+      <td>
+        <input type="number" name="default_price" onkeyup="value=value.replace(/[^\d\.]/g,'')" value="{$list2.default_price}">
+      </td>
+      <td>
         <input type="number" name="default_deal" value="{$list2.default_deal}">
       </td>
+      
       <td>
         <input type="number" name="cfi_total" value="{$list2.cfi_total}">
       </td>
-      <td><input type="submit" value="保存"></td>
+      <td>
+        <input type="submit" onclick="save()" value="保存">
+        <input type="submit" onclick="split()" value="拆分">
+      </td>
     </tr>
     </form>
   </table>
+  </div>
+  
   <div class="box-footer clearfix text-center">
       
   </div>
 
 </div>
 <script type="text/javascript">
+
+  function save() {
+        document.form.action = "{:url('Site/cfi_deal')}";
+        document.form.submit();
+    }
+    function split(){
+        document.form.action="{:url('Site/splitCfi')}";
+        document.form.submit();
+    }
+
   function fresh(){  
         if(location.href.indexOf("?reload=true")<0){
             location.href+="?reload=true";  

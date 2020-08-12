@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_shop.html";i:1596703213;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_shop.html";i:1597228473;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,10 +58,11 @@
     </div>
 </div>
 
+      <a class="btn" href="<?php echo url('user/index'); ?>" style="margin-top: 8px;margin-left: 8px;"><i class="fa fa-history"></i> 返 回</a>
     <table  class="table table-bordered">
       <thead>
       <tr>
-          <th>当前cfi价格:</th>
+          <th></th>
           <th>买入</th>
           <th>卖出</th>
       </tr>
@@ -171,7 +172,7 @@
         <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top"><?php echo config('empty_list_describe'); ?></td></tr></tbody>
         <?php endif; ?>
     </table>
-    <a class="btn" href="<?php echo url('user/index'); ?>"><i class="fa fa-history"></i> 返 回</a>
+ 
     <script>
         function buy(){
             document.form1.action="<?php echo url('Ep/sys_buyEp'); ?>";
