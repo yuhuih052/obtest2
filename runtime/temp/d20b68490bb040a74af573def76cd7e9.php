@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\transfer_record.html";i:1597398973;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\message_record.html";i:1595917438;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,6 @@
     <link href="__STATIC__/module/common/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="__STATIC__/module/index/css/docs.css" rel="stylesheet">
     <link href="__STATIC__/module/index/css/onebase.css" rel="stylesheet">
-    <link href="__STATIC__/index/layui/css/layui.css" rel="stylesheet">
     
     <script type="text/javascript" src="__STATIC__/module/common/jquery/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="__STATIC__/module/common/bootstrap/js/bootstrap.min.js"></script>
@@ -58,40 +57,46 @@
         </div>
     </div>
 </div>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>table模块快速使用</title>
-  <link rel="stylesheet" href="/static/index/layui/css/layui.css" media="all">
-</head>
-<body>
-<table style="margin-top: 38px;" id="demo" lay-filter="test"></table>
- 
-<script src="/static/index/layui/layui.js"></script>
-<script>
-layui.use('table', function(){
-  var table = layui.table;
-  
-  //第一个实例
-  table.render({
-    elem: '#demo'
-    ,height: 312
-    ,url: "<?php echo url('user/transferRecord2'); ?>" //数据接口
-    ,page: true //开启分页
-    ,cols: [[ //表头
-      {field: 'out_name', title: '转出方', width:100}
-      ,{field: 'money', title: '金额', width:100, sort: true}
-      ,{field: 'input_name', title: '转入方', width:100} 
-      ,{field: 'time', title: '时间', width: 177,sort: true}
+<div class="box">
+    
+       
+  <div class="box-body table-responsive">
+    <table  class="table table-bordered table-hover table-striped">
+      <thead>
+      <tr>
+          
+          <th>留言信息</th>
+          <th>留言时间</th>
+          <th>回复信息</th>
+          <th>回复时间</th>
+          
+      </tr>
+      </thead>
       
-    ]]
-  });
-  
-});
-</script>
-</body>
-</html>
+      <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): ?>
+        <tbody>
+            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                <tr>
+                  
+                  <td><?php echo $vo['message']; ?></td>
+                  <td><?php echo $vo['message_time']; ?></td>
+                  <td><?php echo $vo['response']; ?></td>
+                  <td><?php echo $vo['response_time']; ?></td>
+                  
+                </tr>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+        </tbody>
+        <?php else: endif; ?>
+    </table>
+  </div>
+
+  <div class="box-footer clearfix text-center">
+      </div>
+      <a href="<?php echo url('user/index',['id'=> \think\Request::instance()->session('user_id2')]); ?>">个人列表</a>
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+</div>
+
+
 <footer class="footer">
   <div class="container">
       <p> 本站由 <strong><a href="http://www.onebase.org" target="_blank">OneBase</a></strong> 强力驱动</p>

@@ -1,30 +1,34 @@
-<div class="box-body table-responsive">
-    <table  class="table table-bordered table-hover table-striped">
-      <thead>
-      <tr>
-          <th>转出用户</th>
-          <th>数额</th>
-          <th>转入用户</th>
-          <th>操作时间</th>
-         
-      </tr>
-      </thead>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>table模块快速使用</title>
+  <link rel="stylesheet" href="/static/index/layui/css/layui.css" media="all">
+</head>
+<body>
+<table style="margin-top: 38px;" id="demo" lay-filter="test"></table>
+ 
+<script src="/static/index/layui/layui.js"></script>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 312
+    ,url: "{:url('user/transferRecord2')}" //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field: 'out_name', title: '转出方', width:100}
+      ,{field: 'money', title: '金额', width:100, sort: true}
+      ,{field: 'input_name', title: '转入方', width:100} 
+      ,{field: 'time', title: '时间', width: 177,sort: true}
       
-      {notempty name='data'}
-        <tbody>
-            {volist name='data' id='vo'}
-                <tr>
-                  <td>{$vo.out_name}</td>
-                  <td>{$vo.money}</td>
-                  <td>{$vo.input_name}</td>
-                  <td>{$vo.time}</td>
-                </tr>
-            {/volist}
-        </tbody>
-        {else/}
-        <tbody><tr class="odd"><td colspan="8" class="text-center" valign="top">{:config('empty_list_describe')}</td></tr></tbody>
-      {/notempty}
-    </table>
-  </div>
-  <a href="{:url('user/index',['id' => $Request.session.user_id2])}">个人列表</a>
-  <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
+    ]]
+  });
+  
+});
+</script>
+</body>
+</html>

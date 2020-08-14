@@ -1182,14 +1182,13 @@ class User extends IndexBase
         return $data = 0;
 
     }
-    public function transferRecord($username){
-       
+    public function transferRecord(){
+        $username = $this->modelMember->where('id',session('user_id2'))->value('username');
         $map1 = ['out_name'=>$username,];
         $map2 = ['input_name'=>$username,];
         $data = $this->modelOutinput->where($map1)
                                         ->whereOr($map2)
-                                        ->select()
-                                        ->toArray();
+                                        ->select();                               
         //array_push($data, ['userid'=>$userid]);
         //dump($data);die;
         return $data;

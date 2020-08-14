@@ -1,0 +1,32 @@
+---------------------------------------------------------------
+[ 2020-08-14T17:40:19+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord2.html?page=1&limit=10
+[ info ] www.obtest.com/user/transferrecord2.html?page=1&limit=10 [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：2,481.33kb] [文件加载：68]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-08-14T17:40:32+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord2.html?page=1&limit=10
+[ info ] www.obtest.com/user/transferrecord2.html?page=1&limit=10 [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：2,481.34kb] [文件加载：68]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-08-14T17:42:52+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord2.html?page=1&limit=10
+[ info ] www.obtest.com/user/transferrecord2.html?page=1&limit=10 [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,481.34kb] [文件加载：68]
+[ error ] [0]方法参数错误:username[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2020-08-14T17:43:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord/username/123.html
+[ info ] www.obtest.com/user/transferrecord/username/123.html [运行时间：0.084004s][吞吐率：11.90req/s] [内存消耗：3,292.27kb] [文件加载：79]
+[ error ] [0]variable type error：array[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Request.php:1152]
+---------------------------------------------------------------
+[ 2020-08-14T17:47:24+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord/username/123.html
+[ info ] www.obtest.com/user/transferrecord/username/123.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,816.34kb] [文件加载：72]
+[ error ] [0]语法解析错误: syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ')'[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:1185]
+---------------------------------------------------------------
+[ 2020-08-14T18:00:32+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord/username/123.html
+[ info ] www.obtest.com/user/transferrecord/username/123.html [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：2,299.27kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ')'[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:150]
+---------------------------------------------------------------
+[ 2020-08-14T18:00:45+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord/username/123.html
+[ info ] www.obtest.com/user/transferrecord/username/123.html [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,299.27kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected '}', expecting ')'[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:152]
+---------------------------------------------------------------
+[ 2020-08-14T18:00:52+08:00 ] 127.0.0.1 127.0.0.1 GET /user/transferrecord/username/123.html
+[ info ] www.obtest.com/user/transferrecord/username/123.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,299.27kb] [文件加载：61]
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ')'[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:150]

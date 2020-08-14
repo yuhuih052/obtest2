@@ -11,6 +11,7 @@
 
 namespace app\index\controller;
 
+use think\Hook;
 /**
  * 前端首页控制器
  */
@@ -19,11 +20,8 @@ class User extends IndexBase
     // 首页
     public function index()
     {
-        
+        Hook::listen('CheckAuth',$params);
         $id = session('user_id2');
-        if($id == Null){
-            return view('login/login');
-        }
         if(session('user_id2') == $id){
         $data = $this->logicUser->index($id);
         //dump($data);die;
@@ -37,7 +35,7 @@ class User extends IndexBase
     }
 
     public function userInfoEdit($id){
-        
+        Hook::listen('CheckAuth',$params);
         //dump($id);die;
         if(session('user_id2') == $id){
         $data = $this->logicUser->index($id);
@@ -55,6 +53,7 @@ class User extends IndexBase
     // 修改个人信息
     public function userEdit()
     {
+        Hook::listen('CheckAuth',$params);
         if(IS_POST){
             $data = $this->param;
             //dump($data);die;
@@ -66,6 +65,7 @@ class User extends IndexBase
 
     //直接推荐人列表
     public function userRecommonder(){
+        Hook::listen('CheckAuth',$params);
        //$data = $username;
        $id = session('user_id');
        $member = $this->logicUser->index($id);
@@ -83,7 +83,7 @@ class User extends IndexBase
     //推荐人激活会员
     public function memberEdit()
     {
-        
+        Hook::listen('CheckAuth',$params);
         IS_POST && $this->jump($this->logicUser->memberEdit($this->param));
         //dump($this->param);die;
         
@@ -96,12 +96,12 @@ class User extends IndexBase
      //删除会员
     public function memberDel($id = 0)
     {
-        
+        Hook::listen('CheckAuth',$params);
         return $this->jump($this->logicUser->memberDel(['id' => $id]));
     }
     //充值界面
     public function chongzhi(){
-
+        Hook::listen('CheckAuth',$params);
         if(!session('user_id2') == Null){
         
         $data = $this->logicUser->chongzhi();
@@ -115,7 +115,7 @@ class User extends IndexBase
 
     //充值申请
     public function chongzhi1(){
-
+        Hook::listen('CheckAuth',$params);
         $userid = session('user_id2');
         //dump($this->param);die;
         $data = $this->param['request_chongzhi'];
@@ -124,7 +124,7 @@ class User extends IndexBase
     }
     //转账界面
     public function zhuanzhang(){
-        //dd('1');
+        Hook::listen('CheckAuth',$params);
         if(session('member_info2')[0]['is_center'])
         return view();
         return "您不是报单中心";
@@ -134,7 +134,7 @@ class User extends IndexBase
     }
     //转账列表
     public function transferRecord($username){
-        //dump($username);die;
+        Hook::listen('CheckAuth',$params);
         if(session('member_info2')[0]['username'] == $username){
         $data = $this->logicUser->transferRecord($username);
         $this->assign('data',$data);
@@ -143,8 +143,16 @@ class User extends IndexBase
 
         return "访问错误";
     }
+    //转账列表
+    public function transferRecord2(){
+        Hook::listen('CheckAuth',$params);
+        
+        return json($this->logicUser->transferRecord());
+        
+    }
     //转账操作
     public function transfer(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->param;
 
         $validate = new \app\index\validate\Transfer;
@@ -167,12 +175,14 @@ class User extends IndexBase
     }
 
     public function withDrawl(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->logicUser->withDD();
         $this->assign('data',$data);
         return $this->fetch('withdrawl');
     }
     //提现申请
     public function withDrawl1(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->param;
         // $validate = new \app\index\validate\Transfer;
        IS_POST &&$this->jump($this->logicUser->withDrawl($data));
@@ -180,6 +190,7 @@ class User extends IndexBase
     }
     //提现记录
     public function withDrawlrecord($id){
+        Hook::listen('CheckAuth',$params);
         if(session('user_id2') == $id){
         $data = $this->logicUser->record($id);
         $this->assign('data',$data);
@@ -190,10 +201,12 @@ class User extends IndexBase
     
     //留言功能
     public function message(){
+        Hook::listen('CheckAuth',$params);
         return view();
     }
 
     public function messagel(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->param;
         $validate = new \app\index\validate\Message;
 
@@ -207,6 +220,7 @@ class User extends IndexBase
         return $this->fetch('user/message_record');
     }
     public function messageRecord($id){
+        Hook::listen('CheckAuth',$params);
         if(session('user_id2') == $id){
         $record = $this->logicUser->messageRecord($id);
         $this->assign('list',$record);
@@ -217,6 +231,7 @@ class User extends IndexBase
     //双轨图
     public function twoPathway()
     {
+        Hook::listen('CheckAuth',$params);
         $top_id = session('user_id2');
         $level = 4;
         $this->assign('html', $this->logicUser->twoPathway($top_id,$level));
@@ -225,6 +240,7 @@ class User extends IndexBase
     }
     //双轨图查询
     public function twoPathwayfind(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->param;
         if($data['username'] == Null){
             $top_id = session('user_id2');
@@ -244,6 +260,7 @@ class User extends IndexBase
     }
     //左右区注册搜索
     public function placeTreesize(){
+        Hook::listen('CheckAuth',$params);
         //dd('12222');die;
         $data = $this->param;
      
@@ -262,6 +279,7 @@ class User extends IndexBase
     }
     //推荐图
     public function tuijiantu(){
+        Hook::listen('CheckAuth',$params);
         $root_id = session('user_id2');
         $data = $this->logicUser->tuijiantu($root_id);
         //dump($data);die;
@@ -270,6 +288,7 @@ class User extends IndexBase
     }
     //树形图
     public function teamTree(){
+        Hook::listen('CheckAuth',$params);
         $root_id = session('user_id2');
         $this->assign($this->logicUser->teamTree($this->request->param('root_id', '')));
         return $this->fetch('team_tree');
@@ -281,7 +300,7 @@ class User extends IndexBase
     }
 //插件——树形图
    public function re_tree(){
-    
+    Hook::listen('CheckAuth',$params);
     $id = session('user_id2');
     $data = $this->logicUser->re_tree($id);
     $zhitui_all = $data[0]['zhitui_all'];
@@ -296,6 +315,7 @@ class User extends IndexBase
 
    //树形图查询用户
    public function find_re_tree(){
+    Hook::listen('CheckAuth',$params);
     //dd($this->param);
     $username = $this->param;
     $user = $this->logicUser->find_re_tree_id($username);
@@ -315,7 +335,7 @@ class User extends IndexBase
 /**************************************************************************************************/
      public function system()
     {
-        
+        Hook::listen('CheckAuth',$params);
         $se_id = session('user_id2');
         $father['id']   = 2;
         if (!empty($this->param)) {
@@ -357,6 +377,7 @@ class User extends IndexBase
     }
 
     public function left(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->param;
         if (!empty($data['username'])) {
             $the = $this->param;
@@ -400,6 +421,7 @@ class User extends IndexBase
     }
 
     public function right(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->param;
         if (!empty($data['username'])) {
             $the = $this->param;
@@ -446,7 +468,7 @@ class User extends IndexBase
    //直推关系图
     public function my_teamTree()
     {
-
+        Hook::listen('CheckAuth',$params);
         $this->assign($this->logicUser->teamTree3($this->request->param('root_id', '')));
         return $this->fetch('my_team_tree');
     }
@@ -454,14 +476,17 @@ class User extends IndexBase
 
     //货币转换
     public function zhuanhuan(){
+        Hook::listen('CheckAuth',$params);
         return view();
     }
     //货币转换操作
     public function zhuanhuan1(){
+        Hook::listen('CheckAuth',$params);
         $this->jump($this->logicUser->zhuanhuan1($this->param));
     }
     //货币明细
     public function billDetail(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->logicUser->billDetail();
         //dd($data);
         $this->assign('data',$data);
@@ -469,11 +494,12 @@ class User extends IndexBase
     }
     //申请报单中心
     public function request_is_center(){
-        
+        Hook::listen('CheckAuth',$params);
         $this->jump($this->logicUser->request_is_center($this->param));
     }
     //点位升级
     public function upgrade(){
+        Hook::listen('CheckAuth',$params);
         $member = session('member_info2');
         if($member[0]['member_rank'] < $this->param['v']){
 
@@ -484,6 +510,7 @@ class User extends IndexBase
     }
     //奖金明细
     public function bonusDetail(){
+        Hook::listen('CheckAuth',$params);
         $data = $this->logicUser->bonusDetail($this->param);
         $this->assign('data',$data);
         return $this->fetch('bonus_detail');

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1597195532;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1597282548;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +11,7 @@
     <link href="__STATIC__/module/common/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="__STATIC__/module/index/css/docs.css" rel="stylesheet">
     <link href="__STATIC__/module/index/css/onebase.css" rel="stylesheet">
+    <link href="__STATIC__/index/layui/css/layui.css" rel="stylesheet">
     
     <script type="text/javascript" src="__STATIC__/module/common/jquery/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="__STATIC__/module/common/bootstrap/js/bootstrap.min.js"></script>
@@ -95,6 +96,7 @@
         <?php if($data['is_center'] > 0): ?>
         <li><a href=" <?php echo url('user/userRecommonder',['username'=>$data['username']]); ?>">激活会员</a></li>
         <li><a id="" href="<?php echo url('user/zhuanzhang'); ?>">转账</a></li>
+        <li><a href="<?php echo url('user/transferRecord',['username'=>$data['username']]); ?>">转账记录《</a></li>
         <?php endif; ?>
         <li>当前报单等级：
             <?php if($data['is_center'] == 0): ?>无
@@ -130,6 +132,8 @@
         <li><a href="<?php echo url('user/zhuanhuan'); ?>">货币转换</a></li>    
         <li><a href="<?php echo url('user/billDetail'); ?>">货币明细</a></li>
         <li><a href="<?php echo url('user/bonusDetail'); ?>">奖金明细</a></li>
+        <li><a href="<?php echo url('user/withdrawl'); ?>">提现</a></li>
+        <li><a href="<?php echo url('user/withDrawlrecord',['id'=>$data['id']]); ?>">提现记录</a></li>
       </ul>
     </div>
     <div class="dropdown" style="margin-top: 10px">
@@ -197,6 +201,13 @@
         <li><a href="<?php echo url('futou/returnInto'); ?>">返回主账号</a></li>
         <?php endif; ?>
       </ul>
+    </div>
+    <div class="dropdown" style="margin-top: 10px">
+      <a href="<?php echo url('login/logout'); ?>"><button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        退出登录
+        
+      </button>
+      </a>
     </div>
 
 
@@ -276,21 +287,21 @@
             <div class="mui-col-xs-8"><?php echo $data['re_withdrawl']; ?></div>
         </div>
         
-        <a href=" <?php echo url('user/userRecommonder',['username'=>$data['username']]); ?>">  直接推荐人列表《《</a>
+        <!-- <a href=" <?php echo url('user/userRecommonder',['username'=>$data['username']]); ?>">  直接推荐人列表《《</a> -->
         <!-- <a href=" <?php echo url('user/my_teamTree',['id'=>$data['id']]); ?>">  推荐关系《《</a> -->
         <!-- <a href=" <?php echo url('members/teamtree',['id'=>$data['id']]); ?>">  我的团队《《</a>
         <a href=" <?php echo url('members/tree',['id'=>$data['id']]); ?>">  测试tree《《</a> -->
         
-        <a href=" <?php echo url('user/twoPathway'); ?>">  双区结构图《《</a>
+       <!--  <a href=" <?php echo url('user/twoPathway'); ?>">  双区结构图《《</a> -->
         
         
         
-         <a href="<?php echo url('user/transferRecord',['username'=>$data['username']]); ?>">转账记录《</a>
-         <a href="<?php echo url('user/withdrawl'); ?>">提现《《</a>
-         <a href="<?php echo url('user/withDrawlrecord',['id'=>$data['id']]); ?>">提现记录《《</a>
+         <!-- <a href="<?php echo url('user/transferRecord',['username'=>$data['username']]); ?>">转账记录《</a> -->
+         
+         
          <!-- <a href="<?php echo url('user/message'); ?>">留言《《</a> -->
-         <a href="<?php echo url('user/messageRecord',['id'=> $data['id']]); ?>">留言记录《《</a>
-        <a href="<?php echo url('login/logout'); ?>">  退出《</a>
+         <!-- <a href="<?php echo url('user/messageRecord',['id'=> $data['id']]); ?>">留言记录《《</a>
+        <a href="<?php echo url('login/logout'); ?>">  退出《</a> -->
 
     </div>
 

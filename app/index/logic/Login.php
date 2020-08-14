@@ -54,7 +54,8 @@ class Login extends IndexBase
          ];
 
          $sys_status = $this->modelSiteArgm->where('id',1)->value('sys_status');
-        $member = $this->modelMember->where('username','=',$username)->select()->toArray();
+        $member = $this->modelMember->where('username','=',$username)
+                                        ->whereOr('mobile','=',$username)->select()->toArray();
         $mb = $this->modelMember->where('username','=',$username)->find();
         //dump($member);die;
         //判断系统开关状态

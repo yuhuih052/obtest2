@@ -166,6 +166,10 @@ class Ep extends IndexBase{
             return [RESULT_SUCCESS,'当前还有订单未未付款',$url];
         }
         $sell_info = $this->modelEp->where('id',$data['id'])->find();
+        if(session('user_id2') == $sell_info->member_id){
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'不能与自己交易',$url];
+        }
         $re = [
             'ep_id'=>$data['id'],
             'buyer_id' => session('user_id2'),
@@ -196,7 +200,12 @@ class Ep extends IndexBase{
             $url = url('ep/buy_list');
             return [RESULT_SUCCESS,'当前还有订单未未付款',$url];
         }
+
         $sell_info = $this->modelEp->where('id',$data['id'])->find();
+        if(session('user_id2') == $sell_info->member_id){
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'不能与自己交易',$url];
+        }
         $re = [
             'ep_id'=>$data['id'],
             'buyer_id' => session('user_id2'),
@@ -220,6 +229,10 @@ class Ep extends IndexBase{
     //部分出售
     public function sell_ali($data){
         $buy_info = $this->modelEp->where('id',$data['id'])->find();
+        if(session('user_id2') == $buy_info->member_id){
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'不能与自己交易',$url];
+        }
         $re = [
             'ep_id'=>$data['id'],
             'buyer_id' =>$buy_info->member_id,
@@ -247,6 +260,10 @@ class Ep extends IndexBase{
     //全部出售
     public function sell_all($data){
         $buy_info = $this->modelEp->where('id',$data['id'])->find();
+        if(session('user_id2') == $buy_info->member_id){
+            $url = url('ep/buy_list');
+            return [RESULT_SUCCESS,'不能与自己交易',$url];
+        }
         $re = [
             'ep_id'=>$data['id'],
             'buyer_id' =>$buy_info->member_id,
