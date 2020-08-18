@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:67:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\site\site.html";i:1597227455;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:67:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\site\site.html";i:1597473095;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597465286;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="__STATIC__/module/admin/ext/adminlte/dist/css/font-awesome.min.css">
     <link rel="stylesheet" href="__STATIC__/module/admin/ext/adminlte/dist/css/ionicons.min.css">
     
+    <script src="__STATIC__/index/js/jquery.min.js"></script>
     <script type="text/javascript" src="__STATIC__/module/common/jquery/jquery-2.2.3.min.js"></script>
     <script src="__STATIC__/module/admin/ext/jquerypjax/jquery.pjax.js"></script>
     <script src="__STATIC__/module/admin/ext/adminlte/bootstrap/js/bootstrap.min.js"></script>
@@ -194,7 +195,7 @@
 <div class="box">
   <div class="box-header">
     
-    <ob_link><a class="btn" href="<?php echo url('blogrollAdd'); ?>"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    <ob_link><a class="btn" id="btn" > 电子币利息转保管金</a></ob_link>
     
   </div>
     
@@ -312,8 +313,20 @@
   </div>
 
 </div>
-<script type="text/javascript">
 
+<script type="text/javascript">
+ $("#btn").click(function(){
+    //发起ajax请求
+    $.ajax({
+       url:"<?php echo url('refresh_in'); ?>",//注意：这里实际情况应该是根据点击的不同a标签加载不同页面
+       success: function(data){
+         //将请求回来的内容添加到下面的内容div
+         if(data==1){
+          alert('电子币利息发放成功!')
+         }
+       }
+    });
+  });
   function save() {
         document.form.action = "<?php echo url('Site/cfi_deal'); ?>";
         document.form.submit();

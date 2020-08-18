@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\transfer_record.html";i:1597398973;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\transfer_record.html";i:1597646141;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,9 +66,9 @@
   <link rel="stylesheet" href="/static/index/layui/css/layui.css" media="all">
 </head>
 <body>
-<table style="margin-top: 38px;" id="demo" lay-filter="test"></table>
+<table style="margin-top: 45px;" id="demo" lay-filter="test"></table>
  
-<script src="/static/index/layui/layui.js"></script>
+<script src="/static/index/sentsin-layui-master/layui/dist/layui.js"></script>
 <script>
 layui.use('table', function(){
   var table = layui.table;
@@ -78,6 +78,14 @@ layui.use('table', function(){
     elem: '#demo'
     ,height: 312
     ,url: "<?php echo url('user/transferRecord2'); ?>" //数据接口
+     ,parseData: function(res){ //res 即为原始返回的数据
+    return {
+      "code": 0, //解析接口状态
+      "msg": res.message, //解析提示文本
+      "count": res.total, //解析数据长度
+      "data": res //解析数据列表
+    };
+  }
     ,page: true //开启分页
     ,cols: [[ //表头
       {field: 'out_name', title: '转出方', width:100}

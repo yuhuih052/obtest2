@@ -24,7 +24,7 @@ class Bonus extends AdminBase
     {
         
         $data = $this->modelBonus->getList($where, $field, $order,$paginate);
-        //dump($data);die;
+        
         return $data;
     }
     
@@ -35,7 +35,6 @@ class Bonus extends AdminBase
     {
         
        $bonus_list = $this->modelBonusDetail->getList($where, $field, $order,$paginate);
-        //dump($bonus_list);die;
         
         return $bonus_list;
     }
@@ -47,7 +46,7 @@ class Bonus extends AdminBase
         
         $baodanbi_all = $baodanbi_all == NULL ? 0 : $baodanbi_all;
         $totalbonus = $totalbonus == NULL ? 0 : $totalbonus;
-        //dd($baodanbi_all);
+        
         if(!$baodanbi_all == 0){
         $pp =  $totalbonus/$baodanbi_all;
         }else{
@@ -61,7 +60,8 @@ class Bonus extends AdminBase
             'pp' => $pp,
         ];
         //dump($data['sum']);die;
-        $this->modelBonus->setInfo($datarecord);
+        $result = $this->modelBonus->setInfo($datarecord);
+        return 1;
         
     }
 

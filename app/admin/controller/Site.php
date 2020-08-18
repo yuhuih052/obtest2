@@ -29,4 +29,8 @@ class Site extends AdminBase
 	public function splitCfi(){
 		$this->jump($this->logicSite->splitCfi($this->param));
 	}
+	//电子币利息转保管金
+	public function refresh_in(){
+		return $this->logicSite->refresh_in($this->param);
+	}
 }

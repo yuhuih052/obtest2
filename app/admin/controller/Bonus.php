@@ -44,13 +44,7 @@ class Bonus extends AdminBase
     //刷新出纳信息
     public function record(){
 
-       $this->logicBonus->record();
-       $data = $this->logicBonus->bonusList();
-        $this->assign('list', $data);
-        //dump($data);die;
-        return $this->fetch('bonus_cashier');
-       
-
+       return $this->logicBonus->record();
     }
 
     public function search(){

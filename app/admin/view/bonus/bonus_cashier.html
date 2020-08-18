@@ -2,7 +2,7 @@
 <div class="box">
   <div class="box-header">
     
-    <ob_link><a class="btn" href="{:url('bonus/record')}"><i class="fa fa-plus"></i> 刷新</a></ob_link>
+    <ob_link><a class="btn" id="btn"><i class="fa fa-plus"></i> 刷新</a></ob_link>
     
   </div>
   <div>
@@ -44,3 +44,19 @@
 
 <a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 </div>
+<script type="text/javascript">
+   $("#btn").click(function(){
+    //发起ajax请求
+    $.ajax({
+       url:"{:url('bonus/record')}",//注意：这里实际情况应该是根据点击的不同a标签加载不同页面
+       success: function(data){
+         //将请求回来的内容添加到下面的内容div
+         console.log(data);
+         if(data==1){
+          alert('数据刷新成功!')
+          window.location.reload();
+         }
+       }
+    });
+  });
+</script>

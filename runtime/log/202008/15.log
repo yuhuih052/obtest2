@@ -1,0 +1,140 @@
+---------------------------------------------------------------
+[ 2020-08-15T10:12:43+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest.com/user/userrecommonder/username/123.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：3,073.49kb] [文件加载：75]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:26]
+---------------------------------------------------------------
+[ 2020-08-15T10:12:49+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest.com/user/userrecommonder/username/123.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：3,079.74kb] [文件加载：75]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:26]
+---------------------------------------------------------------
+[ 2020-08-15T10:13:04+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest.com/user/userrecommonder/username/123.html [运行时间：0.071005s][吞吐率：14.08req/s] [内存消耗：3,079.74kb] [文件加载：75]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:26]
+---------------------------------------------------------------
+[ 2020-08-15T10:14:36+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest.com/user/userrecommonder/username/123.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：3,079.84kb] [文件加载：75]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:26]
+---------------------------------------------------------------
+[ 2020-08-15T10:17:45+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest.com/user/userrecommonder/username/123.html [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：3,073.63kb] [文件加载：75]
+[ error ] [0]致命错误: Call to a member function toArray() on null[D:\phpstudy_pro\WWW\obtest2\app\index\logic\User.php:26]
+---------------------------------------------------------------
+[ 2020-08-15T10:18:16+08:00 ] 127.0.0.1 127.0.0.1 GET /user/userrecommonder/username/123.html
+[ info ] www.obtest.com/user/userrecommonder/username/123.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：3,084.91kb] [文件加载：76]
+[ error ] [8]未定义数组下标: 0[D:\phpstudy_pro\WWW\obtest2\app\index\controller\User.php:72]
+---------------------------------------------------------------
+[ 2020-08-15T11:04:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/refresh_in.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/site/refresh_in.html?_pjax=.content [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：3,210.44kb] [文件加载：78]
+[ error ] [0]类不存在:app\common\logic\[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-15T11:04:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/refresh_in.html
+[ info ] www.obtest.com/admin.php/site/refresh_in.html [运行时间：0.076004s][吞吐率：13.16req/s] [内存消耗：3,152.09kb] [文件加载：79]
+[ error ] [0]类不存在:app\common\logic\[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-15T11:23:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/refresh_in.html
+[ info ] www.obtest.com/admin.php/site/refresh_in.html [运行时间：0.104005s][吞吐率：9.61req/s] [内存消耗：3,278.98kb] [文件加载：82]
+[ error ] [8]Object of class think\Collection could not be converted to number[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:188]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?reload=true
+[ info ] www.obtest.com/admin.php/site/indexlist.html?reload=true [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：3,559.32kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:33+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.131007s][吞吐率：7.63req/s] [内存消耗：3,564.06kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.091006s][吞吐率：10.99req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.098006s][吞吐率：10.20req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/site/indexlist.html?_pjax=.content [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：3,467.47kb] [文件加载：87]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.115007s][吞吐率：8.70req/s] [内存消耗：3,558.33kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:44+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.107006s][吞吐率：9.35req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:44+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.114007s][吞吐率：8.77req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：3,558.62kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?reload=true
+[ info ] www.obtest.com/admin.php/site/indexlist.html?reload=true [运行时间：0.122007s][吞吐率：8.20req/s] [内存消耗：3,559.03kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?reload=true
+[ info ] www.obtest.com/admin.php/site/indexlist.html?reload=true [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,559.03kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?reload=true
+[ info ] www.obtest.com/admin.php/site/indexlist.html?reload=true [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,559.32kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?reload=true
+[ info ] www.obtest.com/admin.php/site/indexlist.html?reload=true [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,559.03kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.117006s][吞吐率：8.55req/s] [内存消耗：3,564.06kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:14:59+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?reload=true
+[ info ] www.obtest.com/admin.php/site/indexlist.html?reload=true [运行时间：0.112006s][吞吐率：8.93req/s] [内存消耗：3,565.05kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:15:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/site/indexlist.html?_pjax=.content [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,467.40kb] [文件加载：87]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T12:15:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/site/indexlist.html
+[ info ] www.obtest.com/admin.php/site/indexlist.html [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：3,558.38kb] [文件加载：90]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T14:37:01+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/bonuslist.html
+[ info ] www.obtest.com/admin.php/bonus/bonuslist.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,506.13kb] [文件加载：89]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T14:37:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/bonuslist.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/bonus/bonuslist.html?_pjax=.content [运行时间：0.097005s][吞吐率：10.31req/s] [内存消耗：3,413.30kb] [文件加载：86]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T14:37:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/bonuslist.html
+[ info ] www.obtest.com/admin.php/bonus/bonuslist.html [运行时间：0.100005s][吞吐率：10.00req/s] [内存消耗：3,505.97kb] [文件加载：89]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]
+---------------------------------------------------------------
+[ 2020-08-15T14:37:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/bonus/bonuslist.html
+[ info ] www.obtest.com/admin.php/bonus/bonuslist.html [运行时间：0.092005s][吞吐率：10.87req/s] [内存消耗：3,506.13kb] [文件加载：89]
+[ error ] [8]未定义数组下标: 1[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\AdminBase.php:106]

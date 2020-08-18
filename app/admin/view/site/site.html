@@ -1,7 +1,7 @@
 <div class="box">
   <div class="box-header">
     
-    <ob_link><a class="btn" href="{:url('blogrollAdd')}"><i class="fa fa-plus"></i> 新 增</a></ob_link>
+    <ob_link><a class="btn" id="btn" > 电子币利息转保管金</a></ob_link>
     
   </div>
     
@@ -120,8 +120,20 @@
   </div>
 
 </div>
-<script type="text/javascript">
 
+<script type="text/javascript">
+ $("#btn").click(function(){
+    //发起ajax请求
+    $.ajax({
+       url:"{:url('refresh_in')}",//注意：这里实际情况应该是根据点击的不同a标签加载不同页面
+       success: function(data){
+         //将请求回来的内容添加到下面的内容div
+         if(data==1){
+          alert('电子币利息发放成功!')
+         }
+       }
+    });
+  });
   function save() {
         document.form.action = "{:url('Site/cfi_deal')}";
         document.form.submit();

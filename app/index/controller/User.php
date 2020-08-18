@@ -67,9 +67,9 @@ class User extends IndexBase
     public function userRecommonder(){
         Hook::listen('CheckAuth',$params);
        //$data = $username;
-       $id = session('user_id');
+       $id = session('user_id2');
        $member = $this->logicUser->index($id);
-       if($member[0]['is_center'] > 0){
+       if($member['is_center'] > 0){
        $data = $this->logicUser->recommonderList();
         $this->assign('list',$data);
 
@@ -147,7 +147,7 @@ class User extends IndexBase
     public function transferRecord2(){
         Hook::listen('CheckAuth',$params);
         
-        return json($this->logicUser->transferRecord());
+        return $this->logicUser->transferRecord();
         
     }
     //转账操作

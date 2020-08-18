@@ -51,7 +51,7 @@ class CFI extends IndexBase
 				'create_time' => time(),
 			];
 			
-			$this->modelShop->setInfo($re);
+			$shop_id = $this->modelShop->setInfo($re);
 
 			$this->bill($id,$member['username'],'dianzibi_all',$pay,'挂买CFI');
 
@@ -65,17 +65,17 @@ class CFI extends IndexBase
             case 3 :
                 return [RESULT_SUCCESS,'匹配到订单，交易后进行拆分'];break;
 		}
-		
 
 	}
 	//购买逻辑
 	public function transaction($id,$member_rank){
 		$seller_list = $this->modelShop->where('sell','>',0)
-                                        ->where('status',1)
+                                        ->where('statuss',1)
                                         ->order('create_time','asc')
                                         ->select();
+        //当前交易的shop订单
         $buyer = $this->modelShop->where('user_id',$id)
-                                    ->where('status',1)
+                                    ->where('statuss',1)
                                     ->where('dianzibi','>',0)
                                     ->order('create_time','asc')
                                     ->find();
@@ -181,11 +181,11 @@ class CFI extends IndexBase
 	//与系统交易
     public function buyAndsys($id){
         $seller_list = $this->modelShop->where('sell','>',0)
-            ->where('status',1)
+            ->where('statuss',1)
             ->order('create_time','asc')
             ->select();
         $buyer = $this->modelShop->where('id',$id)
-            ->where('status',1)
+            ->where('statuss',1)
             ->where('dianzibi','>',0)
             ->order('create_time','asc')
             ->find();
@@ -268,11 +268,11 @@ class CFI extends IndexBase
 
         $now_price = $this->price()->cfi_price;
         $buyer_list = $this->modelShop->where('dianzibi','>=',2)
-                                        ->where('status',1)
+                                        ->where('statuss',1)
                                         ->order('create_time','asc')
                                             ->select();
         $v = $this->modelShop->where('user_id',$id)
-                                ->where('status',1)
+                                ->where('statuss',1)
                                 ->where('sell','>',0)
                                 ->order('create_time','asc')->find();
         //距离涨价的个数
@@ -332,7 +332,7 @@ class CFI extends IndexBase
                         //涨价后距离下一次涨价的个数
                         $rise_ca = $this->price()->default_deal - $this->price()->deal;
                         $buyer = $this->modelShop->where('id',$buyer->id)
-                                                    ->where('status',1)
+                                                    ->where('statuss',1)
                                                     ->find();
                         if(empty($buyer)){
                             return 2;
@@ -340,7 +340,7 @@ class CFI extends IndexBase
                         //目前账户所能购买最大数额
                         $b = $member_rank['CFI_split'] - $this->info($buyer->user_id)->CFI;
                         $now_price = $this->price()->cfi_price;
-                        $v = $this->modelShop->where('id',$v->id)->where('status',1)->find();
+                        $v = $this->modelShop->where('id',$v->id)->where('statuss',1)->find();
                         if($after_amount < $rise_ca || $v->sell <$rise_ca){//剩余交易小于一次涨价的交易量
                             if($after_amount >= $v->sell){//购买需求大于当前卖家
                                 if($b >= $v->sell){
@@ -388,9 +388,9 @@ class CFI extends IndexBase
                             $b = $member_rank['CFI_split'] - $this->info($buyer->usre_id)->CFI;
                             $now_price = $this->price()->cfi_price;
                             $buyer = $this->modelShop->where('id',$buyer->id)
-                                                    ->where('status',1)
+                                                    ->where('statuss',1)
                                                     ->find();
-                            $v = $this->modelShop->where('id',$v->id)->where('status',1)->find();
+                            $v = $this->modelShop->where('id',$v->id)->where('statuss',1)->find();
                             if($after_amount >= $v->sell){//购买需求大于当前卖家
                                 if($b >= $v->sell){
                                     $now_pay = $v->sell * $now_price;
@@ -439,7 +439,7 @@ class CFI extends IndexBase
                             $now_pay = $rise_ca *$now_price;
                             $this->updata($buyer,$v,$now_pay,$rise_ca,$now_price+0.1);
 
-                            $v = $this->modelShop->where('id',$id)->where('status',1)->find();
+                            $v = $this->modelShop->where('id',$id)->where('statuss',1)->find();
                         }else{//账户能购买的数量不够时
                             $now_pay = $b *$now_price;
                             $this->updata($buyer,$v,$now_pay,$b,$now_price+0.1);
@@ -458,7 +458,7 @@ class CFI extends IndexBase
                         //目前账户所能购买最大数额
                         $b = $member_rank['CFI_split'] - $this->info($buyer->user_id)->CFI;
                         $now_price = $this->price()->cfi_price;
-                        $v = $this->modelShop->where('id',$id)->where('status',1)->find();
+                        $v = $this->modelShop->where('id',$id)->where('statuss',1)->find();
                         if($after_amount < $rise_ca || $v->sell <$rise_ca){//剩余交易大于一次涨价的交易量
                             //购买需求小于当前卖家
                             if($b >= $amount){
@@ -522,9 +522,10 @@ class CFI extends IndexBase
 		$buyer = $this->modelShop->where('id',$buyer->id)->find();
 		if($buyer->dianzibi < $this->price()->cfi_price){
 			$this->modelMember->where('id',$buyer->user_id)->inc('dianzibi',$buyer->dianzibi)->update();
-			$this->modelShop->where('id',$buyer->id)->update(['dianzibi'=>0,'status'=>2]);
+			$this->modelShop->where('id',$buyer->id)->update(['dianzibi'=>0,'statuss'=>2]);
 		}
         $re = [
+            'shop_id' => $buyer->id,
             'buyer_id' => $buyer->user_id,
             'seller_id' => 0,
             'deal_price' => $now_pay / $amount,
@@ -554,6 +555,7 @@ class CFI extends IndexBase
         ];
         $this->modelBill->setInfo($rere);
         $rerer = [
+            'shop_id' => $buyer->id,
             'buyer_id' => $buyer->user_id,
             'seller_id' => $v->user_id,
             'deal_price' => $now_pay / $amount,
@@ -563,7 +565,7 @@ class CFI extends IndexBase
 		$this->priceUd($now_price,$this->price()->deal+$amount,$this->price()->cfi_total);
 		$v = $this->modelShop->where('id',$v->id)->find();
 		if($v->sell < 1){
-			$this->modelShop->where('id',$v->id)->update(['status'=>2]);
+			$this->modelShop->where('id',$v->id)->update(['statuss'=>2]);
 		}
         $buyer = $this->modelShop->where('id',$buyer->id)->find();
 
@@ -576,7 +578,7 @@ class CFI extends IndexBase
                 'shuoming' => '挂买CFI退回剩余不足单价的电子币',
             ];
             $this->modelBill->setInfo($rss);
-            $this->modelShop->where('id',$buyer->id)->update(['status'=>2,'dianzibi'=>0]);
+            $this->modelShop->where('id',$buyer->id)->update(['statuss'=>2,'dianzibi'=>0]);
         }
     }
 	//添加流水账单
@@ -623,7 +625,7 @@ class CFI extends IndexBase
 		$this->modelPrice->where('id',1)->update($pre);
 		$seller = $this->modelShop->where('sell','>',0)->select();
 		foreach ($seller as $key => $va) {
-			if($va->status == 1){
+			if($va->statuss == 1){
 				$this->modelShop->where('user_id',$va->user_id)->update(['sell'=>0,'update_time'=>time()]);
 				$this->modelMember->where('id',$va->user_id)->dec('CFI',$va->sell)->update();
 			}
@@ -650,26 +652,27 @@ class CFI extends IndexBase
     //撤销挂卖买界面
     public function withBuyS(){
 	    return $this->modelShop->where('user_id',session('user_id2'))
-            ->where('status',1)
+            ->where('statuss',1)
             ->where('buy','>',0)
             ->select();
     }
     //撤销挂卖买界面
     public function withSellS(){
         return $this->modelShop->where('user_id',session('user_id2'))
-            ->where('status',1)
+            ->where('statuss',1)
             ->where('sell_a','>',0)
             ->select();
     }
     //撤销挂买
     public function withdralbuy($data){
 	    $this->modelMember->where('id',session('user_id2'))->inc('dianzibi',$data['dianzibi'])->update();
-	    $this->modelShop->where('id',$data['id'])->dec('dianzibi',$data['dianzibi'])->data(['status'=>3])->update();
+	    $this->modelShop->where('id',$data['id'])->dec('dianzibi',$data['dianzibi'])->data(['statuss'=>3])->update();
 	    return [RESULT_SUCCESS,'操作成功'];
     }
+    //撤销挂卖
     public function withdralsell($data){
         $this->modelMember->where('id',session('user_id2'))->inc('CFI',$data['cfi'])->update();
-        $this->modelShop->where('id',$data['id'])->dec('sell',$data['cfi'])->data(['status'=>3])->update();
+        $this->modelShop->where('id',$data['id'])->dec('sell',$data['cfi'])->data(['statuss'=>3])->update();
         return [RESULT_SUCCESS,'操作成功'];
     }
     public function buyRecord(){

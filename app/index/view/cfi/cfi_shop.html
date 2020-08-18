@@ -1,5 +1,4 @@
-
-    <table  class="table table-bordered">
+  <table style="margin-top: 50px;" class="table table-bordered">
       <thead>
       <tr>
           <th>当前cfi价格:{$list.cfi_price}</th>
@@ -64,9 +63,9 @@
 
         <td>{$vo4.buy}</td>
         <td>{$vo4.dianzibi}</td>
-        <td>{if $vo4.status == 1}挂买中
-            {elseif $vo4.status ==2/}订单完成
-            {elseif $vo4.status ==3/}订单关闭
+        <td>{if $vo4.statuss == 1}挂买中
+            {elseif $vo4.statuss ==2/}订单完成
+            {elseif $vo4.statuss ==3/}订单关闭
             {/if}
         </td>
 
@@ -92,9 +91,9 @@
 
             <td>{$vo5.sell_a}</td>
             <td>{$vo5.sell}</td>
-            <td>{if $vo5.status == 1}挂卖中
-                {elseif $vo5.status ==2/}订单完成
-                {elseif $vo5.status ==3/}订单关闭
+            <td>{if $vo5.statuss == 1}挂卖中
+                {elseif $vo5.statuss ==2/}订单完成
+                {elseif $vo5.statuss ==3/}订单关闭
                 {/if}
             </td>
 

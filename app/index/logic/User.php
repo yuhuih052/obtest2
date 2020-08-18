@@ -23,7 +23,7 @@ class User extends IndexBase
     public function index($id)
     {
         
-        $data = $this->modelMember->where('id',$id)->find()->toArray();
+        $data = $this->modelMember->where('id',$id)->find();
         //dump($data);die;
         //$this->assign('data',$data);
         return $data;
@@ -33,7 +33,6 @@ class User extends IndexBase
     //获取推荐人
     public function recommonderList(){
         $member = session('member_info2');
-         
         $data = $this->modelMember->where('center_id',$member[0]['id'])->select()->toArray();
         //dump($data);die;
         return $data;
@@ -1182,6 +1181,7 @@ class User extends IndexBase
         return $data = 0;
 
     }
+    //转账记录
     public function transferRecord(){
         $username = $this->modelMember->where('id',session('user_id2'))->value('username');
         $map1 = ['out_name'=>$username,];
@@ -1190,8 +1190,8 @@ class User extends IndexBase
                                         ->whereOr($map2)
                                         ->select();                               
         //array_push($data, ['userid'=>$userid]);
-        //dump($data);die;
-        return $data;
+        
+        return json($data);
 
     }
     //提现申请提示

@@ -69,7 +69,7 @@ class Site extends AdminBase
 		$this->modelPrice->where('id',1)->update($pre);
 		$seller = $this->modelShop->where('sell','>',0)->select();
 		foreach ($seller as $key => $va) {
-			if($va->status == 1){
+			if($va->statuss == 1){
 				//先返回挂卖市场未交易完成的部分
 				$this->modelShop->where('user_id',$va->user_id)->update(['sell'=>0,'update_time'=>time()]);
 				$this->modelMember->where('id',$va->user_id)->dec('CFI',$va->sell)->update();
@@ -176,5 +176,28 @@ class Site extends AdminBase
                 break;
         }
         return $checkData;
+    }
+    //电子币利息发放到保管金
+    public function refresh_in(){
+    	$mem = $this->modelMember->where('status','=',1)
+    							->where('username','<>','admin')
+    							->select();
+    	foreach ($mem as $key => $v) {
+    		//查询挂买CFI账户的电子币
+    		$s_dianzibi = $this->modelShop->where('user_id',$v->id)
+    										->where('statuss',1)
+    										->value('dianzibi');
+    		$s_dianzibi = $s_dianzibi == null ? 0 :$s_dianzibi;
+    		$all_dianzibi = $v->dianzibi + $s_dianzibi;
+    		$this->modelMember->where('id',$v->id)->inc('baoguanjin',$all_dianzibi * 0.001)->data(['refresh_interest'=>time()])->update();
+    		$r = [
+    			'user_id'=> $v->id,
+    			'user_name'=> $v->username,
+    			'baoguanjin'=> $all_dianzibi * 0.001,
+    			'shuoming'=> '电子币利息发放到保管金',
+    		];
+    		$this->modelBill->setInfo($r);
+    	}
+    	return 1;
     }
 }

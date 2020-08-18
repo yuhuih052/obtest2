@@ -1,0 +1,80 @@
+---------------------------------------------------------------
+[ 2020-08-18T09:25:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html?_pjax=.content [运行时间：0.095005s][吞吐率：10.53req/s] [内存消耗：3,200.63kb] [文件加载：79]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\buycfi2.html[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-08-18T09:25:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：3,211.90kb] [文件加载：80]
+[ error ] [0]模板文件不存在:D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\buycfi2.html[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2020-08-18T09:32:02+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/cfi/dealdetail3.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail3.html [运行时间：0.083004s][吞吐率：12.05req/s] [内存消耗：2,941.63kb] [文件加载：77]
+[ error ] [0]method not exist:think\db\Query->dealDetail3[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-18T09:33:18+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/cfi/dealdetail3.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail3.html [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：2,941.63kb] [文件加载：77]
+[ error ] [0]method not exist:think\db\Query->dealDetail3[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]
+---------------------------------------------------------------
+[ 2020-08-18T09:45:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：3,216.73kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T09:46:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.128007s][吞吐率：7.81req/s] [内存消耗：3,425.63kb] [文件加载：86]
+[ error ] [2]Use of undefined constant obj - assumed 'obj' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:247]
+---------------------------------------------------------------
+[ 2020-08-18T09:52:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.140008s][吞吐率：7.14req/s] [内存消耗：3,425.81kb] [文件加载：86]
+[ error ] [2]Use of undefined constant data - assumed 'data' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:247]
+---------------------------------------------------------------
+[ 2020-08-18T09:53:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.107006s][吞吐率：9.35req/s] [内存消耗：3,354.98kb] [文件加载：82]
+[ error ] [0]语法解析错误: syntax error, unexpected ']', expecting ')'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:247]
+---------------------------------------------------------------
+[ 2020-08-18T09:53:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：3,210.83kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T09:54:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：3,216.73kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T10:01:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.139008s][吞吐率：7.19req/s] [内存消耗：3,425.85kb] [文件加载：86]
+[ error ] [2]Use of undefined constant data - assumed 'data' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:248]
+---------------------------------------------------------------
+[ 2020-08-18T10:01:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.138008s][吞吐率：7.25req/s] [内存消耗：3,425.85kb] [文件加载：86]
+[ error ] [2]Use of undefined constant data - assumed 'data' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:248]
+---------------------------------------------------------------
+[ 2020-08-18T10:02:05+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.082004s][吞吐率：12.19req/s] [内存消耗：3,210.83kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T10:03:21+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.128007s][吞吐率：7.81req/s] [内存消耗：3,418.25kb] [文件加载：85]
+[ error ] [8]未定义变量: id[D:\phpstudy_pro\WWW\obtest2\runtime\temp\c7ecd76a0f09e8bb9c5ebde4b2f0043d.php:205]
+---------------------------------------------------------------
+[ 2020-08-18T10:03:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.077005s][吞吐率：12.99req/s] [内存消耗：3,210.83kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T10:06:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,216.73kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T10:06:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.129008s][吞吐率：7.75req/s] [内存消耗：3,425.69kb] [文件加载：86]
+[ error ] [2]Use of undefined constant data - assumed 'data' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:248]
+---------------------------------------------------------------
+[ 2020-08-18T10:06:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist.html
+[ info ] www.obtest.com/admin.php/cfi/buycfilist.html [运行时间：0.120007s][吞吐率：8.33req/s] [内存消耗：3,420.12kb] [文件加载：86]
+[ error ] [2]Use of undefined constant data - assumed 'data' (this will throw an Error in a future version of PHP)[D:\phpstudy_pro\WWW\obtest2\runtime\temp\e94ad94caa89d8398eba0d31992ab54f.php:248]
+---------------------------------------------------------------
+[ 2020-08-18T10:07:38+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：3,216.56kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T10:11:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
+[ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.093006s][吞吐率：10.75req/s] [内存消耗：3,216.73kb] [文件加载：80]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
