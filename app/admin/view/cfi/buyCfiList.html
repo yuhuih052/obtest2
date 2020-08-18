@@ -7,7 +7,7 @@
 </head>
 <body>
 <table style="margin-top: 55px;" id="demo" lay-filter="test"></table>
- 
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 <script src="/static/module/admin/layui/dist/layui.js"></script>
 <script>
 layui.use('table', function(){
@@ -15,13 +15,14 @@ layui.use('table', function(){
   //第一个实例
   table.render({
     elem: '#demo'
-    ,height: 312
+    ,height: 650
     ,url: "{:url('Cfi/buyCfiList2')}" //数据接口
      ,parseData: function(res){ //res 即为原始返回的数据
+
     return {
       "code": 0, //解析接口状态
       "msg": res.message, //解析提示文本
-      "count": res.total, //解析数据长度
+      "count":res.length, //解析数据长度
       "data": res //解析数据列表
     };
   }
@@ -37,25 +38,25 @@ layui.use('table', function(){
   });
   table.on('rowDouble(test)', function(obj){
 
-  //console.log(obj.data.id) //得到当前行数据id
-            $.ajax({
-                url:"{:url('cfi/dealDetail3')}",
-                data:{
-                    id:obj.data.id,
-                },
-                dataType:'json',
-                type:'post',
-                success:function (data) {
+        //console.log(obj.data.id) //得到当前行数据id
+        $.ajax({
+            url:"{:url('cfi/dealDetail3')}",
+            data:{
+                id:obj.data.id,
+            },
+            dataType:'json',
+            type:'post',
+            success:function (data) {
 
-                  if(data > 0){
-                    window.location.href = 'dealDetail2.html?id='+data;
-                  }else if(data == 0){
-                    layer.msg('暂无交易详情!');
-                  }
-                }
-            })
-            return false;
-});
+              if(data > 0){
+                window.location.href = 'dealDetail2.html?id='+data;
+              }else if(data == 0){
+                layer.msg('暂无交易详情!');
+              }
+            }
+        })
+        return false;
+  });
   
 });
 </script>

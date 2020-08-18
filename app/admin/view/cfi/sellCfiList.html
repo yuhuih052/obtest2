@@ -7,7 +7,7 @@
 </head>
 <body>
 <table style="margin-top: 55px;" id="demo" lay-filter="test"></table>
- 
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 <script src="/static/module/admin/layui/dist/layui.js"></script>
 <script>
 layui.use('table', function(){
@@ -16,17 +16,18 @@ layui.use('table', function(){
   //第一个实例
   table.render({
     elem: '#demo'
-    ,height: 312
+    ,height: 650
     ,url: "{:url('Cfi/sellCfiList2')}" //数据接口
      ,parseData: function(res){ //res 即为原始返回的数据
-      
+
     return {
       "code": 0, //解析接口状态
       "msg": res.message, //解析提示文本
-      "count": res.total, //解析数据长度
+      "count": res.length, //解析数据长度
       "data": res //解析数据列表
     };
   }
+
     ,page: true //开启分页
     ,cols: [[ //表头
       {field: 'user_name', title: '用户名', width:150}

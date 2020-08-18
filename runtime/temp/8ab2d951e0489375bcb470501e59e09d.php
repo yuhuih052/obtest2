@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1597458377;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:70:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\cfi\cfi_shop.html";i:1597633970;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,9 +123,9 @@
 
         <td><?php echo $vo4['buy']; ?></td>
         <td><?php echo $vo4['dianzibi']; ?></td>
-        <td><?php if($vo4['status'] == 1): ?>挂买中
-            <?php elseif($vo4['status'] ==2): ?>订单完成
-            <?php elseif($vo4['status'] ==3): ?>订单关闭
+        <td><?php if($vo4['statuss'] == 1): ?>挂买中
+            <?php elseif($vo4['statuss'] ==2): ?>订单完成
+            <?php elseif($vo4['statuss'] ==3): ?>订单关闭
             <?php endif; ?>
         </td>
 
@@ -151,9 +151,9 @@
 
             <td><?php echo $vo5['sell_a']; ?></td>
             <td><?php echo $vo5['sell']; ?></td>
-            <td><?php if($vo5['status'] == 1): ?>挂卖中
-                <?php elseif($vo5['status'] ==2): ?>订单完成
-                <?php elseif($vo5['status'] ==3): ?>订单关闭
+            <td><?php if($vo5['statuss'] == 1): ?>挂卖中
+                <?php elseif($vo5['statuss'] ==2): ?>订单完成
+                <?php elseif($vo5['statuss'] ==3): ?>订单关闭
                 <?php endif; ?>
             </td>
 
@@ -197,7 +197,7 @@
  
 <footer class="footer">
   <div class="container">
-      <p> 本站由 <strong><a href="http://www.onebase.org" target="_blank">OneBase</a></strong> 强力驱动</p>
+<!--      <p> 本站由 <strong><a href="http://www.onebase.org" target="_blank">OneBase</a></strong> 强力驱动</p>-->
   </div>
 </footer>
 

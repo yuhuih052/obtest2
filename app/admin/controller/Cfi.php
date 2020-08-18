@@ -14,7 +14,7 @@ class Cfi extends AdminBase
 	 }
 	 public function sellCfiList2(){
 
-	 return $this->logicCfi->sellCfi($this->param);
+	 return $this->logicCfi->sellCfiList($this->param);
     
 	 }
 	 public function buyCfiList(){
@@ -24,7 +24,7 @@ class Cfi extends AdminBase
 	 }
 	 public function buyCfiList2(){
 
-	 return $this->logicCfi->buyCfi($this->param);
+	 return $this->logicCfi->buyCfiList($this->param);
 
 	 }
 

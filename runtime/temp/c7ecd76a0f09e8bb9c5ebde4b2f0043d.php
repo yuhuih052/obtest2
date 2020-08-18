@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\dealDetail2.html";i:1597718519;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597638481;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\dealDetail2.html";i:1597733346;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597638481;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -213,27 +213,26 @@ layui.use('table', function(){
   //第一个实例
   table.render({
     elem: '#demo'
-    ,height: 312
+    ,height: 650
     ,url: "<?php echo url('Cfi/dealDetail4'); ?>" //数据接口
     ,where: {id:$('#id').val()}
      ,parseData: function(res){ //res 即为原始返回的数据
-      alert(res);
     return {
       "code": 0, //解析接口状态
       "msg": res.message, //解析提示文本
-      "count": res.total, //解析数据长度
+      "count": res.length, //解析数据长度
       "data": res //解析数据列表
     };
+    console.log(res.total);
   }
     ,page: true //开启分页
     ,cols: [[ //表头
-      {field: 'buyer_id', title: '用户名', width:150}
-      ,{field: 'seller_id', title: '总挂卖量', width:150, sort: true}
-      ,{field: 'deal_number', title: '剩余未成交', width:150}
-      ,{field: 'deal_price', title: '交易状态', width: 177,sort: true}
+      {field: 'buyer_id', title: '买方', width:150}
+      ,{field: 'seller_id', title: '卖方', width:150, sort: true}
+      ,{field: 'deal_number', title: '成交量', width:150}
+      ,{field: 'deal_price', title: '交易价格', width: 177,sort: true}
       ,{field: 'create_time', title: '时间', width: 177,sort: true}
 
-      
     ]]
   });
   

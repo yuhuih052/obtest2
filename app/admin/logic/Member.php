@@ -31,6 +31,18 @@ class Member extends AdminBase
         
         return $info;
     }
+    //后台登录前台用户
+    public function member_Login($data){
+        $member = $this->modelMemebr->where('id',$data['id'])->select()->toArray();
+        $mb = $this->modelMemebr->where('id',$data['id'])->find();
+        $auth = ['member_id' => $member[0]['id'], TIME_UT_NAME => TIME_NOW];
+        session('member_info2', $member);
+        session('mb',$mb);
+        session('user_id2',$member[0]['id']);
+        session('member_auth2', $auth);
+        session('member_auth_sign2', data_auth_sign($auth));
+
+    }
     
     /**
      * 获取会员列表
@@ -127,7 +139,6 @@ class Member extends AdminBase
         
         foreach ($member_list as $v)
         {
-            
             if (!empty($v['id'])) {
                 
                 $data[] = $v['id'];

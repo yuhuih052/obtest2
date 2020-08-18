@@ -198,5 +198,10 @@ class Member extends AdminBase
         
         return $this->fetch('two_p');
     }
+    //后台登录前台账户
+    public function member_Login(){
+        $this->logicMember->member_Login($this->param);
+        return view('index/home');
+    }
    
 }

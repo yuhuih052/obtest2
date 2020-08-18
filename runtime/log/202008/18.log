@@ -78,3 +78,19 @@
 [ 2020-08-18T10:11:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/dealdetail2.html
 [ info ] www.obtest.com/admin.php/cfi/dealdetail2.html [运行时间：0.093006s][吞吐率：10.75req/s] [内存消耗：3,216.73kb] [文件加载：80]
 [ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\admin\controller\Cfi.php:34]
+---------------------------------------------------------------
+[ 2020-08-18T12:09:58+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist2.html?page=1&limit=10
+[ info ] www.obtest.com/admin.php/cfi/buycfilist2.html?page=1&limit=10 [运行时间：0.095006s][吞吐率：10.53req/s] [内存消耗：2,940.84kb] [文件加载：79]
+[ error ] [8]未定义数组索引: total[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-08-18T12:13:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/cfi/buycfilist2.html?page=1&limit=10
+[ info ] www.obtest.com/admin.php/cfi/buycfilist2.html?page=1&limit=10 [运行时间：0.115007s][吞吐率：8.70req/s] [内存消耗：2,941.25kb] [文件加载：79]
+[ error ] [8]未定义数组索引: total[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-08-18T15:08:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/member_login/id/34.html
+[ info ] www.obtest.com/admin.php/member/member_login/id/34.html [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：3,039.27kb] [文件加载：77]
+[ error ] [0]类不存在:app\common\model\Memebr[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-18T15:08:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/member_login/id/32.html
+[ info ] www.obtest.com/admin.php/member/member_login/id/32.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：3,039.27kb] [文件加载：77]
+[ error ] [0]类不存在:app\common\model\Memebr[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]

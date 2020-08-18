@@ -29,10 +29,8 @@ class Cfi extends AdminBase
 	 	        		# code...
 	 	        		break;
 	 	        }
-		        
-	 	        return $data;
- 	
          	}
+             return $data;
          }else{
          	return $data;
          }
@@ -61,10 +59,10 @@ class Cfi extends AdminBase
 	 	        		# code...
 	 	        		break;
 	 	        }
-		        
-	 	        return $data;
- 	
          	}
+//            $data['tota'] =[];
+//	         $data['tota'] = count($data)-1;
+             return $data;
          }else{
          	return $data;
          }

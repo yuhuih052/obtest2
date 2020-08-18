@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\sellCfiList.html";i:1597719413;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597638481;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:10:{s:73:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\sellCfiList.html";i:1597733577;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597638481;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\header.html";i:1585716400;s:34:"../app/common/view/fakeloader.html";i:1585716400;s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_left.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\crumbs.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\footer.html";i:1585716400;s:78:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\sidebar_right.html";i:1585716400;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,7 +203,7 @@
 </head>
 <body>
 <table style="margin-top: 55px;" id="demo" lay-filter="test"></table>
- 
+<a class="btn" onclick="javascript:history.back(-1);return false;"><i class="fa fa-history"></i> 返 回</a>
 <script src="/static/module/admin/layui/dist/layui.js"></script>
 <script>
 layui.use('table', function(){
@@ -212,17 +212,18 @@ layui.use('table', function(){
   //第一个实例
   table.render({
     elem: '#demo'
-    ,height: 312
+    ,height: 650
     ,url: "<?php echo url('Cfi/sellCfiList2'); ?>" //数据接口
      ,parseData: function(res){ //res 即为原始返回的数据
-      
+
     return {
       "code": 0, //解析接口状态
       "msg": res.message, //解析提示文本
-      "count": res.total, //解析数据长度
+      "count": res.length, //解析数据长度
       "data": res //解析数据列表
     };
   }
+
     ,page: true //开启分页
     ,cols: [[ //表头
       {field: 'user_name', title: '用户名', width:150}
