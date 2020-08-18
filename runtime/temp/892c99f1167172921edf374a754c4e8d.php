@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1597459474;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\user\index.html";i:1597744389;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +76,7 @@
     <h1 class="mui-title header-h1">个人中心</h1>
 
 </header>
-    <div class="dropdown" style="margin-top: 10px">
+    <div class="dropdown" style="margin-top: 50px">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         会员管理
         <span class="caret"></span>
@@ -301,8 +301,8 @@
          
          
          <!-- <a href="<?php echo url('user/message'); ?>">留言《《</a> -->
-         <!-- <a href="<?php echo url('user/messageRecord',['id'=> $data['id']]); ?>">留言记录《《</a>
-        <a href="<?php echo url('login/logout'); ?>">  退出《</a> -->
+         <!-- <a href="<?php echo url('user/messageRecord',['id'=> $data['id']]); ?>">留言记录《《</a> -->
+        <a href="<?php echo url('login/logout'); ?>">  退出《</a>
 
     </div>
 

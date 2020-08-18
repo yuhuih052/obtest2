@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\member_list.html";i:1597733936;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\member\member_list.html";i:1597734542;}*/ ?>
 <div class="box">
     
   <div class="box-header">
@@ -140,7 +140,7 @@
                       &nbsp;
                       <ob_link><a href="<?php echo url('memberActivate', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>激活/锁定操作</span></a></ob_link>
                       &nbsp;
-                      <ob_link><a class="confirm ajax-get"  href="<?php echo url('member_Login', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>登录</span></a></ob_link>
+<!--                      <ob_link><a class="confirm ajax-get"   href="<?php echo url('member_Login', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>登录</span></a></ob_link>-->
 <!--                      <ob_link><a class="confirm ajax-get"  href="<?php echo url('memberDel', array('id' => $vo['id'])); ?>"><span class='badge bg-green'>删 除</span></a></ob_link>-->
                   </td>
                 </tr>

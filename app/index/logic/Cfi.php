@@ -507,9 +507,6 @@ class CFI extends IndexBase
                 }
             }
         }
-
-
-
     }
 
     //跟系统交易时刷新数据
@@ -641,7 +638,8 @@ class CFI extends IndexBase
 				$this->modelMember->where('id',$v->id)->inc('CFI',$v->CFI)->update();
 			}else{
 				$this->modelMember->where('id',$v->id)->update(['CFI'=>$v_info_rank['CFI_split']]);
-				$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *$a - $v_info_rank['CFI_split']);
+				//用户达到封顶后，把多余股票加入系统账号中
+				//$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *$a - $v_info_rank['CFI_split']);
 			}
 			
 		}

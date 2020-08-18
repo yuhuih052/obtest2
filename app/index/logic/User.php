@@ -288,17 +288,20 @@ class User extends IndexBase
             array_pop($p_p_id);
             //把报单中心id加入报单中心的推荐人路径。方便发放报单中心奖
             array_push($p_p_id, $p_person[0]['id']);
-            
-            
+//            foreach (array_reverse($p_p_id) as $key=>$d){
+//                dump($d);
+//            }
+//                die;
             foreach (array_reverse($p_p_id) as $key => $id) {
-                
                 static $a = 7;
+                //当前用户，判断是否发放奖金
                 $b = $this->modelMember->where('id',$id)->find();
                 //报单中心等级信息
                 $b_rank = $this->checkMember_rank($b->member_rank);
                 $b_bonus_day = $this->checkBonus_day($id);
                 
                 if($b_rank['bonus_day'] > $b_bonus_day){
+                    //二级报单中心奖
                     if($b->is_center == 1 && $a > 0){
                         $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * 0.02*0.9)
                                                             ->inc('baoguanjin',$check_dis['baodanbi_co'] * 0.02*0.1)
@@ -306,36 +309,34 @@ class User extends IndexBase
                             $re_baodan_bill = [
                                 'bonus_user_id'=>$p[0]['id'],
                                 'bonus_user_name'=>$p[0]['username'],
-                                'user_id' => $p_person[0]['id'],
-                                'user_name' => $p_person[0]['username'],
+                                'user_id' => $b['id'],
+                                'user_name' => $b['username'],
                                 'center_bonus' => $check_dis['baodanbi_co']*0.02,
                                 'bonus'=>$check_dis['baodanbi_co'] * 0.02*0.9,
                                 'baoguanjin'=>$check_dis['baodanbi_co'] * 0.02*0.1,
-                                'shuoming'=>'激活会员获得奖金',
+                                'shuoming'=>'激活会员获得报单中心奖',
                             ];
 
                         $this->modelBill->setInfo($re_baodan_bill);
                         $bonus_detail_ct6 = [
-                        'user_id' => $p_person[0]['id'],
-                        'user_name' => $p_person[0]['username'],
+                        'user_id' => $b['id'],
+                        'user_name' => $b['username'],
                         'bonus_amount' => $check_dis['baodanbi_co']*0.02,
                         'bonus_type'    => '报单中心奖',
                         'bonus_time'    => date('Y-m-d h:i:s', time()),
                     ];
-                    //dd($bonus_detail_ct6);
                     $this->modelBonusDetail->setInfo($bonus_detail_ct6);
-                    
                         $a = $a-2;
                         continue;
-                    }elseif($b->is_center == 2 && $a > 0){
+                    }elseif($b->is_center == 2 && $a > 0){ //一级报单中心奖
                         $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * 0.05*0.9)
                                                             ->inc('baoguanjin',$check_dis['baodanbi_co'] * 0.05*0.1)
                                                             ->update();
                         $re_baodan_bill = [
                                 'bonus_user_id'=>$p[0]['id'],
                                 'bonus_user_name'=>$p[0]['username'],
-                                'user_id' => $p_person[0]['id'],
-                                'user_name' => $p_person[0]['username'],
+                                'user_id' => $b['id'],
+                                'user_name' => $b['username'],
                                 'center_bonus' => $check_dis['baodanbi_co']*0.05,
                                 'bonus'=>$check_dis['baodanbi_co'] * 0.05*0.9,
                                 'baoguanjin'=>$check_dis['baodanbi_co'] * 0.05*0.1,
@@ -343,8 +344,8 @@ class User extends IndexBase
                         $this->modelBill->setInfo($re_baodan_bill);
                         //获奖记录保存，记录接点人
                     $bonus_detail_ct6 = [
-                        'user_id' => $p_person[0]['id'],
-                        'user_name' => $p_person[0]['username'],
+                        'user_id' => $b['id'],
+                        'user_name' => $b['username'],
                         'bonus_amount' => $check_dis['baodanbi_co']*0.05,
                         'bonus_type'    => '报单中心奖',
                         'bonus_time'    => date('Y-m-d h:i:s', time()),
@@ -353,23 +354,23 @@ class User extends IndexBase
                     $this->modelBonusDetail->setInfo($bonus_detail_ct6);
                         $a = $a-5;
                         continue;
-                    }elseif($b->is_center == 3 && $a > 0){
+                    }elseif($b->is_center == 3 && $a > 0){//商务报单中心奖
                         $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * $a *0.01*0.9)
                                                             ->inc('baoguanjin',$check_dis['baodanbi_co'] * $a *0.01*0.1)
                                                             ->update();
                         $re_baodan_bill = [
                                 'bonus_user_id'=>$p[0]['id'],
                                 'bonus_user_name'=>$p[0]['username'],
-                                'user_id' => $p_person[0]['id'],
-                                'user_name' => $p_person[0]['username'],
+                                'user_id' => $b['id'],
+                                'user_name' => $b['username'],
                                 'center_bonus' => $check_dis['baodanbi_co']*$a*0.01,
                                 'bonus'=>$check_dis['baodanbi_co'] *$a* 0.01*0.9,
                                 'baoguanjin'=>$check_dis['baodanbi_co'] *$a* 0.01*0.1,
                             ];
                         $this->modelBill->setInfo($re_baodan_bill);
                         $bonus_detail_ct6 = [
-                        'user_id' => $p_person[0]['id'],
-                        'user_name' => $p_person[0]['username'],
+                        'user_id' => $b['id'],
+                        'user_name' => $b['username'],
                         'bonus_amount' => $check_dis['baodanbi_co']*0.01*$a,
                         'bonus_type'    => '报单中心奖',
                         'bonus_time'    => date('Y-m-d h:i:s', time()),
@@ -383,8 +384,8 @@ class User extends IndexBase
                      $re_baodan_bill = [
                                 'bonus_user_id'=>$p[0]['id'],
                                 'bonus_user_name'=>$p[0]['username'],
-                                'user_id' => $p_person[0]['id'],
-                                'user_name' => $p_person[0]['username'],
+                                'user_id' => $b['id'],
+                                'user_name' => $b['username'],
                                 'center_bonus' => 0,
                                 'shuoming'=>'日奖金达到上限',
                             ];
