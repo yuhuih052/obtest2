@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\login\login.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597638481;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\login\login.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\top.html";i:1597980556;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\layout\bottom.html";i:1585716400;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

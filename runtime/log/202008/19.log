@@ -1,0 +1,24 @@
+---------------------------------------------------------------
+[ 2020-08-19T12:00:12+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_buyep.html
+[ info ] www.obtest.com/ep/sys_buyep.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,943.60kb] [文件加载：78]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:129]
+---------------------------------------------------------------
+[ 2020-08-19T12:00:31+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/sys_buyep.html
+[ info ] www.obtest.com/ep/sys_buyep.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,943.61kb] [文件加载：78]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:129]
+---------------------------------------------------------------
+[ 2020-08-19T15:34:52+08:00 ] 127.0.0.1 127.0.0.1 GET /ep/buy_all.html
+[ info ] www.obtest.com/ep/buy_all.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,924.26kb] [文件加载：78]
+[ error ] [8]未定义数组索引: id[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:209]
+---------------------------------------------------------------
+[ 2020-08-19T17:20:21+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/buy_ali.html
+[ info ] www.obtest.com/ep/buy_ali.html [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：2,670.91kb] [文件加载：73]
+[ error ] [8]未定义数组索引: buy_alist[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Ep.php:69]
+---------------------------------------------------------------
+[ 2020-08-19T17:21:00+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/buy_ali.html
+[ info ] www.obtest.com/ep/buy_ali.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,670.91kb] [文件加载：73]
+[ error ] [8]未定义数组索引: buy_alist[D:\phpstudy_pro\WWW\obtest2\app\index\controller\Ep.php:69]
+---------------------------------------------------------------
+[ 2020-08-19T17:21:06+08:00 ] 127.0.0.1 127.0.0.1 POST /ep/buy_ali.html
+[ info ] www.obtest.com/ep/buy_ali.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,931.35kb] [文件加载：77]
+[ error ] [0]variable type error： array[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Response.php:318]

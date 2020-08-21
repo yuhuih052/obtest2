@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\money\money_list.html";i:1597205436;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\money\money_list.html";i:1597981589;}*/ ?>
 
 <div class="box">
   <div class="box-header">
@@ -47,7 +47,7 @@
       <thead>
       <tr>
           <th>账单用户</th>
-          <th>与账单产生有关的用户</th>
+          <th>与奖金产生有关的用户</th>
           <th>充值</th>
           <th>提现</th>
           <th>转账</th>
@@ -62,6 +62,7 @@
           <th>现金币流水</th>
           <th>保管金流水</th>
           <th>电子币</th>
+          <th>CFI</th>
           <th>激活会员系统入账</th>
           <th>说明</th>
           <th>操作时间</th>
@@ -87,6 +88,7 @@
                     <td><?php echo $vo['bonus']; ?></td>
                     <td><?php echo $vo['baoguanjin']; ?></td>
                     <td><?php echo $vo['dianzibi_all']; ?></td>
+                    <td><?php echo $vo['CFI']; ?></td>
                     <td><?php echo $vo['baodanbi_all']; ?></td>
                     <td><?php echo $vo['shuoming']; ?></td>
                   <td><?php echo $vo['create_time']; ?></td>

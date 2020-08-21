@@ -52,17 +52,18 @@ class Ep extends IndexBase{
         Hook::listen('CheckAuth',$params);
         $data = $this->logicEp->sell_list();
         $this->assign('list',$data);
-        return $this->fetch('ep/sell_list');
+        return $this->fetch('sell_list');
     }
     //交易列表，挂买
     public function buy_list(){
         Hook::listen('CheckAuth',$params);
         $data = $this->logicEp->buy_list();
         $this->assign('list',$data);
-        return $this->fetch('ep/buy_list');
+        return $this->fetch('buy_list');
     }
     //部分购买
     public function buy_ali(){
+
         Hook::listen('CheckAuth',$params);
         $data = $this->param;
         if($data['buy_alist'] == null){
@@ -72,7 +73,7 @@ class Ep extends IndexBase{
             $this->error('请输入不大于剩余挂买的值');
         }
         if($data['buy_alist'] == $data['buy_all']){
-            $this->buy_all($data);
+            $this->buy_all($this->param);
         }
         $this->jump($this->logicEp->buy_ali($data));
     }
@@ -83,6 +84,7 @@ class Ep extends IndexBase{
     }
     //部分出售
     public function sell_ali(){
+
         Hook::listen('CheckAuth',$params);
         $data = $this->param;
         if($data['sell_alist'] == null){
@@ -92,7 +94,7 @@ class Ep extends IndexBase{
             $this->error('请输入不大于剩余挂买的值');
         }
         if($data['sell_alist'] == $data['sell_all']){
-            $this->buy_all($data);
+            $this->sell_all($data);
         }
         $this->jump($this->logicEp->sell_ali($data));
     }

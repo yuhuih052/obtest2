@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_record_detail.html";i:1596851048;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:77:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\ep_record_detail.html";i:1597802190;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +65,7 @@
     <title>Title</title>
 </head>
 <body>
-<table class="table table-bordered" style="width: 48%;">
+<table class="table table-bordered" style="width: 48%;margin-top: 55px;">
     <thead>
     <tr>
         <td>买家</td>

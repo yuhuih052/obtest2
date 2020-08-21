@@ -1,0 +1,20 @@
+---------------------------------------------------------------
+[ 2020-08-20T14:52:21+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/splitcfi.html
+[ info ] www.obtest.com/admin.php/site/splitcfi.html [运行时间：0.102006s][吞吐率：9.80req/s] [内存消耗：3,320.30kb] [文件加载：82]
+[ error ] [0]类不存在:app\common\logic\User[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2020-08-20T14:53:54+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/splitcfi.html
+[ info ] www.obtest.com/admin.php/site/splitcfi.html [运行时间：0.096006s][吞吐率：10.42req/s] [内存消耗：3,268.66kb] [文件加载：83]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:107]
+---------------------------------------------------------------
+[ 2020-08-20T14:56:19+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/site/splitcfi.html
+[ info ] www.obtest.com/admin.php/site/splitcfi.html [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：3,268.70kb] [文件加载：83]
+[ error ] [2]A non-numeric value encountered[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Site.php:108]
+---------------------------------------------------------------
+[ 2020-08-20T17:35:11+08:00 ] 127.0.0.1 127.0.0.1 POST /cfi/sys_buy.html
+[ info ] www.obtest.com/cfi/sys_buy.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,187.59kb] [文件加载：78]
+[ error ] [0]类的属性不存在:app\common\model\Price->cfi_prce[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]
+---------------------------------------------------------------
+[ 2020-08-20T17:35:26+08:00 ] 127.0.0.1 127.0.0.1 POST /cfi/sys_buy.html
+[ info ] www.obtest.com/cfi/sys_buy.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,187.59kb] [文件加载：78]
+[ error ] [0]类的属性不存在:app\common\model\Price->cfi_prce[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Model.php:559]

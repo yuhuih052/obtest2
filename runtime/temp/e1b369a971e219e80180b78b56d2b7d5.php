@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\dealDetail.html";i:1597655820;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\phpstudy_pro\WWW\obtest2\public/../app/admin\view\cfi\dealDetail.html";i:1597894655;}*/ ?>
 
 <div class="box">
  
@@ -10,6 +10,7 @@
       <tr>
           <th>买家</th>
           <th>卖家</th>
+          <th>交易价格</th>
           <th>交易量</th>
           <th>时间</th>
           <th>状态</th>

@@ -114,6 +114,14 @@ class User extends IndexBase
             if($p_person[0]['wallet'] >= $check_dis['baodanbi_co']){
                 //配送电子币
                 $this->modelMember->where('id',$data['id'])->setInc('dianzibi',$check_dis['CF']);
+                //记录电子币流水
+                $beijihuo = [
+                    'user_id'=>$p[0]['id'],
+                    'user_name'=>$p[0]['username'],
+                    'dianzibi_all'=>$check_dis['CF'],
+                    'shuoming'=>'激活时，系统赠送电子币。',
+                ];
+                $this->modelBill->setInfo($beijihuo);
                 //扣除报单中心的报单币（也是激活者）
                 $re = [
                     'wallet' => $p_person[0]['wallet'] - $check_dis['baodanbi_co'],
@@ -124,11 +132,7 @@ class User extends IndexBase
  /************** 直推奖励开始**/
                 //应获奖励
                 $zhitui_bonus  = $check_dis['baodanbi_co'] * $check_p_zhi['tuijian_co'];
-                //当日累计奖金
-                $bonus_day = $this->checkBonus_day($p_zhi[0]['id']);
-                //当日最高获奖金额与当日所获奖金额的差值
-                $D_value = $check_p_zhi['bonus_day'] - $bonus_day;
-                if($D_value >= $zhitui_bonus){
+
                     //更新直推人的奖励
                     $re_zhi = [
                         'bonus' => $p_zhi[0]['bonus'] + $zhitui_bonus*0.9,
@@ -172,97 +176,7 @@ class User extends IndexBase
                         'bonus_type'    => '直推奖',
                         'bonus_time'    => date('Y-m-d h:i:s', time()),
                     ];
-                }else if($D_value > 0 && $D_value < $zhitui_bonus){
-                    //更新直推人的奖励
-                    $re_zhi = [
-                        'bonus' => $p_zhi[0]['bonus'] + $D_value,
-                        'baoguanjin'=>$p_zhi[0]['baoguanjin'] + $D_value,
-                        'all_bonus' =>  $p_zhi[0]['all_bonus'] + $D_value,
-                    ];
-                    //直推人获奖更新
-                    $this->modelMember->where('id',$p_zhi[0]['id'])->update($re_zhi);
 
-                    //账单流水记录,记录直推人
-                    $bill1 = [
-                        'bonus_user_id'=>$p[0]['id'],
-                        'bonus_user_name'=>$p[0]['username'],
-                        'user_id' => $p_zhi[0]['id'],
-                        'user_name' => $p_zhi[0]['username'],
-                        'baoguanjin'  => "+".$D_value*0.1,
-                        'bonus'   => "+".$D_value*0.9,
-                        'tuijian'   => "+".$D_value,
-                        'shuoming' => "激活会员"
-                    ];
-                    $this->modelBill->setInfo($bill1);
-
-                    //报单中心扣除报单币记录
-                    $bill12 = [
-                        'bonus_user_id'=>$p[0]['id'],
-                        'bonus_user_name'=>$p[0]['username'],
-                        'user_id' => $p_person[0]['id'],
-                        'user_name' => $p_person[0]['username'],
-                        'activate' => "-".$check_dis['baodanbi_co'],
-                        'baodanbi_all'=>$check_dis['baodanbi_co'],
-                        'wallet'=>$check_dis['baodanbi_co'],
-                        'shuoming' => "激活会员，报单币减1000",
-                    ];
-                    $this->modelBill->setInfo($bill12);
-
-                    //获奖记录保存，记录直推人
-                    $bonus_detail1 = [
-                        'user_id' => $p_zhi[0]['id'],
-                        'user_name' => $p_zhi[0]['username'],
-                        'bonus_amount' => $D_value,
-                        'bonus_type'    => '直推奖',
-                        'bonus_time'    => date('Y-m-d h:i:s', time()),
-                        'bonus_des' => '已达到奖金日封顶，只能部分奖金',
-                    ];
-                }else{
-                     //更新直推人的奖励
-                    $re_zhi = [
-                        'bonus' => $p_zhi[0]['bonus'] + $D_value,
-                        'baoguanjin'=>$p_zhi[0]['baoguanjin'] + $D_value,
-                        'all_bonus' =>  $p_zhi[0]['all_bonus'] + $D_value,
-                    ];
-                    //直推人获奖更新
-                    $this->modelMember->where('id',$p_zhi[0]['id'])->update($re_zhi);
-
-                    //账单流水记录,记录直推人
-                    $bill1 = [
-                        'bonus_user_id'=>$p[0]['id'],
-                        'bonus_user_name'=>$p[0]['username'],
-                        'user_id' => $p_zhi[0]['id'],
-                        'user_name' => $p_zhi[0]['username'],
-                        'baoguanjin'  =>0,
-                        'bonus'   =>0,
-                        'tuijian'   =>0,
-                        'shuoming' => "当日奖金达到上限，无法获得奖金"
-                    ];
-                    $this->modelBill->setInfo($bill1);
-
-                    //报单中心扣除报单币记录
-                    $bill12 = [
-                        'bonus_user_id'=>$p[0]['id'],
-                        'bonus_user_name'=>$p[0]['username'],
-                        'user_id' => $p_person[0]['id'],
-                        'user_name' => $p_person[0]['username'],
-                        'activate' => "-".$check_dis['baodanbi_co'],
-                        'baodanbi_all'=>$check_dis['baodanbi_co'],
-                        'wallet'=>$check_dis['baodanbi_co'],
-                        'shuoming' => "激活会员，报单币减1000",
-                    ];
-                    $this->modelBill->setInfo($bill12);
-
-                    //获奖记录保存，记录直推人
-                    $bonus_detail1 = [
-                        'user_id' => $p_zhi[0]['id'],
-                        'user_name' => $p_zhi[0]['username'],
-                        'bonus_amount' => 0,
-                        'bonus_type'    => '直推奖',
-                        'bonus_time'    => date('Y-m-d h:i:s', time()),
-                        'bonus_des' => '当日奖金达到上限，无法获得奖金',
-                    ];
-                }
                 $this->modelBonusDetail->setInfo($bonus_detail1);
 /************** 直推奖励结束**/
                 //增加业绩
@@ -294,6 +208,7 @@ class User extends IndexBase
 //                die;
             foreach (array_reverse($p_p_id) as $key => $id) {
                 static $a = 7;
+                static $ab = 0;
                 //当前用户，判断是否发放奖金
                 $b = $this->modelMember->where('id',$id)->find();
                 //报单中心等级信息
@@ -302,7 +217,7 @@ class User extends IndexBase
                 
                 if($b_rank['bonus_day'] > $b_bonus_day){
                     //二级报单中心奖
-                    if($b->is_center == 1 && $a > 0){
+                    if($b->is_center == 1 && $a > 0 && $a == 7){
                         $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * 0.02*0.9)
                                                             ->inc('baoguanjin',$check_dis['baodanbi_co'] * 0.02*0.1)
                                                             ->update();
@@ -327,19 +242,22 @@ class User extends IndexBase
                     ];
                     $this->modelBonusDetail->setInfo($bonus_detail_ct6);
                         $a = $a-2;
+                        $ab = $ab+2;
                         continue;
-                    }elseif($b->is_center == 2 && $a > 0){ //一级报单中心奖
-                        $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * 0.05*0.9)
-                                                            ->inc('baoguanjin',$check_dis['baodanbi_co'] * 0.05*0.1)
+                    }elseif($b->is_center == 2 && $a > 0 ){ //一级报单中心奖
+                        $abc = 5 - $ab;
+
+                        $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] *abs($abc)*0.01*0.9)
+                                                            ->inc('baoguanjin',$check_dis['baodanbi_co'] *abs($abc)*0.01*0.1)
                                                             ->update();
                         $re_baodan_bill = [
                                 'bonus_user_id'=>$p[0]['id'],
                                 'bonus_user_name'=>$p[0]['username'],
                                 'user_id' => $b['id'],
                                 'user_name' => $b['username'],
-                                'center_bonus' => $check_dis['baodanbi_co']*0.05,
-                                'bonus'=>$check_dis['baodanbi_co'] * 0.05*0.9,
-                                'baoguanjin'=>$check_dis['baodanbi_co'] * 0.05*0.1,
+                                'center_bonus' => $check_dis['baodanbi_co']*abs($abc)*0.01,
+                                'bonus'=>$check_dis['baodanbi_co'] * abs($abc)*0.01*0.9,
+                                'baoguanjin'=>$check_dis['baodanbi_co'] * abs($abc)*0.01*0.1,
                             ];
                         $this->modelBill->setInfo($re_baodan_bill);
                         //获奖记录保存，记录接点人
@@ -353,6 +271,7 @@ class User extends IndexBase
                     //dd($bonus_detail_ct6);
                     $this->modelBonusDetail->setInfo($bonus_detail_ct6);
                         $a = $a-5;
+                        $ab = $ab +5;
                         continue;
                     }elseif($b->is_center == 3 && $a > 0){//商务报单中心奖
                         $this->modelMember->where('id',$id)->inc('bonus',$check_dis['baodanbi_co'] * $a *0.01*0.9)
@@ -378,6 +297,7 @@ class User extends IndexBase
                     //dd($bonus_detail_ct6);
                     $this->modelBonusDetail->setInfo($bonus_detail_ct6);
                         $a = $a-7;
+
                         continue;
                     }
                 }else{
@@ -887,7 +807,7 @@ class User extends IndexBase
                     $this->modelMember->where('id',$dp_p_id_path[0])->update($first_father_guanli_bonus);
                 }else{
                     $first_father_guanli_bonus = [
-                        'bonus' => $first_father_info['bonus'] + $D_value1,
+                        'bonus' => $first_father_info[0]['bonus'] + $D_value1,
                         'all_bonus' => $first_father_info[0]['all_bonus'] + $D_value1,
                     ];
 
@@ -1639,7 +1559,7 @@ public function teamTree3($root_id)
                     'bonus' => $userinfo[0]['bonus'] - $data['zhuanhuan'],
                     'wallet' => $userinfo[0]['wallet'] + $data['zhuanhuan'],
                 ];
-           $up = $this->modelMember->where('id',$userinfo[0]['id'])->update($update);
+           $this->modelMember->where('id',$userinfo[0]['id'])->update($update);
 
             //记录流水账单
                 $bill = [
@@ -1650,7 +1570,7 @@ public function teamTree3($root_id)
                 ];
                 //dd($bill1['wallet']);
                 $this->modelBill->setInfo($bill);
-           return $up ? [RESULT_SUCCESS,'现金币转报单币成功'] : [RESULT_ERROR, $this->modelMember->getError()];
+           return [RESULT_SUCCESS,'现金币转报单币成功'];
            }
            return [RESULT_ERROR,'账户现金币余额不足。'];
         }elseif ($data['zhuanhuan_type'] == 2) {
@@ -1692,7 +1612,6 @@ public function teamTree3($root_id)
            }
            return [RESULT_ERROR,'账户保管金余额不足。'];
         }
-
     }
 
     //货币明细

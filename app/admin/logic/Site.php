@@ -58,39 +58,65 @@ class Site extends AdminBase
 	}
 	//股票拆分
 	public function splitCfi($data){
-		$a = $this->price()->cfi_price / 2;
-		$pre = [
-				'cfi_price' =>2,
-				'deal' => 0,
-				'default_deal' => $this->price()->default_deal *$a,
-				'default_price' => $this->price()->default_price * $a,
-				'cfi_total' => $this->price()->cfi_total *$a,
-			];
-		$this->modelPrice->where('id',1)->update($pre);
-		$seller = $this->modelShop->where('sell','>',0)->select();
-		foreach ($seller as $key => $va) {
-			if($va->statuss == 1){
-				//先返回挂卖市场未交易完成的部分
-				$this->modelShop->where('user_id',$va->user_id)->update(['sell'=>0,'update_time'=>time()]);
-				$this->modelMember->where('id',$va->user_id)->dec('CFI',$va->sell)->update();
-			}
-		}
-		//获取账户有CFI的会员
-		$user_split = $this->modelMember->where('CFI','>',0)
-										->where('status',1)
-										->select();
-		foreach ($user_split as $key => $v) {
-			//用户拆分封顶
-			$v_info_rank = $this->checkMember_rank($v->member_rank);
-			if($v->CFI *$a <= $v_info_rank['CFI_split']){
-				$this->modelMember->where('id',$v->id)->inc('CFI',$v->CFI)->update();
-			}else{
-				$this->modelMember->where('id',$v->id)->update(['CFI'=>$v_info_rank['CFI_split']]);
-				$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *$a - $v_info_rank['CFI_split']);
-			}
-			
-		}
-		//遍历持有cFi用户结束
+        $a = $this->price()->cfi_price / 2;
+
+        $pre = [
+            'cfi_price' =>2,
+            'deal' => 0,
+            'default_deal' => $this->price()->default_deal *$a,
+            'cfi_total' => $this->price()->cfi_total *$a,
+        ];
+        $this->modelPrice->where('id',1)->update($pre);
+        $seller = $this->modelShop->where('sell','>',0)->select();
+        foreach ($seller as $key => $va) {
+            if($va->statuss == 1){
+                $this->modelShop->where('user_id',$va->user_id)->update(['sell'=>0,'update_time'=>time()]);
+                //从交易市场返回未交易的CFI至账户
+                $this->modelMember->where('id',$va->user_id)->inc('CFI',$va->sell)->update();
+                $reres = [
+                    'user_id'=>$va->user_id,
+                    'user_name'=>$va->user_name,
+                    'CFI'=>$va->sell,
+                    'shuoming'=>'拆分CFI，从交易市场返回挂卖的CFI至账户',
+                ];
+                $this->modelBill->setInfo($reres);
+            }
+        }
+
+        $user_split = $this->modelMember->where('CFI','>',0)
+            ->where('status',1)
+            ->select();
+        foreach ($user_split as $key => $v) {
+            //用户拆分封顶
+            $v_info_rank = $this->checkMember_rank($v->member_rank);
+            if($v->CFI *$a <= $v_info_rank['CFI_split']){
+                $b = $v->CFI;
+                $c = $v->CFI *$a;
+                $d = $c -$b;
+
+                $this->modelMember->where('id',$v->id)->inc('CFI',$d)->update();
+                $reres = [
+                    'user_id'=>$v->id,
+                    'user_name'=>$v->username,
+                    'CFI'=>$v->CFI*$a - $v->CFI,
+                    'shuoming'=>'拆分CFI，账户增加相应比列的CFI，拆分时交易价格为:'.$a,
+                ];
+                $this->modelBill->setInfo($reres);
+            }else{
+                $this->modelMember->where('id',$v->id)->update(['CFI'=>$v_info_rank['CFI_split']]);
+                $reres = [
+                    'user_id'=>$v->id,
+                    'user_name'=>$v->username,
+                    'CFI'=>$v->CFI*$a - $v_info_rank['CFI_split'],
+                    'shuoming'=>'拆分CFI，由于账户达到拆分封顶，无法获得全部拆分数量的CFI，拆分时交易价格为:'.$a,
+                ];
+                $this->modelBill->setInfo($reres);
+                //用户达到封顶后，把多余股票加入系统账号中
+                //$this->modelPrice->where('id',1)->inc('cfi_total',$v->CFI *$a - $v_info_rank['CFI_split']);
+            }
+
+        }
+        //遍历持有cFi用户结束
 		
 		return [RESULT_SUCCESS,'操作成功'];
 				

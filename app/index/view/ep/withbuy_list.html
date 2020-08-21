@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<table class="table table-bordered" style="width: 48%;">
+<table class="table table-bordered" style="width: 48%; margin-top: 55px;">
     <thead>
     <tr>
         <td>总挂买量</td>
@@ -28,12 +28,12 @@
         </td>
         <td>{$vo.create_time}</td>
         <td>
-            {if $vo.status == 1}
+            {if $vo.statuss == 1}
         <form action="{:url('ep/withBuyEP')}">
             <input hidden name="id" value="{$vo.id}">
             <button type="submit">撤销挂买</button>
         </form>
-            {elseif $vo.status == 3/}已撤销挂买
+            {elseif $vo.statuss == 3/}已撤销挂买
             {/if}
         </td>
 

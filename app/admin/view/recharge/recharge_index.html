@@ -22,15 +22,17 @@
       {notempty name='list'}
         <tbody>
             {volist name='list' id='vo'}
+
                 <tr>
+
                   <td>{$vo.user_name}</td>
-                  <td>{$vo.request}</td>
-                 
+                  <td >{$vo.request}</td>
+
                   <td>{$vo.request_time}</td>
                   
                   <td class="col-md-2 text-center">
                       <ob_link><a href="{:url('rechargeAgree', array('id' => $vo['id'],'charge' => $vo['request']))}" class="btn"><i class="fa fa-edit"></i> 同意</a></ob_link>
-                      &nbsp;
+                &nbsp;
                       <ob_link><a href="{:url('rechargeDel', array('id' => $vo['id'],'charge' => $vo['request']))}" class="btn"><i class="fa fa-edit"></i> 删除</a></ob_link>
                   </td>
                 </tr>

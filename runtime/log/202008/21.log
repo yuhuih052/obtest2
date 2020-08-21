@@ -1,0 +1,80 @@
+---------------------------------------------------------------
+[ 2020-08-21T10:04:27+08:00 ] 192.168.100.21 192.168.200.9 GET /admin.php/member/twop.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/member/twop.html?_pjax=.content [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：3,234.85kb] [文件加载：79]
+[ error ] [8]未定义数组索引: username[D:\phpstudy_pro\WWW\obtest2\app\admin\logic\Member.php:570]
+---------------------------------------------------------------
+[ 2020-08-21T10:42:11+08:00 ] 192.168.100.21 192.168.200.9 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：3,197.82kb] [文件加载：79]
+[ error ] [8]未定义数组索引: bonus[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-08-21T10:50:05+08:00 ] 192.168.100.21 192.168.200.9 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.129007s][吞吐率：7.75req/s] [内存消耗：3,205.32kb] [文件加载：79]
+[ error ] [8]未定义数组索引: bonus[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-08-21T10:52:05+08:00 ] 192.168.100.21 192.168.200.9 POST /user/memberedit.html
+[ info ] www.obtest.com/user/memberedit.html [运行时间：0.108007s][吞吐率：9.26req/s] [内存消耗：3,199.59kb] [文件加载：79]
+[ error ] [8]未定义数组索引: bonus[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\Collection.php:309]
+---------------------------------------------------------------
+[ 2020-08-21T10:55:48+08:00 ] 192.168.100.21 192.168.200.9 GET /ep/ep_shop.html
+[ info ] www.obtest.com/ep/ep_shop.html [运行时间：0.120007s][吞吐率：8.33req/s] [内存消耗：3,141.76kb] [文件加载：79]
+[ error ] [0]语法解析错误: syntax error, unexpected '>'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\d16230fd4e18630b3a907baefc88eea7.php:120]
+---------------------------------------------------------------
+[ 2020-08-21T10:56:14+08:00 ] 192.168.100.21 192.168.200.9 GET /ep/ep_shop.html
+[ info ] www.obtest.com/ep/ep_shop.html [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：2,951.13kb] [文件加载：77]
+[ error ] [0]语法解析错误: syntax error, unexpected '>'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\d16230fd4e18630b3a907baefc88eea7.php:120]
+---------------------------------------------------------------
+[ 2020-08-21T10:57:53+08:00 ] 192.168.100.21 192.168.200.9 GET /ep/ep_shop.html
+[ info ] www.obtest.com/ep/ep_shop.html [运行时间：0.081004s][吞吐率：12.35req/s] [内存消耗：2,936.93kb] [文件加载：77]
+[ error ] [0]语法解析错误: syntax error, unexpected '>'[D:\phpstudy_pro\WWW\obtest2\runtime\temp\d16230fd4e18630b3a907baefc88eea7.php:120]
+---------------------------------------------------------------
+[ 2020-08-21T11:22:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.101006s][吞吐率：9.90req/s] [内存消耗：3,260.27kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:22:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：3,254.54kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:22:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：3,260.27kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:22:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.079004s][吞吐率：12.66req/s] [内存消耗：3,254.54kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:24:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.082004s][吞吐率：12.19req/s] [内存消耗：3,260.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:24:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：3,260.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:24:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.085005s][吞吐率：11.76req/s] [内存消耗：3,260.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:27:19+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.096005s][吞吐率：10.42req/s] [内存消耗：3,260.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:27:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：3,260.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:28:44+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.087004s][吞吐率：11.49req/s] [内存消耗：3,260.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T11:36:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/recharge/rechargerecord.html?_pjax=.content
+[ info ] www.obtest.com/admin.php/recharge/rechargerecord.html?_pjax=.content [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：3,261.40kb] [文件加载：84]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '_pjax' in 'where clause'[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2020-08-21T14:48:13+08:00 ] 192.168.100.21 192.168.200.9 GET /ep/buy_all/id/25/buy_all/10/ep_pro/7.html
+[ info ] www.obtest.com/ep/buy_all/id/25/buy_all/10/ep_pro/7.html [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：2,918.09kb] [文件加载：78]
+[ error ] [8]未定义数组索引: buy_alist[D:\phpstudy_pro\WWW\obtest2\app\index\logic\Ep.php:221]
+---------------------------------------------------------------
+[ 2020-08-21T14:50:09+08:00 ] 192.168.100.21 192.168.200.9 POST /ep/comfirm_money.html
+[ info ] www.obtest.com/ep/comfirm_money.html [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：2,912.47kb] [文件加载：78]
+[ error ] [0]method not exist:think\db\Query->pdate[D:\phpstudy_pro\WWW\obtest2\thinkphp\library\think\db\Query.php:93]

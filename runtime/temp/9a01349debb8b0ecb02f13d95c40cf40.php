@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\buy_list.html";i:1596851112;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:69:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\ep\buy_list.html";i:1597831825;s:64:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout.html";i:1585716400;s:68:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\top.html";i:1597397643;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\header.html";i:1595917326;s:71:"D:\phpstudy_pro\WWW\obtest2\public/../app/index\view\layout\footer.html";i:1597721545;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,11 +65,13 @@
     <title>Title</title>
 </head>
 <body>
-<table class="table table-bordered" style="width: 48%;">
+<table class="table table-bordered" style="width: 48%;margin-top: 55px;">
     <thead>
     <tr>
         <td>交易量</td>
         <td>金额</td>
+        <td>银行卡号</td>
+        <td>手机号码</td>
         <td>状态</td>
         <td>时间</td>
         <td>操作</td>
@@ -81,6 +83,18 @@
     <tr>
         <td><?php echo $vo['ep_amount']; ?></td>
         <td><?php echo $vo['ep_money']; ?></td>
+        <td>
+            <?php 
+            $mem = db('member') -> getById( $vo -> seller_id ) ;
+             ?>
+            <?php echo $mem['bankcard']; ?>
+        </td>
+        <td>
+            <?php 
+            $mem = db('member') -> getById( $vo -> seller_id ) ;
+             ?>
+            <?php echo $mem['mobile']; ?>
+        </td>
         <td><?php if($vo['flag'] == 1): ?>等待打款
             <?php elseif($vo['flag'] ==2): ?>等待确认
             <?php elseif($vo['flag'] ==3): ?>完成交易

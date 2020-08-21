@@ -47,37 +47,40 @@ class Recharge extends AdminBase
     {
         //dump($data);die;
         if($data['charge'] == 0){
-            $url = url('index');
+            $url = url('rechargerecord');
             return [RESULT_SUCCESS, '用户未申请充值', $url];
         }else{
-        $url = url('index');
+        $url = url('rechargerecord');
         $useid = $this->modelRecharge->where('id','=',$data['id'])->value('user_id');
         $user = $this->modelMember->where('id','=',$useid)->select()->toArray();
         $userwallet = $user[0]['wallet'];
-        //dump($data);die;
+        //dump($user);die;
         $data1 = [
             'wallet' => $userwallet + $data['charge'],
             'all_recharge' => $user[0]['all_recharge'] + $data['charge'],
             'request_chongzhi' => 0,
         ];
         //dump($data1);die;
-        $result = $this->modelMember->where('id','=',$useid)->update($data1);
+            //避免重复执行，返回双倍报单币
+            if($user[0]['request_chongzhi'] >0){
+                $this->modelMember->where('id','=',$useid)->update($data1);
 
         //修改申请充值状态
         $recharge_result = $this->modelRecharge->where('id',$data['id'])
                                                 ->where('request',$data['charge'])
                                                 ->update(['result' => 1]);
 
-        $usernnn = $this->modelMember->where('id',$data['id'])->value('username');
+        $usernnn = $this->modelMember->where('id',$useid)->value('username');
        //账单流水记录
         $bill6 = [
             'user_id' => $data['id'],
             'user_name' => $usernnn,
             'recharge'  => '+'.$data['charge'],
         ];
+        //dd($bill6);
         $this->modelBill->setInfo($bill6);
-        
-        return $result ? [RESULT_SUCCESS, '操作成功', $url] : [RESULT_ERROR, $this->modelBill->getError()];
+            }
+        return [RESULT_SUCCESS, '操作成功', $url];
         }
     }
     //删除
